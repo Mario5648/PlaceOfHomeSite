@@ -1,0 +1,726 @@
+body
+{
+    margin: 0;
+    padding: 0;
+
+    background-color: #f2f2f2;
+    color:#092230;
+    /*#282828*/
+}
+
+/*
+colors
+blue : #506d7a
+beige : #fffce5
+*/
+
+#reportHeader
+{
+    background-color: #506d7a;
+}
+
+
+#reportHeaderContainerText
+{
+    background-color: #506d7a;
+    color: #fffce5;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    padding-left: 30px;
+
+    width: 100%;
+}
+
+
+#reportHeaderAddressContainerBox
+{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+
+    width: 300px;
+
+
+}
+
+
+
+#closestSectionContainer
+{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+#closestDestinationContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 100%;
+}
+
+.destination-container-box
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    border-radius: 20px;
+
+    padding-left: 20px;
+
+    width:300px;
+
+    background-color: #FFFAFA;
+    color: #092230;
+    border-color: #506d7a;
+    border-style: solid;
+}
+
+
+
+#housingSectionContainer
+{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+#housingContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 100%;
+}
+
+.full-horizontal-container-box
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
+    border-radius: 20px;
+
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    width:80%;
+
+    background-color: #FFFAFA;
+    color: #092230;
+    border-color: #506d7a;
+    border-style: solid;
+}
+
+
+
+
+
+.quarter-grid-container-box
+{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-gap: 10px; /* Gap between items */
+  justify-content: center;
+  align-items: center;
+  
+  width:80%;
+}
+
+.item-quarter-box
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.grid-text-container-box
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width:80%;
+
+}
+
+
+#economicSectionContainer
+{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+#economicContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 100%;
+}
+
+
+
+#socialSectionContainer
+{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+#socialContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 100%;
+}
+
+#COLSectionContainer
+{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+#COLContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 100%;
+}
+
+
+
+#overviewSectionContainer
+{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+#overviewContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 100%;
+}
+
+#overviewTextBox
+{
+    width: 80%;
+}
+
+.close-destinations-table
+{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+td, th {
+    text-align: left;
+    padding: 8px;
+  }
+  tbody .destinationRow:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+
+  
+  .StyledReceipt:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: #FFFAFA;
+    --mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50%/30px 100%;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+  }
+.COL-table
+{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    border-collapse: collapse;
+    width: 100%;
+
+    margin-bottom: 40px;
+}
+
+.reciept-horizontal-line
+{
+    border-top:2px dashed #092230;
+    padding: 20px;
+}
+
+.reciept-header-text-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.destinationButton
+{
+    color: #f36c36;
+}
+
+.destinationButton:hover
+{
+    color: #092230;
+}
+@media screen and (min-width: 651px) 
+{
+    .reportLogo
+    {
+        width: 200px;
+    }
+    #reportHeaderContainer
+    {
+        background-color: #506d7a;
+        color: #fffce5;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+        
+    }
+    #reportHeaderAddressContainer
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;    
+    
+        width: 100%;
+    }
+    #reportHeaderInfoContainer
+    {
+        max-width: 800px;
+    }
+    #overviewSection
+    {    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #closestSection
+    {    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #housingSection
+    {    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #economicSection
+    {    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #socialSection
+    {    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #COLSection
+    {    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .half-horizontal-container-box
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+
+        border-radius: 20px;
+
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        width:80%;
+
+        background-color: #FFFAFA;
+        color: #092230;
+        border-color: #506d7a;
+        border-style: solid;
+    }
+    .left-horizontal-container-box
+    {
+        width:50%;
+    }
+
+    .right-horizontal-container-box
+    {
+        padding-left:30px;
+        width:50%;
+    }
+    .thirds-horizontal-container-box
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+        border-radius: 20px;
+
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        width:80%;
+
+        background-color: #FFFAFA;
+        color: #092230;
+        border-color: #506d7a;
+        border-style: solid;
+    }
+
+    .thirds-horizontal-container-box-1
+    {
+        width:33%;
+    }
+
+    .thirds-horizontal-container-box-2
+    {
+        padding-left:30px;
+        width:33%;
+    }
+
+    .thirds-horizontal-container-box-3
+    {
+        padding-left:30px;
+        width:33%;
+    }
+
+    .vl 
+    {
+        width: 2px; /* Line thickness */
+        height: 500px;
+        background-color: #506d7a;
+        margin: 0 auto; /* Centering the line if desired */
+    }
+
+    .StyledReceipt {
+        width: 800px;
+        padding: 60px;
+        position: relative;
+        filter: drop-shadow(0 0 0.2rem #092230); /* update the shadow here */
+        z-index: 1;
+        overflow: hidden;
+      }
+}
+
+@media screen and (max-width: 650px) 
+{
+    .reportLogo
+    {
+        width: 100px;
+    }
+    #reportHeaderContainer
+    {
+
+
+    }
+    #reportHeaderAddressContainer
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    
+        width: 100%;
+
+
+    }    
+    #reportHeaderInfoContainer
+    {
+        width: 100%;
+        max-width: 650px;
+        margin: auto;
+
+    }
+    #overviewSection
+    {    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    #closestSection
+    {    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    #housingSection
+    {    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    #economicSection
+    {    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    #socialSection
+    {    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    #COLSection
+    {    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .half-horizontal-container-box
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        border-radius: 20px;
+
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        width:100%;
+
+        background-color: #FFFAFA;
+        color: #092230;
+        border-color: #506d7a;
+        border-style: solid;
+    }
+    .left-horizontal-container-box
+    {
+        width:100%;
+    }
+    
+    .right-horizontal-container-box
+    {
+        width:80%;
+    }
+    .thirds-horizontal-container-box
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border-radius: 20px;
+    
+        padding-left: 30px;
+        padding-top: 30px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+        width:100%;
+    
+        background-color: #FFFAFA;
+        color: #092230;
+        border-color: #506d7a;
+        border-style: solid;
+    }
+    .thirds-horizontal-container-box-1
+    {
+        width:100%;
+    }
+
+    .thirds-horizontal-container-box-2
+    {
+        width:100%;
+    }
+
+    .thirds-horizontal-container-box-3
+    {
+        width:100%;
+    }
+    .vl 
+    {
+        width: 100%; /* Line thickness */
+        min-height: 1px; /* Responsive height based on the viewport height */
+
+        background-color: #506d7a;
+        margin: 0 auto; /* Centering the line if desired */
+    }
+    .StyledReceipt {
+        width: 280px;
+        padding: 30px;
+        position: relative;
+        filter: drop-shadow(0 0 0.2rem #092230); /* update the shadow here */
+        z-index: 1;
+        overflow: hidden;
+      }
+}
