@@ -237,6 +237,7 @@ a
     flex-direction: row;
     align-items: flex-start;
     flex-wrap: wrap;
+
 }
 
 .newProcessStepBox
@@ -317,10 +318,13 @@ a
 }
 
 .dataSectionContainer
-{
+{    
     width: 100%;
     max-width: 1000px;
     margin: auto;
+
+    word-wrap: break-word;
+
 }
 
 
@@ -354,5 +358,39 @@ a
 
         border-radius: 30px;
         border-style: none;
+    }
+
+    .stepsSectionContainer
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        justify-content: center;
+    
+    }
+
+    .missionSectionBodyContainer
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .missionImage
+    {
+        width: 200px;
+        border-radius: 30px;
+        margin-left: 40px;
+
+    }
+    .missionTextContainer
+    {
+        padding-top: 10px;
+        padding-left: 40px;
+
+        width: 200px;
     }
 }
