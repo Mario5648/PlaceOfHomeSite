@@ -327,6 +327,15 @@ a
 
 }
 
+.nav-bar-options-mobile
+{
+    display: none;
+}
+
+.mobile-menu-links {
+    display: none;
+    text-decoration: none;
+}
 
 @media only screen and (max-width: 767px) {
     .hideInMobile {
@@ -392,5 +401,35 @@ a
         padding-left: 40px;
 
         width: 200px;
+    }
+
+    .menuTextContainer
+    {
+        display: none;
+    }
+
+    .nav-bar-options-mobile
+    {
+        font-size: 50px;
+        display: block;
+
+    }
+
+    .mobile-menu-bar-icon
+    {
+        color: #FFFAFA;
+        text-decoration: none;
+    }
+
+
+
+    .mobile-menu-links a {
+        color: #FFFAFA;
+        padding: 14px 16px;
+        text-decoration: none;
+        display: block;
+        background-color: #092230;
+        font-size: 17px;
+
     }
 }

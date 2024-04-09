@@ -1,6 +1,6 @@
 <html>
 
-    <header>
+    <head>
         <title>Place of Home</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./styles/main_page_styles.css">
@@ -8,23 +8,40 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="./placeOfHomeIcon.ico">
+        <link rel="icon" type="image/x-icon" href="./placeOfHomeLogo.ico">
+        <script src="./scripts/website_utils.js"></script>
 
-    </header>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
 
     <body>
         <!-- Menu -->
         <div class="menuSection">
             <div class="menuSectionContainer">
                 <div>
-                    <img src="./logo.png" width="150px;"></img>
+                    <img src="./placeOfHomeLogo.png" width="100px;"></img>
                 </div>
                 <div class="menuTextContainer">
                     <a href="./index.html">Home</a>
                     <a href="./mission.html">Mission</a>
                     <a href="./data.html">About Data</a>
                 </div>
+
+                
+                <div class="nav-bar-options-mobile">
+                    <div class="topnav">
+                        <a href="javascript:void(0);" class="icon" onclick="mobileMenuFunction()">
+                            <i class="fa fa-reorder mobile-menu-bar-icon"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
+        </div>
+
+        <div id="mobile-menu-links" class="mobile-menu-links">
+            <a href="./main.html">Home</a>
+            <a href="./mission.html">Mission</a>
+            <a href="./data.html">About Data</a>
         </div>
 
         <!-- Data -->
