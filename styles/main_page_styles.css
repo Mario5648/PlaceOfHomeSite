@@ -337,6 +337,22 @@ a
     text-decoration: none;
 }
 
+.loadingBodySection
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingBody
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 @media only screen and (max-width: 767px) {
     .hideInMobile {
         display: none;

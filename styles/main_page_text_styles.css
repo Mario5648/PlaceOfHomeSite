@@ -112,3 +112,9 @@ a
 
     font-weight: 800;  
 }
+
+.loadingText
+{
+    font-size: 20px;
+    color: #092230;
+}
