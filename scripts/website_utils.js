@@ -52,7 +52,7 @@ function generateZipCodeReport()
     ZIPCODE = zipCode
     CITY = document.getElementById("autocomplete-input").value;
 
-    renderLoadingScreen();
+    window.open('../loading.html', '_self')
     generateReport(function(data)
     {
 
