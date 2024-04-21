@@ -127,3 +127,11 @@ a
 
     text-shadow: -1px -1px 0 #506D7A, 1px -1px 0 #506D7A, -1px 1px 0 #506D7A, 1px 1px 0 #506D7A;
 }
+
+.noteText
+{
+    font-size: 16px;
+    color: #f36c36;
+    font-style: italic;
+    font-weight: 700;
+}

@@ -1,8 +1,8 @@
 
 var ERROR_FLAG = "ERROR";
 
-var generateReportEndPoint = "http://127.0.0.1:5000/getZipCodeData";
-var getCitiesForStateEndPoint = "http://127.0.0.1:5000/getCitiesForState"
+var generateReportEndPoint = "https://placeofhome-api.org/getZipCodeData";
+var getCitiesForStateEndPoint = "https://placeofhome-api.org/getCitiesForState"
 
 
 function endpointCall(endpoint=null, params={}, callBack=null)
