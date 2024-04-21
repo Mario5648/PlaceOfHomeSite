@@ -418,7 +418,7 @@ a
 
     .zipCodeLookupField
     {
-        width: 15em;
+        width: 18em;
         height: 40px;
 
         padding: 20px;
@@ -428,7 +428,7 @@ a
     }
     .selectionField
     {
-        width: 15em;
+        width: 18em;
         height: 40px;
 
         padding: 10px;
@@ -438,7 +438,7 @@ a
     }
 
     .autocomplete-results {
-        width: 13em;
+        width: 15em;
         background: #FFF;
         z-index: 100;
         position: absolute;
