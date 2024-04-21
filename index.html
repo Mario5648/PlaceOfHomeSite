@@ -8,21 +8,34 @@
         <link rel="stylesheet" href="./styles/main_page_styles.css">
         <link rel="stylesheet" href="./styles/main_page_text_styles.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="./placeOfHomeLogo.ico">
 
+        
         <script src="./scripts/website_utils.js"></script>
+        <script src="./main_page_scripts/utils.js"></script>
+        <script src="./scripts/render_pages.js"></script>
+        <script src="./scripts/make_calls.js"></script>
+        <script src="./scripts/api_calls.js"></script>
+        <script src="./scripts/variables.js"></script>
+        <script src="./scripts/render_charts.js"></script>
+        <script src="./scripts/render_destinations.js"></script>
+        <script src="./main_page_scripts/searchCities.js"></script>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
-    <body>
+    <body id="mainBody" onload="initialStartFunctions()">
         <!-- Menu -->
         <div class="menuSection">
             <div class="menuSectionContainer">
-                <div>
+                <div class="logoSectionContainer">
                     <img src="./placeOfHomeLogo.png" width="100px;"></img>
+                    <p class="logoText">Place of Home</p>
                 </div>
                 <div class="menuTextContainer">
                     <a href="./index.html">Home</a>
@@ -52,8 +65,13 @@
             <div class="heroSectionContainer">
                 <div class="zipCodeLookupBox">
                     <p class="zipCodeLookupTitleText">Zip Code Lookup</p>
-                    <input type="text" placeholder="Enter 5 digit zipcode" class="zipCodeLookupField"></input>
-                    <button class="zipcodeSearchButton">Search</button>
+                    <label for="statesSelection" class="sectionText">Selected State :</label>
+                    <select id="statesSelection" class="selectionField" onchange="populateCitySelection()"></select><br>
+                    <span id="cityFieldSection"></span>
+                    <div id="autocomplete-results" class="autocomplete-results"></div><br>
+                    <label for="zipCodeInput" class="sectionText">Selected Zip Code :</label>
+                    <input id="zipCodeInput" type="text" placeholder="Enter 5 digit zipcode" class="zipCodeLookupField"></input><br>
+                    <button class="zipcodeSearchButton" onclick="generateZipCodeReport()">Search</button>
                     <p class="zipCodeLookupText">Make the right choice on where to call home by analyzing the area and be better informed around the surrounding area.</p>
                 </div>
             </div>

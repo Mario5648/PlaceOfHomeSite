@@ -8,7 +8,7 @@ function renderRestaurants(restaurantList)
         rating = "rating" in restaurantList[index] ? restaurantList[index]["rating"] : "None";
         restaurantTableHTML += `<tr class="destinationRow">
                                     <td>${restaurantList[index]["displayName"]["text"]}</td>
-                                    <td>${rating}</td>
+                                    <td>${rating} <i class="fa fa-star"></i></td>
                                     <td><a class="destinationButton" href="${restaurantList[index]["googleMapsUri"]}">View</a></td>
                                 </tr>`;
     }
@@ -27,7 +27,7 @@ function renderParks(parkList)
         rating = "rating" in parkList[index] ? parkList[index]["rating"] : "None";
         parkTableHTML += `<tr class="destinationRow">
                                     <td>${parkList[index]["displayName"]["text"]}</td>
-                                    <td>${rating}</td>
+                                    <td>${rating} <i class="fa fa-star"></td>
                                     <td><a class="destinationButton" href="${parkList[index]["googleMapsUri"]}">View</a></td>
                                 </tr>`;
     }
@@ -46,7 +46,7 @@ function renderGroceryStores(groceryStoreList)
         rating = "rating" in groceryStoreList[index] ? groceryStoreList[index]["rating"] : "None";
         groceryStoreTableHTML += `<tr class="destinationRow">
                                     <td>${groceryStoreList[index]["displayName"]["text"]}</td>
-                                    <td>${rating}</td>
+                                    <td>${rating} <i class="fa fa-star"></td>
                                     <td><a class="destinationButton" href="${groceryStoreList[index]["googleMapsUri"]}">View</a></td>
                                 </tr>`;
     }

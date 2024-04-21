@@ -19,7 +19,13 @@ a
     font-weight: 400;
     font-style: normal;
 }
-
+.logoSectionContainer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .menuSection
 {
     background-color: #092230;
@@ -53,7 +59,7 @@ a
 
 .heroSectionContainer
 {
-    background-image: url('../austinBackground.jpg');
+    background-image: url('../houstonBackgorund6-min.jpg');
     height: 750px;
     width: 100%;
     background-size: cover;
@@ -64,6 +70,25 @@ a
     align-items: center;
 }
 
+.autocomplete-results {
+    width: 21em;
+    background: #FFF;
+    z-index: 100;
+    position: absolute;
+    margin-top: 250px;
+
+}
+
+.autocomplete-results div {
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+.autocomplete-results div:hover 
+{
+    background-color: #f9f9f9;
+}
+  
 .zipCodeLookupBox
 {
     display: flex;
@@ -73,11 +98,21 @@ a
 
     background-color: rgba(255, 250, 250, 0.7);
     width: 25em;
-    height: 300px;
+    height: 500px;
 
     border-radius: 30px;
 
     padding:30px;
+}
+
+.selectionField
+{
+    width: 25em;
+    height: 40px;
+
+    padding: 10px;
+    border-radius: 30px;
+    border-style: none;
 }
 
 .zipCodeLookupField
@@ -343,14 +378,21 @@ a
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    padding: 30px;
 }
 
 .loadingBody
 {
+    margin: 0;
+    padding: 0;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    text-align: center;
 }
 
 @media only screen and (max-width: 767px) {
@@ -367,7 +409,7 @@ a
 
         background-color: rgba(255, 250, 250, 0.7);
         width: 15em;
-        height: 300px;
+        height: 500px;
 
         border-radius: 30px;
 
@@ -383,6 +425,25 @@ a
 
         border-radius: 30px;
         border-style: none;
+    }
+    .selectionField
+    {
+        width: 15em;
+        height: 40px;
+
+        padding: 10px;
+
+        border-radius: 30px;
+        border-style: none;
+    }
+
+    .autocomplete-results {
+        width: 13em;
+        background: #FFF;
+        z-index: 100;
+        position: absolute;
+        margin-top: 245px;
+    
     }
 
     .stepsSectionContainer

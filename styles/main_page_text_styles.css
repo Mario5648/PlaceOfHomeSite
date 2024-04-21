@@ -118,3 +118,12 @@ a
     font-size: 20px;
     color: #092230;
 }
+
+.logoText
+{
+    font-size: 20px;
+    color: #FFFAFA;
+    text-align: center;
+
+    text-shadow: -1px -1px 0 #506D7A, 1px -1px 0 #506D7A, -1px 1px 0 #506D7A, 1px 1px 0 #506D7A;
+}

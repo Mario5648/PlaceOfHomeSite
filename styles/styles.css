@@ -35,7 +35,8 @@ beige : #fffce5
 
     padding-left: 30px;
 
-    width: 100%;
+    max-width: 1000px;
+    margin: auto;
 }
 
 
@@ -47,8 +48,6 @@ beige : #fffce5
 
 
     width: 300px;
-
-
 }
 
 

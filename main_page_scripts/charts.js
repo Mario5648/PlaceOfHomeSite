@@ -9,8 +9,14 @@ var generationalMoving = new Chart(ctx, {
             backgroundColor: 'rgba(243, 108, 54, 1)',
             borderColor: 'rgba(243, 108, 54, 1)',
             borderWidth: 1,
+            datalabels: {
+                color: 'rgb(16,36,52)',
+                anchor: 'end',
+                align: 'top'
+            }
         }]
     },
+    plugins :[ChartDataLabels],
     options: {
         scales: {
             y: {
@@ -27,13 +33,14 @@ var generationalMoving = new Chart(ctx, {
                         borderColor: 'rgb(75, 192, 192)',
                         borderWidth: 2,
                         label: {
-                            content: 'Average for all ages - 11%',
+                            content: '% of Movers per Generation',
                             enabled: true,
                             position: 'end'
                         }
                     }
                 }
-            }
+            },
         }
+        
     }
 });

@@ -2,6 +2,8 @@
 var ERROR_FLAG = "ERROR";
 
 var generateReportEndPoint = "http://127.0.0.1:5000/getZipCodeData";
+var getCitiesForStateEndPoint = "http://127.0.0.1:5000/getCitiesForState"
+
 
 function endpointCall(endpoint=null, params={}, callBack=null)
 {
@@ -32,5 +34,7 @@ function identifyEndPoint(endpoint=null)
     {
         case "generateReport":
             return generateReportEndPoint;
+        case "getCitiesForState":
+            return getCitiesForStateEndPoint;
     }
 }

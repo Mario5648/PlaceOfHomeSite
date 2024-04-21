@@ -17,12 +17,9 @@ function renderRentHistoryChart(data = null)
             backgroundColor: ['rgba(243,108,54,0.6)'],
             borderWidth: 1,
             datalabels: {
-                align: 'start',
+                color: 'rgb(16,36,52)',
                 anchor: 'end',
-                offset:-30,
-                font: {
-                        size: 16
-                      }
+                align: 'top'
             }
         }]
         };
@@ -30,6 +27,7 @@ function renderRentHistoryChart(data = null)
     const rentChart = new Chart(ctx, {
                                     type: 'bar',
                                     data: data,
+                                    plugins :[ChartDataLabels],
                                     options: {
                                                 responsive: true,
                                                 maintainAspectRatio: true,
@@ -78,12 +76,9 @@ function renderHomePriceHistoryChart(data = null)
             backgroundColor: ['rgba(243,108,54,0.6)'],
             borderWidth: 1,
             datalabels: {
-                align: 'start',
+                color: 'rgb(16,36,52)',
                 anchor: 'end',
-                offset:-30,
-                font: {
-                        size: 16
-                      }
+                align: 'top'
             }
         }]
         };
@@ -91,6 +86,7 @@ function renderHomePriceHistoryChart(data = null)
     const homePriceChart = new Chart(ctx, {
                                     type: 'bar',
                                     data: data,
+                                    plugins :[ChartDataLabels],
                                     options: {
                                                 responsive: true,
                                                 maintainAspectRatio: true,
@@ -135,12 +131,9 @@ function renderEmploymentChart(data = null)
             backgroundColor: ['rgba(243,108,54,0.6)'],
             borderWidth: 1,
             datalabels: {
-                align: 'start',
+                color: 'rgb(16,36,52)',
                 anchor: 'end',
-                offset:-30,
-                font: {
-                        size: 16
-                      }
+                align: 'top'
             }
         }]
         };
@@ -148,6 +141,7 @@ function renderEmploymentChart(data = null)
     const employmentChart = new Chart(ctx, {
                                     type: 'bar',
                                     data: data,
+                                    plugins :[ChartDataLabels],
                                     options: {
                                                 responsive: true,
                                                 maintainAspectRatio: true,
@@ -198,12 +192,9 @@ function renderCommuteChart(data = null)
             backgroundColor: ['rgba(243,108,54,0.6)'],
             borderWidth: 1,
             datalabels: {
-                align: 'start',
+                color: 'rgb(16,36,52)',
                 anchor: 'end',
-                offset:-30,
-                font: {
-                        size: 16
-                      }
+                align: 'top'
             }
         }]
         };
@@ -211,6 +202,7 @@ function renderCommuteChart(data = null)
     const commuteChart = new Chart(ctx, {
                                     type: 'bar',
                                     data: data,
+                                    plugins :[ChartDataLabels],
                                     options: {
                                                 responsive: true,
                                                 maintainAspectRatio: true,
@@ -259,12 +251,9 @@ function renderResidentsStayedChart(data = null)
             backgroundColor: ['rgba(243,108,54,0.6)'],
             borderWidth: 1,
             datalabels: {
-                align: 'start',
+                color: 'rgb(16,36,52)',
                 anchor: 'end',
-                offset:-30,
-                font: {
-                        size: 16
-                      }
+                align: 'top'
             }
         }]
         };
@@ -272,6 +261,7 @@ function renderResidentsStayedChart(data = null)
     const residentsStayedOverYearsChart = new Chart(ctx, {
                                     type: 'bar',
                                     data: data,
+                                    plugins :[ChartDataLabels],
                                     options: {
                                                 responsive: true,
                                                 maintainAspectRatio: true,
