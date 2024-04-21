@@ -53,8 +53,7 @@ function generateZipCodeReport()
     CITY = document.getElementById("autocomplete-input").value;
 
     renderLoadingScreen();
-    document.body.style.transform = "scale(1)";
-    document.body.style.transformOrigin = "0 0";
+    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0');
 
     generateReport(function(data)
     {
