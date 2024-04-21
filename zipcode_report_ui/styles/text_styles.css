@@ -1,0 +1,205 @@
+p
+{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.closest-destinations-box-title
+{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.closest-destinations-box-distance-text
+{
+    font-size: 14px;
+    color: #506d7a;
+}
+
+.closest-destinations-box-view-text
+{
+    font-size: 16px;
+    color: #f36c36;
+}
+
+.box-title
+{
+    font-size: 18px;
+}
+
+
+a
+{
+    text-decoration: none;
+    color:inherit;
+}
+@media screen and (min-width: 651px) 
+{
+    .report-header-text
+    {
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .report-info-text
+    {
+        font-size: 25px;
+    }
+    .box-value-text
+    {
+        font-size: 30px;
+        font-weight: 800;
+    }
+    .overview-text
+    {
+        font-size: 20px;
+    }
+    
+    .overview-box-title
+    {
+        font-size: 20px;
+    }
+    
+    .overview-box-value-text
+    {
+        font-size: 25px;
+        font-weight: 800;
+    }
+    
+    .box-value-subtext
+    {
+        font-size: 16px;
+    }
+    .section-header-text
+    {
+        font-size: 30px;
+        font-weight: bold;
+        color:#f36c36;
+    }
+
+    .section-title-text
+    {
+        font-size: 20px;
+        font-weight: bold;
+
+        padding-left: 50px;
+    }
+    .reciept-title
+    {
+        font-size: 35px;
+        color:#092230;
+        font-weight: 800;
+    }
+
+    .reciept-subtitles
+    {
+        font-size: 30px;
+        color:#092230;
+        font-weight: 800;
+    }
+
+    .reciept-normal-text
+    {
+        font-size: 25px;
+        color:#092230;
+    }
+
+    .reciept-bold-text
+    {
+        font-size: 25px;
+        color:#092230;
+        font-weight: 800;
+    }
+
+    .reciept-header-sub-text
+    {
+        font-size: 16px;
+        color:#092230;
+    }
+}
+@media screen and (max-width: 650px) 
+{
+    .report-header-text
+    {
+        font-size: 20px;
+    }
+
+    .report-info-text
+    {
+        font-size: 15px;
+    }
+    .box-value-text
+    {
+        font-size: 16px;
+        font-weight: 800;
+    }
+    .overview-text
+    {
+        font-size: 16px;
+    }
+    
+    .overview-box-title
+    {
+        font-size: 16px;
+    }
+    
+    .overview-box-value-text
+    {
+        font-size: 20px;
+        font-weight: 800;
+    }
+    
+    .box-value-subtext
+    {
+        font-size: 16px;
+    }
+    .section-header-text
+    {
+        font-size: 20px;
+        font-weight: bold;
+        color:#f36c36;
+    }
+
+    .section-title-text
+    {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .reciept-title
+    {
+        font-size: 25px;
+        color:#092230;
+        font-weight: 800;
+    }
+
+    .reciept-subtitles
+    {
+        font-size: 16px;
+        color:#092230;
+        font-weight: 800;
+    }
+
+    .reciept-normal-text
+    {
+        font-size: 16px;
+        color:#092230;
+    }
+
+    .reciept-bold-text
+    {
+        font-size: 16px;
+        color:#092230;
+        font-weight: 800;
+    }
+
+    .reciept-header-sub-text
+    {
+        font-size: 12px;
+        color:#092230;
+    }
+}

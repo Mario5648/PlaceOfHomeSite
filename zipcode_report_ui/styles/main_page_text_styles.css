@@ -1,0 +1,137 @@
+a
+{
+    text-decoration: none;
+    color:#FFFAFA;
+}
+
+.zipCodeLookupTitleText
+{
+    font-size: 25px;
+    color: #092230;
+}
+
+.zipCodeLookupText
+{
+    font-size: 16px;
+    color: #092230;
+}
+
+.sectionTitleText
+{
+    font-size: 40px;
+    color: #092230;
+}
+
+.sectionText
+{
+    font-size: 20px;
+    color: #092230;
+}
+
+.analyticItemText
+{
+    font-size: 20px;
+    color: #092230;
+}
+
+.blueSectionTitleText
+{
+    font-size: 40px;
+    color: #FFFAFA;
+}
+
+.blueSectionText
+{
+    font-size: 20px;
+    color: #FFFAFA;
+}
+
+.statisticValueText
+{
+    font-size: 20px;
+    color: #f36c36;
+}
+
+.statisticTitleText
+{
+    font-size: 20px;
+    color: #FFFAFA;
+}
+
+.stepsTitleText
+{
+    font-size: 16px;
+    font-weight: 800;
+    color: #092230;
+}
+
+.stepsDescriptionText
+{
+    font-size: 15px;
+    color: #092230;
+    text-align: center;
+}
+
+.footerTitleText
+{
+    font-size: 18px;
+    font-weight: 800;
+    color: #FFFAFA;
+}
+
+.footerText
+{
+    font-size: 16px;
+    color: #FFFAFA;
+}
+
+.developedByText
+{
+    font-size: 14px;
+    color: #FFFAFA;
+}
+
+.missionText
+{
+    font-size: 25px;
+    color: #092230;
+
+    font-weight: 800;
+}
+
+.missionDescriptionText
+{
+    font-size: 16px;
+    color: #092230;
+}
+
+.dataTitleText
+{
+    font-size: 20px;
+    color: #092230;
+
+    font-weight: 800;  
+}
+
+.loadingText
+{
+    font-size: 20px;
+    color: #092230;
+}
+
+.logoText
+{
+    font-size: 20px;
+    color: #FFFAFA;
+    text-align: center;
+
+    text-shadow: -1px -1px 0 #506D7A, 1px -1px 0 #506D7A, -1px 1px 0 #506D7A, 1px 1px 0 #506D7A;
+}
+
+.noteText
+{
+    font-size: 16px;
+    color: #f36c36;
+    font-style: italic;
+    font-weight: 700;
+}
