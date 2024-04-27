@@ -36,4 +36,16 @@ function setupAutocomplete(states) {
     }, 250);
 
     input.oninput = debouncedFilter;
+
+    // Handle the 'Enter' key to select the top autocomplete result
+    input.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent the default form submit behavior
+            const firstResult = resultsDiv.firstChild;
+            if (firstResult) {
+                input.value = firstResult.textContent; // Set the input to the first result
+                resultsDiv.innerHTML = ''; // Clear the results
+            }
+        }
+    });
 }
