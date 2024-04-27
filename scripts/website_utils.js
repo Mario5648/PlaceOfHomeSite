@@ -27,31 +27,66 @@ function generateStateSelectionFieldOptions()
 }
 
 
-function checkValidZipCode(zipCode)
+function checkValidZipCode()
 {
+    let zipCode = document.getElementById("zipCodeInput").value;
     if((zipCode.length == 5) && !isNaN(zipCode))
     {
-        return zipCode
+        return zipCode;
     }else
     {
         alert("Please enter valid zipcode!");
-        return false
+        return false;
+    }
+}
+
+function checkCityInput()
+{
+    let city = document.getElementById('autocomplete-input').value;
+
+    if(city != '')
+    {
+        return city.trim();
+    }else
+    {
+        alert("Please select a city");
+        return false;
+    }
+}
+
+function checkStateInput()
+{
+    let state = document.getElementById('statesSelection').value;
+    if(state != '')
+    {
+        return state;
+    }else
+    {
+        alert("Please select a state!");
+        return false;
     }
 }
 
 function generateZipCodeReport()
 {
 
-    zipCode = checkValidZipCode(document.getElementById("zipCodeInput").value);
-
-    if(!zipCode)
+    STATE = checkStateInput();
+    if(!STATE)
     {
         return;
     }
-    
-    ZIPCODE = zipCode
-    CITY = document.getElementById("autocomplete-input").value;
+    CITY = checkCityInput();
+    if(!CITY)
+    {
+        return;
+    }
+    ZIPCODE = checkValidZipCode();
+    if(!ZIPCODE)
+    {
+        return;
+    }
 
+    
     renderLoadingScreen();
     document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0');
 
