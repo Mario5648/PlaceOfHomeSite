@@ -9,7 +9,7 @@ function populateCitySelection()
 
     getCitiesForState(function(data)
     {         
-        document.getElementById('cityFieldSection').innerHTML = `<label for="autocomplete-input" class="sectionText">City :</label> <input id="autocomplete-input" type="text" placeholder="Please input a city" autocomplete="off" class="zipCodeLookupField"><br>`;
+        document.getElementById('cityFieldSection').innerHTML = `<label for="autocomplete-input" class="sectionText">City :</label><br> <input id="autocomplete-input" type="text" placeholder="Please input a city" autocomplete="off" class="zipCodeLookupField"><br>`;
         STATE_CITY_LIST = JSON.parse(data['stateCities']);
         setupAutocomplete(STATE_CITY_LIST);
     }, selectedState);
