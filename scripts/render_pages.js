@@ -56,20 +56,20 @@ function renderReportPage()
                                     <div class="reportZipCodeGradeContainer">
                                         <p class="ratingBoxTitle">Zip Code Raiting</p>
                                         <div class="reportRatingRow">
-                                            <img id="overallRatingIcon" class="gradeImgStyle" src="./grade_icons/grade_a.png">
+                                            <img id="overallRatingIcon" class="gradeImgStyle" src="./grade_icons/grade_null.png">
                                             <p class="ratingTextPadding ratingText" > Overall Zip Code Rating </p>
                                         </div>
                                         <hr>
                                         <div class="reportRatingRow">
-                                            <img id="rentRatingIcon" class="gradeImgStyle" src="./grade_icons/grade_b.png">
+                                            <img id="rentRatingIcon" class="gradeImgStyle" src="./grade_icons/grade_null.png">
                                             <p class="ratingTextPadding ratingText"> Rent Rating </p>
                                         </div>
                                         <div class="reportRatingRow">
-                                            <img id="homePriceRating" class="gradeImgStyle" src="./grade_icons/grade_d.png">
+                                            <img id="homePriceRating" class="gradeImgStyle" src="./grade_icons/grade_null.png">
                                             <p class="ratingTextPadding ratingText"> Home Price Rating </p>
                                         </div>
                                         <div class="reportRatingRow">
-                                            <img id="commuteRating" class="gradeImgStyle" src="./grade_icons/grade_d.png">
+                                            <img id="commuteRating" class="gradeImgStyle" src="./grade_icons/grade_null.png">
                                             <p class="ratingTextPadding ratingText"> Commute Rating </p>
                                         </div>
                                     </div>
