@@ -5,7 +5,11 @@ p
     font-style: normal;
 }
 
-
+.ratingBoxTitle
+{
+    font-size: 25px;
+    font-weight: 800;
+}
 
 
 .closest-destinations-box-title
@@ -123,6 +127,15 @@ a
 }
 @media screen and (max-width: 650px) 
 {
+    .ratingBoxTitle
+    {
+        font-size: 20px;
+        font-weight: 300;
+    }
+    .ratingText
+    {
+        font-size: 16px;
+    }
     .report-header-text
     {
         font-size: 20px;

@@ -53,18 +53,40 @@ function renderReportPage()
                         <div id="reportHeader">
                             <div id="reportHeaderContainer">
                                 <div id="reportHeaderContainerText">
-                                    <div id="reportHeaderInfoContainer">
-                                        <p class="report-header-text">Zip Code Report</p>
-                                        <p id="dateRangeText" class="report-info-text">01/01/2022 - 03/01/2024</p>
-                                    </div>
-                                    <div id="reportHeaderAddressContainer">
-                                        <div id="reportHeaderAddressContainerBox">
-                                            <p class="report-header-text">Zip Code:</p>
-                                            <p id="zipCodeText" class="report-info-text">77002</p>
+                                    <div class="reportZipCodeGradeContainer">
+                                        <p class="ratingBoxTitle">Zip Code Raiting</p>
+                                        <div class="reportRatingRow">
+                                            <img id="overallRatingIcon" class="gradeImgStyle" src="./grade_icons/grade_a.png">
+                                            <p class="ratingTextPadding ratingText" > Overall Zip Code Rating </p>
                                         </div>
-                                        <div id="reportHeaderAddressContainerBox">
-                                            <p class="report-header-text">City:</p>
-                                            <p id="cityStateText" class="report-info-text">Houston, TX</p>
+                                        <hr>
+                                        <div class="reportRatingRow">
+                                            <img id="rentRatingIcon" class="gradeImgStyle" src="./grade_icons/grade_b.png">
+                                            <p class="ratingTextPadding ratingText"> Rent Rating </p>
+                                        </div>
+                                        <div class="reportRatingRow">
+                                            <img id="homePriceRating" class="gradeImgStyle" src="./grade_icons/grade_d.png">
+                                            <p class="ratingTextPadding ratingText"> Home Price Rating </p>
+                                        </div>
+                                        <div class="reportRatingRow">
+                                            <img id="commuteRating" class="gradeImgStyle" src="./grade_icons/grade_d.png">
+                                            <p class="ratingTextPadding ratingText"> Commute Rating </p>
+                                        </div>
+                                    </div>
+                                    <div class="zipCodeTextContainer">
+                                        <div id="reportHeaderInfoContainer">
+                                            <p class="report-header-text">Zip Code Report</p>
+                                            <p id="dateRangeText" class="report-info-text">01/01/2022 - 03/01/2024</p>
+                                        </div>
+                                        <div id="reportHeaderAddressContainer">
+                                            <div id="reportHeaderAddressContainerBox">
+                                                <p class="report-header-text">Zip Code:</p>
+                                                <p id="zipCodeText" class="report-info-text">77002</p>
+                                            </div>
+                                            <div id="reportHeaderAddressContainerBox">
+                                                <p class="report-header-text">City:</p>
+                                                <p id="cityStateText" class="report-info-text">Houston, TX</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -14,11 +14,41 @@ blue : #506d7a
 beige : #fffce5
 */
 
+.reportZipCodeGradeContainer
+{
+    background-color: #f2f2f2;
+    color:#092230;
+    width: 300px;
+    padding: 20px;
+
+    border-radius: 30px;
+}
+.reportRatingRow
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+}
+
+.ratingTextPadding
+{
+    padding-left: 30px;
+}
+
+.gradeImgStyle
+{
+    width: 50px;
+}
 #reportHeader
 {
     background-color: #506d7a;
 }
 
+.zipCodeTextContainer
+{
+    padding-left: 30px;
+}
 
 #reportHeaderContainerText
 {
@@ -26,9 +56,10 @@ beige : #fffce5
     color: #fffce5;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
+    flex-wrap:wrap-reverse;
 
     padding-top: 50px;
     padding-bottom: 50px;
@@ -562,6 +593,12 @@ td, th {
     {
 
 
+    }
+
+    .gradeImgStyle
+    {
+        width: 30px;
+        height: 30px;
     }
     #reportHeaderAddressContainer
     {

@@ -157,6 +157,12 @@ function generateZipCodeReport()
             document.getElementById("monthlyTotalCOL").innerHTML = "$"+data["costOfLiving"]["Month_Total"];
             document.getElementById("annualTotalCOL").innerHTML = "$"+data["costOfLiving"]["Annual_Total"];
 
+
+            document.getElementById("overallRatingIcon").src = `./grade_icons/grade_${data["ratings"]["overallRating"]}.png`;
+            document.getElementById("rentRatingIcon").src = `./grade_icons/grade_${data["ratings"]["rentRating"]}.png`;
+            document.getElementById("homePriceRating").src = `./grade_icons/grade_${data["ratings"]["housePriceRating"]}.png`;
+            document.getElementById("commuteRating").src = `./grade_icons/grade_${data["ratings"]["commuteRating"]}.png`;
+
             renderRentHistoryChart(data);
             renderHomePriceHistoryChart(data);
             renderEmploymentChart(data);
