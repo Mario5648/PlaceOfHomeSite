@@ -54,7 +54,7 @@ function renderReportPage()
                             <div id="reportHeaderContainer">
                                 <div id="reportHeaderContainerText">
                                     <div class="reportZipCodeGradeContainer">
-                                        <p class="ratingBoxTitle">Zip Code Raiting</p>
+                                        <p class="ratingBoxTitle">Zip Code Rating</p>
                                         <div class="reportRatingRow">
                                             <img id="overallRatingIcon" class="gradeImgStyle" src="./grade_icons/grade_null.png">
                                             <p class="ratingTextPadding ratingText" > Overall Zip Code Rating </p>
