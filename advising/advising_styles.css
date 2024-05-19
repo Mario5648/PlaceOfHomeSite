@@ -1,0 +1,1133 @@
+body
+{
+    margin: 0;
+    padding: 0;
+
+    background-color: #FFFAFA;
+}
+
+p
+{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a
+{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.logoSectionContainer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menuSection
+{
+    background-color: #092230;
+
+    padding:20px;
+}
+
+.menuSectionContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.menuTextContainer
+{
+    color: #FFFAFA;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 20em;
+}
+
+.heroSectionContainer
+{
+    height: 750px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.autocomplete-results {
+    width: 21em;
+    background: #FFF;
+    z-index: 100;
+    position: absolute;
+    margin-top: 290px;
+
+}
+
+.autocomplete-results div {
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+.autocomplete-results div:hover 
+{
+    background-color: #f9f9f9;
+}
+  
+.zipCodeLookupBox
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    background-color: rgba(255, 250, 250, 0.7);
+    width: 25em;
+    height: 500px;
+
+    border-radius: 30px;
+
+    padding:30px;
+}
+
+.selectionField
+{
+    width: 25em;
+    height: 40px;
+
+    padding: 10px;
+    border-radius: 30px;
+    border-style: none;
+}
+
+.zipCodeLookupField
+{
+    width: 25em;
+    height: 40px;
+
+    padding: 20px;
+
+    border-radius: 30px;
+    border-style: none;
+}
+
+.zipcodeSearchButton
+{
+    width: 100px;
+    height: 30px;
+
+    border-style: none;
+    border-radius: 30px;
+    background-color: #f36c36;
+
+    color:#FFFAFA;
+}
+
+.areaSection
+{
+    padding: 30px;
+}
+
+.areaSectionContainer
+{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    
+}
+
+.analyticsItemContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+.analyticsItemContainerBox
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding:50px;
+}
+
+.movingSection
+{
+    background-color: #092230;
+    padding: 50px;
+
+}
+
+.movingSectionContainer
+{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.movingLeftSectionContainer
+{
+   flex-grow: 3;
+   padding: 20px;
+}
+
+.statisticsRightSectionContainer
+{
+    flex-grow: 7;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.statContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: 100%;
+}
+
+.statContainerBox
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.chartSectionContainer
+{
+    background-color: #FFFAFA;
+    padding: 20px;
+}
+
+.statisticsSourcesTextContainer
+{
+    background-color: #092230;
+    padding: 30px;
+
+    font-size: 14px;
+    color: #FFFAFA;
+}
+
+.chart
+{
+    width:30%;
+    height:300px;
+
+}
+
+.newProcessSection
+{
+    padding:50px;
+}
+
+.newProcessSectionContainer
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.stepsSectionContainer
+{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+}
+
+.newProcessStepBox
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+
+    width: 180px;
+
+    padding: 30px;
+}
+
+.footerSection
+{
+    background-color: #092230;
+    padding: 50px;
+}
+
+.footerSectionContainer
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: auto; 
+}
+
+.mainFooterSectionContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+}
+
+.missionSection
+{
+    padding: 50px;
+}
+
+.missionSectionContainer
+{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.missionSectionBodyContainer
+{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.missionImage
+{
+    width: 400px;
+    border-radius: 30px;
+}
+
+.missionTextContainer
+{
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+.dataSection
+{
+    padding: 50px;
+}
+
+.dataSectionContainer
+{    
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+
+    word-wrap: break-word;
+
+}
+
+.nav-bar-options-mobile
+{
+    display: none;
+}
+
+.mobile-menu-links {
+    display: none;
+    text-decoration: none;
+}
+
+.loadingBodySection
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+.loadingBody
+{
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+a
+{
+    text-decoration: none;
+    color:#FFFAFA;
+}
+
+.zipCodeLookupTitleText
+{
+    font-size: 25px;
+    color: #092230;
+}
+
+.zipCodeLookupText
+{
+    font-size: 16px;
+    color: #092230;
+    font-weight: 700;
+}
+
+.sectionTitleText
+{
+    font-size: 40px;
+    color: #092230;
+}
+
+.sectionText
+{
+    font-size: 20px;
+    color: #092230;
+}
+
+.analyticItemText
+{
+    font-size: 20px;
+    color: #092230;
+}
+
+.blueSectionTitleText
+{
+    font-size: 40px;
+    color: #FFFAFA;
+}
+
+.blueSectionText
+{
+    font-size: 20px;
+    color: #FFFAFA;
+}
+
+.statisticValueText
+{
+    font-size: 20px;
+    color: #f36c36;
+}
+
+.statisticTitleText
+{
+    font-size: 20px;
+    color: #FFFAFA;
+}
+
+.stepsTitleText
+{
+    font-size: 16px;
+    font-weight: 800;
+    color: #092230;
+}
+
+.stepsDescriptionText
+{
+    font-size: 15px;
+    color: #092230;
+    text-align: center;
+}
+
+.footerTitleText
+{
+    font-size: 18px;
+    font-weight: 800;
+    color: #FFFAFA;
+}
+
+.footerText
+{
+    font-size: 16px;
+    color: #FFFAFA;
+}
+
+.developedByText
+{
+    font-size: 14px;
+    color: #FFFAFA;
+}
+
+.missionText
+{
+    font-size: 25px;
+    color: #092230;
+
+    font-weight: 800;
+}
+
+.missionDescriptionText
+{
+    font-size: 16px;
+    color: #092230;
+}
+
+.dataTitleText
+{
+    font-size: 20px;
+    color: #092230;
+
+    font-weight: 800;  
+}
+
+.loadingText
+{
+    font-size: 20px;
+    color: #092230;
+}
+
+.logoText
+{
+    font-size: 20px;
+    color: #FFFAFA;
+    text-align: center;
+
+    text-shadow: -1px -1px 0 #506D7A, 1px -1px 0 #506D7A, -1px 1px 0 #506D7A, 1px 1px 0 #506D7A;
+}
+
+.noteText
+{
+    font-size: 16px;
+    color: #f36c36;
+    font-style: italic;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 767px) {
+    .hideInMobile {
+        display: none;
+    }
+
+    .zipCodeLookupBox
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        background-color: rgba(255, 250, 250, 0.7);
+        width: 15em;
+        height: 550px;
+
+        border-radius: 30px;
+
+        padding:30px;
+    }
+
+    .zipCodeLookupField
+    {
+        width: 18em;
+        height: 40px;
+
+        padding: 20px;
+
+        border-radius: 30px;
+        border-style: none;
+    }
+    .selectionField
+    {
+        width: 18em;
+        height: 40px;
+
+        padding: 10px;
+
+        border-radius: 30px;
+        border-style: none;
+    }
+
+    .autocomplete-results {
+        width: 15em;
+        background: #FFF;
+        z-index: 100;
+        position: absolute;
+        margin-top: 300px;
+    
+    }
+
+    .stepsSectionContainer
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        justify-content: center;
+    
+    }
+
+    .missionSectionBodyContainer
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .missionImage
+    {
+        width: 200px;
+        border-radius: 30px;
+        margin-left: 40px;
+
+    }
+    .missionTextContainer
+    {
+        padding-top: 10px;
+        padding-left: 40px;
+
+        width: 200px;
+    }
+
+    .menuTextContainer
+    {
+        display: none;
+    }
+
+    .nav-bar-options-mobile
+    {
+        font-size: 50px;
+        display: block;
+
+    }
+
+    .mobile-menu-bar-icon
+    {
+        color: #FFFAFA;
+        text-decoration: none;
+    }
+
+
+
+    .mobile-menu-links a {
+        color: #FFFAFA;
+        padding: 14px 16px;
+        text-decoration: none;
+        display: block;
+        background-color: #092230;
+        font-size: 17px;
+
+    }
+}
+
+
+@media screen and (min-width: 651px) 
+{
+    .heroSectionContainer
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .heroSectionTextContainer
+    {
+        padding: 10px;
+        width: 500px;
+    }
+
+    .descriptionSectionContainer
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+
+        padding: 100px;
+
+        padding-bottom: 300px;
+    }
+
+    .descriptionLeftTextContainer
+    {
+        padding-right: 50px;
+        width: 1500px;
+    }
+
+    .pricingSection
+    {
+        background-color: #092230;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 80px;
+    }
+
+    .pricingSectionContainer
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        background-color: #092230;
+
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+
+        padding: 100px
+
+        
+    }
+
+    .pricingBox
+    {
+        width: 350px;
+        background-color: #FFFAFA;
+
+        padding: 30px;
+
+        border-radius: 30px;
+    }
+
+    .pricingSectionTitleText
+    {
+        font-size: 30px;
+        color:#FFFAFA
+    }
+
+    .missionSection
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .missionSectionContainer
+    {
+        background-image: url("./houstonmission-3.jpg");
+
+        background-repeat:no-repeat;
+        background-size:cover;
+
+        width: 800px;
+        height: 400px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 30px;
+    }
+
+    .missionTitleText
+    {
+        font-size: 35px;
+        color: #FFFAFA;
+        font-weight: 800;
+    }
+
+    .missionSubText
+    {
+        font-size: 25px;
+        color: #FFFAFA;
+    }
+
+    .pricingBoxTitleText
+    {
+        color: #092230;
+        font-size: 23px;
+        font-weight: 700;
+    }
+
+    .pricingBoxText
+    {
+        color: #092230;
+        font-size: 18px;
+    }
+
+    .pricingBoxPrice
+    {
+        color: #092230;
+        font-size: 23px;
+        font-weight: 700;
+    }
+
+    .pricingBoxDuration
+    {
+        color: #092230;
+        font-size: 16px;
+    }
+
+    .pricingBoxButton
+    {
+        background-color: #f36c36;
+        border-style: none;
+        border-radius: 30px;
+        color: #FFFAFA;
+        width: 150px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .descriptionLeftLargeText
+    {
+        font-size: 45px;
+        font-weight: 700;
+        color: #092230;
+    }
+
+    .descriptionRightText
+    {
+        font-size: 20px;
+        color: #092230;
+    }
+
+    .heroSectionTextTitle
+    {
+        font-size: 50px;
+        font-weight: 700;
+        color: #092230;
+
+    }
+
+    .heroSectionText
+    {
+        font-size: 18px;
+        color: #092230;
+
+    }
+
+    .callToActionButton
+    {
+        width: 200px;
+        height: 50px;
+
+        border-style: none;
+        border-radius: 30px;
+
+        background-color: #f36c36;
+        
+        font-size: 20px;
+        color: #FFFAFA;
+    }
+
+    .noticeTextSection
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .noticeText
+    {
+        font-size: 40px;
+        color: #f36c36;
+        font-weight: 700;
+    }
+
+    .heroImage
+    {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 650px) 
+{
+    .heroSectionContainer
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .heroSectionTextContainer
+    {
+        padding: 50px;
+    }
+
+    .heroImage
+    {
+        width: 400px;
+    }
+
+    .descriptionSectionContainer
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+
+        padding-top: 100px;
+        padding-bottom: 150px;
+    }
+
+    .descriptionLeftTextContainer
+    {
+        width: 300px;
+    }
+
+    .descriptionRightText
+    {
+        width: 300px;
+    }
+
+    .pricingSection
+    {
+        background-color: #092230;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 80px;
+    }
+
+    .pricingSectionContainer
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        flex-wrap: wrap;
+
+        background-color: #092230;
+
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+
+        height: 1300px;
+
+    }
+
+    .pricingBox
+    {
+        width: 200px;
+        background-color: #FFFAFA;
+
+        padding: 30px;
+
+        border-radius: 30px;
+
+        margin-top: 30px;
+    }
+
+    .pricingSectionTitleText
+    {
+        font-size: 30px;
+        color:#FFFAFA
+    }
+
+    .missionSection
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        max-width: 300px;
+        margin: auto;
+
+        padding: 30px;
+
+        padding-top: 100px;
+        padding-bottom: 200px;
+
+    }
+
+    .missionSectionContainer
+    {
+        background-image: url("./houstonmission-3.jpg");
+
+        background-repeat:no-repeat;
+        background-size:cover;
+
+        width: 400px;
+        height: 300px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 30px;
+
+        padding: 30px;
+
+    }
+
+    .missionTitleText
+    {
+        font-size: 20px;
+        color: #FFFAFA;
+        font-weight: 800;
+    }
+
+    .missionSubText
+    {
+        font-size: 16px;
+        color: #FFFAFA;
+    }
+
+    .pricingBoxTitleText
+    {
+        color: #092230;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .pricingBoxText
+    {
+        color: #092230;
+        font-size: 16px;
+    }
+
+    .pricingBoxPrice
+    {
+        color: #092230;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .pricingBoxDuration
+    {
+        color: #092230;
+        font-size: 16px;
+    }
+
+    .pricingBoxButton
+    {
+        background-color: #f36c36;
+        border-style: none;
+        border-radius: 30px;
+        color: #FFFAFA;
+        width: 150px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .descriptionLeftLargeText
+    {
+        font-size: 30px;
+        font-weight: 700;
+        color: #092230;
+    }
+
+    .descriptionRightText
+    {
+        font-size: 16px;
+        color: #092230;
+    }
+
+    .heroSectionTextTitle
+    {
+        font-size: 50px;
+        font-weight: 700;
+        color: #092230;
+
+    }
+
+    .heroSectionText
+    {
+        font-size: 18px;
+        color: #092230;
+
+    }
+
+    .callToActionButton
+    {
+        width: 200px;
+        height: 50px;
+
+        border-style: none;
+        border-radius: 30px;
+
+        background-color: #f36c36;
+        
+        font-size: 20px;
+        color: #FFFAFA;
+    }
+
+    .noticeTextSection
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        max-width: 300px;
+        margin: auto;
+
+        padding: 30px;
+
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+    }
+
+    .noticeText
+    {
+        font-size: 20px;
+        color: #f36c36;
+        font-weight: 700;
+    }
+}

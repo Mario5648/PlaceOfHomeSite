@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #0a2230;
+    color: #0a2230;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    color: #f4f4f4;
+}
+
+h3 {
+    color: #0a2230
+}
+form {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+.input-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+.generalQuestionField{
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #0a2230;
+    border-radius: 4px;
+}
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+button {
+    padding: 10px 15px;
+    color: #f4f4f9;
+    background-color: #0a2230;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+button:hover {
+    background-color: #f36c36;
+}
+input[type="submit"] {
+    padding: 10px 15px;
+    color: #f4f4f9;
+    background-color: #0a2230;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    width: 200px;
+    font-size: 20px;
+}
+input[type="submit"]:hover {
+    background-color: #f36c36;
+}
+
+.questionFieldSection
+{
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.questionfield{
+    width: calc(80% - 22px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #0a2230;
+    border-radius: 4px;
+}
+
+.deleteButton
+{
+    background-color: #f4f4f4;
+    color: #0a2230;
+}
+
+.tour-date {
+    display: none;
+    margin-top: 5px;
+}
+
+.hidden {
+    display: none;
+  }
