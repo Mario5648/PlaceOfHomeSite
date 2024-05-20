@@ -1,8 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
     background-color: #0a2230;
     color: #0a2230;
+    padding-right:50px;
+    padding-left:10px;
 
     display: flex;
     flex-direction: column;
