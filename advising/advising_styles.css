@@ -314,34 +314,6 @@ a
 
 }
 
-
-.missionSectionContainer
-{
-    width: 100%;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.missionSectionBodyContainer
-{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
-.missionImage
-{
-    width: 400px;
-    border-radius: 30px;
-}
-
-.missionTextContainer
-{
-    padding-top: 50px;
-    padding-left: 50px;
-}
-
 .dataSection
 {
     padding: 50px;
@@ -529,132 +501,16 @@ a
     font-weight: 700;
 }
 
-@media only screen and (max-width: 767px) {
-    .hideInMobile {
-        display: none;
-    }
 
-    .zipCodeLookupBox
-    {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
-
-        background-color: rgba(255, 250, 250, 0.7);
-        width: 15em;
-        height: 550px;
-
-        border-radius: 30px;
-
-        padding:30px;
-    }
-
-    .zipCodeLookupField
-    {
-        width: 18em;
-        height: 40px;
-
-        padding: 20px;
-
-        border-radius: 30px;
-        border-style: none;
-    }
-    .selectionField
-    {
-        width: 18em;
-        height: 40px;
-
-        padding: 10px;
-
-        border-radius: 30px;
-        border-style: none;
-    }
-
-    .autocomplete-results {
-        width: 15em;
-        background: #FFF;
-        z-index: 100;
-        position: absolute;
-        margin-top: 300px;
-    
-    }
-
-    .stepsSectionContainer
-    {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        justify-content: center;
-    
-    }
-
-    .missionSectionBodyContainer
-    {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    }
-
-    .missionImage
-    {
-        width: 200px;
-        border-radius: 30px;
-        margin-left: 40px;
-
-    }
-    .missionTextContainer
-    {
-        padding-top: 10px;
-        padding-left: 40px;
-
-        width: 200px;
-    }
-
-    .menuTextContainer
-    {
-        display: none;
-    }
-
-    .nav-bar-options-mobile
-    {
-        font-size: 50px;
-        display: block;
-
-    }
-
-    .mobile-menu-bar-icon
-    {
-        color: #FFFAFA;
-        text-decoration: none;
-    }
-
-
-
-    .mobile-menu-links a {
-        color: #FFFAFA;
-        padding: 14px 16px;
-        text-decoration: none;
-        display: block;
-        background-color: #092230;
-        font-size: 17px;
-
-    }
-}
-
-
-@media screen and (min-width: 651px) 
+@media screen and (min-width: 700px) 
 {
+
     .heroSectionContainer
     {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-
 
         width: 100%;
         max-width: 1000px;
@@ -663,7 +519,6 @@ a
 
     .heroSectionTextContainer
     {
-        padding: 10px;
         width: 500px;
     }
 
@@ -679,8 +534,6 @@ a
         margin: auto;
 
         padding-top: 100px;
-        padding-left: 30px;
-        padding-right: 30px;
         padding-bottom: 300px;
     }
 
@@ -721,6 +574,8 @@ a
 
         padding-top: 30px;
         padding-bottom: 30px;
+
+        height: 700px;
         
     }
 
@@ -763,14 +618,16 @@ a
         justify-content: center;
         align-items: center;
 
-        height: 500px;
+        height: 700px;
 
     }
     .missionImage
     {
         position: absolute;
         z-index: -1;
-        width: 700px;
+        width: 500px;
+
+        border-radius: 30px;
     }
 
     .missionTitleText
@@ -889,8 +746,40 @@ a
     }
 }
 
-@media screen and (max-width: 650px) 
+@media screen and (max-width: 699px) 
 {
+    .hideInMobile {
+        display: none;
+    }
+    .menuTextContainer
+    {
+        display: none;
+    }
+
+    .nav-bar-options-mobile
+    {
+        font-size: 50px;
+        display: block;
+
+    }
+
+    .mobile-menu-bar-icon
+    {
+        color: #FFFAFA;
+        text-decoration: none;
+    }
+
+
+
+    .mobile-menu-links a {
+        color: #FFFAFA;
+        padding: 14px 16px;
+        text-decoration: none;
+        display: block;
+        background-color: #092230;
+        font-size: 17px;
+
+    }
     .heroSectionContainer
     {
         display: flex;
@@ -1005,7 +894,7 @@ a
         justify-content: center;
         align-items: center;
 
-        height: 300px;
+        height: 400px;
 
     }
     .missionImage
@@ -1013,7 +902,7 @@ a
         position: absolute;
         z-index: -1;
         width: 400px;
-        margin-left: -3px;
+        border-radius: 30px;
     }
 
     .missionTitleText
