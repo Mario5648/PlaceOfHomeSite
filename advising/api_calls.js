@@ -1,8 +1,8 @@
 
 var ERROR_FLAG = "ERROR";
 
-var saveUserInputMoveAdvisorPremiumEndPoint = "http://127.0.0.1:5000/saveUserInputMoveAdvisorPremium";
-var saveUserInputMoveAdvisorStandardEndPoint = "http://127.0.0.1:5000/saveUserInputMoveAdvisorStandard";
+var saveUserInputMoveAdvisorPremiumEndPoint = "https://placeofhome-advising-api.org/saveUserInputMoveAdvisorPremium";
+var saveUserInputMoveAdvisorStandardEndPoint = "https://placeofhome-advising-api.org/saveUserInputMoveAdvisorStandard";
 function endpointCall(endpoint=null, params={}, callBack=null)
 {
     let endpointLink = identifyEndPoint(endpoint);
