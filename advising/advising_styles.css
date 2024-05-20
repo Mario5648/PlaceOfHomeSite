@@ -575,7 +575,7 @@ a
         padding-top: 30px;
         padding-bottom: 30px;
 
-        height: 700px;
+        max-height: 1700px;
         
     }
 
@@ -625,7 +625,7 @@ a
     {
         position: absolute;
         z-index: -1;
-        width: 500px;
+        width: 600px;
 
         border-radius: 30px;
     }
@@ -746,7 +746,7 @@ a
     }
 }
 
-@media screen and (max-width: 699px) 
+@media screen and (max-width: 700px) 
 {
     .hideInMobile {
         display: none;
@@ -859,7 +859,7 @@ a
     .pricingBox
     {
         width: 100%;
-        max-width: 200px;
+        max-width: 250px;
         margin: auto;
 
         background-color: #FFFAFA;
@@ -885,9 +885,8 @@ a
         align-items: center;
 
         width: 100%;
-        max-width: 350px;
+        max-width: 600px;
         margin: auto;
-
     }
 
     .missionSectionContainer
@@ -904,7 +903,7 @@ a
     {
         position: absolute;
         z-index: -1;
-        width: 300px;
+        width: 400px;
         border-radius: 30px;
     }
 
