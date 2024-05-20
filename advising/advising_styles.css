@@ -858,7 +858,10 @@ a
 
     .pricingBox
     {
-        width: 200px;
+        width: 100%;
+        max-width: 350px;
+        margin: auto;
+        
         background-color: #FFFAFA;
 
         padding: 30px;
@@ -901,7 +904,7 @@ a
     {
         position: absolute;
         z-index: -1;
-        width: 400px;
+        width: 300px;
         border-radius: 30px;
     }
 
