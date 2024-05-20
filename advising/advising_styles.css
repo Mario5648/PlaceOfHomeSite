@@ -314,10 +314,6 @@ a
 
 }
 
-.missionSection
-{
-    padding: 50px;
-}
 
 .missionSectionContainer
 {
@@ -682,15 +678,21 @@ a
         max-width: 1000px;
         margin: auto;
 
-        padding: 100px;
-
+        padding-top: 100px;
+        padding-left: 30px;
+        padding-right: 30px;
         padding-bottom: 300px;
     }
 
     .descriptionLeftTextContainer
     {
         padding-right: 50px;
-        width: 1500px;
+    }
+
+    .descriptionRightTextContainer
+    {
+        padding-right: 50px;
+        width: 800px;
     }
 
     .pricingSection
@@ -701,6 +703,7 @@ a
         justify-content: center;
         align-items: center;
         padding-top: 80px;
+
     }
 
     .pricingSectionContainer
@@ -708,6 +711,7 @@ a
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        flex-wrap: wrap;
 
         background-color: #092230;
 
@@ -715,17 +719,22 @@ a
         max-width: 1000px;
         margin: auto;
 
-        padding: 100px
-
+        padding-top: 30px;
+        padding-bottom: 30px;
         
     }
 
     .pricingBox
     {
-        width: 350px;
+        width: 100%;
+        max-width: 350px;
+        margin: auto;
+
         background-color: #FFFAFA;
 
         padding: 30px;
+
+        margin-top: 30px;
 
         border-radius: 30px;
     }
@@ -749,20 +758,19 @@ a
 
     .missionSectionContainer
     {
-        background-image: url("./houstonmission-3.jpg");
-
-        background-repeat:no-repeat;
-        background-size:cover;
-
-        width: 800px;
-        height: 400px;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
-        border-radius: 30px;
+        height: 500px;
+
+    }
+    .missionImage
+    {
+        position: absolute;
+        z-index: -1;
+        width: 700px;
     }
 
     .missionTitleText
@@ -980,39 +988,32 @@ a
     .missionSection
     {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
 
         width: 100%;
-        max-width: 300px;
+        max-width: 350px;
         margin: auto;
-
-        padding: 30px;
-
-        padding-top: 100px;
-        padding-bottom: 200px;
 
     }
 
     .missionSectionContainer
     {
-        background-image: url("./houstonmission-3.jpg");
-
-        background-repeat:no-repeat;
-        background-size:cover;
-
-        width: 400px;
-        height: 300px;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
-        border-radius: 30px;
+        height: 300px;
 
-        padding: 30px;
-
+    }
+    .missionImage
+    {
+        position: absolute;
+        z-index: -1;
+        width: 400px;
+        margin-left: -3px;
     }
 
     .missionTitleText
