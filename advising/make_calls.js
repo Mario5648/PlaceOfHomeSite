@@ -21,8 +21,7 @@ function saveUserInfoMoveAdvisorStandard(params)
     {
         if(data["status"] == "success")
         {
-            alert("TEST SUCCESS")
-            window.open("https://buy.stripe.com/9AQ5o74Xj75f6IweUV", "__self")
+            location.href = "https://buy.stripe.com/9AQ5o74Xj75f6IweUV";
         }
         else if(data["status"] == "failed")
         {
