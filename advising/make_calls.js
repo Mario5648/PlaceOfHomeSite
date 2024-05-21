@@ -5,7 +5,7 @@ function saveUserInfoMoveAdvisorPremium(params)
     {
         if(data["status"] == "success")
         {
-            window.open("https://buy.stripe.com/7sI5o7cpL89jaYMcMM", "__self")
+            location.href = "https://buy.stripe.com/7sI5o7cpL89jaYMcMM";
         }
         else if(data["status"] == "failed")
         {
