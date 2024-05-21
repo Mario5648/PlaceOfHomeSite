@@ -28,6 +28,7 @@ function renderReportPage()
                                 </div>
                                 <div class="menuTextContainer">
                                     <a href="./index.html">Home</a>
+                                    <a href="./advising/advising.html">Advisor</a>
                                     <a href="./mission.html">Mission</a>
                                     <a href="./data.html">About Data</a>
                                 </div>
@@ -45,6 +46,7 @@ function renderReportPage()
                 
                         <div id="mobile-menu-links" class="mobile-menu-links">
                             <a href="./index.html">Home</a>
+                            <a href="./advising/advising.html">Advisor</a>
                             <a href="./mission.html">Mission</a>
                             <a href="./data.html">About Data</a>
                         </div>
