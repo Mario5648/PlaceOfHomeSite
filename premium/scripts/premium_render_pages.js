@@ -15,6 +15,10 @@ function renderLoadingScreen()
 function renderPremiumReportPage()
 {
     let reportHtml = `  
+                        <div class="reportMenuHeaderContainer">
+                            <p class="zipCodeHeaderTextStyle">Zip Code Analysis Report</p>
+                            <button class="pdfButtonStyle">Export to PDF <i class="fa fa-file-pdf-o"></i></button>
+                        </div>
                         <div id="reportHeader">
                             <div id="reportHeaderContainer">
                                 <div id="reportHeaderContainerText">
