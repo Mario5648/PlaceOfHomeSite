@@ -3,7 +3,17 @@ body
     margin: 0;
     padding: 0;
 
-    background-color: #FFFAFA;
+    background-color: #f2f2f2;
+    color:#092230;
+}
+
+.mainBody
+{
+    margin: 0;
+    padding: 0;
+
+    background-color: #f2f2f2;
+    color:#092230;
 }
 
 p
@@ -380,6 +390,8 @@ a
     align-items: center;
 
     padding: 30px;
+
+    background-color: #FFFAFA;
 }
 
 .loadingBody
@@ -393,6 +405,8 @@ a
     align-items: center;
     height: 100%;
     text-align: center;
+    background-color: #FFFAFA;
+
 }
 
 @media only screen and (max-width: 767px) {

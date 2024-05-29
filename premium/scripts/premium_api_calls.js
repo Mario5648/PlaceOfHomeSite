@@ -1,10 +1,7 @@
 
 var ERROR_FLAG = "ERROR";
 
-var generateReportEndPoint = "https://placeofhome-api.org/getZipCodeData";
-var getCitiesForStateEndPoint = "https://placeofhome-api.org/getCitiesForState"
 var generatePremiumReportEndPoint = "https://placeofhome-api.org/getZipCodeData";
-
 
 function endpointCall(endpoint=null, params={}, callBack=null)
 {
@@ -33,10 +30,6 @@ function identifyEndPoint(endpoint=null)
 {
     switch(endpoint)
     {
-        case "generateReport":
-            return generateReportEndPoint;
-        case "getCitiesForState":
-            return getCitiesForStateEndPoint;
         case "generatePremiumReport":
             return generatePremiumReportEndPoint;
     }

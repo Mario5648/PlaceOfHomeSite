@@ -3,7 +3,7 @@ function renderLoadingScreen()
     let loadingHtml = `
                 <div class="loadingBody">
                     <div class="loadingBodySection">
-                        <img src="./placeOfHomeLoading.gif" width="200px"></img>
+                        <img src="../placeOfHomeLoading.gif" width="200px"></img>
                         <p class="loadingText">Gathering data for the area to potentially call home!</p>
                     </div>
                 </div>
@@ -12,62 +12,29 @@ function renderLoadingScreen()
     document.getElementById("mainBody").innerHTML = loadingHtml;
 }
 
-function renderReportPage()
+function renderPremiumReportPage()
 {
-    let reportHtml = `
-                        <!-- Menu -->
-                        <div class="menuSection">
-                            <div class="menuSectionContainer">
-                                <div class="logoSectionContainer">
-                                    <img src="./placeOfHomeLogo.png" width="100px;"></img>
-                                    <p class="logoText">Place of Home</p>
-                                </div>
-                                <div class="menuTextContainer">
-                                    <a href="./index.html">Home</a>
-                                    <a href="./advising/advising.html">Advisor</a>
-                                    <a href="./mission.html">Mission</a>
-                                    <a href="./data.html">About Data</a>
-                                </div>
-                
-                                
-                                <div class="nav-bar-options-mobile">
-                                    <div class="topnav">
-                                        <a href="javascript:void(0);" class="icon" onclick="mobileMenuFunction()">
-                                            <i class="fa fa-reorder mobile-menu-bar-icon"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                
-                        <div id="mobile-menu-links" class="mobile-menu-links">
-                            <a href="./index.html">Home</a>
-                            <a href="./advising/advising.html">Advisor</a>
-                            <a href="./mission.html">Mission</a>
-                            <a href="./data.html">About Data</a>
-                        </div>
-
-                        
+    let reportHtml = `  
                         <div id="reportHeader">
                             <div id="reportHeaderContainer">
                                 <div id="reportHeaderContainerText">
                                     <div class="reportZipCodeGradeContainer">
                                         <p class="ratingBoxTitle">Zip Code Rating</p>
                                         <div class="reportRatingRow">
-                                            <img id="overallRatingIcon" class="gradeImgStyle" src="./grade_icons/grade_null.png">
+                                            <img id="overallRatingIcon" class="gradeImgStyle" src="../grade_icons/grade_null.png">
                                             <p class="ratingTextPadding ratingText" > Overall Zip Code Rating </p>
                                         </div>
                                         <hr>
                                         <div class="reportRatingRow">
-                                            <img id="rentRatingIcon" class="gradeImgStyle" src="./grade_icons/grade_null.png">
+                                            <img id="rentRatingIcon" class="gradeImgStyle" src="../grade_icons/grade_null.png">
                                             <p class="ratingTextPadding ratingText"> Rent Rating </p>
                                         </div>
                                         <div class="reportRatingRow">
-                                            <img id="homePriceRating" class="gradeImgStyle" src="./grade_icons/grade_null.png">
+                                            <img id="homePriceRating" class="gradeImgStyle" src="../grade_icons/grade_null.png">
                                             <p class="ratingTextPadding ratingText"> Home Price Rating </p>
                                         </div>
                                         <div class="reportRatingRow">
-                                            <img id="commuteRating" class="gradeImgStyle" src="./grade_icons/grade_null.png">
+                                            <img id="commuteRating" class="gradeImgStyle" src="../grade_icons/grade_null.png">
                                             <p class="ratingTextPadding ratingText"> Commute Rating </p>
                                         </div>
                                     </div>

@@ -1,19 +1,16 @@
-body
+/*
+colors
+blue : #506d7a
+beige : #fffce5
+*/
+.mainBody
 {
     margin: 0;
     padding: 0;
 
     background-color: #f2f2f2;
     color:#092230;
-    /*#282828*/
 }
-
-/*
-colors
-blue : #506d7a
-beige : #fffce5
-*/
-
 .reportZipCodeGradeContainer
 {
     background-color: #f2f2f2;

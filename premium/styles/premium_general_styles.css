@@ -1,0 +1,197 @@
+body
+{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+
+    background-color: #f2f2f2;
+    color:#092230;
+}
+
+.left-menu-container
+{
+    display: flex;
+    flex-direction: column;
+
+    width: 250px;
+    background-color: #0a2230;
+
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    color: white;
+
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+
+}
+
+.menu-logo-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-logo-style
+{
+    width: 80px;
+}
+
+.menu-row-selection-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.menu-icon-style
+{
+    width:20px;
+    font-size:18px;
+}
+
+.menu-text
+{
+    padding-left: 30px;
+}
+
+.mainBody
+{
+    margin: 0;
+    padding: 0;
+
+    background-color: #f2f2f2;
+    color:#092230;
+}
+.main-content-container
+{
+    margin-left: 290px;
+    width: 100%;
+
+}
+
+.main-header-text
+{
+    padding-left:30px;
+    padding-top: 30px;
+
+    font-size: 25px;
+}
+
+.main-header-subtext
+{
+    padding-left:30px;
+}
+
+.input-box-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 80px;
+}
+
+.input-box
+{
+    display: flex;
+    flex-direction: column;
+
+    border-style: solid;
+    border-radius: 30px;
+
+    width: 400px;
+
+    padding: 30px;
+
+    background-color: #fafafa;
+}
+
+.input-field
+{
+    height:30px;
+    border-radius: 30px;
+    border: 1px solid silver;
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.input-submit-button
+{
+    width: 200px;
+    height: 40px;
+
+    font-size: 18px;
+
+    background-color:#f36c36;
+    color:white;
+    border-style: none;
+    border-radius: 30px;
+}
+
+.zipCodeLookupField
+{    
+    width: 90%;
+    height:30px;
+    border-radius: 30px;
+    border: 1px solid silver;
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.autocomplete-results {
+    width: 25em;
+    z-index: 100;
+    position: absolute;
+    margin-top: 160px;
+}
+
+.autocomplete-results div {
+    background-color: #f9f9f9;
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+.autocomplete-results div:hover 
+{
+    background-color: #0a2230;
+    color: #f9f9f9;
+}
+
+.loadingBodySection
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    background-color: #FFFAFA;
+}
+
+.loadingBody
+{
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    background-color: #FFFAFA;
+
+}

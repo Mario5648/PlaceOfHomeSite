@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Place of Home</title>
+        <link rel="stylesheet" href="./styles/premium_general_styles.css">
+        <script src="./scripts/premium_general_script.js"></script>
+        <script src="../scripts/website_utils.js"></script>
+        <script src="../scripts/make_calls.js"></script>
+        <script src="../scripts/api_calls.js"></script>
+        <script src="./scripts/premium_variables.js"></script>
+        <script src="../main_page_scripts/searchCities.js"></script>
+        <script src="../scripts/render_pages.js"></script>
+
+        <script src="./scripts/premium_variables.js"></script>
+        <script src="./scripts/premium_utils.js"></script>
+        <script src="../main_page_scripts/utils.js"></script>
+        <script src="./scripts/premium_render_pages.js"></script>
+        <script src="./scripts/premium_make_calls.js"></script>
+        <script src="../scripts/variables.js"></script>
+        <script src="../scripts/render_charts.js"></script>
+        <script src="../scripts/render_destinations.js"></script>
+        <script src="../main_page_scripts/searchCities.js"></script>
+
+        <script src="../scripts/website_utils.js"></script>
+        <script src="../main_page_scripts/utils.js"></script>
+        <script src="../scripts/render_pages.js"></script>
+        <script src="../scripts/make_calls.js"></script>
+        <script src="../scripts/api_calls.js"></script>
+        <script src="../scripts/variables.js"></script>
+        <script src="../scripts/render_charts.js"></script>
+        <script src="../scripts/render_destinations.js"></script>
+        <script src="../main_page_scripts/searchCities.js"></script>
+
+        <link rel="stylesheet" href="../styles/styles.css">
+        <link rel="stylesheet" href="../styles/text_styles.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body onload="generateStateSelectionFieldOptions()">
+        
+        <div class="left-menu-container">
+            <div class="menu-logo-container">
+                <img src="logo.png" class="menu-logo-style"></img>
+                <p>Place of Home</p>
+            </div>
+            <br>
+            <br>
+            <div>
+                <div class="menu-row-selection-container">
+                    <i class="fa fa-dashboard menu-icon-style"></i>
+                    <p class="menu-text">Dashboard</p>
+                </div>
+                <br>
+                <br>
+                <br>
+                <p>Reporting</p>
+                <div class="menu-row-selection-container">
+                    <i class="fa fa-map-marker menu-icon-style"></i>
+                    <p class="menu-text">Zip Code Analysis</p>
+                </div>
+                <div class="menu-row-selection-container">
+                    <i class="fa fa-balance-scale menu-icon-style"></i>
+                    <p class="menu-text">Zip Code Compare</p>
+                </div>
+                <div class="menu-row-selection-container">
+                    <i class="fa fa-home menu-icon-style"></i>
+                    <p class="menu-text">Property Analysis</p>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <div class="menu-row-selection-container">
+                    <i class="fa fa-gear menu-icon-style"></i>
+                    <p class="menu-text">Settings</p>
+                </div>
+                <div class="menu-row-selection-container">
+                    <i class="fa fa-sign-out menu-icon-style"></i>
+                    <p class="menu-text">Logout</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content-container" id="mainBody">
+
+            <div class="main-header-container">
+                <p class="main-header-text">Zip Code Analyzer Report</p>
+                <p class="main-header-subtext">Analyze the area a property is located. See the social, economic, demograpic, and housing data.</p>
+            </div>
+
+            <div class="input-box-container">
+                <div class="input-box">
+                    <br>
+                    <label for="statesSelection">State :</label>
+                    <select id="statesSelection" name="statesSelection" class="input-field" onchange="populateCitySelection()"></select>
+                    <br>
+                    <br>
+                    <span id="cityFieldSection"></span>
+                    <div id="autocomplete-results" class="autocomplete-results"></div><br>
+                    <br>
+                    <br>
+                    <label for="zipCodeInput">Zip Code :</label>
+                    <input class="input-field" id="zipCodeInput" name="zipCodeInput" type="number"></input>
+                    <br>
+                    <button class="input-submit-button" onclick="generateZipCodePremiumReport()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
