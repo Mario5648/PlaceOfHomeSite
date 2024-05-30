@@ -110,6 +110,7 @@ function renderPremiumReportPage()
                             </div>
                         </div>
                         
+                        <hr>
 
                         <!-- Closest to You Section -->
                         <div id="closestSection">
@@ -234,13 +235,18 @@ function renderPremiumReportPage()
                                 <div id="socialContainer">
                                     <div class="full-horizontal-container-box">
                                         <p class="box-title">Zip Code Percent of People Who Stayed</p>
-                                        <p id="zipCodePeopleStayed" class="box-value-text">57% stay in 77002</p>
+                                        <p id="zipCodePeopleStayedSameHome" class="box-value-text">57% stay in 77002</p>
+                                        <p id="zipCodePeopleStayedSameCounty" class="box-value-text">57% stay in 77002</p>
+                                        <p id="zipCodePeopleStayedSameState" class="box-value-text">57% stay in 77002</p>
+                                        <p id="zipCodePeopleStayedDifferentState" class="box-value-text">57% stay in 77002</p>
                                         <canvas id="residentsStayedOverYears" width="400" height="200"></canvas>
                                         <p id="peopleStayedDescription" class="box-value-subtext">* Note! people seem to be moving out of this zip code for the past 5 years this could be caused for various reasons.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <hr>
 
                         <!-- Social Section -->
                         <div id="COLSection">

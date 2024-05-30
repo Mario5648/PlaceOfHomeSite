@@ -145,7 +145,7 @@ function generateZipCodeReport()
 
             document.getElementById("commuteDescription").innerHTML = "*"+data["descriptions"]["commute"];
             
-            document.getElementById("zipCodePeopleStayed").innerHTML =  (parseFloat(parseInt(data["zipCode"]["SOCIAL"]['Population 1 year and over'].replace(',', '')) / parseInt(data["zipCode"]["DEMOGRAPHIC"]['Total population'].replace(',', ''))) * 100).toFixed(2)+ " % stayed for over 1 year";
+            document.getElementById("zipCodePeopleStayed").innerHTML =  (parseFloat(parseInt(data["zipCode"]["SOCIAL"]['Same house'].replace(',', '')) / parseInt(data["zipCode"]["SOCIAL"]['Population 1 year and over'].replace(',', '')) ) * 100).toFixed(2)+ " % stayed for over 1 year";
             document.getElementById("peopleStayedDescription").innerHTML = "*"+data["descriptions"]["residentsStayed"];
 
             document.getElementById("foodCOL").innerHTML = "$"+data["costOfLiving"]["Month_Food"];

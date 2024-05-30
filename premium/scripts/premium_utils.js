@@ -78,7 +78,12 @@ function generateZipCodePremiumReport()
 
             document.getElementById("commuteDescription").innerHTML = "*"+data["descriptions"]["commute"];
             
-            document.getElementById("zipCodePeopleStayed").innerHTML =  (parseFloat(parseInt(data["zipCode"]["SOCIAL"]['Population 1 year and over'].replace(',', '')) / parseInt(data["zipCode"]["DEMOGRAPHIC"]['Total population'].replace(',', ''))) * 100).toFixed(2)+ " % stayed for over 1 year";
+            document.getElementById("zipCodePeopleStayedSameHome").innerHTML =  (parseFloat(parseInt(data["zipCode"]["SOCIAL"]['Same house'].replace(',', '')) / parseInt(data["zipCode"]["SOCIAL"]['Population 1 year and over'].replace(',', '')) ) * 100).toFixed(2)+ " % stayed in the same home for a year";
+            document.getElementById("zipCodePeopleStayedSameCounty").innerHTML =  (parseFloat(parseInt(data["zipCode"]["SOCIAL"]['Same county'].replace(',', '')) / parseInt(data["zipCode"]["SOCIAL"]['Population 1 year and over'].replace(',', '')) ) * 100).toFixed(2)+ " % stayed in the same county for a year after moving homes";
+            document.getElementById("zipCodePeopleStayedSameState").innerHTML =  (parseFloat(parseInt(data["zipCode"]["SOCIAL"]['Same state'].replace(',', '')) / parseInt(data["zipCode"]["SOCIAL"]['Population 1 year and over'].replace(',', '')) ) * 100).toFixed(2)+ " % stayed in the same state for a year after moving";
+            document.getElementById("zipCodePeopleStayedDifferentState").innerHTML =  (parseFloat(parseInt(data["zipCode"]["SOCIAL"]['Different state'].replace(',', '')) / parseInt(data["zipCode"]["SOCIAL"]['Population 1 year and over'].replace(',', '')) ) * 100).toFixed(2)+ " % moved out of the state after a year";
+         
+         
             document.getElementById("peopleStayedDescription").innerHTML = "*"+data["descriptions"]["residentsStayed"];
 
             document.getElementById("foodCOL").innerHTML = "$"+data["costOfLiving"]["Month_Food"];
