@@ -1,3 +1,62 @@
+function renderPopulationHistoryChart(data = null)
+{
+    let populationHistoricalData = [];
+    years = Object.keys(data["pastData"]["zipCode"]["DEMOGRAPHIC"])
+    for(let yearIndex = 0; yearIndex < years.length; yearIndex+=1)
+    {
+        populationHistoricalData.push(parseInt(data["pastData"]["zipCode"]["DEMOGRAPHIC"][years[yearIndex]]["Total population"].replace(",","")))
+    }
+
+    var data = {
+        labels: years,
+        datasets: [{
+            axis: 'x',
+            label: 'Population History',
+            data: populationHistoricalData,
+            fill: false,
+            backgroundColor: ['rgba(243,108,54,0.6)'],
+            borderWidth: 1,
+            datalabels: {
+                color: 'rgb(16,36,52)',
+                anchor: 'end',
+                align: 'top'
+            }
+        }]
+        };
+    const ctx = document.getElementById('populationChart').getContext('2d');
+    const populationChart = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: data,
+                                    plugins :[ChartDataLabels],
+                                    options: {
+                                                responsive: true,
+                                                maintainAspectRatio: true,
+                                                indexAxis: 'x', // This will make the bar chart horizontal
+                                                scales: {
+                                                    y: {
+                                                        ticks: {
+                                                            beginAtZero: true,
+                                                        }
+                                                    }
+                                                    },
+                                                    plugins: {
+                                                        legend: {
+                                                            display: false
+                                                        },
+                                                        title: {
+                                                            display: true,
+                                                            text: 'Population History',
+                                                            font: {
+                                                                size: 16
+                                                            }
+                                                        },
+                                                        
+                                                    }
+                                                }
+                                            
+                                    });
+}
+
 function renderRentHistoryChart(data = null)
 {
     let rentHistoricalData = [];

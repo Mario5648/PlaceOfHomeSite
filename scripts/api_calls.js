@@ -3,7 +3,7 @@ var ERROR_FLAG = "ERROR";
 
 var generateReportEndPoint = "https://placeofhome-api.org/getZipCodeData";
 var getCitiesForStateEndPoint = "https://placeofhome-api.org/getCitiesForState"
-var generatePremiumReportEndPoint = "https://placeofhome-api.org/getZipCodeData";
+var generatePremiumReportEndPoint = "http://127.0.0.1:5000/getZipCodeDataPremium";
 
 
 function endpointCall(endpoint=null, params={}, callBack=null)

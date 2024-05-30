@@ -5,7 +5,7 @@ function makeCallGeneratePremiumReport( callBack = null )
                   "zipCode":ZIPCODE,
                   "city":CITY,
                   "state":STATE,
-                  "reportType":"freeTier",
+                  "reportType":"premium",
                  };
 
     endpointCall("generatePremiumReport", params, function(data)

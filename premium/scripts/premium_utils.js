@@ -50,6 +50,8 @@ function generateZipCodePremiumReport()
             document.getElementById("cityNationCrime").innerHTML = data["crime"]["nationCrimeDescription"];
             document.getElementById("cityStateCrime").innerHTML = data["crime"]["stateCrimeDescription"];
 
+            document.getElementById("populationDescription").innerHTML = "*"+data["descriptions"]["population"];
+
             document.getElementById("zipCodeRent").innerHTML = "$"+data["zipCode"]["HOUSING"]["Rent_Median (dollars)"];
             document.getElementById("cityRent").innerHTML = "Median. City : $"+data["city"]["HOUSING"]["Rent_Median (dollars)"];
             document.getElementById("stateRent").innerHTML = "Median. State : $"+data["state"]["HOUSING"]["Rent_Median (dollars)"];
@@ -94,15 +96,13 @@ function generateZipCodePremiumReport()
             document.getElementById("homePriceRating").src = `../grade_icons/grade_${data["ratings"]["housePriceRating"]}.png`;
             document.getElementById("commuteRating").src = `../grade_icons/grade_${data["ratings"]["commuteRating"]}.png`;
 
+            renderPopulationHistoryChart(data);
             renderRentHistoryChart(data);
             renderHomePriceHistoryChart(data);
             renderEmploymentChart(data);
             renderCommuteChart(data);
             renderResidentsStayedChart(data);
 
-
-
-            
             renderRestaurants(data["destinations"]["restaurants"]["places"]);
             renderParks(data["destinations"]["parks"]["places"]);
             renderGroceryStores(data["destinations"]["groceryStores"]["places"]);

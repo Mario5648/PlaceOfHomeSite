@@ -100,8 +100,16 @@ function renderPremiumReportPage()
                                         </div>
                                     </div>
                                 </div>
+                                <div id="populationContainer">
+                                    <div class="full-horizontal-container-box">
+                                        <p class="box-title">Zip Code Population History</p>
+                                        <canvas id="populationChart" width="400" height="200"></canvas>
+                                        <p id="populationDescription" class="box-value-subtext"></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        
 
                         <!-- Closest to You Section -->
                         <div id="closestSection">
