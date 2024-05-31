@@ -47,8 +47,8 @@ function generateZipCodePremiumReport()
 
             document.getElementById("zipCodeOverviewDescription").innerHTML = data["descriptions"]["zipcodeOverall"];
             document.getElementById("zipCodePopulation").innerHTML = data["zipCode"]["DEMOGRAPHIC"]['Total population'];
-            document.getElementById("cityNationCrime").innerHTML = data["crime"]["nationCrimeDescription"];
-            document.getElementById("cityStateCrime").innerHTML = data["crime"]["stateCrimeDescription"];
+            document.getElementById("cityNationCrime").innerHTML = data["crimeDescriptions"]["nationCrimeDescription"];
+            document.getElementById("cityStateCrime").innerHTML = data["crimeDescriptions"]["stateCrimeDescription"];
 
             document.getElementById("populationDescription").innerHTML = "*"+data["descriptions"]["population"];
 
@@ -103,6 +103,7 @@ function generateZipCodePremiumReport()
             document.getElementById("commuteRating").src = `../grade_icons/grade_${data["ratings"]["commuteRating"]}.png`;
 
             renderPopulationHistoryChart(data);
+            renderCrimeBreakdownChart(data)
             renderRentHistoryChart(data);
             renderHomePriceHistoryChart(data);
             renderEmploymentChart(data);
@@ -111,6 +112,7 @@ function generateZipCodePremiumReport()
             renderResidentsStayedChart(data);
             renderRaceDemographicChart(data);
             renderAgeDemographicChart(data);
+            renderEducationAttainmentChart(data);
 
             renderRestaurants(data["destinations"]["restaurants"]["places"]);
             renderParks(data["destinations"]["parks"]["places"]);

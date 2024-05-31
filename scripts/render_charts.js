@@ -57,6 +57,98 @@ function renderPopulationHistoryChart(data = null)
                                     });
 }
 
+function renderCrimeBreakdownChart(data = null)
+{
+    let cityCrimeData = [];
+    let stateCrimeData = [];
+    let nationalCrimeData = [];
+
+    cityCrimeData.push(parseInt(data["crimeData"]["city"]["violentCrime"]))
+    cityCrimeData.push(parseInt(data["crimeData"]["city"]["propertyCrime"]))
+
+    stateCrimeData.push(parseInt(data["crimeData"]["state"]["violentCrime"]))
+    stateCrimeData.push(parseInt(data["crimeData"]["state"]["propertyCrime"]))
+
+    nationalCrimeData.push(parseInt(data["crimeData"]["nation"]["violentCrime"]))
+    nationalCrimeData.push(parseInt(data["crimeData"]["nation"]["propertyCrime"]))
+
+    var data = {
+        labels: ["Violent Crime", "Property Crime"],
+        datasets: [{
+            axis: 'x',
+            label: 'City Crime Breakdown',
+            data: cityCrimeData,
+            fill: false,
+            backgroundColor: ['rgba(243,108,54,0.6)'],
+            borderWidth: 1,
+            datalabels: {
+                color: 'rgb(16,36,52)',
+                anchor: 'end',
+                align: 'top'
+            }
+        },
+        {
+            axis: 'x',
+            label: 'Avg. State Crime Breakdown',
+            data: stateCrimeData,
+            fill: false,
+            backgroundColor: ['rgba(10,34,48,0.6)'],
+            borderWidth: 1,
+            datalabels: {
+                color: 'rgb(16,36,52)',
+                anchor: 'end',
+                align: 'top'
+            }
+        },
+        {
+            axis: 'x',
+            label: 'Avg. National Crime Breakdown',
+            data: nationalCrimeData,
+            fill: false,
+            backgroundColor: ['rgba(80,110,121,0.6)'],
+            borderWidth: 1,
+            datalabels: {
+                color: 'rgb(16,36,52)',
+                anchor: 'end',
+                align: 'top'
+            }
+        }
+        ]
+        };
+    const ctx = document.getElementById('crimeBreakdownChart').getContext('2d');
+    const crimeBreakdownChart = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: data,
+                                    plugins :[ChartDataLabels],
+                                    options: {
+                                                responsive: true,
+                                                maintainAspectRatio: true,
+                                                indexAxis: 'x', // This will make the bar chart horizontal
+                                                scales: {
+                                                    y: {
+                                                        ticks: {
+                                                            beginAtZero: true,
+                                                        }
+                                                    }
+                                                    },
+                                                    plugins: {
+                                                        legend: {
+                                                            display: false
+                                                        },
+                                                        title: {
+                                                            display: true,
+                                                            text: 'City Crime Vs. State & National Averages',
+                                                            font: {
+                                                                size: 16
+                                                            }
+                                                        },
+                                                        
+                                                    }
+                                                }
+                                            
+                                    });
+}
+
 function renderRentHistoryChart(data = null)
 {
     let rentHistoricalData = [];
@@ -526,6 +618,70 @@ function renderAgeDemographicChart(data = null)
                                                         title: {
                                                             display: true,
                                                             text: 'Age Demographic',
+                                                            font: {
+                                                                size: 16
+                                                            }
+                                                        },
+                                                        
+                                                    }
+                                                }
+                                            
+                                    });
+}
+
+function renderEducationAttainmentChart(data = null)
+{
+    let educationAttainmentData = [];
+
+    educationAttainmentData.push(parseInt(data["zipCode"]["SOCIAL"]["Less than 9th grade"].replace(",","")))
+    educationAttainmentData.push(parseInt(data["zipCode"]["SOCIAL"]["9th to 12th grade, no diploma"].replace(",","")))
+    educationAttainmentData.push(parseInt(data["zipCode"]["SOCIAL"]["High school graduate (includes equivalency)"].replace(",","")))
+    educationAttainmentData.push(parseInt(data["zipCode"]["SOCIAL"]["High school graduate or higher"].replace(",","")))
+    educationAttainmentData.push(parseInt(data["zipCode"]["SOCIAL"]["Some college, no degree"].replace(",","")))
+    educationAttainmentData.push(parseInt(data["zipCode"]["SOCIAL"]["Associate's degree"].replace(",","")))
+    educationAttainmentData.push(parseInt(data["zipCode"]["SOCIAL"]["Bachelor's degree"].replace(",","")))
+    educationAttainmentData.push(parseInt(data["zipCode"]["SOCIAL"]["Bachelor's degree or higher"].replace(",","")))
+    educationAttainmentData.push(parseInt(data["zipCode"]["SOCIAL"]["Graduate or professional degree"].replace(",","")))
+
+    var data = {
+        labels: ["Less than 9th grade", "9th to 12th grade, no diploma", "High school graduate (includes equivalency)", "High school graduate or higher", "Some college, no degree", "Associate's degree", "Bachelor's degree", "Bachelor's degree or higher", "Graduate or professional degree"],
+        datasets: [{
+            axis: 'y',
+            label: 'Education Attainment',
+            data: educationAttainmentData,
+            fill: false,
+            backgroundColor: ['rgba(243,108,54,0.6)'],
+            borderWidth: 1,
+            datalabels: {
+                color: 'rgb(16,36,52)',
+                anchor: 'end',
+                align: 'end'
+            }
+        }]
+        };
+    const ctx = document.getElementById('educationAttainmentBreakdown').getContext('2d');
+    const educationAttainementChart = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: data,
+                                    plugins :[ChartDataLabels],
+                                    options: {
+                                                responsive: true,
+                                                maintainAspectRatio: true,
+                                                indexAxis: 'y', // This will make the bar chart horizontal
+                                                scales: {
+                                                    y: {
+                                                        ticks: {
+                                                            beginAtZero: true,
+                                                        }
+                                                    }
+                                                    },
+                                                    plugins: {
+                                                        legend: {
+                                                            display: false
+                                                        },
+                                                        title: {
+                                                            display: true,
+                                                            text: 'Education Attainment',
                                                             font: {
                                                                 size: 16
                                                             }

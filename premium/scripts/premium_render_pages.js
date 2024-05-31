@@ -100,6 +100,12 @@ function renderPremiumReportPage()
                                         </div>
                                     </div>
                                 </div>
+                                <div id="overviewContainer">
+                                    <div class="full-horizontal-container-box">
+                                        <p class="box-title">Crime Breakdown</p>
+                                        <canvas id="crimeBreakdownChart" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
                                 <div id="populationContainer">
                                     <div class="full-horizontal-container-box">
                                         <p class="box-title">Zip Code Population History</p>
@@ -264,6 +270,12 @@ function renderPremiumReportPage()
                                     <div class="full-horizontal-container-box">
                                         <p class="box-title">Age - Demographic</p>
                                         <canvas id="ageDemographicBreakdown" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+                                <div id="socialContainer">
+                                    <div class="full-horizontal-container-box">
+                                        <p class="box-title">Education Attainment</p>
+                                        <canvas id="educationAttainmentBreakdown" width="400" height="200"></canvas>
                                     </div>
                                 </div>
 
