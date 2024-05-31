@@ -195,7 +195,7 @@ function renderPremiumReportPage()
                         <div id="economicSection">
                             <div id="economicSectionContainer">
                                 <p id="workingInZipCodeText" class="section-header-text">Working in 77002</p>
-                                <p class="section-title-text">Employment Status</p>
+                                <p class="section-title-text">Employment</p>
                                 <div id="economicContainer">
                                     <div class="full-horizontal-container-box">
                                         <div>
@@ -205,8 +205,16 @@ function renderPremiumReportPage()
                                             <p id="stateIncome" class="box-value-subtext">Avg. State : $73,250</p>
                                             <p id="nationalIncome" class="box-value-subtext">Avg. National : $54,190</p>
                                         </div>
-                                        <canvas id="employedVsUnemployed" width="400" height="200"></canvas>
+                                        <canvas id="incomeHistory" width="400" height="200"></canvas>
+                                        <p id="incomeHistoryDescription" class="box-value-subtext"></p>
 
+                                    </div>
+                                </div>
+
+                                <div id="economicContainer">
+                                    <div class="full-horizontal-container-box">
+                                        <p class="box-title">Employment vs Unemployment</p>
+                                        <canvas id="employedVsUnemployed" width="400" height="200"></canvas>
                                     </div>
                                 </div>
                                 <p class="section-title-text">Commute To Work</p>
@@ -231,18 +239,34 @@ function renderPremiumReportPage()
                         <div id="socialSection">
                             <div id="socialSectionContainer">
                                 <p id="peopleInZipCodeText" class="section-header-text">People in 77002</p>
-                                <p class="section-title-text">% of People who Stayed</p>
+                                <p class="section-title-text">% of People who Stayed/Moved</p>
                                 <div id="socialContainer">
                                     <div class="full-horizontal-container-box">
                                         <p class="box-title">Zip Code Percent of People Who Stayed</p>
-                                        <p id="zipCodePeopleStayedSameHome" class="box-value-text">57% stay in 77002</p>
-                                        <p id="zipCodePeopleStayedSameCounty" class="box-value-text">57% stay in 77002</p>
-                                        <p id="zipCodePeopleStayedSameState" class="box-value-text">57% stay in 77002</p>
-                                        <p id="zipCodePeopleStayedDifferentState" class="box-value-text">57% stay in 77002</p>
+                                        <p id="zipCodePeopleStayedSameHome" class="people-stayed-text-style">57% stay in 77002</p>
+                                        <p id="zipCodePeopleStayedSameCounty" class="people-stayed-text-style">57% stay in 77002</p>
+                                        <p id="zipCodePeopleStayedSameState" class="people-stayed-text-style">57% stay in 77002</p>
+                                        <p id="zipCodePeopleStayedDifferentState" class="people-stayed-text-style">57% stay in 77002</p>
                                         <canvas id="residentsStayedOverYears" width="400" height="200"></canvas>
                                         <p id="peopleStayedDescription" class="box-value-subtext">* Note! people seem to be moving out of this zip code for the past 5 years this could be caused for various reasons.</p>
                                     </div>
                                 </div>
+
+                                <p class="section-title-text">Demographic</p>
+
+                                <div id="socialContainer">
+                                    <div class="full-horizontal-container-box">
+                                        <p class="box-title">Race - Demographic</p>
+                                        <canvas id="raceDemographicBreakdown" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+                                <div id="socialContainer">
+                                    <div class="full-horizontal-container-box">
+                                        <p class="box-title">Age - Demographic</p>
+                                        <canvas id="ageDemographicBreakdown" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 
