@@ -284,6 +284,23 @@ function renderPremiumReportPage()
 
                         <hr>
 
+                        <!-- Natural Disaster Section -->
+                        <div id="naturalDisasterSection">
+                            <div id="naturalDisasterSectionContainer">
+                                <p id="naturalDisastersInCityText" class="section-header-text">Natural Disasters in City</p>
+                                <p class="section-title-text">Natural Disasters from 2018 - 2023</p>
+
+                                <div id="naturalDisastersContainer">
+                                    <div class="full-horizontal-container-box" id="naturalDisastersTableContainer">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <hr>
+
                         <!-- Social Section -->
                         <div id="COLSection">
                             <div id="COLSectionContainer">

@@ -114,9 +114,40 @@ function generateZipCodePremiumReport()
             renderAgeDemographicChart(data);
             renderEducationAttainmentChart(data);
 
+            renderNaturalDisasters(data);
+
             renderRestaurants(data["destinations"]["restaurants"]["places"]);
             renderParks(data["destinations"]["parks"]["places"]);
             renderGroceryStores(data["destinations"]["groceryStores"]["places"]);
         }
     })
+}
+
+
+function renderNaturalDisasters(data = null)
+{
+    let tableHtml = `<table>
+                        <tr>
+                            <th>Year</th>
+                            <th>Month</th>
+                            <th>Disaster Type</th>
+                            <th>Location</th>
+                            <th>Description</th>
+                        </tr>
+                    `;
+
+    Object.keys(data['naturalDisasters']['BEGIN_YEARMONTH']).forEach(key => {
+        tableHtml += `
+                        <tr class="destinationRow">
+                            <td>${data['naturalDisasters']['BEGIN_YEARMONTH'][key].toString().substring(0,4)}</td>
+                            <td>${data['naturalDisasters']['BEGIN_YEARMONTH'][key].toString().substring(0,4)}</td>
+                            <td>${data['naturalDisasters']['EVENT_TYPE'][key]}</td>
+                            <td>${data['naturalDisasters']['BEGIN_LOCATION'][key]}</td>
+                            <td>${data['naturalDisasters']['EVENT_NARRATIVE'][key]}</td>
+                        </tr>
+    `;
+    });
+
+    tableHtml += '</table>'
+    document.getElementById("naturalDisastersTableContainer").innerHTML = tableHtml;
 }

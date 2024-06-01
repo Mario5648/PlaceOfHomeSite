@@ -427,6 +427,52 @@ td, th {
 {
     color: #092230;
 }
+
+#naturalDisasterSection
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 100%;
+}
+
+#naturalDisasterSectionContainer
+{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+#naturalDisastersContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 100%;
+}
+
+
 @media screen and (min-width: 651px) 
 {
     .reportLogo
