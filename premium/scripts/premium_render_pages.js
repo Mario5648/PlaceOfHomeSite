@@ -12,12 +12,88 @@ function renderLoadingScreen()
     document.getElementById("mainBody").innerHTML = loadingHtml;
 }
 
+function renderZipCodeAnalysisInputPage()
+{
+    let zipCodeInputHtml = `
+                                
+                                <div class="main-header-container">
+                                    <p class="main-header-text">Zip Code Analyzer Report</p>
+                                    <p class="main-header-subtext">Analyze the area a property is located. See the social, economic, demograpic, and housing data.</p>
+                                </div>
+
+                                <div class="input-box-container">
+                                    <div class="input-box">
+                                        <br>
+                                        <label for="statesSelection">State :</label>
+                                        <select id="statesSelection" name="statesSelection" class="input-field" onchange="populateCitySelection()"></select>
+                                        <br>
+                                        <br>
+                                        <span id="cityFieldSection"></span>
+                                        <div id="autocomplete-results" class="autocomplete-results"></div><br>
+                                        <br>
+                                        <br>
+                                        <label for="zipCodeInput">Zip Code :</label>
+                                        <input class="input-field" id="zipCodeInput" name="zipCodeInput" type="number"></input>
+                                        <br>
+                                        <button class="input-submit-button" onclick="generateZipCodePremiumReport()">Submit</button>
+                                    </div>
+                                </div>
+    `;
+
+    document.getElementById("mainBody").innerHTML = zipCodeInputHtml;
+
+    generateStateSelectionFieldOptions();
+}
+
+function renderZipCodeCompareInputPage()
+{
+    let zipCodeInputHtml = `
+                                
+        <div class="main-header-container">
+            <p class="main-header-text">Zip Code Compare</p>
+            <p class="main-header-subtext">This tool enables users to compare key metrics such as population, income, and crime rates across up to five zip codes simultaneously.</p>
+        </div>
+
+        <div class="input-box-container">
+            <div class="input-box">
+                <br>
+                <label for="statesSelection">State :</label>
+                <select id="statesSelection" name="statesSelection" class="input-field" onchange="populateCitySelection()"></select>
+                <br>
+                <br>
+                <span id="cityFieldSection"></span>
+                <div id="autocomplete-results" class="autocomplete-results"></div><br>
+                <br>
+                <br>
+                <div id="zipCodeInputContainer">
+                    <span>
+                        <label for="zipCodeInput">Zip Code:</label><br>
+                        <input style="width:360px;"class="input-field zipCodeInputField" id="zipCodeInput" name="zipCodeInput" type="number"></input><br>
+                        <br>
+                    </span>
+                </div>
+                <br>
+                <div class="input-functions-container">
+                    <button class="input-add-button" onclick="addInputField()">Add Zip Code</button>
+                    <button class="input-del-button" onclick="removeInputField()">Delete Zip Code</button>
+                </div>
+                <br>
+                <button class="input-submit-button" onclick="generateZipCodeComparePremiumReport()">Submit</button>
+            </div>
+        </div>
+    `;
+
+    document.getElementById("mainBody").innerHTML = zipCodeInputHtml;
+
+    generateStateSelectionFieldOptions();
+}
+
 function renderPremiumReportPage()
 {
     let reportHtml = `  
                         <div class="reportMenuHeaderContainer">
                             <p class="zipCodeHeaderTextStyle">Zip Code Analysis Report</p>
-                            <button class="pdfButtonStyle">Export to PDF <i class="fa fa-file-pdf-o"></i></button>
+                            <button class="pdfButtonStyle" hidden>Export to PDF <i class="fa fa-file-pdf-o"></i></button>
                         </div>
                         <div id="reportHeader">
                             <div id="reportHeaderContainer">
@@ -363,6 +439,135 @@ function renderPremiumReportPage()
     `;
 
     document.getElementById("mainBody").innerHTML = reportHtml;
+}
+
+
+function renderZipCodeComparisonPremiumReport()
+{
+    let zipCodeComparisonHtml = `
+    
+            <div class="reportMenuHeaderContainer">
+                <p class="zipCodeHeaderTextStyle">Zip Code Comparison Report</p>
+                <button class="pdfButtonStyle" hidden>Export to PDF <i class="fa fa-file-pdf-o"></i></button>
+            </div>
+
+            <div class="main-header-container">
+                <p id="cityStateText" class="main-header-text">Houston, TX</p>
+                <p id="dateRangeText" class="main-header-subtext">01/01/2022 - 06/02/2024</p>
+            </div>
+
+            <div class="table-section-container">
+
+                <div class="header-table-section">
+                    <table id="zipCodeComparisonHeaderTable" class="header-comparison-table">
+                        <tr id="zipCodesColumns">
+                            <th></th>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="table-header-section">
+                    <p>Overview</p>
+                </div>
+                <div class="table-section">
+                    <table id="zipCodeComparisonTable" class="comparison-table">
+                        <tr id="descriptionColumns">
+                            <th>Description</th>
+                        </tr>
+                        <tr id="populationColumns">
+                            <th>Population</th>
+                        </tr>
+                        <tr id="avgWeatherColumns">
+                            <th>Avg. Weather</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-header-section">
+                    <p>Living Prices</p>
+                </div>
+                <div class="table-section">
+                    <table id="zipCodeComparisonTable" class="comparison-table">
+                        <tr id="medianRentPriceColumns">
+                            <th>Median Rent</th>
+                        </tr>
+                        <tr id="medianHomePriceColumns">
+                            <th>Median Home Price</th>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="table-header-section">
+                    <p>Working Data</p>
+                </div>
+                <div class="table-section">
+                    <table id="zipCodeComparisonTable" class="comparison-table">
+                        <tr id="avgIncomeColumns">
+                            <th>Avg. Income</th>
+                        </tr>
+                        <tr id="employmentColumns">
+                            <th>Employment</th>
+                        </tr>
+                        <tr id="unemploymentColumns">
+                            <th>Unemployment</th>
+                        </tr>
+                        <tr id="avgCommuteTimeColumns">
+                            <th>Avg. Commute Time</th>
+                        </tr>
+                        <tr id="commuteMediumColumns">
+                            <th>Preffered Commute Medium</th>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="table-header-section">
+                    <p>Moving vs. Staying (After a Year)</p>
+                </div>
+                <div class="table-section">
+                    <table id="zipCodeComparisonTable" class="comparison-table">
+                        <tr id="sameHomeColumns">
+                            <th>Same Home</th>
+                        </tr>
+                        <tr id="sameCountyColumns">
+                            <th>Same County (Moved Homes)</th>
+                        </tr>
+                        <tr id="sameStateColumns">
+                            <th>Same State (Moved Homes)</th>
+                        </tr>
+                        <tr id="movedOutColumns">
+                            <th>Moved Out of State</th>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="table-header-section">
+                    <p>Demographic</p>
+                </div>
+                <div class="table-section">
+                    <table id="zipCodeComparisonTable" class="comparison-table">
+                        <tr id="commonAgeRangeColumns">
+                            <th>Most Common Age Range</th>
+                        </tr>
+                        <tr id="commonEducationColumns">
+                            <th>Most Common Education Attainment</th>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="table-header-section">
+                    <p>Natural Disasters</p>
+                </div>
+                <div class="table-section">
+                    <table id="zipCodeComparisonTable" class="comparison-table">
+                        <tr id="numberDisastersColumns">
+                            <th>Number of Disasters</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+    `;
+
+    document.getElementById("mainBody").innerHTML = zipCodeComparisonHtml;
+
 }
 
 function renderFailedPage()

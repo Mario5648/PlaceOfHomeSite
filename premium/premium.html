@@ -43,7 +43,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
-    <body onload="generateStateSelectionFieldOptions()">
+    <body>
         
         <div class="left-menu-container">
             <div class="menu-logo-container">
@@ -63,11 +63,11 @@
                 <p>Reporting</p>
                 <div class="menu-row-selection-container">
                     <i class="fa fa-map-marker menu-icon-style"></i>
-                    <p class="menu-text">Zip Code Analysis</p>
+                    <p class="menu-text" onclick="renderZipCodeAnalysisInputPage()">Zip Code Analysis</p>
                 </div>
                 <div class="menu-row-selection-container">
                     <i class="fa fa-balance-scale menu-icon-style"></i>
-                    <p class="menu-text">Zip Code Compare</p>
+                    <p class="menu-text" onclick="renderZipCodeCompareInputPage()">Zip Code Compare</p>
                 </div>
                 <div class="menu-row-selection-container">
                     <i class="fa fa-home menu-icon-style"></i>
@@ -92,28 +92,6 @@
 
         <div class="main-content-container" id="mainBody">
 
-            <div class="main-header-container">
-                <p class="main-header-text">Zip Code Analyzer Report</p>
-                <p class="main-header-subtext">Analyze the area a property is located. See the social, economic, demograpic, and housing data.</p>
-            </div>
-
-            <div class="input-box-container">
-                <div class="input-box">
-                    <br>
-                    <label for="statesSelection">State :</label>
-                    <select id="statesSelection" name="statesSelection" class="input-field" onchange="populateCitySelection()"></select>
-                    <br>
-                    <br>
-                    <span id="cityFieldSection"></span>
-                    <div id="autocomplete-results" class="autocomplete-results"></div><br>
-                    <br>
-                    <br>
-                    <label for="zipCodeInput">Zip Code :</label>
-                    <input class="input-field" id="zipCodeInput" name="zipCodeInput" type="number"></input>
-                    <br>
-                    <button class="input-submit-button" onclick="generateZipCodePremiumReport()">Submit</button>
-                </div>
-            </div>
         </div>
     </body>
 </html>

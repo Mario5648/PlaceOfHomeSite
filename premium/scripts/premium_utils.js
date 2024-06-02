@@ -123,6 +123,119 @@ function generateZipCodePremiumReport()
     })
 }
 
+function generateZipCodeComparePremiumReport()
+{
+
+    STATE = checkStateInput();
+    if(!STATE)
+    {
+        return;
+    }
+    CITY = checkCityInput();
+    if(!CITY)
+    {
+        return;
+    }
+    getAllZipCodeValues();
+    renderLoadingScreen();
+    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0');
+
+    generatePremiumZipCodeCompareReport(function(data)
+    {
+
+        if(data["status"] == "success")
+        {
+            renderZipCodeComparisonPremiumReport();
+
+            let zipCodes = Object.keys(data)
+            zipCodes.pop()
+
+            for (let index in zipCodes) {
+                document.getElementById("zipCodesColumns").innerHTML += `<td>${zipCodes[index]}</td>`;
+            
+                document.getElementById("descriptionColumns").innerHTML += `<td>${data[zipCodes[index]]['descriptions']['zipcodeOverall']}</td>`;
+
+                document.getElementById("populationColumns").innerHTML += `<td>${data[zipCodes[index]]['zipCode']['DEMOGRAPHIC']['Total population']}</td>`;
+
+                document.getElementById("avgWeatherColumns").innerHTML += `<td>${data[zipCodes[index]]['weatherData']['averageWeather']}</td>`;
+
+                document.getElementById("medianRentPriceColumns").innerHTML += `<td>${data[zipCodes[index]]['zipCode']['HOUSING']['Rent_Median (dollars)']}</td>`;
+                document.getElementById("medianHomePriceColumns").innerHTML += `<td>${data[zipCodes[index]]['zipCode']['HOUSING']['House_Median (dollars)']}</td>`;
+                document.getElementById("avgIncomeColumns").innerHTML += `<td>${data[zipCodes[index]]['zipCode']['ECONOMIC']['Mean household income (dollars)']}</td>`;
+                document.getElementById("employmentColumns").innerHTML += `<td>${data[zipCodes[index]]['zipCode']['ECONOMIC']['Employed']}</td>`;
+                document.getElementById("unemploymentColumns").innerHTML += `<td>${data[zipCodes[index]]['zipCode']['ECONOMIC']['Unemployed']}</td>`;
+                document.getElementById("avgCommuteTimeColumns").innerHTML += `<td>${data[zipCodes[index]]['zipCode']['ECONOMIC']['Mean travel time to work (minutes)']}</td>`;
+                document.getElementById("commuteMediumColumns").innerHTML += `<td>${_popularCommuteMedium(data[zipCodes[index]])}</td>`;
+                document.getElementById("sameHomeColumns").innerHTML += `<td>${data[zipCodes[index]]['zipCode']['SOCIAL']['Same house']}</td>`;
+                document.getElementById("sameCountyColumns").innerHTML += `<td>${data[zipCodes[index]]['zipCode']['SOCIAL']['Same county']}</td>`;
+                document.getElementById("sameStateColumns").innerHTML += `<td>${data[zipCodes[index]]['zipCode']['SOCIAL']['Same state']}</td>`;
+                document.getElementById("movedOutColumns").innerHTML += `<td>${data[zipCodes[index]]['zipCode']['SOCIAL']['Different state']}</td>`;
+                document.getElementById("commonAgeRangeColumns").innerHTML += `<td>${_commonAgeRange(data[zipCodes[index]])}</td>`;
+                document.getElementById("commonEducationColumns").innerHTML += `<td>${_commonEducation(data[zipCodes[index]])}</td>`;
+                document.getElementById("numberDisastersColumns").innerHTML += `<td>${(Object.keys(data[zipCodes[index]]['naturalDisasters']['BEGIN_LOCATION']).length).toString()}</td>`;
+
+            
+            }
+
+        }
+    })
+}
+
+function _popularCommuteMedium(data)
+{
+    let commuteMediums = ['Public transportation (excluding taxicab)', 'Walked', 'Worked from home', 'Car, truck, or van -- drove alone']
+
+    let tmpValue = -1;
+    let popularCommute = "";
+    for (let index in commuteMediums) {
+        let tmp = parseInt(data['zipCode']['ECONOMIC'][commuteMediums[index]].replace(',', ''))
+
+        if(tmpValue < tmp)
+        {
+            tmpValue = tmp;
+            popularCommute = commuteMediums[index];
+        }
+    }
+
+    return popularCommute;
+}
+
+
+function _commonAgeRange(data)
+{
+    let ageRanges = ["Under 5 years", "5 to 9 years", "10 to 14 years", "15 to 19 years", "20 to 24 years", "25 to 34 years", "35 to 44 years", "45 to 54 years", "55 to 59 years", "60 to 64 years", "65 to 74 years", "75 to 84 years", "85 years and over"];
+    let tmpValue = -1;
+    let popularAgeRanges = "";
+    for (let index in ageRanges) {
+        let tmp = parseInt(data['zipCode']['DEMOGRAPHIC'][ageRanges[index]].replace(',', ''))
+
+        if(tmpValue < tmp)
+        {
+            tmpValue = tmp;
+            popularAgeRanges = ageRanges[index];
+        }
+    }
+
+    return popularAgeRanges;
+}
+
+function _commonEducation(data)
+{
+    let educationAttainment = ["Less than 9th grade", "9th to 12th grade, no diploma", "High school graduate (includes equivalency)", "High school graduate or higher", "Some college, no degree", "Associate's degree", "Bachelor's degree", "Bachelor's degree or higher", "Graduate or professional degree"];
+    let tmpValue = -1;
+    let popularEducation = "";
+    for (let index in educationAttainment) {
+        let tmp = parseInt(data['zipCode']['SOCIAL'][educationAttainment[index]].replace(',', ''))
+
+        if(tmpValue < tmp)
+        {
+            tmpValue = tmp;
+            popularEducation = educationAttainment[index];
+        }
+    }
+
+    return popularEducation;
+}
 
 function renderNaturalDisasters(data = null)
 {
@@ -151,3 +264,6 @@ function renderNaturalDisasters(data = null)
     tableHtml += '</table>'
     document.getElementById("naturalDisastersTableContainer").innerHTML = tableHtml;
 }
+
+
+

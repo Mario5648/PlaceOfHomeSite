@@ -48,3 +48,36 @@ function generatePremiumReport( callBack = null )
         callBack(data)
     });
 }
+
+
+function makeCallGeneratePremiumZipCodeCompareReport( callBack = null )
+{
+
+    let params = {
+                  "zipCodes":ZIPCODES,
+                  "city":CITY,
+                  "state":STATE,
+                  "reportType":"premium",
+                 };
+
+    endpointCall("generateZipCodeComparePremiumReport", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data)
+        }
+        else if(data["status"] == "failed")
+        {
+            alert("No data found for the zipcode. Redirecting you back to home page.");
+            window.open("./index.html", "_self");
+        }
+    });
+}
+
+function generatePremiumZipCodeCompareReport( callBack = null)
+{
+    makeCallGeneratePremiumZipCodeCompareReport(function(data)
+    {        
+        callBack(data)
+    });
+}

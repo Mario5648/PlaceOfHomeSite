@@ -4,7 +4,7 @@ var ERROR_FLAG = "ERROR";
 var generateReportEndPoint = "https://placeofhome-api.org/getZipCodeData";
 var getCitiesForStateEndPoint = "https://placeofhome-api.org/getCitiesForState"
 var generatePremiumReportEndPoint = "http://127.0.0.1:5000/getZipCodeDataPremium";
-
+var generateZipCodeComparePremiumReportEndPoint = "http://127.0.0.1:5000/getZipCodeCompareDataPremium";
 
 function endpointCall(endpoint=null, params={}, callBack=null)
 {
@@ -39,5 +39,7 @@ function identifyEndPoint(endpoint=null)
             return getCitiesForStateEndPoint;
         case "generatePremiumReport":
             return generatePremiumReportEndPoint;
+        case "generateZipCodeComparePremiumReport":
+            return generateZipCodeComparePremiumReportEndPoint;
     }
 }
