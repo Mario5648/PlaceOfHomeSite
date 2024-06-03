@@ -51,7 +51,7 @@ function renderZipCodeCompareInputPage()
                                 
         <div class="main-header-container">
             <p class="main-header-text">Zip Code Compare</p>
-            <p class="main-header-subtext">This tool enables users to compare key metrics such as population, income, and crime rates across up to five zip codes simultaneously.</p>
+            <p class="main-header-subtext">This tool enables users to compare key metrics such as social, economic, demograpic, and housing data across up to five zip codes simultaneously within the same city.</p>
         </div>
 
         <div class="input-box-container">
