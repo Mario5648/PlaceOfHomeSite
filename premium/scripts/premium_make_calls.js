@@ -81,3 +81,42 @@ function generatePremiumZipCodeCompareReport( callBack = null)
         callBack(data)
     });
 }
+
+
+function makeCallGeneratePremiumPropertyAnalysisReport( callBack = null )
+{
+
+    let params = {
+                  "propertyZillowLink": ZILLOW_LINK,
+                  "reportType":"premium",
+                 };
+
+    console.log(ZILLOW_FAKE_DATA);
+    return callBack(ZILLOW_FAKE_DATA);
+
+    /*
+    endpointCall("generatePropertyAnalysisPremiumReport", params, function(data)
+    {
+        
+        if(data["status"] == "success")
+        {
+            return callBack(data)
+        }
+        else if(data["status"] == "failed")
+        {
+            alert("No data found for the property. Redirecting you back to home page.");
+            window.open("./index.html", "_self");
+        }
+
+    });
+    */
+}
+
+
+function generatePremiumPropertyAnalysisReport( callBack = null )
+{
+    makeCallGeneratePremiumPropertyAnalysisReport(function(data)
+    {        
+        callBack(data)
+    });
+}

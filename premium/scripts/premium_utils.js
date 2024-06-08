@@ -266,4 +266,18 @@ function renderNaturalDisasters(data = null)
 }
 
 
+function generatePropertyAnalysisPremiumReport()
+{
 
+    renderLoadingScreen();
+    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0');
+
+    generatePremiumPropertyAnalysisReport(function(data)
+    {
+
+        if(data["status"] == "success")
+        {
+            renderPropertyAnalysisPremiumReport();
+        }
+    })
+}

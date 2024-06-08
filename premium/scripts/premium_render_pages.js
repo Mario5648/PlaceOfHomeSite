@@ -88,6 +88,28 @@ function renderZipCodeCompareInputPage()
     generateStateSelectionFieldOptions();
 }
 
+function renderPropertyAnalysisInputPage()
+{
+    let propertyInputHtml = `               
+                        <div class="main-header-container">
+                            <p class="main-header-text">Property Analysis Report</p>
+                            <p class="main-header-subtext">This application generates a comprehensive property report by simply inputting a Zillow link, providing detailed information on property value, neighborhood statistics, and more.</p>
+                        </div>
+
+                        <div class="input-box-container">
+                            <div class="input-box">
+                                <br>
+                                <label for="zillowLinkInput">Zillow Property Link:</label>
+                                <input style="width:360px;"class="input-field" id="zillowLinkInput" name="zillowLinkInput" type="text"></input>
+                                <br>  
+                                <button class="input-submit-button" onclick="generatePropertyAnalysisPremiumReport()">Submit</button>
+                            </div>
+                        </div>
+                    `;
+
+    document.getElementById("mainBody").innerHTML = propertyInputHtml;
+}
+
 function renderPremiumReportPage()
 {
     let reportHtml = `  
@@ -568,6 +590,19 @@ function renderZipCodeComparisonPremiumReport()
 
     document.getElementById("mainBody").innerHTML = zipCodeComparisonHtml;
 
+}
+
+function renderPropertyAnalysisPremiumReport()
+{
+
+    let propertyAnalysisReportHtml = `
+    
+    
+    
+    `;
+
+
+    document.getElementById("mainBody").innerHTML = propertyAnalysisReportHtml;
 }
 
 function renderFailedPage()
