@@ -44,5 +44,6 @@ var ZILLOW_FAKE_DATA = {'zillowData':{
                                         "monthlyHoaFee":1,
                                         "mortgageRates":2,
                                         "imgSrc":'https://photos.zillowstatic.com/fp/fe0c3095baabfc68a32b7c4dabae77ab-p_d.jpg',
+                                        "nearbyHomes":[],
                                     },
                         'status':"success"};

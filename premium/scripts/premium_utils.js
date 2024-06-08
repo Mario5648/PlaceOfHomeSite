@@ -265,6 +265,41 @@ function renderNaturalDisasters(data = null)
     document.getElementById("naturalDisastersTableContainer").innerHTML = tableHtml;
 }
 
+function generateNearbyHomes(nearByHomesData)
+{
+    let nearbyHomesTableHtml = `<table id="nearbyHomesTable">
+                                <tr>
+                                    <th>Address</th>
+                                    <th>Beds</th>
+                                    <th>Baths</th>
+                                    <th>SqFt</th>
+                                    <th>Sale Price</th>
+                                </tr>
+                                `;
+
+    let sumPrice = 0;
+    let numOfHomes = nearByHomesData.length;
+
+    for(let i = 0; i < nearByHomesData.length; i++)
+    {
+        nearbyHomesTableHtml += `<tr>
+                                    <td>${nearByHomesData[i]['address']['streetAddress']+' '+nearByHomesData[i]['address']['city']+', '+nearByHomesData[i]['address']['state']+' '+nearByHomesData[i]['address']['zipcode']}</td>
+                                    <td>${nearByHomesData[i]['bedrooms']}</td>
+                                    <td>${nearByHomesData[i]['bathrooms']}</td>
+                                    <td>${nearByHomesData[i]['resoFacts']['lotSize']}</td>
+                                    <td>${nearByHomesData[i]['price']}</td>
+                                </tr>`;
+    }
+
+
+    if(sumPrice != 0)
+    {
+        document.getElementById('nearbyHomesTable').innerHTML = nearbyHomesTableHtml;
+        document.getElementById('nearbyHomesAvgPriceText').innerHTML = "Avg. Price: $" + (sumPrice / numOfHomes);
+    }
+}
+
+
 
 function generatePropertyAnalysisPremiumReport()
 {
@@ -278,6 +313,27 @@ function generatePropertyAnalysisPremiumReport()
         if(data["status"] == "success")
         {
             renderPropertyAnalysisPremiumReport();
+            document.getElementById("generatedDateText").innerHTML = DATE_TODAY;
+
+            document.getElementById("propertyAddress").innerHTML = ZILLOW_FAKE_DATA["zillowData"]["address"]["streetAddress"];
+            document.getElementById("propertyCityStateZipCode").innerHTML = ZILLOW_FAKE_DATA["zillowData"]["address"]["city"] + ", " + ZILLOW_FAKE_DATA["zillowData"]["address"]["state"]+ " "+ZILLOW_FAKE_DATA["zillowData"]["address"]["zipcode"];
+
+            document.getElementById("propertyImage").innerHTML = ZILLOW_FAKE_DATA['zillowData']['imgSrc']
+            document.getElementById("propertyDatePostedText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['datePosted']
+
+            document.getElementById("propertyPriceText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['price']
+            document.getElementById("propertyBedroomsText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['bedrooms']
+            document.getElementById("propertyBathroomsText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['bathrooms']
+            document.getElementById("propertyStoryText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['resoFacts']['stories']
+            document.getElementById("propertyLivingAreaText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['livingArea']
+            document.getElementById("propertyYearBuiltText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['yearBuilt']
+            document.getElementById("propertyTypeText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['resoFacts']['propertySubType']
+            document.getElementById("propertyPricePerSqFtText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['resoFacts']['pricePerSquareFoot']
+            document.getElementById("propertyHOAText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['monthlyHoaFee']
+
+            document.getElementById("zillowDescriptionsText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['description']
+
+            generateNearbyHomes(ZILLOW_FAKE_DATA['zillowData']['nearbyHomes']);
         }
     })
 }

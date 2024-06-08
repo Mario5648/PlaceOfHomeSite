@@ -327,3 +327,150 @@ body
     width: 25%;
     padding: 20px;
 }
+
+
+.centerReport
+{
+    display: flex;
+    justify-content: center;
+}
+
+.propertyReportBody
+{
+    width: 900px;
+    background-color: white;
+
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+
+}
+.propertyReportHeaderContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reportGeneraionDateText
+{
+    font-size: 13px;
+}
+
+.reportLineStyle
+{
+    border: 2px solid #092230;
+    width: 200px;
+}
+
+.reportHeaderStyle
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.report-menu-logo-style
+{
+    width: 150px;
+}
+
+.propertyReportHeaderText
+{
+    font-size: 20px;
+}
+
+.propertyOverviewReportHeaderText
+{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.propertyPhoto
+{
+    height: 400px;
+    width: 300px;
+    object-fit: cover;
+}
+
+.propertyDatePostedText
+{
+    font-size: 13px;
+}
+
+.halfContainer
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.propertyInfomationContainer
+{
+    padding-left: 100px;
+}
+
+.propertyInformationText
+{
+    font-size: 20px;
+
+}
+
+#propertyInformationTable
+{
+    width: 500px;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+#propertyInformationTable th, #propertyInformationTable td 
+{
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#propertyInformationTable tr:nth-child(even){background-color: #f2f2f2;}
+
+.zillowDescriptionHeaderText
+{
+    font-size: 20px;
+}
+
+.zillowDescriptionText
+{
+    font-size: 15px;
+}
+
+.areaDescriptionTextSection
+{
+    padding-right: 40px;
+    font-size: 15px;
+}
+
+.areaDescriptionHeaderText
+{
+    font-size: 20px;
+}
+
+#nearbyHomesTable
+{
+    width: 100%;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+#nearbyHomesTable th, #nearbyHomesTable td 
+{
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#nearbyHomesTable tr:nth-child(even){background-color: #f2f2f2;}
+
+.avgPriceText
+{
+    padding-left: 680px;
+}

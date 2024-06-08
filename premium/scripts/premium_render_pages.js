@@ -596,8 +596,177 @@ function renderPropertyAnalysisPremiumReport()
 {
 
     let propertyAnalysisReportHtml = `
-    
-    
+                        <!--Application Header-->
+                        <div class="reportMenuHeaderContainer">
+                            <p class="zipCodeHeaderTextStyle">Property Analysis Report</p>
+                            <button class="pdfButtonStyle" hidden>Export to PDF <i class="fa fa-file-pdf-o"></i></button>
+                        </div>
+
+                        <div class="centerReport">
+                            <div class="propertyReportBody">
+                                <!--Report Header-->
+                                <div class="propertyReportHeaderContainer">
+                                    <img src="logo.png" class="report-menu-logo-style"></img>
+                                    <div class="reportHeaderStyle">
+                                        <p id="generatedDateText" class="reportGeneraionDateText" >Generated on: 06/04/2024</p>
+                                        <hr class="reportLineStyle">
+                                        <p class="propertyReportHeaderText">Property Analysis Report</p>
+                                        <p>By: Place of Home</p>
+                                    </div>
+                                </div>
+                                
+                                <br>
+                                <br>
+                                <!--Property overview header-->
+                                <div>
+                                    <p class="propertyOverviewReportHeaderText">Property Overview</p>
+                                    <p id="propertyAddress">Address: 7306 deep spring</p>
+                                    <p id="propertyCityStateZipCode">San Antonio, TX 78238</p>
+                                </div>
+                                <!--property overview data-->
+                                <div class="halfContainer">
+                                    <div>
+                                        <img id="propertyImage" class="propertyPhoto" src="https://photos.zillowstatic.com/fp/fe0c3095baabfc68a32b7c4dabae77ab-p_d.jpg"></img>
+                                        <p id="propertyDatePostedText" class="propertyDatePostedText">Date Posted: 05/04/2024</p>
+                                    </div>
+
+                                    <div class="propertyInfomationContainer">
+                                        <p class="propertyInformationText">Property Information</p>
+                                        <table id="propertyInformationTable">
+                                            <tr>
+                                                <th>Price</th>
+                                                <td id="propertyPriceText">$175,000</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Bedrooms</th>
+                                                <td id="propertyBedroomsText">3</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Bathrooms</th>
+                                                <td id="propertyBathroomsText">2</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Stories</th>
+                                                <td id="propertyStoryText">1</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Living Area</th>
+                                                <td id="propertyLivingAreaText">8,983 sq ft</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Year Built</th>
+                                                <td id="propertyYearBuiltText">1993</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Property Type</th>
+                                                <td id="propertyTypeText">Single Family</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Price Per SQ FT</th>
+                                                <td id="propertyPricePerSqFtText">$164</td>
+                                            </tr>
+                                            <tr>
+                                                <th>HOA Fee</th>
+                                                <td id="propertyHOAText">$16</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!--Property zillow description-->
+                                <br>
+                                <br>
+                                <div>
+                                    <p class="zillowDescriptionHeaderText">Zillow Property Description</p>
+                                    <p id="zillowDescriptionsText" class="zillowDescriptionText">We're pleased to present the opportunity to acquire a Rare gem property in a highly demanded San Antonio, TX. Including 3 bedrooms and 3 bathrooms, you are going to enjoy the 1,420 sqft that composes this House built in 1933. Nested in an enjoyable neighborhood, and minutes from local attractions, public transportation, and public park. Don't miss this great opportunity!</p>
+                                </div>
+
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div>
+                                    <p class="propertyOverviewReportHeaderText">Area Overview</p>
+                                </div>
+                                <br>
+                                <br>
+                                <!--Area details-->
+                                <div class="halfContainer">
+                                    <div class="areaDescriptionTextSection">
+                                        <p class="areaDescriptionHeaderText">Area Descriptions</p>
+                                        <p id="propertyAreaText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</p>
+                                    </div>
+
+                                    <div>
+                                        <p class="propertyInformationText">Area Information</p>
+                                        <table id="propertyInformationTable">
+                                            <tr>
+                                                <th>Population</th>
+                                                <td id="propertyAreaPopulationText">18,000</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Avg. Weather</th>
+                                                <td id="propertyAreaWeatherText">76.5°F</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Median Rent</th>
+                                                <td id="propertyAreaRentText">$1,123</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Median Home Price</th>
+                                                <td id="propertyAreaHomePriceText">$231,432</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Avg. Income</th>
+                                                <td id="propertyAreaIncomeText">$121,021</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Avg. Commute Time</th>
+                                                <td id="propertyAreaCommuteText">20.5 minutes</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Stayed in Same Home</th>
+                                                <td id="propertyAreaSameHomeText">45%</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Most Common Age Range</th>
+                                                <td id="propertyAreaRangeText">20 - 34</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Number of Natural Disasters</th>
+                                                <td id="propertyAreaNaturalDisastersNumberText">2</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <!--Area Graphs-->
+                                <div>
+                                    <p class="propertyInformationText">Growth Since 2018</p>
+                                    <div class="halfContainer">
+                                        <div>
+                                            <canvas id="populationChart" width="400" height="200"></canvas>
+                                        </div>
+                                        <div>
+                                            <canvas id="homePriceChart" width="400" height="200"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="propertyOverviewReportHeaderText">Nearby Homes</p>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <div>
+                                    <p class="propertyInformationText">Nearby Homes For Sale</p>
+                                    <table id="nearbyHomesTable"><br><center><p>- No Homes Nearby Found -</p></center></table>
+                                    <p id="nearbyHomesAvgPriceText" class="avgPriceText"></p>
+                                </div>
+
+                            </div>
+                        </div>
     
     `;
 
