@@ -744,7 +744,7 @@ function renderPropertyAnalysisPremiumReport()
                                 <!--Area Graphs-->
                                 <div>
                                     <p class="propertyInformationText">Growth Since 2018</p>
-                                    <div class="halfContainer">
+                                    <div class="halfContainerCharts">
                                         <div>
                                             <canvas id="populationChart" width="400" height="200"></canvas>
                                         </div>

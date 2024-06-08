@@ -313,27 +313,41 @@ function generatePropertyAnalysisPremiumReport()
         if(data["status"] == "success")
         {
             renderPropertyAnalysisPremiumReport();
-            document.getElementById("generatedDateText").innerHTML = DATE_TODAY;
+            document.getElementById("generatedDateText").innerHTML = "Report Generated On: "+DATE_TODAY;
 
-            document.getElementById("propertyAddress").innerHTML = ZILLOW_FAKE_DATA["zillowData"]["address"]["streetAddress"];
-            document.getElementById("propertyCityStateZipCode").innerHTML = ZILLOW_FAKE_DATA["zillowData"]["address"]["city"] + ", " + ZILLOW_FAKE_DATA["zillowData"]["address"]["state"]+ " "+ZILLOW_FAKE_DATA["zillowData"]["address"]["zipcode"];
+            document.getElementById("propertyAddress").innerHTML = data["zillowData"]["address"]["streetAddress"];
+            document.getElementById("propertyCityStateZipCode").innerHTML = data["zillowData"]["address"]["city"] + ", " + data["zillowData"]["address"]["state"]+ " "+data["zillowData"]["address"]["zipcode"];
 
-            document.getElementById("propertyImage").innerHTML = ZILLOW_FAKE_DATA['zillowData']['imgSrc']
-            document.getElementById("propertyDatePostedText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['datePosted']
+            document.getElementById("propertyImage").innerHTML = data['zillowData']['imgSrc']
+            document.getElementById("propertyDatePostedText").innerHTML = "Date Posted: "+data['zillowData']['datePosted']
 
-            document.getElementById("propertyPriceText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['price']
-            document.getElementById("propertyBedroomsText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['bedrooms']
-            document.getElementById("propertyBathroomsText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['bathrooms']
-            document.getElementById("propertyStoryText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['resoFacts']['stories']
-            document.getElementById("propertyLivingAreaText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['livingArea']
-            document.getElementById("propertyYearBuiltText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['yearBuilt']
-            document.getElementById("propertyTypeText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['resoFacts']['propertySubType']
-            document.getElementById("propertyPricePerSqFtText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['resoFacts']['pricePerSquareFoot']
-            document.getElementById("propertyHOAText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['monthlyHoaFee']
+            document.getElementById("propertyPriceText").innerHTML = data['zillowData']['price']
+            document.getElementById("propertyBedroomsText").innerHTML = data['zillowData']['bedrooms']
+            document.getElementById("propertyBathroomsText").innerHTML = data['zillowData']['bathrooms']
+            document.getElementById("propertyStoryText").innerHTML = data['zillowData']['resoFacts']['stories']
+            document.getElementById("propertyLivingAreaText").innerHTML = data['zillowData']['livingArea']
+            document.getElementById("propertyYearBuiltText").innerHTML = data['zillowData']['yearBuilt']
+            document.getElementById("propertyTypeText").innerHTML = data['zillowData']['resoFacts']['propertySubType']
+            document.getElementById("propertyPricePerSqFtText").innerHTML = data['zillowData']['resoFacts']['pricePerSquareFoot']
+            document.getElementById("propertyHOAText").innerHTML = data['zillowData']['monthlyHoaFee']
 
-            document.getElementById("zillowDescriptionsText").innerHTML = ZILLOW_FAKE_DATA['zillowData']['description']
+            document.getElementById("zillowDescriptionsText").innerHTML = data['zillowData']['description']
 
-            generateNearbyHomes(ZILLOW_FAKE_DATA['zillowData']['nearbyHomes']);
+            document.getElementById("propertyAreaText").innerHTML = data['zipCodeData']['descriptions']['zipcodeOverall']
+
+            document.getElementById("propertyAreaPopulationText").innerHTML = data['zipCodeData']['zipCode']['DEMOGRAPHIC']['Total population']
+            document.getElementById("propertyAreaWeatherText").innerHTML = data['zipCodeData']['weatherData']['averageWeather']
+            document.getElementById("propertyAreaRentText").innerHTML = data['zipCodeData']['zipCode']['HOUSING']['Rent_Median (dollars)']
+            document.getElementById("propertyAreaHomePriceText").innerHTML = data['zipCodeData']['zipCode']['HOUSING']['House_Median (dollars)']
+            document.getElementById("propertyAreaIncomeText").innerHTML = data['zipCodeData']['zipCode']['ECONOMIC']['Mean household income (dollars)']
+            document.getElementById("propertyAreaCommuteText").innerHTML = data['zipCodeData']['zipCode']['ECONOMIC']['Mean travel time to work (minutes)']
+            document.getElementById("propertyAreaSameHomeText").innerHTML = (parseFloat(parseInt(data['zipCodeData']["zipCode"]["SOCIAL"]['Same house'].replace(',', '')) / parseInt(data['zipCodeData']["zipCode"]["SOCIAL"]['Population 1 year and over'].replace(',', '')) ) * 100).toFixed(2)
+            document.getElementById("propertyAreaRangeText").innerHTML = _commonAgeRange(data['zipCodeData'])
+            document.getElementById("propertyAreaNaturalDisastersNumberText").innerHTML = Object.keys(data['zipCodeData']['naturalDisasters']['BEGIN_LOCATION']).length
+            
+            generateNearbyHomes(data['zillowData']['nearbyHomes']);
+            renderPopulationHistoryChart(data['zipCodeData']);
+            renderHomePriceHistoryChart(data['zipCodeData']);
         }
     })
 }

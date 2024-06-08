@@ -90,17 +90,13 @@ function makeCallGeneratePremiumPropertyAnalysisReport( callBack = null )
                   "propertyZillowLink": ZILLOW_LINK,
                   "reportType":"premium",
                  };
-
-    console.log(ZILLOW_FAKE_DATA);
-    return callBack(ZILLOW_FAKE_DATA);
-
-    /*
+    
     endpointCall("generatePropertyAnalysisPremiumReport", params, function(data)
     {
         
         if(data["status"] == "success")
         {
-            return callBack(data)
+            return callBack(data);
         }
         else if(data["status"] == "failed")
         {
@@ -109,7 +105,6 @@ function makeCallGeneratePremiumPropertyAnalysisReport( callBack = null )
         }
 
     });
-    */
 }
 
 
