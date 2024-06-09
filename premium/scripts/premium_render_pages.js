@@ -648,14 +648,14 @@ function renderPropertyAnalysisPremiumReport()
                                 <!--Property overview header-->
                                 <div>
                                     <p class="propertyOverviewReportHeaderText">Property Overview</p>
-                                    <p id="propertyAddress">Address: 7306 deep spring</p>
-                                    <p id="propertyCityStateZipCode">San Antonio, TX 78238</p>
+                                    <p id="propertyAddress">Address:</p>
+                                    <p id="propertyCityStateZipCode"></p>
                                 </div>
                                 <!--property overview data-->
                                 <div class="halfContainer">
                                     <div>
-                                        <img id="propertyImage" class="propertyPhoto" src="https://photos.zillowstatic.com/fp/fe0c3095baabfc68a32b7c4dabae77ab-p_d.jpg"></img>
-                                        <p id="propertyDatePostedText" class="propertyDatePostedText">Date Posted: 05/04/2024</p>
+                                        <img id="propertyImage" class="propertyPhoto"></img>
+                                        <p id="propertyDatePostedText" class="propertyDatePostedText">Date Posted:</p>
                                     </div>
 
                                     <div class="propertyInfomationContainer">
@@ -663,39 +663,39 @@ function renderPropertyAnalysisPremiumReport()
                                         <table id="propertyInformationTable">
                                             <tr>
                                                 <th>Price</th>
-                                                <td id="propertyPriceText">$175,000</td>
+                                                <td id="propertyPriceText"></td>
                                             </tr>
                                             <tr>
                                                 <th>Bedrooms</th>
-                                                <td id="propertyBedroomsText">3</td>
+                                                <td id="propertyBedroomsText"></td>
                                             </tr>
                                             <tr>
                                                 <th>Bathrooms</th>
-                                                <td id="propertyBathroomsText">2</td>
+                                                <td id="propertyBathroomsText"></td>
                                             </tr>
                                             <tr>
                                                 <th>Stories</th>
-                                                <td id="propertyStoryText">1</td>
+                                                <td id="propertyStoryText"></td>
                                             </tr>
                                             <tr>
                                                 <th>Living Area</th>
-                                                <td id="propertyLivingAreaText">8,983 sq ft</td>
+                                                <td id="propertyLivingAreaText"></td>
                                             </tr>
                                             <tr>
                                                 <th>Year Built</th>
-                                                <td id="propertyYearBuiltText">1993</td>
+                                                <td id="propertyYearBuiltText"></td>
                                             </tr>
                                             <tr>
                                                 <th>Property Type</th>
-                                                <td id="propertyTypeText">Single Family</td>
+                                                <td id="propertyTypeText"></td>
                                             </tr>
                                             <tr>
                                                 <th>Price Per SQ FT</th>
-                                                <td id="propertyPricePerSqFtText">$164</td>
+                                                <td id="propertyPricePerSqFtText"></td>
                                             </tr>
                                             <tr>
                                                 <th>HOA Fee</th>
-                                                <td id="propertyHOAText">$16</td>
+                                                <td id="propertyHOAText"></td>
                                             </tr>
                                         </table>
                                     </div>
@@ -705,7 +705,7 @@ function renderPropertyAnalysisPremiumReport()
                                 <br>
                                 <div>
                                     <p class="zillowDescriptionHeaderText">Zillow Property Description</p>
-                                    <p id="zillowDescriptionsText" class="zillowDescriptionText">We're pleased to present the opportunity to acquire a Rare gem property in a highly demanded San Antonio, TX. Including 3 bedrooms and 3 bathrooms, you are going to enjoy the 1,420 sqft that composes this House built in 1933. Nested in an enjoyable neighborhood, and minutes from local attractions, public transportation, and public park. Don't miss this great opportunity!</p>
+                                    <p id="zillowDescriptionsText" class="zillowDescriptionText"></p>
                                 </div>
 
                                 <br>
@@ -713,7 +713,7 @@ function renderPropertyAnalysisPremiumReport()
                                 <br>
                                 <br>
                                 <div>
-                                    <p class="propertyOverviewReportHeaderText">Area Overview</p>
+                                    <p class="propertyOverviewReportHeaderText"></p>
                                 </div>
                                 <br>
                                 <br>
@@ -721,7 +721,7 @@ function renderPropertyAnalysisPremiumReport()
                                 <div class="halfContainer">
                                     <div class="areaDescriptionTextSection">
                                         <p class="areaDescriptionHeaderText">Area Descriptions</p>
-                                        <p id="propertyAreaText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</p>
+                                        <p id="propertyAreaText"></p>
                                     </div>
 
                                     <div>
@@ -729,39 +729,39 @@ function renderPropertyAnalysisPremiumReport()
                                         <table id="propertyInformationTable">
                                             <tr>
                                                 <th>Population</th>
-                                                <td id="propertyAreaPopulationText">18,000</td>
+                                                <td id="propertyAreaPopulationText"></td>
                                             </tr>
                                             <tr>
                                                 <th>Avg. Weather</th>
-                                                <td id="propertyAreaWeatherText">76.5°F</td>
+                                                <td id="propertyAreaWeatherText"></td>
                                             </tr>
                                             <tr>
                                                 <th>Median Rent</th>
-                                                <td id="propertyAreaRentText">$1,123</td>
+                                                <td id="propertyAreaRentText"></td>
                                             </tr>
                                             <tr>
                                                 <th>Median Home Price</th>
-                                                <td id="propertyAreaHomePriceText">$231,432</td>
+                                                <td id="propertyAreaHomePriceText"></td>
                                             </tr>
                                             <tr>
                                                 <th>Avg. Income</th>
-                                                <td id="propertyAreaIncomeText">$121,021</td>
+                                                <td id="propertyAreaIncomeText"></td>
                                             </tr>
                                             <tr>
                                                 <th>Avg. Commute Time</th>
-                                                <td id="propertyAreaCommuteText">20.5 minutes</td>
+                                                <td id="propertyAreaCommuteText"></td>
                                             </tr>
                                             <tr>
                                                 <th>Stayed in Same Home</th>
-                                                <td id="propertyAreaSameHomeText">45%</td>
+                                                <td id="propertyAreaSameHomeText"></td>
                                             </tr>
                                             <tr>
                                                 <th>Most Common Age Range</th>
-                                                <td id="propertyAreaRangeText">20 - 34</td>
+                                                <td id="propertyAreaRangeText"></td>
                                             </tr>
                                             <tr>
                                                 <th>Number of Natural Disasters</th>
-                                                <td id="propertyAreaNaturalDisastersNumberText">2</td>
+                                                <td id="propertyAreaNaturalDisastersNumberText"></td>
                                             </tr>
                                         </table>
                                     </div>
@@ -820,22 +820,22 @@ function renderPropertyAnalysisPremiumReport()
                                     <div class="boxedQuickAnalyticsContainer">
                                         <div class="analyticsBox">
                                             <p>Home Price</p>
-                                            <p id="homePriceAnalyticsText">$273,000</p>
+                                            <p id="homePriceAnalyticsText"></p>
                                         </div>
 
                                         <div class="analyticsBox">
                                             <p>Rent Per Month</p>
-                                            <p id="rentAnalyticsText">$13,000</p>
+                                            <p id="rentAnalyticsText"></p>
                                         </div>
 
                                         <div class="analyticsBox">
                                             <p>Expenses</p>
-                                            <p id="expensesAnalyticsText">$3,000</p>
+                                            <p id="expensesAnalyticsText"></p>
                                         </div>
 
                                         <div class="analyticsBox">
                                             <p>Annual Debt Service</p>
-                                            <p id="annualDebtServiceText">$3,000</p>
+                                            <p id="annualDebtServiceText"></p>
                                         </div>
                                     </div>
                                     <br>
@@ -843,31 +843,31 @@ function renderPropertyAnalysisPremiumReport()
                                     <table id="propertyAnalyticsCalculationTable">
                                         <tr>
                                             <th>Gross Operating Income</th>
-                                            <td id="grossOperatingIncomeText">$175,000</td>
+                                            <td id="grossOperatingIncomeText"></td>
                                         </tr>
                                         <tr>
                                             <th>Net Operating Income</th>
-                                            <td id="netOperatingIncomeText">3</td>
+                                            <td id="netOperatingIncomeText"></td>
                                         </tr>
                                         <tr>
                                             <th>Cap Rate</th>
-                                            <td id="capRateText">2</td>
+                                            <td id="capRateText"></td>
                                         </tr>
                                         <tr>
                                             <th>Clash Flow (Before Tax)</th>
-                                            <td id="cashFlowText">1</td>
+                                            <td id="cashFlowText"></td>
                                         </tr>
                                         <tr>
                                             <th>Cash on Cash Returns</th>
-                                            <td id="cashOnCashText">8,983 sq ft</td>
+                                            <td id="cashOnCashText"></td>
                                         </tr>
                                         <tr>
                                             <th>Gross Rent Multiplier</th>
-                                            <td id="grossRentMultiplierText">1993</td>
+                                            <td id="grossRentMultiplierText"></td>
                                         </tr>
                                         <tr>
                                             <th>Debt Service Coverage Ratio</th>
-                                            <td id="debtServiceCoverageRatio">Single Family</td>
+                                            <td id="debtServiceCoverageRatio"></td>
                                         </tr>
                                     </table>
                                 </div>

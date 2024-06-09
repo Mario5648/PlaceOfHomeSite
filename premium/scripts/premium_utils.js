@@ -330,7 +330,7 @@ function generatePropertyAnalysisPremiumReport()
             document.getElementById("propertyAddress").innerHTML = data["zillowData"]["address"]["streetAddress"];
             document.getElementById("propertyCityStateZipCode").innerHTML = data["zillowData"]["address"]["city"] + ", " + data["zillowData"]["address"]["state"]+ " "+data["zillowData"]["address"]["zipcode"];
 
-            document.getElementById("propertyImage").innerHTML = data['zillowData']['imgSrc']
+            document.getElementById("propertyImage").src = data['zillowData']['imgSrc']
             document.getElementById("propertyDatePostedText").innerHTML = "Date Posted: "+data['zillowData']['datePosted']
 
             document.getElementById("propertyPriceText").innerHTML = data['zillowData']['price']
@@ -348,7 +348,7 @@ function generatePropertyAnalysisPremiumReport()
             document.getElementById("propertyAreaText").innerHTML = data['zipCodeData']['descriptions']['zipcodeOverall']
 
             document.getElementById("propertyAreaPopulationText").innerHTML = data['zipCodeData']['zipCode']['DEMOGRAPHIC']['Total population']
-            document.getElementById("propertyAreaWeatherText").innerHTML = data['zipCodeData']['weatherData']['averageWeather']
+            document.getElementById("propertyAreaWeatherText").innerHTML = data['zipCodeData']['weatherData']['averageWeather']+"°F"
             document.getElementById("propertyAreaRentText").innerHTML = data['zipCodeData']['zipCode']['HOUSING']['Rent_Median (dollars)']
             document.getElementById("propertyAreaHomePriceText").innerHTML = data['zipCodeData']['zipCode']['HOUSING']['House_Median (dollars)']
             document.getElementById("propertyAreaIncomeText").innerHTML = data['zipCodeData']['zipCode']['ECONOMIC']['Mean household income (dollars)']
