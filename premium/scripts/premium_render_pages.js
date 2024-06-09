@@ -103,7 +103,7 @@ function renderPropertyAnalysisInputPage()
                                 <input style="width:360px;"class="input-field" id="zillowLinkInput" name="zillowLinkInput" type="text"></input>
                                 <br>
                                 <p class="input-header-text">Property Info</p>
-                                <label for="anticipatedRentInput">Anticipated Rent:</label>
+                                <label for="anticipatedRentInput">Anticipated Monthly Rent:</label>
                                 <input style="width:360px;"class="input-field" id="anticipatedRentInput" name="anticipatedRentInput" type="number"></input>
                                 <br>
                                 <label for="anticipatedOccupiedMonthsInput">Anticipated Occupied Months:</label>
