@@ -357,9 +357,26 @@ function generatePropertyAnalysisPremiumReport()
             document.getElementById("propertyAreaRangeText").innerHTML = _commonAgeRange(data['zipCodeData'])
             document.getElementById("propertyAreaNaturalDisastersNumberText").innerHTML = Object.keys(data['zipCodeData']['naturalDisasters']['BEGIN_LOCATION']).length
             
+
+            document.getElementById("grossOperatingIncomeText").innerHTML = "$ " +data['propertyAnalyticsCalculations']['grossOperatingIncome']
+            document.getElementById("netOperatingIncomeText").innerHTML = "$ " +data['propertyAnalyticsCalculations']['netOperatingIncome']
+            document.getElementById("capRateText").innerHTML = data['propertyAnalyticsCalculations']['capRate']+ " %"
+            document.getElementById("cashFlowText").innerHTML = "$ " +data['propertyAnalyticsCalculations']['cashFlow_BeforeTax']
+            document.getElementById("cashOnCashText").innerHTML = data['propertyAnalyticsCalculations']['cashOnCashReturns']+ " %"
+            document.getElementById("grossRentMultiplierText").innerHTML = data['propertyAnalyticsCalculations']['grossRentMultiplier']
+            document.getElementById("debtServiceCoverageRatio").innerHTML = data['propertyAnalyticsCalculations']['debtServiceCoverageRatio']
+
+            document.getElementById("homePriceAnalyticsText").innerHTML = "$ " +data['zillowData']['price']
+            document.getElementById("rentAnalyticsText").innerHTML = "$ " +data['propertyAnalyticsCalculations']['anticipatedRent']
+            document.getElementById("expensesAnalyticsText").innerHTML = "$ " +data['propertyAnalyticsCalculations']['anticipatedExpenses']
+            document.getElementById("annualDebtServiceText").innerHTML = "$ " +data['propertyAnalyticsCalculations']['annualDebtService']
+
             generateNearbyHomes(data['zillowData']['nearbyHomes']);
             renderPopulationHistoryChart(data['zipCodeData']);
             renderHomePriceHistoryChart(data['zipCodeData']);
+
+            renderRentComparisonChart(data);
+            renderHomePriceComparisonChart(data);
 
         }
     })

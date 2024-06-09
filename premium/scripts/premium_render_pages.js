@@ -800,12 +800,46 @@ function renderPropertyAnalysisPremiumReport()
                                 </div>
                                 <br>
                                 <br>
+                                <div>
+                                <p class="propertyInformationText">Comparison Charts</p>
+                                <div class="halfContainerCharts">
+                                        <div>
+                                            <canvas id="rentPricesComparisonChart" width="400" height="200"></canvas>
+                                        </div>
+                                        <div>
+                                            <canvas id="homePricesComparisonChart" width="400" height="200"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
                                 <div class="propertyAnalyticsCalculationContainer">
                                     <p class="propertyInformationText">Property Analytics Calculation</p>
+                                    <br>
+                                    <br>
+                                    <div class="boxedQuickAnalyticsContainer">
+                                        <div class="analyticsBox">
+                                            <p>Home Price</p>
+                                            <p id="homePriceAnalyticsText">$273,000</p>
+                                        </div>
 
-                                    <div>
-                                    
+                                        <div class="analyticsBox">
+                                            <p>Rent Per Month</p>
+                                            <p id="rentAnalyticsText">$13,000</p>
+                                        </div>
+
+                                        <div class="analyticsBox">
+                                            <p>Expenses</p>
+                                            <p id="expensesAnalyticsText">$3,000</p>
+                                        </div>
+
+                                        <div class="analyticsBox">
+                                            <p>Annual Debt Service</p>
+                                            <p id="annualDebtServiceText">$3,000</p>
+                                        </div>
                                     </div>
+                                    <br>
+                                    <br>
                                     <table id="propertyAnalyticsCalculationTable">
                                         <tr>
                                             <th>Gross Operating Income</th>

@@ -692,3 +692,123 @@ function renderEducationAttainmentChart(data = null)
                                             
                                     });
 }
+
+
+function renderRentComparisonChart(data = null)
+{
+
+    //zipCode Median, your rent
+    let rentComparisonData = [];
+
+    
+    rentComparisonData.push(parseInt(data['zipCodeData']['zipCode']['HOUSING']['Rent_Median (dollars)'].replace(',', '')).toString());
+    rentComparisonData.push(data['propertyAnalyticsCalculations']['anticipatedRent'].toString());
+
+    var data = {
+        labels: ['Zip Code Median', 'Your Anticipated Rent'],
+        datasets: [{
+            axis: 'x',
+            label: 'Rent Comparison',
+            data: rentComparisonData,
+            fill: false,
+            backgroundColor: ['rgb(9, 34, 48, 0.6)', 'rgba(243,108,54,0.6)'],
+            borderWidth: 1,
+            datalabels: {
+                color: 'rgb(16,36,52)',
+                anchor: 'end',
+                align: 'top'
+            }
+        }]
+        };
+    const ctx = document.getElementById('rentPricesComparisonChart').getContext('2d');
+    const rentComparisonChart = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: data,
+                                    plugins :[ChartDataLabels],
+                                    options: {
+                                                responsive: true,
+                                                maintainAspectRatio: true,
+                                                indexAxis: 'x', // This will make the bar chart horizontal
+                                                scales: {
+                                                    y: {
+                                                        ticks: {
+                                                            beginAtZero: true,
+                                                        }
+                                                    }
+                                                    },
+                                                    plugins: {
+                                                        legend: {
+                                                            display: false
+                                                        },
+                                                        title: {
+                                                            display: true,
+                                                            text: 'Rent Comparison',
+                                                            font: {
+                                                                size: 16
+                                                            }
+                                                        },
+                                                        
+                                                    }
+                                                }
+                                            
+                                    });
+}
+
+function renderHomePriceComparisonChart(data = null)
+{
+
+    //zipCode Median, your rent
+    let homePriceComparisonData = [];
+
+    homePriceComparisonData.push(parseInt(data['zipCodeData']['zipCode']['HOUSING']['House_Median (dollars)'].replace(',', '')).toString());
+    homePriceComparisonData.push(data['zillowData']['price'].toString());
+
+    var data = {
+        labels: ['Zip Code Median', 'Anticipated Home Price'],
+        datasets: [{
+            axis: 'x',
+            label: 'Home Price Comparison',
+            data: homePriceComparisonData,
+            fill: false,
+            backgroundColor: ['rgb(9, 34, 48, 0.6)','rgba(243,108,54,0.6)'],
+            borderWidth: 1,
+            datalabels: {
+                color: 'rgb(16,36,52)',
+                anchor: 'end',
+                align: 'top'
+            }
+        }]
+        };
+    const ctx = document.getElementById('homePricesComparisonChart').getContext('2d');
+    const homePriceComparisonChart = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: data,
+                                    plugins :[ChartDataLabels],
+                                    options: {
+                                                responsive: true,
+                                                maintainAspectRatio: true,
+                                                indexAxis: 'x', // This will make the bar chart horizontal
+                                                scales: {
+                                                    y: {
+                                                        ticks: {
+                                                            beginAtZero: true,
+                                                        }
+                                                    }
+                                                    },
+                                                    plugins: {
+                                                        legend: {
+                                                            display: false
+                                                        },
+                                                        title: {
+                                                            display: true,
+                                                            text: 'Home Price Comparison',
+                                                            font: {
+                                                                size: 16
+                                                            }
+                                                        },
+                                                        
+                                                    }
+                                                }
+                                            
+                                    });
+}
