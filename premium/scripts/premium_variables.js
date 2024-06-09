@@ -13,4 +13,13 @@ var yyyy = today.getFullYear();
 var DATE_TODAY = mm + '/' + dd + '/' + yyyy;
 
 var ZILLOW_LINK = '';
+var ANTICIPATED_RENT = '';
+var ANTICIPATED_OCCUPIED_MONTHS = '';
+var ANTICIPATED_EXPENSES = '';
+var ANTICIPATED_PRINCIPLE = '';
+var ANTICIPATED_INTEREST = '';
+var ANTICIPATED_DOWNPAYMENT = '';
+var ANTICIPATED_CLOSING_COST = '';
+var ANTICIPATED_RENOVATION_COST = '';
+
 

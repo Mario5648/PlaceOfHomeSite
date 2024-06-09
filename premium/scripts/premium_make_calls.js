@@ -88,6 +88,14 @@ function makeCallGeneratePremiumPropertyAnalysisReport( callBack = null )
 
     let params = {
                   "propertyZillowLink": ZILLOW_LINK,
+                  "anticipatedRentInput":ANTICIPATED_RENT,
+                  "anticipatedOccupiedMonthsInput":ANTICIPATED_OCCUPIED_MONTHS,
+                  "anticipatedExpensesInput":ANTICIPATED_EXPENSES,
+                  "anticipatedPrincipleInput":ANTICIPATED_PRINCIPLE,
+                  "anticipatedInterestInput":ANTICIPATED_INTEREST,
+                  "anticipatedDownpaymentInput":ANTICIPATED_DOWNPAYMENT,
+                  "anticipatedClosingCostInput":ANTICIPATED_CLOSING_COST,
+                  "anticipatedRenovationCostInput":ANTICIPATED_RENOVATION_COST,
                   "reportType":"premium",
                  };
     

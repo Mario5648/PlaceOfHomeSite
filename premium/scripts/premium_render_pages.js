@@ -98,10 +98,38 @@ function renderPropertyAnalysisInputPage()
 
                         <div class="input-box-container">
                             <div class="input-box">
-                                <br>
+                                <p class="input-header-text">Zillow Info</p>
                                 <label for="zillowLinkInput">Zillow Property Link:</label>
                                 <input style="width:360px;"class="input-field" id="zillowLinkInput" name="zillowLinkInput" type="text"></input>
-                                <br>  
+                                <br>
+                                <p class="input-header-text">Property Info</p>
+                                <label for="anticipatedRentInput">Anticipated Rent:</label>
+                                <input style="width:360px;"class="input-field" id="anticipatedRentInput" name="anticipatedRentInput" type="number"></input>
+                                <br>
+                                <label for="anticipatedOccupiedMonthsInput">Anticipated Occupied Months:</label>
+                                <input style="width:360px;"class="input-field" id="anticipatedOccupiedMonthsInput" name="anticipatedOccupiedMonthsInput" type="number"></input>
+                                <br>
+                                <label for="anticipatedExpensesInput">Anticipated Expenses:</label>
+                                <input style="width:360px;"class="input-field" id="anticipatedExpensesInput" name="anticipatedExpensesInput" type="number"></input>
+                                <br>
+                                <p class="input-header-text">Annual Debt Info</p>
+                                <label for="anticipatedPrincipleInput">Anticipated Principle:</label>
+                                <input style="width:360px;"class="input-field" id="anticipatedPrincipleInput" name="anticipatedPrincipleInput" type="number"></input>
+                                <br>
+                                <label for="anticipatedInterestInput">Anticipated Interest:</label>
+                                <input style="width:360px;"class="input-field" id="anticipatedInterestInput" name="anticipatedInterestInput" type="number"></input>
+                                <br>
+                                <p class="input-header-text">Purchase Info</p>
+                                <label for="anticipatedDownpaymentInput">Anticipated Downpayment:</label>
+                                <input style="width:360px;"class="input-field" id="anticipatedDownpaymentInput" name="anticipatedDownpaymentInput" type="number"></input>
+                                <br>
+                                <label for="anticipatedClosingCostInput">Anticipated Closing Cost:</label>
+                                <input style="width:360px;"class="input-field" id="anticipatedClosingCostInput" name="anticipatedClosingCostInput" type="number"></input>
+                                <br>
+                                <label for="anticipatedRenovationCostInput">Anticipated Renovation Cost:</label>
+                                <input style="width:360px;"class="input-field" id="anticipatedRenovationCostInput" name="anticipatedRenovationCostInput" type="number"></input>
+                                <br>
+                                <br>
                                 <button class="input-submit-button" onclick="generatePropertyAnalysisPremiumReport()">Submit</button>
                             </div>
                         </div>
@@ -763,6 +791,51 @@ function renderPropertyAnalysisPremiumReport()
                                     <p class="propertyInformationText">Nearby Homes For Sale</p>
                                     <table id="nearbyHomesTable"><br><center><p>- No Homes Nearby Found -</p></center></table>
                                     <p id="nearbyHomesAvgPriceText" class="avgPriceText"></p>
+                                </div>
+
+                                <br>
+                                <br>
+                                <div>
+                                    <p class="propertyOverviewReportHeaderText">Property Analytics Calculations Overview</p>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="propertyAnalyticsCalculationContainer">
+                                    <p class="propertyInformationText">Property Analytics Calculation</p>
+
+                                    <div>
+                                    
+                                    </div>
+                                    <table id="propertyAnalyticsCalculationTable">
+                                        <tr>
+                                            <th>Gross Operating Income</th>
+                                            <td id="grossOperatingIncomeText">$175,000</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Net Operating Income</th>
+                                            <td id="netOperatingIncomeText">3</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Cap Rate</th>
+                                            <td id="capRateText">2</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Clash Flow (Before Tax)</th>
+                                            <td id="cashFlowText">1</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Cash on Cash Returns</th>
+                                            <td id="cashOnCashText">8,983 sq ft</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Gross Rent Multiplier</th>
+                                            <td id="grossRentMultiplierText">1993</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Debt Service Coverage Ratio</th>
+                                            <td id="debtServiceCoverageRatio">Single Family</td>
+                                        </tr>
+                                    </table>
                                 </div>
 
                             </div>

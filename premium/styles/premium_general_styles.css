@@ -481,3 +481,28 @@ body
     flex-direction: row;
     justify-content: space-between;
 }
+
+.input-header-text
+{
+    font-size: 20px;
+}
+
+.propertyAnalyticsCalculationContainer
+{
+}
+
+#propertyAnalyticsCalculationTable
+{
+    width: 100%;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+#propertyAnalyticsCalculationTable th, #propertyAnalyticsCalculationTable td 
+{
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#propertyAnalyticsCalculationTable tr:nth-child(even){background-color: #f2f2f2;}

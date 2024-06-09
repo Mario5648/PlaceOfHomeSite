@@ -299,11 +299,23 @@ function generateNearbyHomes(nearByHomesData)
     }
 }
 
-
+function getAllPropertyInputData()
+{
+    ZILLOW_LINK = document.getElementById("zillowLinkInput").value;
+    ANTICIPATED_RENT = document.getElementById("anticipatedRentInput").value;
+    ANTICIPATED_OCCUPIED_MONTHS = document.getElementById("anticipatedOccupiedMonthsInput").value;
+    ANTICIPATED_EXPENSES = document.getElementById("anticipatedExpensesInput").value;
+    ANTICIPATED_PRINCIPLE = document.getElementById("anticipatedPrincipleInput").value;
+    ANTICIPATED_INTEREST = document.getElementById("anticipatedInterestInput").value;
+    ANTICIPATED_DOWNPAYMENT = document.getElementById("anticipatedDownpaymentInput").value;
+    ANTICIPATED_CLOSING_COST = document.getElementById("anticipatedClosingCostInput").value;
+    ANTICIPATED_RENOVATION_COST = document.getElementById("anticipatedRenovationCostInput").value;
+}
 
 function generatePropertyAnalysisPremiumReport()
 {
 
+    getAllPropertyInputData();
     renderLoadingScreen();
     document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0');
 
@@ -348,6 +360,7 @@ function generatePropertyAnalysisPremiumReport()
             generateNearbyHomes(data['zillowData']['nearbyHomes']);
             renderPopulationHistoryChart(data['zipCodeData']);
             renderHomePriceHistoryChart(data['zipCodeData']);
+
         }
     })
 }
