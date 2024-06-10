@@ -267,11 +267,10 @@ function renderNaturalDisasters(data = null)
 
 function generateNearbyHomes(nearByHomesData)
 {
-    let nearbyHomesTableHtml = `<table id="nearbyHomesTable">
+    let nearbyHomesTableHtml = `
                                 <tr>
                                     <th>Address</th>
-                                    <th>Beds</th>
-                                    <th>Baths</th>
+                                    <th>living Area</th>
                                     <th>SqFt</th>
                                     <th>Sale Price</th>
                                 </tr>
@@ -280,22 +279,24 @@ function generateNearbyHomes(nearByHomesData)
     let sumPrice = 0;
     let numOfHomes = nearByHomesData.length;
 
-    for(let i = 0; i < nearByHomesData.length; i++)
+    for(let i = 0; i < nearByHomesData.length -1; i++)
     {
+        sumPrice += nearByHomesData[i]['price'];
+
         nearbyHomesTableHtml += `<tr>
                                     <td>${nearByHomesData[i]['address']['streetAddress']+' '+nearByHomesData[i]['address']['city']+', '+nearByHomesData[i]['address']['state']+' '+nearByHomesData[i]['address']['zipcode']}</td>
-                                    <td>${nearByHomesData[i]['bedrooms']}</td>
-                                    <td>${nearByHomesData[i]['bathrooms']}</td>
-                                    <td>${nearByHomesData[i]['resoFacts']['lotSize']}</td>
-                                    <td>${nearByHomesData[i]['price']}</td>
+                                    <td>${nearByHomesData[i]['livingArea']}</td>
+                                    <td>${nearByHomesData[i]['lotSize']}</td>
+                                    <td>$ ${nearByHomesData[i]['price']}</td>
                                 </tr>`;
     }
 
 
     if(sumPrice != 0)
     {
+        document.getElementById('noNearbyHomesText').style.visibility='hidden';
         document.getElementById('nearbyHomesTable').innerHTML = nearbyHomesTableHtml;
-        document.getElementById('nearbyHomesAvgPriceText').innerHTML = "Avg. Price: $" + (sumPrice / numOfHomes);
+        document.getElementById('nearbyHomesAvgPriceText').innerHTML = "Avg. Price: $ " + (sumPrice / numOfHomes);
     }
 }
 

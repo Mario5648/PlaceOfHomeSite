@@ -789,7 +789,7 @@ function renderPropertyAnalysisPremiumReport()
                                 <br>
                                 <div>
                                     <p class="propertyInformationText">Nearby Homes For Sale</p>
-                                    <table id="nearbyHomesTable"><br><center><p>- No Homes Nearby Found -</p></center></table>
+                                    <table id="nearbyHomesTable"><span id='noNearbyHomesText'><br><center><p>- No Homes Nearby Found -</p></center></span></table>
                                     <p id="nearbyHomesAvgPriceText" class="avgPriceText"></p>
                                 </div>
 
