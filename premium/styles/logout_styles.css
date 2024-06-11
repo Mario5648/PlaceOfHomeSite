@@ -34,17 +34,17 @@ body, html {
 h1 {
     margin-bottom: 20px;
     font-size: 24px;
-    color: #333;
+    color: #092230;
 }
 
 p {
     margin-bottom: 30px;
-    color: #666;
+    color: #092230;
 }
 
 .login-btn {
     padding: 10px 20px;
-    background-color: #333;
+    background-color: #092230;
     color: #fff;
     border: none;
     border-radius: 5px;

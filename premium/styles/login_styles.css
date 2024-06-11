@@ -8,6 +8,8 @@ body, html {
     width: 100%;
     height: 100%;
     font-family: Arial, sans-serif;
+    color: #092230;
+
 }
 
 .container {
@@ -49,7 +51,7 @@ body, html {
 h1 {
     margin-bottom: 20px;
     font-size: 24px;
-    color: #333;
+    color: #092230;
 }
 
 .google-signin {
@@ -69,13 +71,13 @@ h1 {
 .or-signin {
     text-align: center;
     margin: 20px 0;
-    color: #888;
+    color: #092230;
 }
 
 form label {
     display: block;
     margin-bottom: 5px;
-    color: #333;
+    color: #092230;
 }
 
 form input {
@@ -101,7 +103,7 @@ form input {
 .signin-btn {
     width: 100%;
     padding: 10px;
-    background-color: #333;
+    background-color: #092230;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -109,17 +111,17 @@ form input {
 }
 
 .signin-btn:hover {
-    background-color: #555;
+    background-color: #f36c36;
 }
 
 .signup-link {
     text-align: center;
     margin-top: 20px;
-    color: #333;
+    color: #092230;
 }
 
 .signup-link a {
-    color: #007bff;
+    color: #f36c36;
     text-decoration: none;
 }
 
