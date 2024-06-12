@@ -74,13 +74,13 @@ h1 {
     color: #092230;
 }
 
-form label {
+.formSectionContainer label {
     display: block;
     margin-bottom: 5px;
     color: #092230;
 }
 
-form input {
+.formSectionContainer input {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -127,4 +127,17 @@ form input {
 
 .signup-link a:hover {
     text-decoration: underline;
+}
+
+.captcha-values-section
+{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    font-size: 20px;
 }

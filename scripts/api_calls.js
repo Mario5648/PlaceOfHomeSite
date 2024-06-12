@@ -6,6 +6,8 @@ var getCitiesForStateEndPoint = "https://placeofhome-api.org/getCitiesForState"
 var generatePremiumReportEndPoint = "http://127.0.0.1:5000/getZipCodeDataPremium";
 var generateZipCodeComparePremiumReportEndPoint = "http://127.0.0.1:5000/getZipCodeCompareDataPremium";
 var generatePropertyAnalysisPremiumReportEndPoint = "http://127.0.0.1:5000/generatePropertyAnalysisPremiumReport";
+var userSignupEndPoint = "http://127.0.0.1:5000/signup";
+var userLoginEndPoint = "http://127.0.0.1:5000/login";
 
 function endpointCall(endpoint=null, params={}, callBack=null)
 {
@@ -44,5 +46,9 @@ function identifyEndPoint(endpoint=null)
             return generateZipCodeComparePremiumReportEndPoint;
         case "generatePropertyAnalysisPremiumReport":
             return generatePropertyAnalysisPremiumReportEndPoint;
+        case "userSignup":
+            return userSignupEndPoint;
+        case "userLogin":
+            return userLoginEndPoint;
     }
 }

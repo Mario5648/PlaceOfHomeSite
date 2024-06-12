@@ -124,3 +124,48 @@ function generatePremiumPropertyAnalysisReport( callBack = null )
         callBack(data)
     });
 }
+
+
+
+function makeCallUserSignup( callBack = null, firstName, email, password )
+{
+
+    let params = {
+                  "firstName":firstName,
+                  "email":email,
+                  "password":password,
+                 };
+
+    endpointCall("userSignup", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data)
+        }
+        else if(data["status"] == "failed")
+        {
+            alert("failed to sign up, please try again");
+        }
+    });
+}
+
+function makeCallUserLogin( callBack = null, email, password )
+{
+
+    let params = {
+                  "email":email,
+                  "password":password,
+                 };
+
+    endpointCall("userLogin", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data)
+        }
+        else if(data["status"] == "failed")
+        {
+            alert("failed to sign in, please try again");
+        }
+    });
+}

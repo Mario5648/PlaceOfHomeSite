@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="./styles/login_styles.css">
+    <script src="./scripts/captcha.js"></script>
+    <script src="./scripts/premium_users.js"></script>
+    <script src="./scripts/premium_make_calls.js"></script>
+    <script src="../scripts/api_calls.js"></script>
 </head>
 <body>
     <div class="container">
@@ -15,13 +19,22 @@
             <img src="./logo.png" style="width:150px;"><br><br>
             <div class="form-container">
                 <h1>Place of Home Premium</h1>
-                <form>
+                <div class="formSectionContainer">
                     <label for="email">Email</label>
                     <input type="text" id="email" name="email">
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password">
-                    <button type="submit" class="signin-btn">Sign In</button>
-                </form>
+
+                    <div id="captcha">
+                        <div class="captcha-values-section">
+                            <span id="num1"></span> + <span id="num2"></span> = 
+                        </div>
+                        <label for="captchaInput">Enter Captcha Answer Below:</label>
+                        <input type="text" id="captchaInput" name="captchaInput" required>
+                    </div>
+
+                    <button type="submit" class="signin-btn" onclick="userLogin()">Sign In</button>
+                </div>
                 <p class="signup-link">Don't have an account? <a href="./signup.html">Sign up</a></p>
             </div>
         </div>
