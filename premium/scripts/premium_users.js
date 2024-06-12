@@ -12,23 +12,94 @@ function hash_password(user_password)
 }
 
 
+function checkSignupInputs(firstName, email, password, captcha)
+{
+
+    const regex = /^[a-zA-Z0-9\s.,!?@]+$/;
+
+    let captchaValue1 = parseInt(document.getElementById("num1").innerHTML);
+    let captchaValue2 = parseInt(document.getElementById("num2").innerHTML);
+
+    if(firstName && email && password && captcha)
+    {
+        
+        if(regex.test(firstName) && regex.test(email) && regex.test(password) && regex.test(captcha))
+        {
+            if(captcha == (captchaValue1 + captchaValue2))
+            {
+                return true;
+            }else
+            {
+                alert("Please input correct captcha value");
+                return false;
+            }
+        }
+        alert("Please input proper characters");
+        return false;
+    }else
+    {
+        alert("Please fill in all input fields");
+        return false;
+    }
+}
+
+function checkLoginInputs(email, password, captcha)
+{
+
+    const regex = /^[a-zA-Z0-9\s.,!?@]+$/;
+
+    let captchaValue1 = parseInt(document.getElementById("num1").innerHTML);
+    let captchaValue2 = parseInt(document.getElementById("num2").innerHTML);
+
+    if(email && password && captcha)
+    {
+        
+        if(regex.test(email) && regex.test(password) && regex.test(captcha))
+        {
+            if(captcha == (captchaValue1 + captchaValue2))
+            {
+                return true;
+            }else
+            {
+                alert("Please input correct captcha value");
+                return false;
+            }
+        }
+        alert("Please input proper characters");
+        return false;
+    }else
+    {
+        alert("Please fill in all input fields");
+        return false;
+    }
+}
 function userSignup()
 {
 
     let firstName = document.getElementById("firstName").value;
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
+    let captchaValue = document.getElementById("captchaInput").value;
+    
+    let validInputs = checkSignupInputs(firstName, email, password, captchaValue)
+    
+
     let hashed_password = ``;
     let i = hash_password(password).then((hex) => hashed_password = hex);
+    
+    if(validInputs){
+        setTimeout(function(){
+            makeCallUserSignup(function(data)
+            {
+                if(data['status'] == "success")
+                {
+                    location.href = "./premium.html";
+                }
 
-    makeCallUserSignup(function(data)
-    {
-        if(data['status'] == "success")
-        {
-            location.href = "./premium.html";
-        }
+            }, firstName, email, hashed_password);
+        }, 100);
+    }
 
-    }, firstName, email, hashed_password);
 
 }
 
@@ -38,17 +109,26 @@ function userLogin()
 
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
+    let captchaValue = document.getElementById("captchaInput").value;
+
+    let validInputs = checkLoginInputs(email, password, captchaValue);
+
+
     let hashed_password = ``;
     let i = hash_password(password).then((hex) => hashed_password = hex);
 
-    makeCallUserLogin(function(data)
-    {
-        if(data['status'] == "success")
-        {
-            location.href = "./premium.html";
-        }
+    if(validInputs){
+        setTimeout(function(){
+            makeCallUserLogin(function(data)
+            {
+                if(data['status'] == "success")
+                {
+                    location.href = "./premium.html";
+                }
 
-    }, email, hashed_password);
+            }, email, hashed_password);
+        }, 100);
+    }
 
 }
 
