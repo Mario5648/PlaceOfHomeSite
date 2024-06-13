@@ -24,4 +24,6 @@ var ANTICIPATED_RENOVATION_COST = '';
 
 var TEST_API_CALLS = false;
 
+var USER_EMAIL = '';
+
 

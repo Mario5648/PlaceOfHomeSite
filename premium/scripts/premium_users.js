@@ -134,5 +134,28 @@ function userLogin()
 
 function logoutUser()
 {
+    localStorage.removeItem("POH_USER_EMAIL");
+    localStorage.removeItem("POH_USER_TOKEN");
     location.href = "./login.html";
+}
+
+function getUserToken()
+{
+    localStorage.getItem("POH_USER_TOKEN");
+}
+
+function getUserEmail()
+{
+    localStorage.getItem("POH_USER_EMAIL");
+}
+
+function verifyUserToken()
+{
+    if (localStorage.getItem("POH_USER_TOKEN"))
+    {
+        return true;
+    }else
+    {
+        location.href = "./login.html"
+    }
 }

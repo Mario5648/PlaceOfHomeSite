@@ -2,6 +2,8 @@ function makeCallGeneratePremiumReport( callBack = null )
 {
 
     let params = {
+                  "userEmail":localStorage.getItem("POH_USER_EMAIL"),
+                  "userToken":localStorage.getItem("POH_USER_TOKEN"),
                   "zipCode":ZIPCODE,
                   "city":CITY,
                   "state":STATE,
@@ -54,6 +56,9 @@ function makeCallGeneratePremiumZipCodeCompareReport( callBack = null )
 {
 
     let params = {
+                  "userEmail":getUserEmail(),
+                  "userToken":getUserToken(),
+
                   "zipCodes":ZIPCODES,
                   "city":CITY,
                   "state":STATE,
@@ -87,6 +92,9 @@ function makeCallGeneratePremiumPropertyAnalysisReport( callBack = null )
 {
 
     let params = {
+                  "userEmail":getUserEmail(),
+                  "userToken":getUserToken(),
+
                   "propertyZillowLink": ZILLOW_LINK,
                   "anticipatedRentInput":ANTICIPATED_RENT,
                   "anticipatedOccupiedMonthsInput":ANTICIPATED_OCCUPIED_MONTHS,
@@ -129,6 +137,7 @@ function generatePremiumPropertyAnalysisReport( callBack = null )
 
 function makeCallUserSignup( callBack = null, firstName, email, password )
 {
+    localStorage.setItem("POH_USER_EMAIL",email);
 
     let params = {
                   "firstName":firstName,
@@ -140,6 +149,7 @@ function makeCallUserSignup( callBack = null, firstName, email, password )
     {
         if(data["status"] == "success")
         {
+            localStorage.setItem("POH_USER_TOKEN", data["jwt"]);
             return callBack(data)
         }
         else if(data["status"] == "failed")
@@ -151,6 +161,7 @@ function makeCallUserSignup( callBack = null, firstName, email, password )
 
 function makeCallUserLogin( callBack = null, email, password )
 {
+    localStorage.setItem("POH_USER_EMAIL",email);
 
     let params = {
                   "email":email,
@@ -161,6 +172,7 @@ function makeCallUserLogin( callBack = null, email, password )
     {
         if(data["status"] == "success")
         {
+            localStorage.setItem("POH_USER_TOKEN", data["jwt"]);
             return callBack(data)
         }
         else if(data["status"] == "failed")

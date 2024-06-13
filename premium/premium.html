@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="./styles/premium_general_styles.css">
         <script src="./scripts/premium_general_script.js"></script>
         <script src="../scripts/website_utils.js"></script>
-        <script src="../scripts/make_calls.js"></script>
         <script src="../scripts/api_calls.js"></script>
         <script src="./scripts/premium_variables.js"></script>
         <script src="../main_page_scripts/searchCities.js"></script>
@@ -45,7 +44,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
-    <body>
+    <body onload="verifyUserToken()">
         
         <div class="left-menu-container">
             <div class="menu-logo-container">
