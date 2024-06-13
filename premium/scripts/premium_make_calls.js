@@ -56,8 +56,8 @@ function makeCallGeneratePremiumZipCodeCompareReport( callBack = null )
 {
 
     let params = {
-                  "userEmail":getUserEmail(),
-                  "userToken":getUserToken(),
+                  "userEmail":localStorage.getItem("POH_USER_EMAIL"),
+                  "userToken":localStorage.getItem("POH_USER_TOKEN"),
 
                   "zipCodes":ZIPCODES,
                   "city":CITY,
@@ -92,8 +92,8 @@ function makeCallGeneratePremiumPropertyAnalysisReport( callBack = null )
 {
 
     let params = {
-                  "userEmail":getUserEmail(),
-                  "userToken":getUserToken(),
+                  "userEmail":localStorage.getItem("POH_USER_EMAIL"),
+                  "userToken":localStorage.getItem("POH_USER_TOKEN"),
 
                   "propertyZillowLink": ZILLOW_LINK,
                   "anticipatedRentInput":ANTICIPATED_RENT,
@@ -178,6 +178,27 @@ function makeCallUserLogin( callBack = null, email, password )
         else if(data["status"] == "failed")
         {
             alert("failed to sign in, please try again");
+        }
+    });
+}
+
+function retrieveUserAnalytics(callBack = null)
+{
+
+    let params = {
+                "userEmail":localStorage.getItem("POH_USER_EMAIL"),
+                "userToken":localStorage.getItem("POH_USER_TOKEN"),
+                 };
+
+    endpointCall("userAnalytics", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data)
+        }
+        else if(data["status"] == "failed")
+        {
+            alert("failed to retrieve user analytics");
         }
     });
 }

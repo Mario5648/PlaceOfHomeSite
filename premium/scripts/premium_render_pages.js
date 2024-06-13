@@ -12,6 +12,28 @@ function renderLoadingScreen()
     document.getElementById("mainBody").innerHTML = loadingHtml;
 }
 
+function renderDashboard()
+{
+    let dashboardHtml = `
+                        <div class="dashboard-section-container">
+                            <p id="dashboardTitleText" class="dashboard-title-text">Hello</p>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="dashboard-boxes-container">
+                                <div class="dashboard-box">
+                                    <p>Reports Generated</p>
+                                    <p id="dashboardReportsGeneratedText"></p>
+                                </div>
+                            </div>
+                        </div>
+    `;
+
+    document.getElementById("mainBody").innerHTML = dashboardHtml;
+
+    generateDashboard();
+}
+
 function renderZipCodeAnalysisInputPage()
 {
     let zipCodeInputHtml = `

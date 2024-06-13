@@ -8,6 +8,7 @@ var generateZipCodeComparePremiumReportEndPoint = "http://127.0.0.1:5000/getZipC
 var generatePropertyAnalysisPremiumReportEndPoint = "http://127.0.0.1:5000/generatePropertyAnalysisPremiumReport";
 var userSignupEndPoint = "http://127.0.0.1:5000/signup";
 var userLoginEndPoint = "http://127.0.0.1:5000/login";
+var userAnalyticsEndPoint = "http://127.0.0.1:5000/getUserAnalytics";
 
 function endpointCall(endpoint=null, params={}, callBack=null)
 {
@@ -50,5 +51,7 @@ function identifyEndPoint(endpoint=null)
             return userSignupEndPoint;
         case "userLogin":
             return userLoginEndPoint;
+        case "userAnalytics":
+            return userAnalyticsEndPoint;
     }
 }

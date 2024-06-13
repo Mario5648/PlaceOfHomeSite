@@ -44,7 +44,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
-    <body onload="verifyUserToken()">
+    <body onload="verifyUserToken();renderDashboard()">
         
         <div class="left-menu-container">
             <div class="menu-logo-container">
@@ -56,7 +56,7 @@
             <div>
                 <div class="menu-row-selection-container">
                     <i class="fa fa-dashboard menu-icon-style"></i>
-                    <p class="menu-text">Dashboard</p>
+                    <p class="menu-text" onclick="renderDashboard()">Dashboard</p>
                 </div>
                 <br>
                 <br>
@@ -92,6 +92,7 @@
         </div>
 
         <div class="main-content-container" id="mainBody">
+
         </div>
     </body>
 </html>

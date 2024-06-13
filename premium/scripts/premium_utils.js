@@ -382,3 +382,16 @@ function generatePropertyAnalysisPremiumReport()
         }
     })
 }
+
+
+function generateDashboard()
+{
+    retrieveUserAnalytics(function(data)
+    {
+        if(data['status'] == "success")
+        {
+            document.getElementById("dashboardTitleText").innerHTML = "Hello "+data['userAnalytics']['userName'][1]
+            document.getElementById("dashboardReportsGeneratedText").innerHTML = data['userAnalytics']['numberOfReports']
+        }
+    });
+}

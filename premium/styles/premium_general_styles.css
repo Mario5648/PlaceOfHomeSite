@@ -526,3 +526,35 @@ body
 
     border-radius: 30px;
 }
+
+.dashboard-section-container
+{
+    padding: 30px;
+}
+
+.dashboard-title-text
+{
+    font-size: 30px;
+}
+
+.dashboard-boxes-container
+{
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    flex-wrap: wrap;
+}
+
+.dashboard-box
+{
+    background-color: #092230;
+    color: #f2f2f2;
+
+    padding: 20px;
+
+    border-radius: 30px;
+
+    font-size: 20px;
+}
