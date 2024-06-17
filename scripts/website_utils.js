@@ -179,6 +179,18 @@ function generateZipCodeReport()
     })
 }
 
+var MOBILE_MENU_ON = false;
+
+function mobileMenuFunction() {
+    var x = document.getElementById("mobile-menu-links");
+    if (MOBILE_MENU_ON == true) {
+        MOBILE_MENU_ON = false;
+        x.style.display = "none";
+    } else {
+        MOBILE_MENU_ON = true;
+        x.style.display = "block";
+    }
+}
 
 /*
     <option value="" disabled selected>Please select a state</option>

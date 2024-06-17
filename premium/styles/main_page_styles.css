@@ -1,0 +1,794 @@
+@media screen and (min-width: 700px) 
+{
+    body
+    {
+        margin: 0;
+        padding: 0;
+
+        background-color: #FFFAFA;
+    }
+
+    p
+    {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #092230;
+    }
+
+    a
+    {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    .logoSectionContainer
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .menuSection
+    {
+        background-color: #092230;
+
+        padding:20px;
+    }
+
+    .menuSectionContainer
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+
+        height:50px;
+    }
+
+    .menuTextContainer
+    {
+        color: #FFFAFA;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 25em;
+    }
+
+    .nav-bar-options-mobile
+    {
+        display: none;
+    }
+
+    .mobile-menu-links {
+        display: none;
+        text-decoration: none;
+    }
+
+    .logoText
+    {
+        font-size: 20px;
+        color: #FFFAFA;
+    }
+
+    .menuTextContainer a {
+        color: #FFFAFA;
+        text-decoration: none;
+    }
+
+    .schedule-demo
+    {
+        width:150px;
+        padding:10px;
+
+        background-color: #f36c36;
+        color: #FFFAFA;
+
+        border-radius: 30px;
+        border-style: none;
+        
+        font-size: 17px;
+    }
+
+    .logosubText
+    {
+        font-size: 16px;
+        color: #FFFAFA;
+        margin-top: -15px;
+
+    }
+
+    .reportsMobile
+    {
+        display: none;
+    }
+
+    .reportsDesktop
+    {
+        display: block;
+    }
+
+    .halfSectionContainer
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+
+        height: 600px;
+
+    }
+
+    .halfFlexLeft
+    {
+
+
+        padding-left: 30px;
+        padding-right: 30px;
+
+        width: 440px;
+    }
+
+    .halfFlexRight
+    {
+
+
+        padding-right: 30px;
+        padding-left: 30px;
+
+        width: 440px;
+    }
+
+    .heroImg
+    {
+        width: 100%;
+    }
+
+    .hero-main-text
+    {
+        font-size: 50px;
+        font-weight: 500;
+    }
+
+    .hero-sub-text
+    {
+        font-size: 16px;
+    }
+
+    .highlightText
+    {
+        font-size: 15px;
+        color: #f36c36;
+    }
+
+    .reportSectionTitle
+    {
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .reportsImage
+    {
+        width: 100%;
+        border-radius: 30px;
+    }
+
+    .defaultSectionContainer
+    {
+        padding-left: 30px;
+        padding-right: 30px;
+
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+
+        height: 600px;
+    }
+
+    .pricingDefaultSectionContainer
+    {
+        padding-left: 30px;
+        padding-right: 30px;
+
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+
+        height: 600px;
+    }
+
+    .defaultSectionTitle
+    {
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    .tripleSectionContainer
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+
+        height: 600px;
+    }
+
+    .tripleFlex1
+    {
+
+        padding-left: 30px;
+        padding-right: 30px;
+
+        width: 273px;
+    }
+
+    .tripleFlex2
+    {
+
+        padding-left: 30px;
+        padding-right: 30px;
+
+        width: 273px;
+    }
+
+    .tripleFlex3
+    {
+
+        padding-left: 30px;
+        padding-right: 30px;
+
+        width: 273px;
+    }
+
+    .whyIcon
+    {
+        font-size: 60px;
+        color: #092230;
+    }
+
+    .whyTitle
+    {
+        font-size: 30px;
+        color: #f36c36;
+    }
+
+    .pricingSectionContainer
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .pricingPlanBox
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 300px;
+        background-color: #092230;
+        border-radius: 30px;
+
+        padding: 30px;
+
+        height: 450px;
+    }
+
+    .purchaseButton
+    {
+        background-color: #f36c36;
+        border-style: none;
+        border-radius: 30px;
+
+        color: #FFFAFA;
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .pricingPlanTitle
+    {
+        font-size: 25px;
+        font-weight: 600;
+        color: #FFFAFA;
+    }
+
+    .pricingPlanText
+    {
+        font-size: 16px;
+        color: #FFFAFA;
+    }
+
+    .pricingPlanTierText
+    {
+        font-size: 17px;
+        font-weight: 600;
+        color: #f36c36;
+    }
+
+    .pricingPlanPriceText
+    {
+        font-size: 20px;
+        font-weight: 600;
+        color: #FFFAFA;
+
+    }
+
+    .pricingBottomSpace
+    {
+        height: 200px;
+    }
+
+    .footerSection
+    {
+        background-color: #092230;
+        padding: 50px;
+    }
+
+    .footerSectionContainer
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+
+        width: 100%;
+        max-width: 1000px;
+        margin: auto; 
+    }
+
+    .mainFooterSectionContainer
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        width: 100%;
+
+    }
+
+    .footerTitleText
+    {
+        font-size: 18px;
+        font-weight: 800;
+        color: #FFFAFA;
+    }
+
+    .footerText
+    {
+        font-size: 16px;
+        color: #FFFAFA;
+        text-decoration: none;
+    }
+
+    .developedByText
+    {
+        font-size: 14px;
+        color: #FFFAFA;
+    }
+
+}
+
+@media screen and (max-width: 700px) 
+{
+    .hideInMobile {
+        display: none;
+    }
+    .menuTextContainer
+    {
+        display: none;
+    }
+
+    .nav-bar-options-mobile
+    {
+        font-size: 50px;
+        display: block;
+
+    }
+
+    .mobile-menu-bar-icon
+    {
+        color: #FFFAFA;
+        text-decoration: none;
+    }
+
+
+
+    .mobile-menu-links a {
+        color: #FFFAFA;
+        padding: 14px 16px;
+        text-decoration: none;
+        display: block;
+        background-color: #092230;
+        font-size: 17px;
+
+    }
+
+    .mobile-menu-links {
+        color: #FFFAFA;
+        padding: 14px 16px;
+        text-decoration: none;
+        display: none;
+        background-color: #092230;
+        font-size: 17px;
+
+    }
+
+    body
+    {
+        margin: 0;
+        padding: 0;
+
+        background-color: #FFFAFA;
+    }
+
+    .mainBodyStyles
+    {
+        padding: 40px;
+    }
+
+    p
+    {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #092230;
+    }
+
+    a
+    {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    .logoSectionContainer
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .menuSection
+    {
+        background-color: #092230;
+
+        padding:20px;
+    }
+
+    .menuSectionContainer
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 100%;
+        max-width: 700px;
+        margin: auto;
+
+        height:50px;
+    }
+
+    .logoText
+    {
+        font-size: 20px;
+        color: #FFFAFA;
+    }
+
+    .schedule-demo
+    {
+        width:150px;
+        padding:10px;
+
+        background-color: #f36c36;
+        color: #FFFAFA;
+
+        border-radius: 30px;
+        border-style: none;
+        
+        font-size: 17px;
+    }
+
+    .logosubText
+    {
+        font-size: 16px;
+        color: #FFFAFA;
+        margin-top: -15px;
+
+    }
+
+    .reportsMobile
+    {
+        display: block;
+    }
+
+    .reportsDesktop
+    {
+        display: none;
+    }
+
+    .halfSectionContainer
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        width: 100%;
+        max-width: max-content;
+        margin: auto;
+
+        height: 900px;
+
+    }
+
+    .halfFlexLeft
+    {
+        width: 440px;
+    }
+
+    .halfFlexRight
+    {
+        width: 440px;
+    }
+
+    .mobileReportImage
+    {
+        margin-bottom: -300px;
+    }
+
+    .heroImg
+    {
+        width: 100%;
+    }
+
+    .hero-main-text
+    {
+        font-size: 50px;
+        font-weight: 500;
+    }
+
+    .hero-sub-text
+    {
+        font-size: 16px;
+    }
+
+    .highlightText
+    {
+        font-size: 15px;
+        color: #f36c36;
+    }
+
+    .reportSectionTitle
+    {
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .reportsImage
+    {
+        width: 100%;
+        border-radius: 30px;
+    }
+
+    .defaultSectionContainer
+    {
+
+        width: 100%;
+        max-width: max-content;
+        margin: auto;
+
+        height: 1700px;
+    }
+
+    .pricingDefaultSectionContainer
+    {
+        width: 100%;
+        max-width: max-content;
+        margin: auto;
+
+        height: 1300px; 
+    }
+
+    .defaultSectionTitle
+    {
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    .tripleSectionContainer
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        width: 100%;
+        max-width: max-content;
+        margin: auto;
+
+        height: 600px;
+    }
+
+    .tripleFlex1
+    {
+
+        width: 273px;
+    }
+
+    .tripleFlex2
+    {
+
+        width: 273px;
+    }
+
+    .tripleFlex3
+    {
+
+        width: 273px;
+    }
+
+    .whyIcon
+    {
+        font-size: 60px;
+        color: #092230;
+    }
+
+    .whyTitle
+    {
+        font-size: 30px;
+        color: #f36c36;
+    }
+
+    .pricingSectionContainer
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+
+        width: 100%;
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .pricingPlanBox
+    {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 200px;
+        background-color: #092230;
+        border-radius: 30px;
+
+        padding: 30px;
+
+        height: 450px;
+    }
+
+    .purchaseButton
+    {
+        background-color: #f36c36;
+        border-style: none;
+        border-radius: 30px;
+
+        color: #FFFAFA;
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .pricingPlanTitle
+    {
+        font-size: 25px;
+        font-weight: 600;
+        color: #FFFAFA;
+    }
+
+    .pricingPlanText
+    {
+        font-size: 16px;
+        color: #FFFAFA;
+    }
+
+    .pricingPlanTierText
+    {
+        font-size: 17px;
+        font-weight: 600;
+        color: #f36c36;
+    }
+
+    .pricingPlanPriceText
+    {
+        font-size: 20px;
+        font-weight: 600;
+        color: #FFFAFA;
+
+    }
+
+    .pricingBottomSpace
+    {
+        height: 0px;
+    }
+
+    .footerSection
+    {
+        background-color: #092230;
+        padding: 50px;
+    }
+
+    .footerSectionContainer
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+
+        width: 100%;
+        max-width: 1000px;
+        margin: auto; 
+    }
+
+    .mainFooterSectionContainer
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        width: 100%;
+
+    }
+
+    .footerTitleText
+    {
+        font-size: 18px;
+        font-weight: 800;
+        color: #FFFAFA;
+    }
+
+    .footerText
+    {
+        font-size: 16px;
+        color: #FFFAFA;
+        text-decoration: none;
+    }
+
+    .developedByText
+    {
+        font-size: 14px;
+        color: #FFFAFA;
+    }
+}
