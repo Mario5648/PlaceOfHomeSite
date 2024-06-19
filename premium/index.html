@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="../scripts/website_utils.js"></script>
 
+        <script src="../scripts/api_calls.js"></script>
+        <script src="../scripts/make_calls.js"></script>
     </head>
     <body>
         <div class="menuSection">
@@ -18,10 +20,10 @@
                     <p class="logosubText">Premium</p>
                 </div>
                 <div class="menuTextContainer">
-                    <a href="../index.html">Home</a>
-                    <a href="./advising.html">Pricing</a>
-                    <a href="../mission.html">Reports</a>
-                    <a><button class="schedule-demo">Request Demo</button></a>
+                    <a href="./index.html">Home</a>
+                    <a href="#reportPricingSection">Pricing</a>
+                    <a href="#reportDesktopSection">Reports</a>
+                    <a href="#contactUsSection"><button class="schedule-demo">Request Demo</button></a>
                 </div>
 
                 
@@ -36,10 +38,10 @@
         </div>
 
         <div id="mobile-menu-links" class="mobile-menu-links">
-            <a href="../index.html">Home</a>
-            <a href="./advising.html">Pricing</a>
-            <a href="../mission.html">Reports</a>
-            <a><button class="schedule-demo">Request Demo</button></a>
+            <a href="./index.html">Home</a>
+            <a href="#reportPricingSection">Pricing</a>
+            <a href="#reportMobileSection">Reports</a>
+            <a href="#contactUsSection"><button class="schedule-demo">Request Demo</button></a>
         </div>
 
         <div class="mainBodyStyles">
@@ -48,7 +50,7 @@
                 <div class="halfFlexLeft">
                     <p class="hero-main-text">Know everything about a property and the surrounding area</p>
                     <p class="hero-sub-text">Become an expert about a property and the surrounding area. Lead your clients to find the best place or make the best investment</p>
-                    <button class="schedule-demo">Request Demo</button>
+                    <a href="#contactUsSection"><button class="schedule-demo">Request Demo</button></a>
                 </div>
 
                 <div class="halfFlexRight">
@@ -56,7 +58,7 @@
                 </div>
             </div>
 
-            <div class="reportsDesktop">
+            <div class="reportsDesktop" id="reportDesktopSection">
                 <!--Reports Section-->
                 <div class="halfSectionContainer">
                     <div class="halfFlexLeft">
@@ -95,7 +97,7 @@
                 </div>
             </div>
 
-            <div class="reportsMobile">
+            <div class="reportsMobile" id="reportMobileSection">
                 <!--Reports Section-->
                 <div class="halfSectionContainer">
                     <div class="halfFlexLeft mobileReportImage">
@@ -158,7 +160,7 @@
             </div>
 
             <!--Price Section-->
-            <div class="pricingDefaultSectionContainer">
+            <div class="pricingDefaultSectionContainer" id="reportPricingSection">
                 <p class="defaultSectionTitle">Plan Pricing</p>
                 <div class="pricingSectionContainer">
                     <div class="pricingPlanBox">
@@ -168,10 +170,9 @@
                             <p class="pricingPlanPriceText">$35 / month</p>
                         </div>
                         <div>
-                            <p class="pricingPlanText">* test1 </p>
-                            <p class="pricingPlanText">* test1 </p>
-                            <p class="pricingPlanText">* test1 </p>
-                            <p class="pricingPlanText">* test1 </p>
+                            <p class="pricingPlanText">• Zip Code Analyzer </p>
+                            <p class="pricingPlanText">• Zip Code Compare </p>
+                            <p class="pricingPlanText">• Property Analyzer </p>
                         </div>
                         <button class="purchaseButton">Purchase</button>
                     </div>
@@ -183,11 +184,11 @@
                             <p class="pricingPlanPriceText">$70 / month</p>
                         </div>
                         <div>
-                            <p class="pricingPlanText">* test1 </p>
-                            <p class="pricingPlanText">* test1 </p>
-                            <p class="pricingPlanText">* test1 </p>
-                            <p class="pricingPlanText">* test1 </p>
-                            <p class="pricingPlanText">* test1 </p>
+                            <p class="pricingPlanText">• Zip Code Analyzer </p>
+                            <p class="pricingPlanText">• Zip Code Compare </p>
+                            <p class="pricingPlanText">• Property Analyzer </p>
+                            <p class="pricingPlanText">• Customer Support </p>
+                            <p class="pricingPlanText">• Early Access to new Features </p>
                         </div>
                         <button class="purchaseButton">Purchase</button>
                     </div>
@@ -198,7 +199,7 @@
             </div>
     
             <!--Contact Us-->
-            <div class="halfSectionContainer">
+            <div class="halfSectionContainer" id="contactUsSection">
                 <div class="halfFlexLeft contactTextPosition">
                     <p class="contactTitleText">Contact Us</p>
                     <p>Phone Number : (832) 570-8833</p>
@@ -221,7 +222,7 @@
                         <label for="message">Message</label><br>
                         <textarea id="message" name="message" rows="8" cols="35" class="contactInputMessage"></textarea><br><br>
     
-                        <button type="submit" class="schedule-demo">Submit</button>
+                        <button type="submit" class="schedule-demo" id="sendMessageButton" onclick="sendMessageOnClick()">Submit</button>
                     </form>
                 </div>
             </div>

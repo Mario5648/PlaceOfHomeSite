@@ -9,6 +9,7 @@ var generatePropertyAnalysisPremiumReportEndPoint = "http://127.0.0.1:5000/gener
 var userSignupEndPoint = "http://127.0.0.1:5000/signup";
 var userLoginEndPoint = "http://127.0.0.1:5000/login";
 var userAnalyticsEndPoint = "http://127.0.0.1:5000/getUserAnalytics";
+var sendMessageEndPoint = "https://www.api-contact-lite.com/sendMessage";
 
 function endpointCall(endpoint=null, params={}, callBack=null)
 {
@@ -53,5 +54,7 @@ function identifyEndPoint(endpoint=null)
             return userLoginEndPoint;
         case "userAnalytics":
             return userAnalyticsEndPoint;
+        case "sendMessage":
+            return sendMessageEndPoint;
     }
 }

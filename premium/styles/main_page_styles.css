@@ -1,4 +1,4 @@
-@media screen and (min-width: 700px) 
+@media screen and (min-width: 900px) 
 {
     body
     {
@@ -234,8 +234,8 @@
     .tripleFlex1
     {
 
-        padding-left: 30px;
-        padding-right: 30px;
+        padding: 30px;
+
 
         width: 273px;
     }
@@ -243,8 +243,8 @@
     .tripleFlex2
     {
 
-        padding-left: 30px;
-        padding-right: 30px;
+        padding: 30px;
+
 
         width: 273px;
     }
@@ -252,8 +252,8 @@
     .tripleFlex3
     {
 
-        padding-left: 30px;
-        padding-right: 30px;
+        padding: 30px;
+
 
         width: 273px;
     }
@@ -454,7 +454,7 @@
 
 }
 
-@media screen and (max-width: 700px) 
+@media screen and (max-width: 900px) 
 {
     .hideInMobile {
         display: none;
@@ -702,18 +702,23 @@
     {
 
         width: 273px;
+        padding: 30px;
     }
 
     .tripleFlex2
     {
 
         width: 273px;
+        padding: 30px;
+
     }
 
     .tripleFlex3
     {
 
         width: 273px;
+        padding: 30px;
+
     }
 
     .whyIcon
@@ -755,6 +760,7 @@
         padding: 30px;
 
         height: 450px;
+        
     }
 
     .purchaseButton
