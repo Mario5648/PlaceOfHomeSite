@@ -1,3 +1,15 @@
+.phoneNumberText
+{
+    color:#f4f7f5;
+    text-decoration: none;
+}
+
+.emailText
+{
+    color:#f4f7f5;
+    text-decoration: none;
+}
+
 @media screen and (min-width: 900px) 
 {
     body
@@ -345,6 +357,8 @@
 
     .fromContainer
     {
+        font-family: "Poppins", sans-serif;
+
         background-color: #092230;
         color: #FFFAFA;
 
@@ -809,6 +823,8 @@
 
     .fromContainer
     {
+        font-family: "Poppins", sans-serif;
+
         background-color: #092230;
         color: #FFFAFA;
 
