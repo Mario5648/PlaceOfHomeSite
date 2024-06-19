@@ -194,11 +194,11 @@ function retrieveUserAnalytics(callBack = null)
     {
         if(data["status"] == "success")
         {
-            return callBack(data)
+            return callBack(data);
         }
         else if(data["status"] == "failed")
         {
-            alert("failed to retrieve user analytics");
+            return callBack(data);
         }
     });
 }
