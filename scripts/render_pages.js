@@ -26,6 +26,7 @@ function renderReportPage()
                                     <a href="./index.html">Home</a>
                                     <a href="./mission.html">Mission</a>
                                     <a href="./data.html">About Data</a>
+                                    <a href="./premium/index.html">Premium</a>
                                 </div>
 
                                 
@@ -43,6 +44,7 @@ function renderReportPage()
                             <a href="./index.html">Home</a>
                             <a href="./mission.html">Mission</a>
                             <a href="./data.html">About Data</a>
+                            <a href="./premium/index.html">Premium</a>
                         </div>
 
                         
