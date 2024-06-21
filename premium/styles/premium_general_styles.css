@@ -558,3 +558,23 @@ body
 
     font-size: 20px;
 }
+
+.settingsInputSectionContainer
+{
+    padding: 30px;
+}
+
+.subscriptionStatusTitle
+{
+    font-weight: 600;
+}
+
+.subscriptionEndDate
+{
+    font-size: 14px;
+}
+
+.changeSubscriptionButton
+{
+    padding: 10px;
+}

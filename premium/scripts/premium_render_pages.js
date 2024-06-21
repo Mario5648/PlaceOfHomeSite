@@ -17,6 +17,7 @@ function renderDashboard()
     let dashboardHtml = `
                         <div class="dashboard-section-container">
                             <p id="dashboardTitleText" class="dashboard-title-text">Hello</p>
+                            <p id="dashboardTierText">Tier</p>
                             <br>
                             <br>
                             <br>
@@ -917,4 +918,33 @@ function renderFailedPage()
     `;
 
     document.getElementById("mainBody").innerHTML = failedHtml;
+}
+
+function renderSettingsPage()
+{
+    let settingsPageHtml = `
+    
+            <div>
+                <div class="main-header-container">
+                    <p class="main-header-text">User Settings</p>
+                </div>
+
+                <div class="settingsInputSectionContainer">
+                    <p class="subscriptionStatusTitle">Subscription Status</p>
+                    <p id="subscriptionEndDate" class="subscriptionEndDate">Subscription End Date : </p>
+                    <button id="subscriptionStatusButton" class="changeSubscriptionButton" onclick="updateUserSubscriptionStatus()">End Subscription</button>
+                </div>
+            </div>
+    `;
+
+
+    document.getElementById("mainBody").innerHTML = settingsPageHtml;
+    let subEndDate = "Ongoing";
+    if(localStorage.getItem("POH_USER_SUBSCRIPTION_END_DATE"))
+    {
+        subEndDate = localStorage.getItem("POH_USER_SUBSCRIPTION_END_DATE");
+        document.getElementById("subscriptionStatusButton").innerHTML = "Enable Subscription";
+    }
+    
+    document.getElementById("subscriptionEndDate").innerHTML = "Subscription End Date : " + subEndDate;
 }

@@ -10,6 +10,7 @@ var userSignupEndPoint = "http://127.0.0.1:5000/signup";
 var userLoginEndPoint = "http://127.0.0.1:5000/login";
 var userAnalyticsEndPoint = "http://127.0.0.1:5000/getUserAnalytics";
 var sendMessageEndPoint = "https://www.api-contact-lite.com/sendMessage";
+var updateUserSubscriptionEndPoint = "http://127.0.0.1:5000/updateUserSubscription"
 
 function endpointCall(endpoint=null, params={}, callBack=null)
 {
@@ -56,5 +57,7 @@ function identifyEndPoint(endpoint=null)
             return userAnalyticsEndPoint;
         case "sendMessage":
             return sendMessageEndPoint;
+        case "updateUserSubscription":
+            return updateUserSubscriptionEndPoint;
     }
 }

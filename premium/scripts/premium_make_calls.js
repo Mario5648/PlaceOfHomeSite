@@ -173,6 +173,9 @@ function makeCallUserLogin( callBack = null, email, password )
         if(data["status"] == "success")
         {
             localStorage.setItem("POH_USER_TOKEN", data["jwt"]);
+            localStorage.setItem("POH_USER_TIER", data['userTierData']["subscriptionTier"]);
+            localStorage.setItem("POH_USER_TOOLS", data['userTierData']["tools"]);
+            localStorage.setItem("POH_USER_SUBSCRIPTION_END_DATE", data['userTierData']["subscriptionEndDate"]);
             return callBack(data)
         }
         else if(data["status"] == "failed")
@@ -199,6 +202,30 @@ function retrieveUserAnalytics(callBack = null)
         else if(data["status"] == "failed")
         {
             return callBack(data);
+        }
+    });
+}
+
+function updateUserSubscriptionStatus()
+{
+    let params = {
+        "userEmail":localStorage.getItem("POH_USER_EMAIL"),
+        "userToken":localStorage.getItem("POH_USER_TOKEN"),
+        "subscriptionStatus": document.getElementById("subscriptionStatusButton").innerHTML,
+         };
+
+    endpointCall("updateUserSubscription", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+
+            localStorage.setItem("POH_USER_SUBSCRIPTION_END_DATE", data["newSubscriptionEndingDate"]);
+            alert("Successfully Updated Subscription Status");
+            renderSettingsPage();
+        }
+        else if(data["status"] == "failed")
+        {
+            alert("Failed to Update Subscription Status");
         }
     });
 }

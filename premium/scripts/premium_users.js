@@ -136,6 +136,9 @@ function logoutUser()
 {
     localStorage.removeItem("POH_USER_EMAIL");
     localStorage.removeItem("POH_USER_TOKEN");
+    localStorage.removeItem("POH_USER_TIER");
+    localStorage.removeItem("POH_USER_TOOLS");
+    localStorage.removeItem("POH_USER_SUBSCRIPTION_END_DATE");
     location.href = "./login.html";
 }
 

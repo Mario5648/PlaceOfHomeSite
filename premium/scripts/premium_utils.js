@@ -390,8 +390,58 @@ function generateDashboard()
     {
         if(data['status'] == "success")
         {
-            document.getElementById("dashboardTitleText").innerHTML = "Hello "+data['userAnalytics']['userName'][1]
+            let tier = "Free";
+
+            if(localStorage.getItem("POH_USER_TIER") != 'null')
+            {
+                tier = localStorage.getItem("POH_USER_TIER");
+            }
+            
+            document.getElementById("dashboardTitleText").innerHTML = "Hello "+data['userAnalytics']['userName']
             document.getElementById("dashboardReportsGeneratedText").innerHTML = data['userAnalytics']['numberOfReports']
+            document.getElementById("dashboardTierText").innerHTML = "Subscription Tier : " + tier;
         }
     });
+}
+
+
+function generateToolOptionsMenu()
+{
+    let toolOptionsHtml = ``;
+    
+
+    let userTools = localStorage.getItem("POH_USER_TOOLS");
+
+    if(userTools != 'null')
+    {
+        userTools = userTools.split(",")
+    }
+
+    let toolsDictOptions = {
+
+        "zipCodeAnalyzer": `<div class="menu-row-selection-container">
+                                <i class="fa fa-map-marker menu-icon-style"></i>
+                                <p class="menu-text" onclick="renderZipCodeAnalysisInputPage()">Zip Code Analysis</p>
+                            </div>`,
+        
+        "zipCodeCompare": `<div class="menu-row-selection-container">
+                                <i class="fa fa-balance-scale menu-icon-style"></i>
+                                <p class="menu-text" onclick="renderZipCodeCompareInputPage()">Zip Code Compare</p>
+                            </div>`,
+        "propertyAnalyzer": `<div class="menu-row-selection-container">
+                                <i class="fa fa-home menu-icon-style"></i>
+                                <p class="menu-text" onclick="renderPropertyAnalysisInputPage()">Property Analysis</p>
+                            </div>`,
+    }
+
+
+    if(userTools != 'null')
+    {
+        for(let index = 0 ; index < userTools.length; index ++)
+        {
+            toolOptionsHtml += toolsDictOptions[userTools[index]]
+        }
+    }
+    
+    document.getElementById("toolOptions").innerHTML = toolOptionsHtml;
 }

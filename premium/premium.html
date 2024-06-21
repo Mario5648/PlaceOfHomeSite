@@ -44,7 +44,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
-    <body onload="verifyUserToken();renderDashboard()">
+    <body onload="verifyUserToken();renderDashboard();generateToolOptionsMenu()">
         
         <div class="left-menu-container">
             <div class="menu-logo-container">
@@ -62,18 +62,8 @@
                 <br>
                 <br>
                 <p>Reporting</p>
-                <div class="menu-row-selection-container">
-                    <i class="fa fa-map-marker menu-icon-style"></i>
-                    <p class="menu-text" onclick="renderZipCodeAnalysisInputPage()">Zip Code Analysis</p>
-                </div>
-                <div class="menu-row-selection-container">
-                    <i class="fa fa-balance-scale menu-icon-style"></i>
-                    <p class="menu-text" onclick="renderZipCodeCompareInputPage()">Zip Code Compare</p>
-                </div>
-                <div class="menu-row-selection-container">
-                    <i class="fa fa-home menu-icon-style"></i>
-                    <p class="menu-text" onclick="renderPropertyAnalysisInputPage()">Property Analysis</p>
-                </div>
+                <span id="toolOptions">
+                </span>
             </div>
             <br>
             <br>
@@ -82,7 +72,7 @@
             <div>
                 <div class="menu-row-selection-container">
                     <i class="fa fa-gear menu-icon-style"></i>
-                    <p class="menu-text">Settings</p>
+                    <p class="menu-text" onclick="renderSettingsPage()">Settings</p>
                 </div>
                 <div class="menu-row-selection-container">
                     <i class="fa fa-sign-out menu-icon-style"></i>
