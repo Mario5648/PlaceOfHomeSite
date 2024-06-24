@@ -253,7 +253,7 @@ function renderNaturalDisasters(data = null)
         tableHtml += `
                         <tr class="destinationRow">
                             <td>${data['naturalDisasters']['BEGIN_YEARMONTH'][key].toString().substring(0,4)}</td>
-                            <td>${data['naturalDisasters']['BEGIN_YEARMONTH'][key].toString().substring(0,4)}</td>
+                            <td>${data['naturalDisasters']['BEGIN_YEARMONTH'][key].toString().substring(4,7)}</td>
                             <td>${data['naturalDisasters']['EVENT_TYPE'][key]}</td>
                             <td>${data['naturalDisasters']['BEGIN_LOCATION'][key]}</td>
                             <td>${data['naturalDisasters']['EVENT_NARRATIVE'][key]}</td>

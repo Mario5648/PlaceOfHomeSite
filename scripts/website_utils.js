@@ -21,6 +21,7 @@ function generateStateSelectionFieldOptions()
     let optionsHtml = `
     <option value="" disabled selected>Please select a state</option>
     <option value="Texas">Texas</option>    
+    <option value="Florida">Florida</option>
     `;
 
     document.getElementById("statesSelection").innerHTML = optionsHtml;
