@@ -14,7 +14,12 @@ function renderRestaurants(restaurantList)
     }
 
 
-    document.getElementById("restaurantTable").innerHTML = restaurantTableHTML
+    document.getElementById("restaurantTable").innerHTML = restaurantTableHTML;
+
+    if (restaurantTableHTML)
+    {
+        document.getElementById("notFoundTextDestination").innerHTML = '';
+    }
 }
 
 function renderParks(parkList)
@@ -33,7 +38,11 @@ function renderParks(parkList)
     }
 
 
-    document.getElementById("parkTable").innerHTML = parkTableHTML
+    document.getElementById("parkTable").innerHTML = parkTableHTML;
+    if (parkTableHTML)
+    {
+        document.getElementById("notFoundTextDestination").innerHTML = '';
+    }
 }
 
 function renderGroceryStores(groceryStoreList)
@@ -52,6 +61,10 @@ function renderGroceryStores(groceryStoreList)
     }
 
 
-    document.getElementById("groceryStoreTable").innerHTML = groceryStoreTableHTML
+    document.getElementById("groceryStoreTable").innerHTML = groceryStoreTableHTML;
+    if (groceryStoreTableHTML)
+    {
+        document.getElementById("notFoundTextDestination").innerHTML = '';
+    }
 }
 
