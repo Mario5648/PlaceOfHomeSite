@@ -277,20 +277,20 @@ function renderPremiumReportPage()
                                     <div class="full-horizontal-container-box">
                                         <p class="box-title">Restaurants in the Area</p>
                                         <table id="restaurantTable" class="close-destinations-table">
-                                        - Not Found -
+                                            <p>- Not Found -</p>
                                         </table>
                                     </div>
                                     <div class="full-horizontal-container-box">
                                         <p class="box-title">Parks in the Area</p>
                                         <table id="parkTable" class="close-destinations-table">
-                                        - Not Found -
+                                            <p>- Not Found -</p>
                                         </table>
                                     </div>
 
                                     <div class="full-horizontal-container-box">
                                         <p class="box-title">Grocery Stores in the Area</p>
                                         <table id="groceryStoreTable" class="close-destinations-table">
-                                        - Not Found -
+                                            <p>- Not Found -</p>
                                         </table>
                                     </div>
 
