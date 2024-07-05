@@ -432,6 +432,10 @@ function generateToolOptionsMenu()
                                 <i class="fa fa-home menu-icon-style"></i>
                                 <p class="menu-text" onclick="renderPropertyAnalysisInputPage()">Property Analysis</p>
                             </div>`,
+        "propertyManager": `<div class="menu-row-selection-container">
+                                <i class="fa fa-home menu-icon-style"></i>
+                                <p class="menu-text" onclick="renderPropertyManagementHome()">Property Manager</p>
+                            </div>`,
     }
 
 

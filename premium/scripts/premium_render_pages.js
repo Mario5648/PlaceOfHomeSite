@@ -945,3 +945,248 @@ function renderSettingsPage()
     
     document.getElementById("subscriptionEndDate").innerHTML = "Subscription End Date : " + subEndDate;
 }
+
+
+
+function renderPropertyManagementHome()
+{
+    let propertyManagementHomeHtml = `
+    
+        <div class="main-header-container">
+            <p class="main-header-text">Property Manager</p>
+        </div>
+
+
+        <div class="propertyManagerHomeOptionButtonsContainer">
+            <button class="propertyManagerOptionButton" onclick="renderAddProperty()">Add Property</button>
+        <div>
+        <br>
+        <br>
+        <div class="propertyGridSection">
+            <div class="propertyViewCard">
+                <img class="propertyCardImage" src='https://placehold.co/600x400'></img>
+                <div class="propertyCardInfo">
+                    <p>Property One</p>
+                    <br>
+                    <div class="propertyCardButtons">
+                        <button class="propertyNormalCardButton">View</button>
+                        <button class="propertyNormalCardButton" onclick="renderEditProperty()">Edit</button>
+                        <button class="propertyRemoveCardButton">Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="propertyViewCard">
+                <img class="propertyCardImage" src='https://placehold.co/600x400'></img>
+                <div class="propertyCardInfo">
+                    <p>Property Two</p>
+                    <br>
+                    <div class="propertyCardButtons">
+                        <button class="propertyNormalCardButton">View</button>
+                        <button class="propertyNormalCardButton" onclick="renderEditProperty()">Edit</button>
+                        <button class="propertyRemoveCardButton">Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="propertyViewCard">
+                <img class="propertyCardImage" src='https://placehold.co/600x400'></img>
+                <div class="propertyCardInfo">
+                    <p>Property Three</p>
+                    <br>
+                    <div class="propertyCardButtons">
+                        <button class="propertyNormalCardButton">View</button>
+                        <button class="propertyNormalCardButton" onclick="renderEditProperty()">Edit</button>
+                        <button class="propertyRemoveCardButton">Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="propertyViewCard">
+                <img class="propertyCardImage" src='https://placehold.co/600x400'></img>
+                <div class="propertyCardInfo">
+                    <p>Property Four</p>
+                    <br>
+                    <div class="propertyCardButtons">
+                        <button class="propertyNormalCardButton">View</button>
+                        <button class="propertyNormalCardButton" onclick="renderEditProperty()">Edit</button>
+                        <button class="propertyRemoveCardButton">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.getElementById("mainBody").innerHTML = propertyManagementHomeHtml;
+
+}
+
+
+function renderAddProperty()
+{
+    let addPropertyHtml = `
+        <div class="main-header-container">
+            <a onclick="renderPropertyManagementHome()"><p class="main-header-back-text"><i class="fa fa-arrow-left"></i> Back to Properties</></a>
+            <p class="main-header-text">Property Manager - Add Property</p>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="addPropertyForm">
+            <p class="addPropertySectionHeaderText">Property Information</p>
+            <br>
+            <label for="propertyName">Property Name</label><br><br>
+            <input type="text" id="propertyName" name="propertyName" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="propertyAddress">Property Address</label><br><br>
+            <input type="text" id="propertyAdress" name="propertyAddress" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="propertyNumRooms">Property Number of Rooms</label><br><br>
+            <input type="text" id="propertyNumRooms" name="propertyNumRooms" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="propertyNumBathrooms">Property Number of Bathrooms</label><br><br>
+            <input type="text" id="propertyNumBathrooms" name="propertyNumBathrooms" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="propertySqFt">Property SqFt</label><br><br>
+            <input type="text" id="propertySqft" name="propertySqft" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label>Upload Property Image</label><br><br><br>
+            <label for="imageInput" class="fileLabel">Upload Image From Computer</label><br>
+            <input type="file" id="imageInput" accept="image/*" onchange="loadFile(event)" hidden><br>
+            <img id="output" width="50%" />
+            <br>
+            <br>
+            <hr>
+            <p class="addPropertySectionHeaderText">Contract Information</p>
+            <br>
+            <label for="pricePerMonth">Price Per Month </label><br><br>
+            <input type="text" id="pricePerMonth" name="pricePerMonth" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="contractStartDate">Start Date </label><br><br>
+            <input type="date" id="contractStartDate" name="contractStartDate" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="contractEndDate">End Date </label><br><br>
+            <input type="date" id="contractEndDate" name="contractEndDate" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <hr>
+            <p class="addPropertySectionHeaderText">Tenant Information</p>
+            <br>
+            <label for="mainTenantName">Main Tenant Name</label><br><br>
+            <input type="text" id="mainTenantName" name="mainTenantName" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="mainTenantEmail">Main Tenant Email</label><br><br>
+            <input type="email" id="mainTenantEmail" name="mainTenantEmail" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="mainTenantPhoneNumber">Main Tenant Phone Number</label><br><br>
+            <input type="text" id="mainTenantPhoneNumber" name="mainTenantPhoneNumber" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <br>
+
+            <button class="submitPropertyButton">Submit</button>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    
+    `;
+
+    document.getElementById("mainBody").innerHTML = addPropertyHtml;
+
+}
+
+function renderEditProperty()
+{
+    let editPropertyHtml = `
+        <div class="main-header-container">
+            <a onclick="renderPropertyManagementHome()"><p class="main-header-back-text"><i class="fa fa-arrow-left"></i> Back to Properties</></a>
+            <p class="main-header-text">Property Manager - Edit Property</p>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="addPropertyForm">
+            <p class="addPropertySectionHeaderText">Property Information</p>
+            <br>
+            <label for="propertyName">Property Name</label><br><br>
+            <input type="text" id="propertyName" name="propertyName" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="propertyAddress">Property Address</label><br><br>
+            <input type="text" id="propertyAdress" name="propertyAddress" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="propertyNumRooms">Property Number of Rooms</label><br><br>
+            <input type="text" id="propertyNumRooms" name="propertyNumRooms" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="propertyNumBathrooms">Property Number of Bathrooms</label><br><br>
+            <input type="text" id="propertyNumBathrooms" name="propertyNumBathrooms" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="propertySqFt">Property SqFt</label><br><br>
+            <input type="text" id="propertySqft" name="propertySqft" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label>Upload New Property Image</label><br><br><br>
+            <label for="imageInput" class="fileLabel">Upload Image From Computer</label><br>
+            <input type="file" id="imageInput" accept="image/*" onchange="loadFile(event)" hidden><br>
+            <img id="output" width="50%" />
+            <br>
+            <br>
+            <hr>
+            <p class="addPropertySectionHeaderText">Contract Information</p>
+            <br>
+            <label for="pricePerMonth">Price Per Month </label><br><br>
+            <input type="text" id="pricePerMonth" name="pricePerMonth" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="contractStartDate">Start Date </label><br><br>
+            <input type="date" id="contractStartDate" name="contractStartDate" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="contractEndDate">End Date </label><br><br>
+            <input type="date" id="contractEndDate" name="contractEndDate" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <hr>
+            <p class="addPropertySectionHeaderText">Tenant Information</p>
+            <br>
+            <label for="mainTenantName">Main Tenant Name</label><br><br>
+            <input type="text" id="mainTenantName" name="mainTenantName" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="mainTenantEmail">Main Tenant Email</label><br><br>
+            <input type="email" id="mainTenantEmail" name="mainTenantEmail" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="mainTenantPhoneNumber">Main Tenant Phone Number</label><br><br>
+            <input type="text" id="mainTenantPhoneNumber" name="mainTenantPhoneNumber" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <br>
+
+            <button class="submitPropertyButton">Submit</button>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+
+    `;
+
+    document.getElementById("mainBody").innerHTML = editPropertyHtml;
+}
