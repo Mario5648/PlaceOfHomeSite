@@ -724,3 +724,326 @@ body
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
+.propertyMenuOptionsButtons
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuButton
+{
+    background-color: #f36c36;
+    color: white; 
+    padding: 12px 30px;
+    font-size: 16px;
+    margin-right: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+
+.menuButton:hover
+{
+    background-color: #092230;
+    color: white; 
+}
+
+.propertyInfomationSectionContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 200px;
+}
+
+.mainPropertyInformationCard
+{
+    width: 50%;
+    background-color: #ffffff;
+
+    padding-left: 30px;
+    padding-right: 30px;
+
+    height: 850px;
+}
+
+.propertyInformationImage
+{
+    width: 100%;
+}
+
+.propertyInformationText
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.mainPropertyInformationSection
+{
+    width: 75%;
+}
+
+.generalPropertyInfomationSection
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.generalPropertyInformationCard
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 33%;
+}
+
+.generalPropertyInformationCardTextSection
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.propertyCardTitleText
+{
+    font-size: 35px;
+}
+
+.propertyCardTitleText
+{
+    font-size: 35px;
+}
+
+.propertyCardNameText
+{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.propertyCardAddressText
+{
+    font-size: 15px;
+    color: #506d7a;
+}
+
+.propertyCardTypeTitle
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.propertyCardTypeText
+{
+    font-size: 15px;
+}
+
+.propertyCardSubText
+{
+    font-size: 25px;
+}
+
+.generalPropertyText
+{
+    font-size: 25px;
+    font-weight: bold;
+
+    margin-bottom: -15px;
+}
+
+.generalPropertyInformationIcon
+{
+    width: 50px;
+}
+
+.propertyOtherData
+{
+    display: flex;
+    flex-direction: column;
+    
+    width: 50%;
+}
+
+.otherCardSection
+{
+    background-color: #fff;
+
+    margin-left: 20px;
+
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+
+    margin-bottom: 20px;
+}
+
+.tenantNameCardText
+{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.contractIdCardText
+{
+    font-size: 20px;
+    color: #506d7a;
+}
+
+.contractPriceCardText
+{
+    font-weight: bold;
+}
+
+.propertyAnalyticsContainerSection
+{
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.propertyAnalyticsCard
+{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+    background-color: #fff;
+}
+
+.halfContainerPropertyAnalytics
+{
+    display: flex;
+    flex-direction: row;
+
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+    background-color: #fff;
+}
+
+.paymentSectionContainer
+{
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 200px;
+}
+
+.paymentCard
+{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+    background-color: #fff;
+}
+
+.paymentHalfContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.copyLinkButton
+{
+    width: 200px;
+    height: 30px;
+
+    padding: 5px;
+
+    background-color: #9cc5c7;
+    color: #fff;
+    border-style: none;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+  
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cancelButton
+{
+    background-color: #9cc5c7;
+    color: #fff;
+    border-style: none;
+
+    width: 100px;
+    height: 30px;
+
+    padding: 5px;
+}
+
+.removeButton
+{
+    background-color: #e26f6f;
+    color: #fff;
+    border-style: none;
+
+    width: 100px;
+    height: 30px;
+
+    padding: 5px;
+}
+
+.spaceBetween
+{
+    width: 50px;
+}
