@@ -959,6 +959,7 @@ function renderPropertyManagementHome()
 
         <div class="propertyManagerHomeOptionButtonsContainer">
             <button class="propertyManagerOptionButton" onclick="renderAddProperty()">Add Property</button>
+            <button class="propertyManagerOptionButton" onclick="renderPropertyProfileSettings()">Property Managing Settings</button>
         <div>
         <br>
         <br>
@@ -1194,7 +1195,7 @@ function renderEditProperty()
             <br>
             <br>
 
-            <button class="submitPropertyButton">Submit</button>
+            <button class="submitPropertyButton">Save</button>
             <br>
             <br>
             <br>
@@ -1453,4 +1454,45 @@ function closeModal()
 {
     var modal = document.getElementById("removePropertyModal");
     modal.style.display = "none";
+}
+
+function renderPropertyProfileSettings()
+{
+    let propertyProfileSettings = `
+        <div class="main-header-container">
+            <a onclick="renderPropertyManagementHome()"><p class="main-header-back-text"><i class="fa fa-arrow-left"></i> Back to Properties</></a>
+            <p class="main-header-text">Property Manager - Settings</p>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="profileSettingsContainer">
+            <div>
+                <p class="propertySettingsSectionTitle">Payment Details</p>
+                <p>Connect to stripe inorder to create payment portals for your tenants to receive payments online.</p>
+                <p class="propertySettingsSectionNoteText">NOTE: A website will also be needed when onboarding your account.</p>
+                <button class="profileSettingsNormalButton">Connect to Stripe</button>
+                <div class="accountConnectedInfoDiv">
+                    <p class="propertySettingsAccountConnectedText">Account Successfully Connected!</p>
+                    <button class="profileSettingsViewButton">View Dashboard</button>
+                </div>
+                <br>
+                <br>
+            </div>
+            <hr style="width:100%;">
+            <div>
+                <p class="propertySettingsSectionTitle">Website</p>
+                <p>We provide all premium users with a complimentary website to promote their properties in case they don't already have one.</p>
+                <button class="profileSettingsNormalButton">Generate Website</button>
+                <div class="websiteLiveInfoDiv">
+                    <p class="propertySettingsWebsiteLiveText">Website is Live!</p>
+                    <button class="profileSettingsViewButton">View Website</button>
+                </div>
+            </div>
+        </div>
+    
+    `;
+
+    document.getElementById("mainBody").innerHTML = propertyProfileSettings;
 }
