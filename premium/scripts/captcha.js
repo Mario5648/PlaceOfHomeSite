@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('num1').innerText = num1;
     document.getElementById('num2').innerText = num2;
 
-    document.getElementById('captcha').addEventListener('submit', function(event) {
+    document.getElementById('captchaForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
         let userAnswer = parseInt(document.getElementById('captchaInput').value, 10);
