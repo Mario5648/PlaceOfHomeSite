@@ -16,6 +16,7 @@ var getUserWebsiteDataEndPoint = "http://127.0.0.1:5000/getUserWebsiteData";
 var createWebsiteEndPoint = "http://127.0.0.1:5000/createWebsite";
 var updateWebsiteEndPoint = "http://127.0.0.1:5000/updateWebsite";
 var removeWebsiteEndPoint = "http://127.0.0.1:5000/removeWebsite";
+var createAndLinkStripeAccountEndPoint = "http://127.0.0.1:5000/createStripeAccount";
 
 function endpointCall(endpoint=null, params={}, callBack=null)
 {
@@ -72,5 +73,7 @@ function identifyEndPoint(endpoint=null)
             return updateWebsiteEndPoint;
         case "removeWebsite":
             return removeWebsiteEndPoint;
+        case "createStripeAccount":
+            return createAndLinkStripeAccountEndPoint;
     }
 }

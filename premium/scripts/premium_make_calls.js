@@ -176,6 +176,8 @@ function makeCallUserLogin( callBack = null, email, password )
             localStorage.setItem("POH_USER_TIER", data['userTierData']["subscriptionTier"]);
             localStorage.setItem("POH_USER_TOOLS", data['userTierData']["tools"]);
             localStorage.setItem("POH_USER_SUBSCRIPTION_END_DATE", data['userTierData']["subscriptionEndDate"]);
+            localStorage.setItem("POH_USER_SUBSCRIPTION_END_DATE", data['userTierData']["subscriptionEndDate"]);
+            localStorage.setItem("POH_USER_STRIPE_ACCOUNT_ID", data['userTierData']["accountId"]);
             return callBack(data)
         }
         else if(data["status"] == "failed")
@@ -326,6 +328,30 @@ function removeUserWebsite(callBack = null)
 
 
     endpointCall("removeWebsite", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data);
+        }
+        else if(data["status"] == "failed")
+        {
+            return callBack(data);
+        }
+    });
+}
+
+function createAndLinkStripeAccount(callBack = null)
+{
+
+    let params = {
+                "loginEmail":localStorage.getItem("POH_USER_EMAIL"),
+                "userToken":localStorage.getItem("POH_USER_TOKEN"),
+                };
+
+
+
+
+    endpointCall("createStripeAccount", params, function(data)
     {
         if(data["status"] == "success")
         {

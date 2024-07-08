@@ -527,3 +527,31 @@ function removeWebsite()
         }
     })
 }
+
+function createStripeAccount()
+{
+
+    createAndLinkStripeAccount(function(data)
+    {
+
+        if(data["status"] == "success")
+        {
+            window.open(data['accountOnboardingUrl']);
+            localStorage.setItem("POH_USER_STRIPE_ACCOUNT_ID", data['accountId']);            
+        }
+    })
+}
+
+
+function checkStripeAccountConnection()
+{
+    if(localStorage.getItem("POH_USER_STRIPE_ACCOUNT_ID"))
+    {
+        document.getElementById("accountNotConnectedInfoDiv").style.display = "none";
+        document.getElementById("accountConnectedInfoDiv").style.display = "block";
+    }else
+    {
+        document.getElementById("accountNotConnectedInfoDiv").style.display = "block";
+        document.getElementById("accountConnectedInfoDiv").style.display = "none";        
+    }
+}

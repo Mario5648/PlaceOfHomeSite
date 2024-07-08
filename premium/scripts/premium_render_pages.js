@@ -1486,8 +1486,11 @@ function renderPropertyProfileSettings()
                 <p class="propertySettingsSectionTitle">Payment Details</p>
                 <p>Connect to stripe inorder to create payment portals for your tenants to receive payments online.</p>
                 <p class="propertySettingsSectionNoteText">NOTE: A website will also be needed when onboarding your account.</p>
-                <button class="profileSettingsNormalButton">Connect to Stripe</button>
-                <div class="accountConnectedInfoDiv">
+                <div id="accountNotConnectedInfoDiv" class="accountNotConnectedInfoDiv">
+                    <button class="profileSettingsNormalButton" onclick="createStripeAccount()">Connect to Stripe</button>
+                </div>
+
+                <div id="accountConnectedInfoDiv" class="accountConnectedInfoDiv">
                     <p class="propertySettingsAccountConnectedText">Account Successfully Connected!</p>
                     <button class="profileSettingsViewButton">View Dashboard</button>
                 </div>
@@ -1561,4 +1564,5 @@ function renderPropertyProfileSettings()
 
     document.getElementById("mainBody").innerHTML = propertyProfileSettings;
     checkWebsiteLive();
+    checkStripeAccountConnection();
 }
