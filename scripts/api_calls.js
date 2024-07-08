@@ -17,6 +17,10 @@ var createWebsiteEndPoint = "http://127.0.0.1:5000/createWebsite";
 var updateWebsiteEndPoint = "http://127.0.0.1:5000/updateWebsite";
 var removeWebsiteEndPoint = "http://127.0.0.1:5000/removeWebsite";
 var createAndLinkStripeAccountEndPoint = "http://127.0.0.1:5000/createStripeAccount";
+var addPropertyPMEndPoint = "http://127.0.0.1:5000/addPropertyPM";
+var getAllUserPropertiesPMEndPoint = "http://127.0.0.1:5000/getAllUserPropertiesPM";
+var getSinglePropertyDataEndPoint = "http://127.0.0.1:5000/getSinglePropertyData";
+var editPropertyPMEndPoint = "http://127.0.0.1:5000/editPropertyPM";
 
 function endpointCall(endpoint=null, params={}, callBack=null)
 {
@@ -75,5 +79,13 @@ function identifyEndPoint(endpoint=null)
             return removeWebsiteEndPoint;
         case "createStripeAccount":
             return createAndLinkStripeAccountEndPoint;
+        case "addPropertyPM":
+            return addPropertyPMEndPoint;
+        case "getAllUserPropertiesPM":
+            return getAllUserPropertiesPMEndPoint;
+        case "getSinglePropertyData":
+            return getSinglePropertyDataEndPoint;
+        case "editPropertyPM":
+            return editPropertyPMEndPoint;
     }
 }

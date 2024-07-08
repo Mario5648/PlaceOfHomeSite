@@ -555,3 +555,102 @@ function checkStripeAccountConnection()
         document.getElementById("accountConnectedInfoDiv").style.display = "none";        
     }
 }
+
+function addProperty()
+{
+    addNewProperty(function(data)
+    {
+
+        if(data["status"] == "success")
+        {
+            alert("Successfully added property!");
+            renderPropertyManagementHome();
+        }
+    })
+}
+
+function getAllUserProperties()
+{
+    getAllProperties(function(data)
+    {
+
+        if(data["status"] == "success")
+        {
+            let propertiesGridHtml = ``;
+            for(let index = 0; index < data['properties'].length; index +=1)
+            {
+                propertiesGridHtml += `
+                
+                <div class="propertyViewCard">
+                    <img class="propertyCardImage" src='${data['properties'][index]['propertyImage']}'></img>
+                    <div class="propertyCardInfo">
+                        <p>${data['properties'][index]['propertyName']}</p>
+                        <br>
+                        <div class="propertyCardButtons">
+                            <button class="propertyNormalCardButton" onclick="renderViewProperty('${data['properties'][index]['pid']}')">View</button>
+                            <button class="propertyNormalCardButton" onclick="renderEditProperty('${data['properties'][index]['pid']}')">Edit</button>
+                            <button class="propertyRemoveCardButton" onclick="renderRemoveModal('${data['properties'][index]['pid']}')">Remove</button>
+                        </div>
+                    </div>
+                </div>
+                
+                `;
+            }
+            document.getElementById("propertyGridSection").innerHTML = propertiesGridHtml ; 
+        }
+    })
+}
+
+function getSinglePropertyDataEdit(pid, areaAnalytics)
+{
+    getPropertyData(function(data)
+    {
+
+        if(data["status"] == "success")
+        {
+            console.log(data)
+            document.getElementById("propertyName").value = data['properties'][0]['propertyName'];
+            document.getElementById("propertyAddress").value = data['properties'][0]['propertyAddress'];
+            document.getElementById("propertyNumRooms").value = data['properties'][0]['propertyNumberRooms'];
+            document.getElementById("propertyNumBathrooms").value = data['properties'][0]['propertyNumberBathrooms'];
+            document.getElementById("propertySqft").value = data['properties'][0]['propertySqFt'];
+            document.getElementById("output").src = data['properties'][0]['propertyImage'];
+            document.getElementById("output").value = data['properties'][0]['propertyImage'];
+            document.getElementById("pricePerMonth").value = data['properties'][0]['propertyContractPrice'];
+            document.getElementById("contractStartDate").value = data['properties'][0]['propertyContractStartDate'];
+            document.getElementById("contractEndDate").value = data['properties'][0]['propertyContractEndDate'];
+            document.getElementById("mainTenantName").value = data['properties'][0]['propertyTenantName'];
+            document.getElementById("mainTenantEmail").value = data['properties'][0]['propertyTenantEmail'];
+            document.getElementById("mainTenantPhoneNumber").value = data['properties'][0]['propertyTenantPhoneNumber'];
+            console.log(data['properties'][0]['acceptOnlinePayments'])
+            document.getElementById("acceptOnlinePayments").checked = data['properties'][0]['acceptOnlinePayments'] == "True" ? true : false;
+
+
+        }
+    }, pid, areaAnalytics)
+
+}
+
+function checkForStripeOnlinePayments()
+{
+    if(localStorage.getItem("POH_USER_STRIPE_ACCOUNT_ID"))
+    {
+        document.getElementById("enableStripeMessage").hidden = true;
+    }else
+    {
+        document.getElementById("enableStripeMessage").hidden = false
+        document.getElementById("acceptOnlinePayments").disabled = true;
+    }
+}
+
+function savePropertyChanges(pid)
+{
+    savePropertyEditChanges(function(data)
+    {
+
+        if(data["status"] == "success")
+        {
+            alert("Successfully edited property!");
+        }
+    }, pid)
+}

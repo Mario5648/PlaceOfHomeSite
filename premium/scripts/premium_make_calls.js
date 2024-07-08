@@ -348,10 +348,128 @@ function createAndLinkStripeAccount(callBack = null)
                 "userToken":localStorage.getItem("POH_USER_TOKEN"),
                 };
 
-
-
-
     endpointCall("createStripeAccount", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data);
+        }
+        else if(data["status"] == "failed")
+        {
+            return callBack(data);
+        }
+    });
+}
+
+function addNewProperty(callBack = null)
+{
+    let params = {
+            "loginEmail":localStorage.getItem("POH_USER_EMAIL"),
+            "userToken":localStorage.getItem("POH_USER_TOKEN"),
+
+            "stripeAccountId" : localStorage.getItem("POH_USER_STRIPE_ACCOUNT_ID"),
+            "acceptOnlinePayments" : document.getElementById('acceptOnlinePayments').checked,
+
+            "propertyName" : document.getElementById('propertyName').value,
+            "propertyAddress" : document.getElementById('propertyAddress').value,
+            "propertyNumberRooms" : document.getElementById('propertyNumRooms').value,
+            "propertyNumberBathrooms" : document.getElementById('propertyNumBathrooms').value,
+            "propertySqFt" : document.getElementById('propertySqft').value,
+            "propertyImage" : document.getElementById('output').value,
+
+            "propertyContractPrice" : document.getElementById('pricePerMonth').value,
+            "propertyContractStartDate" : document.getElementById('contractStartDate').value,
+            "propertyContractEndDate" : document.getElementById('contractEndDate').value,
+
+            "propertyTenantName" : document.getElementById('mainTenantName').value,
+            "propertyTenantEmail" : document.getElementById('mainTenantEmail').value,
+            "propertyTenantPhoneNumber" : document.getElementById('mainTenantPhoneNumber').value,
+        };
+
+    endpointCall("addPropertyPM", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data);
+        }
+        else if(data["status"] == "failed")
+        {
+            return callBack(data);
+        }
+    });
+}
+
+
+function getAllProperties(callBack = null)
+{
+
+    let params = {
+                "loginEmail":localStorage.getItem("POH_USER_EMAIL"),
+                "userToken":localStorage.getItem("POH_USER_TOKEN"),
+                };
+
+    endpointCall("getAllUserPropertiesPM", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data);
+        }
+        else if(data["status"] == "failed")
+        {
+            return callBack(data);
+        }
+    });
+}
+
+function getPropertyData(callBack = null, pid = null, areaAnalytics = false)
+{
+
+    let params = {
+                "loginEmail":localStorage.getItem("POH_USER_EMAIL"),
+                "userToken":localStorage.getItem("POH_USER_TOKEN"),
+                "pid":pid,
+                "areaAnalytics":areaAnalytics,
+                };
+
+    endpointCall("getSinglePropertyData", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data);
+        }
+        else if(data["status"] == "failed")
+        {
+            return callBack(data);
+        }
+    });
+}
+
+function savePropertyEditChanges(callBack = null, pid = null)
+{
+    let params = {
+            "loginEmail":localStorage.getItem("POH_USER_EMAIL"),
+            "userToken":localStorage.getItem("POH_USER_TOKEN"),
+            "pid": pid,
+            "stripeAccountId" : localStorage.getItem("POH_USER_STRIPE_ACCOUNT_ID"),
+            "acceptOnlinePayments" : document.getElementById('acceptOnlinePayments').checked,
+
+            "propertyName" : document.getElementById('propertyName').value,
+            "propertyAddress" : document.getElementById('propertyAddress').value,
+            "propertyNumberRooms" : document.getElementById('propertyNumRooms').value,
+            "propertyNumberBathrooms" : document.getElementById('propertyNumBathrooms').value,
+            "propertySqFt" : document.getElementById('propertySqft').value,
+            "propertyImage" : document.getElementById('output').value,
+
+            "propertyContractPrice" : document.getElementById('pricePerMonth').value,
+            "propertyContractStartDate" : document.getElementById('contractStartDate').value,
+            "propertyContractEndDate" : document.getElementById('contractEndDate').value,
+
+            "propertyTenantName" : document.getElementById('mainTenantName').value,
+            "propertyTenantEmail" : document.getElementById('mainTenantEmail').value,
+            "propertyTenantPhoneNumber" : document.getElementById('mainTenantPhoneNumber').value,
+        };
+
+    endpointCall("editPropertyPM", params, function(data)
     {
         if(data["status"] == "success")
         {

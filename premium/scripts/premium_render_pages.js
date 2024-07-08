@@ -963,78 +963,28 @@ function renderPropertyManagementHome()
         <div>
         <br>
         <br>
-        <div class="propertyGridSection">
-            <div class="propertyViewCard">
-                <img class="propertyCardImage" src='https://placehold.co/600x400'></img>
-                <div class="propertyCardInfo">
-                    <p>Property One</p>
-                    <br>
-                    <div class="propertyCardButtons">
-                        <button class="propertyNormalCardButton" onclick="renderViewProperty()">View</button>
-                        <button class="propertyNormalCardButton" onclick="renderEditProperty()">Edit</button>
-                        <button class="propertyRemoveCardButton" onclick="renderRemoveModal()">Remove</button>
-                    </div>
+        <div id="propertyGridSection" class="propertyGridSection">
+
+
+
+
+        </div>
+
+        <div id="removePropertyModal" class="modal">
+            <div class="modal-content">
+                <a id="modalCloseX" class="close" onclick="closeModal()">&times;</a>
+                <p>Are you sure you want to remove this property?</p>
+                <div class="halfContainer">
+                    <button class="cancelButton">Cancel</button>
+                    <span class="spaceBetween"></span>
+                    <button class="removeButton">Remove</button>
                 </div>
             </div>
-
-            <div class="propertyViewCard">
-                <img class="propertyCardImage" src='https://placehold.co/600x400'></img>
-                <div class="propertyCardInfo">
-                    <p>Property Two</p>
-                    <br>
-                    <div class="propertyCardButtons">
-                        <button class="propertyNormalCardButton" onclick="renderViewProperty()">View</button>
-                        <button class="propertyNormalCardButton" onclick="renderEditProperty()">Edit</button>
-                        <button class="propertyRemoveCardButton" onclick="renderRemoveModal()">Remove</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="propertyViewCard">
-                <img class="propertyCardImage" src='https://placehold.co/600x400'></img>
-                <div class="propertyCardInfo">
-                    <p>Property Three</p>
-                    <br>
-                    <div class="propertyCardButtons">
-                        <button class="propertyNormalCardButton" onclick="renderViewProperty()">View</button>
-                        <button class="propertyNormalCardButton" onclick="renderEditProperty()">Edit</button>
-                        <button class="propertyRemoveCardButton" onclick="renderRemoveModal()">Remove</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="propertyViewCard">
-                <img class="propertyCardImage" src='https://placehold.co/600x400'></img>
-                <div class="propertyCardInfo">
-                    <p>Property Four</p>
-                    <br>
-                    <div class="propertyCardButtons">
-                        <button class="propertyNormalCardButton" onclick="renderViewProperty()">View</button>
-                        <button class="propertyNormalCardButton" onclick="renderEditProperty()">Edit</button>
-                        <button class="propertyRemoveCardButton" onclick="renderRemoveModal()">Remove</button>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div id="removePropertyModal" class="modal">
-                <div class="modal-content">
-                    <a id="modalCloseX" class="close" onclick="closeModal()">&times;</a>
-                    <p>Are you sure you want to remove this property?</p>
-                    <div class="halfContainer">
-                        <button class="cancelButton">Cancel</button>
-                        <span class="spaceBetween"></span>
-                        <button class="removeButton">Remove</button>
-                    </div>
-                </div>
-            </div>
-
         </div>
     `;
 
     document.getElementById("mainBody").innerHTML = propertyManagementHomeHtml;
-
+    getAllUserProperties();
 }
 
 
@@ -1057,7 +1007,7 @@ function renderAddProperty()
             <br>
             <br>
             <label for="propertyAddress">Property Address</label><br><br>
-            <input type="text" id="propertyAdress" name="propertyAddress" class="propertyInfoFieldInput"></input>
+            <input type="text" id="propertyAddress" name="propertyAddress" class="propertyInfoFieldInput"></input>
             <br>
             <br>
             <label for="propertyNumRooms">Property Number of Rooms</label><br><br>
@@ -1110,7 +1060,16 @@ function renderAddProperty()
             <br>
             <br>
 
-            <button class="submitPropertyButton">Submit</button>
+            
+            <p class="enablePaymentTitle">Enable online payment for this property</p><br>
+            <p id="enableStripeMessage">Please Connect a Stripe Account to Allow Online Payments.</p>
+            <input type="checkbox" id="acceptOnlinePayments" name="acceptOnlinePayments"></input>
+            <label for="acceptOnlinePayments">Accept Online Payment</label><br><br>
+
+            <br>
+            <br>
+
+            <button class="submitPropertyButton" onclick="addProperty()">Submit</button>
             <br>
             <br>
             <br>
@@ -1120,10 +1079,10 @@ function renderAddProperty()
     `;
 
     document.getElementById("mainBody").innerHTML = addPropertyHtml;
-
+    checkForStripeOnlinePayments();
 }
 
-function renderEditProperty()
+function renderEditProperty(pid = null)
 {
     let editPropertyHtml = `
         <div class="main-header-container">
@@ -1142,7 +1101,7 @@ function renderEditProperty()
             <br>
             <br>
             <label for="propertyAddress">Property Address</label><br><br>
-            <input type="text" id="propertyAdress" name="propertyAddress" class="propertyInfoFieldInput"></input>
+            <input type="text" id="propertyAddress" name="propertyAddress" class="propertyInfoFieldInput"></input>
             <br>
             <br>
             <label for="propertyNumRooms">Property Number of Rooms</label><br><br>
@@ -1195,7 +1154,15 @@ function renderEditProperty()
             <br>
             <br>
 
-            <button class="submitPropertyButton">Save</button>
+            <p class="enablePaymentTitle">Enable online payment for this property</p><br>
+            <p id="enableStripeMessage">Please Connect a Stripe Account to Allow Online Payments.</p>
+            <input type="checkbox" id="acceptOnlinePayments" name="acceptOnlinePayments"></input>
+            <label for="acceptOnlinePayments">Accept Online Payment</label><br><br>
+
+            <br>
+            <br>
+
+            <button class="submitPropertyButton" onclick="savePropertyChanges('${pid}')">Save</button>
             <br>
             <br>
             <br>
@@ -1205,6 +1172,9 @@ function renderEditProperty()
     `;
 
     document.getElementById("mainBody").innerHTML = editPropertyHtml;
+
+    getSinglePropertyDataEdit(pid, false);
+    checkForStripeOnlinePayments();
 }
 
 function renderViewProperty()
