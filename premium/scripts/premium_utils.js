@@ -449,3 +449,81 @@ function generateToolOptionsMenu()
     
     document.getElementById("toolOptions").innerHTML = toolOptionsHtml;
 }
+
+function generateWebsite()
+{
+    createUserWebsite(function(data)
+    {
+
+        if(data["status"] == "success")
+        {
+            localStorage.setItem("POH_USER_WEBSITE_ID", data['websiteId']);
+
+            document.getElementById("websiteLiveInfoDiv").style.display = "block";
+            document.getElementById("websiteNotLiveInfoDiv").style.display = "none";
+
+            document.getElementById("aTagVisitWebsite").setAttribute("href", `../poh_pm/index.html?wid=${localStorage.getItem("POH_USER_WEBSITE_ID")}`);
+        }
+    })
+}
+
+function checkWebsiteLive()
+{
+    if(localStorage.getItem("POH_USER_WEBSITE_ID"))
+    {
+        document.getElementById("websiteLiveInfoDiv").style.display = "block";
+        document.getElementById("websiteNotLiveInfoDiv").style.display = "none";
+
+        document.getElementById("aTagVisitWebsite").setAttribute("href", `../poh_pm/index.html?wid=${localStorage.getItem("POH_USER_WEBSITE_ID")}`);
+        getWebsiteData();
+    }else
+    {
+        document.getElementById("websiteLiveInfoDiv").style.display = "none";
+        document.getElementById("websiteNotLiveInfoDiv").style.display = "block";
+    }
+}
+
+function getWebsiteData()
+{
+    retrieveWebsiteData(function(data)
+    {
+
+        if(data["status"] == "success")
+        {
+            document.getElementById('companyName').value = data['websiteData']['companyName'];
+            document.getElementById('city').value = data['websiteData']['city'];
+            document.getElementById('state').value = data['websiteData']['state'];
+            document.getElementById('phoneNumber').value = data['websiteData']['phoneNumber'];
+            document.getElementById('contactEmail').value = data['websiteData']['email'];
+        }
+    })
+}
+
+function updateWebsite()
+{
+    updateUserWebsite(function(data)
+    {
+
+        if(data["status"] == "success")
+        {
+            alert('Website changes have been saved!');
+        }
+    })
+}
+
+function removeWebsite()
+{
+
+    removeUserWebsite(function(data)
+    {
+
+        if(data["status"] == "success")
+        {
+            closeWebsiteModal();
+            localStorage.removeItem("POH_USER_WEBSITE_ID");
+            checkWebsiteLive();
+            alert('Website has been deleted!');
+
+        }
+    })
+}

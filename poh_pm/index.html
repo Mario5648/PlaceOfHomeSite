@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Next Home</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="./scripts/general.js"></script>
+    <script src="../scripts/api_calls.js"></script>
+</head>
+<body onload="populateWebsiteData()">
+    <header>
+        <div class="navbar">
+            <a id="companyName" href="#" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="#business-services">Business Services</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Find Your New Home</h1>
+                <p id="cityStateHeroText"></p>
+                <a href="#contact"><button>Contact Us</button></a>
+            </div>
+        </section>
+    </main>
+
+    <section id="business-services">
+        <h2>Business Services</h2>
+        <p id="businessServicesDescription"></p>
+        <div class="service-boxes">
+            <div class="service-box">
+                <h3>Property Management</h3>
+                <p>We handle all aspects of property management, from tenant screening and lease agreements to maintenance and repairs. Our proactive approach ensures your properties are well-maintained and your tenants are happy.</p>
+            </div>
+            <div class="service-box">
+                <h3>Rent Collection</h3>
+                <p>Streamline your rent collection process with our efficient and secure payment systems. We ensure timely payments and provide detailed financial reporting for complete transparency.</p>
+            </div>
+            <div class="service-box">
+                <h3>Marketing and Leasing</h3>
+                <p>Our marketing strategies are tailored to attract high-quality tenants quickly. We manage property listings, conduct showings, and handle all leasing paperwork to minimize vacancies and maximize your rental income.</p>
+            </div>
+            <div class="service-box">
+                <h3>Maintenance and Repairs</h3>
+                <p>Our team coordinates all maintenance and repair services, ensuring your property remains in excellent condition. We work with trusted vendors to provide prompt and reliable service, reducing downtime and inconvenience for your tenants.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contactDescriptionSection">
+        <p>Whether you're looking to rent a property, need assistance with your current rental, or have any questions regarding our services, we're here to help. Reach out to us via email or phone, and our dedicated team will get back to you promptly.</p>
+        </div>
+        <div class="contact-container">
+            <p><span class="icon">📱</span> <a href="mailto:support@jongde.com" id="contactPhoneNumber">Phone Number : (123) 456 - 7891</a> </p>
+            <p><span class="icon">📧</span> <a href="mailto:business@jongde.com" id="contactEmail">Email : TEST@EMAIL.com</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p id="footerText"></p>
+    </footer>
+</body>
+</html>

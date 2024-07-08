@@ -229,3 +229,111 @@ function updateUserSubscriptionStatus()
         }
     });
 }
+
+function createUserWebsite(callBack = null)
+{
+
+    let params = {
+                "loginEmail":localStorage.getItem("POH_USER_EMAIL"),
+                "userToken":localStorage.getItem("POH_USER_TOKEN"),
+                "companyName" : document.getElementById('companyName').value,
+                "city" : document.getElementById('city').value,
+                "state" : document.getElementById('state').value,
+                "phoneNumber" : document.getElementById('phoneNumber').value,
+                "email" : document.getElementById('contactEmail').value,
+                "otherData" : {},
+                 };
+
+
+
+
+    endpointCall("createWebsite", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data);
+        }
+        else if(data["status"] == "failed")
+        {
+            return callBack(data);
+        }
+    });
+}
+
+function retrieveWebsiteData(callBack = null)
+{
+    let params = {
+        "wid":localStorage.getItem("POH_USER_WEBSITE_ID"),
+    };
+
+
+
+
+    endpointCall("getUserWebsiteData", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data);
+        }
+        else if(data["status"] == "failed")
+        {
+            return callBack(data);
+        }
+    });
+}
+
+function updateUserWebsite(callBack = null)
+{
+
+    let params = {
+                "loginEmail":localStorage.getItem("POH_USER_EMAIL"),
+                "userToken":localStorage.getItem("POH_USER_TOKEN"),
+                "wid": localStorage.getItem("POH_USER_WEBSITE_ID"),
+                "companyName" : document.getElementById('companyName').value,
+                "city" : document.getElementById('city').value,
+                "state" : document.getElementById('state').value,
+                "phoneNumber" : document.getElementById('phoneNumber').value,
+                "email" : document.getElementById('contactEmail').value,
+                "otherData" : {},
+                };
+
+
+
+
+    endpointCall("updateWebsite", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data);
+        }
+        else if(data["status"] == "failed")
+        {
+            return callBack(data);
+        }
+    });
+}
+
+function removeUserWebsite(callBack = null)
+{
+
+    let params = {
+                "loginEmail":localStorage.getItem("POH_USER_EMAIL"),
+                "userToken":localStorage.getItem("POH_USER_TOKEN"),
+                "wid": localStorage.getItem("POH_USER_WEBSITE_ID"),
+                };
+
+
+
+
+    endpointCall("removeWebsite", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data);
+        }
+        else if(data["status"] == "failed")
+        {
+            return callBack(data);
+        }
+    });
+}

@@ -1,16 +1,21 @@
 
 var ERROR_FLAG = "ERROR";
 
-var generateReportEndPoint = "https://placeofhome-api.org/getZipCodeData";
-var getCitiesForStateEndPoint = "https://placeofhome-api.org/getCitiesForState"
-var generatePremiumReportEndPoint = "https://placeofhome-api.org/getZipCodeDataPremium";
-var generateZipCodeComparePremiumReportEndPoint = "https://placeofhome-api.org/getZipCodeCompareDataPremium";
-var generatePropertyAnalysisPremiumReportEndPoint = "https://placeofhome-api.org/generatePropertyAnalysisPremiumReport";
-var userSignupEndPoint = "https://placeofhome-api.org/signup";
-var userLoginEndPoint = "https://placeofhome-api.org/login";
-var userAnalyticsEndPoint = "https://placeofhome-api.org/getUserAnalytics";
+//https://placeofhome-api.org/
+var generateReportEndPoint = "http://127.0.0.1:5000/getZipCodeData";
+var getCitiesForStateEndPoint = "http://127.0.0.1:5000/getCitiesForState"
+var generatePremiumReportEndPoint = "http://127.0.0.1:5000/getZipCodeDataPremium";
+var generateZipCodeComparePremiumReportEndPoint = "http://127.0.0.1:5000/getZipCodeCompareDataPremium";
+var generatePropertyAnalysisPremiumReportEndPoint = "http://127.0.0.1:5000/generatePropertyAnalysisPremiumReport";
+var userSignupEndPoint = "http://127.0.0.1:5000/signup";
+var userLoginEndPoint = "http://127.0.0.1:5000/login";
+var userAnalyticsEndPoint = "http://127.0.0.1:5000/getUserAnalytics";
 var sendMessageEndPoint = "https://www.api-contact-lite.com/sendMessage";
-var updateUserSubscriptionEndPoint = "https://placeofhome-api.org/updateUserSubscription"
+var updateUserSubscriptionEndPoint = "http://127.0.0.1:5000/updateUserSubscription";
+var getUserWebsiteDataEndPoint = "http://127.0.0.1:5000/getUserWebsiteData";
+var createWebsiteEndPoint = "http://127.0.0.1:5000/createWebsite";
+var updateWebsiteEndPoint = "http://127.0.0.1:5000/updateWebsite";
+var removeWebsiteEndPoint = "http://127.0.0.1:5000/removeWebsite";
 
 function endpointCall(endpoint=null, params={}, callBack=null)
 {
@@ -59,5 +64,13 @@ function identifyEndPoint(endpoint=null)
             return sendMessageEndPoint;
         case "updateUserSubscription":
             return updateUserSubscriptionEndPoint;
+        case "getUserWebsiteData":
+            return getUserWebsiteDataEndPoint;
+        case "createWebsite":
+            return createWebsiteEndPoint;
+        case "updateWebsite":
+            return updateWebsiteEndPoint;
+        case "removeWebsite":
+            return removeWebsiteEndPoint;
     }
 }

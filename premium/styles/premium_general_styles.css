@@ -1115,3 +1115,16 @@ body
 {
     display: none;
 }
+
+.profileSettingsDeleteButton
+{
+    width: 200px;
+    height: 30px;
+
+    padding: 5px;
+
+    background-color: #e26f6f;
+    color: #fff;
+
+    border-style: none;
+}

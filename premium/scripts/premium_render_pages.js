@@ -1456,6 +1456,20 @@ function closeModal()
     modal.style.display = "none";
 }
 
+
+
+function renderWebsiteModal()
+{
+    var modal = document.getElementById("removeWebsiteModal");
+    modal.style.display = "block";
+}
+
+function closeWebsiteModal()
+{
+    var modal = document.getElementById("removeWebsiteModal");
+    modal.style.display = "none";
+}
+
 function renderPropertyProfileSettings()
 {
     let propertyProfileSettings = `
@@ -1484,15 +1498,67 @@ function renderPropertyProfileSettings()
             <div>
                 <p class="propertySettingsSectionTitle">Website</p>
                 <p>We provide all premium users with a complimentary website to promote their properties in case they don't already have one.</p>
-                <button class="profileSettingsNormalButton">Generate Website</button>
-                <div class="websiteLiveInfoDiv">
-                    <p class="propertySettingsWebsiteLiveText">Website is Live!</p>
-                    <button class="profileSettingsViewButton">View Website</button>
+                <br>
+                <p>Please fill in all values to create the website.</p>
+                <label for="companyName">Company Name</label><br>
+                <input type="text" id="companyName" name="companyName"></input>
+                <br>
+                <br>
+
+                <label for="city">City</label><br>
+                <input type="text" id="city" name="city"></input>
+                <br>
+                <br>
+
+                <label for="state">State</label><br>
+                <input type="text" id="state" name="state"></input>
+                <br>
+                <br>
+
+                <label for="phoneNumber">Phone Number</label><br>
+                <input type="text" id="phoneNumber" name="phoneNumber"></input>
+                <br>
+                <br>
+
+                <label for="contactEmail">Contact Email</label><br>
+                <input type="text" name="contactEmail" id="contactEmail"></input>
+                <br>
+                <br>
+
+                <div id="websiteNotLiveInfoDiv" class="websiteNotLiveInfoDiv">
+                    <button class="profileSettingsNormalButton" onclick="generateWebsite()">Generate Website</button>
+                </div>
+
+                <div id="websiteLiveInfoDiv" class="websiteLiveInfoDiv">
+                    <div>
+                        <p class="propertySettingsWebsiteLiveText">Website is Live!</p>
+                        <a id="aTagVisitWebsite" href=""><button class="profileSettingsViewButton">View Website</button></a>
+                        <button class="profileSettingsViewButton" onclick="updateWebsite()">Save Changes</button>
+                    </div>
+                    <br>
+                    <button class="profileSettingsDeleteButton" onclick="renderWebsiteModal()">Remove Website</button>
                 </div>
             </div>
         </div>
+
+        <div id="removeWebsiteModal" class="modal">
+            <div class="modal-content">
+                <a id="modalCloseX" class="close" onclick="closeWebsiteModal()">&times;</a>
+                <p>Are you sure you want to delete your website?</p>
+                <p>Note you can always create another one.</p>
+                <div class="halfContainer">
+                    <button class="cancelButton">Cancel</button>
+                    <span class="spaceBetween"></span>
+                    <button class="removeButton" onclick="removeWebsite()">Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
     
     `;
 
     document.getElementById("mainBody").innerHTML = propertyProfileSettings;
+    checkWebsiteLive();
 }
