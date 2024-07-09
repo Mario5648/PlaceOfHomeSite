@@ -977,7 +977,7 @@ function renderPropertyManagementHome()
                 <div class="halfContainer">
                     <button class="cancelButton">Cancel</button>
                     <span class="spaceBetween"></span>
-                    <button class="removeButton">Remove</button>
+                    <button class="removeButton" onclick="removeProperty()">Remove</button>
                 </div>
             </div>
         </div>
@@ -985,6 +985,8 @@ function renderPropertyManagementHome()
 
     document.getElementById("mainBody").innerHTML = propertyManagementHomeHtml;
     getAllUserProperties();
+
+    removeCachedPropertyData();
 }
 
 
@@ -1006,8 +1008,20 @@ function renderAddProperty()
             <input type="text" id="propertyName" name="propertyName" class="propertyInfoFieldInput"></input>
             <br>
             <br>
-            <label for="propertyAddress">Property Address</label><br><br>
-            <input type="text" id="propertyAddress" name="propertyAddress" class="propertyInfoFieldInput"></input>
+            <label for="streetAddress">Street Address</label><br><br>
+            <input type="text" id="streetAddress" name="streetAddress" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="cityAddress">City</label><br><br>
+            <input type="text" id="cityAddress" name="cityAddress" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="stateAddress">State</label><br><br>
+            <input type="text" id="stateAddress" name="stateAddress" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="zipCodeAddress">Zip Code</label><br><br>
+            <input type="text" id="zipCodeAddress" name="zipCodeAddress" class="propertyInfoFieldInput"></input>
             <br>
             <br>
             <label for="propertyNumRooms">Property Number of Rooms</label><br><br>
@@ -1100,6 +1114,22 @@ function renderEditProperty(pid = null)
             <input type="text" id="propertyName" name="propertyName" class="propertyInfoFieldInput"></input>
             <br>
             <br>
+            <label for="streetAddress">Street Address</label><br><br>
+            <input type="text" id="streetAddress" name="streetAddress" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="cityAddress">City</label><br><br>
+            <input type="text" id="cityAddress" name="cityAddress" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="stateAddress">State</label><br><br>
+            <input type="text" id="stateAddress" name="stateAddress" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
+            <label for="zipCodeAddress">Zip Code</label><br><br>
+            <input type="text" id="zipCodeAddress" name="zipCodeAddress" class="propertyInfoFieldInput"></input>
+            <br>
+            <br>
             <label for="propertyAddress">Property Address</label><br><br>
             <input type="text" id="propertyAddress" name="propertyAddress" class="propertyInfoFieldInput"></input>
             <br>
@@ -1177,7 +1207,7 @@ function renderEditProperty(pid = null)
     checkForStripeOnlinePayments();
 }
 
-function renderViewProperty()
+function renderViewProperty(pid = null)
 {
     let viewPropertyHtml = `
         <div class="main-header-container">
@@ -1188,9 +1218,9 @@ function renderViewProperty()
         <br>
 
         <div class="propertyMenuOptionsButtons">
-            <button class="menuButton" onclick="renderViewProperty()">Overview</button>
-            <button class="menuButton" onclick="renderPropertyAnalytics()">Analytics</button>
-            <button class="menuButton" onclick="renderPropertyPayment()">Payment</button>
+            <button class="menuButton" onclick="renderViewProperty('${pid}')">Overview</button>
+            <button class="menuButton" onclick="renderPropertyAnalytics('${pid}')">Analytics</button>
+            <button class="menuButton" onclick="renderPropertyPayment('${pid}')">Payment</button>
         </div>
 
         <br>
@@ -1199,12 +1229,12 @@ function renderViewProperty()
         <div class="propertyInfomationSectionContainer">
             <div class="mainPropertyInformationCard">
                 <p class="propertyCardTitleText">Property</p>
-                <img class="propertyInformationImage" src='https://placehold.co/600x400'></img>
+                <img class="propertyInformationImage" id="propertyImage"></img>
 
                 <div class="propertyInformationText">
                     <div class="mainPropertyInformationSection">
-                        <p class="propertyCardNameText">Property 1</p>
-                        <p class="propertyCardAddressText">7306 deep spring, San Antonio, TX 78238</p>
+                        <p id="propertyName" class="propertyCardNameText"></p>
+                        <p id="propertyAddress" class="propertyCardAddressText"></p>
                     </div>
                     <div>
                         <p class="propertyCardTypeTitle">Property Type:</p>
@@ -1219,21 +1249,21 @@ function renderViewProperty()
                     <div class="generalPropertyInformationCard">
                         <img class="generalPropertyInformationIcon" src="data:image/png;base64,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">
                         <div class="generalPropertyInformationCardTextSection">
-                            <p class="generalPropertyText">2</p>
+                            <p id="propertyNumRooms" class="generalPropertyText"></p>
                             <p>Rooms</p>
                         </div>
                     </div>
                     <div class="generalPropertyInformationCard">
                         <img class="generalPropertyInformationIcon" src="data:image/png;base64,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">
                         <div class="generalPropertyInformationCardTextSection">
-                            <p class="generalPropertyText">2</p>
+                            <p id="propertyNumBathrooms" class="generalPropertyText"></p>
                             <p>Bathrooms</p>
                         </div>
                     </div>
                     <div class="generalPropertyInformationCard">
                         <img class="generalPropertyInformationIcon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAACwklEQVR4nOXbvYvUQBjH8a9bKGJ5126taKFgI56FqPy4v0AEtdXiGkELsRVUPHxpFewtxZfO5v4D7a6xsbJSrxL15GTgWVjC5piZnSSTmQemyYZln89OnjxJJgAHgBNUHGvAHvCASkMG4MYmFQO8qXUmyBI/CdyvcSZoDoAaEdQAqA5BCwCqQlALgIsXNRRGtQAcB74BP0tH0AKAo5b8F2AKPCwZQQsANoBtS34WxSJonxpADYVRAQBFIigQwMXHkg4HBQLcsv0/l4KgAICbtu8rYGLJjx5BAQB3gSeW/CxGj6CIGlBUYVQCgFEjKBHAEeDrGA8HJQBwyW8Bv4DXY0NQAoD3lvz6GNtmeQCct+p/sOXz28CFxrbRIMgDYNP2+QAcKq0wyhPgD7Brd4/bZsKiyH4myBPA3R+4GoFwBvidM4ICAAhEcMnvAJ+AZ7kiKBDAF+Gw3U5zya/m3DYrAsAX4Rqw0tiWHYIiAVxcBv6O/eygJQCKQNCSALEIM4DBEZQAIBRh/t8ffCYoEYBvYTy9oAgOWhiVEMAHYWIIzRgMQYkBRlcY1QEAkW0zQ3SM6gggBmHVOsderx3UIUAIwoolv2PXEL1dRapjAF+E68APS34WvSCoB4CQC6hmdI6gngCyPTuoR4Blzg6d3W1WzwAxCOt217mT5w4aACAE4aIlv2XPH5J3jBoIwBfhDvDWkp9FUgQNCJBFYdTAAIMjKAOA2LPDJMVKFWUCEIowsZUqe8uuWVJGACEIT+13uzVLS3WMygzAF+EecKOxLQpBHgCPgX/A9x7Hrv2u5yHJxCDIA+CYffGjAcalQIBgBCVaIpNTTENWuaswgKmtcnc166UPggoD2Lbk3fsOXm2zCgPYsPcd5mNfBBUGENw2qxKAVgTZxiv2xKb08a55OKzNPaWtbZxyAO71+bPWcNQ0zrnc/wM8ZOyYGGAneQAAAABJRU5ErkJggg==">
                         <div class="generalPropertyInformationCardTextSection">
-                            <p class="generalPropertyText">2</p>
+                            <p id="propertySqFt" class="generalPropertyText"></p>
                             <p>SqFt</p>
                         </div>
                     </div>
@@ -1243,18 +1273,17 @@ function renderViewProperty()
             <div class="propertyOtherData">
                 <div class="otherCardSection">
                     <p class="propertyCardTitleText">Tenant</p>
-                    <p class="tenantNameCardText">John Doe</p>
-                    <p>john@gmail.com</p>
-                    <p>(123) 456-7891</p>
+                    <p id="propertyTenantName" class="tenantNameCardText"></p>
+                    <p id="propertyTenantEmail"></p>
+                    <p id="propertyTenantPhone"></p>
                     <br>
                     <br>
                 </div>
 
                 <div class="otherCardSection">
                     <p class="propertyCardTitleText">Contract</p>
-                    <p class="contractIdCardText">Contract ID</p>
-                    <p class="contractPriceCardText">$1,360 / month</p>
-                    <p>07/03/2024 - 07/05/2025</p>
+                    <p id="propertyContractAmount" class="contractPriceCardText"></p>
+                    <p id="propertyContractDateRange"></p>
                     <br>
                     <br>
                 </div>
@@ -1265,9 +1294,11 @@ function renderViewProperty()
     `;
 
     document.getElementById("mainBody").innerHTML = viewPropertyHtml;
+
+    getFullSinglePropertyData(pid, true);
 }
 
-function renderPropertyAnalytics()
+function renderPropertyAnalytics(pid = null)
 {
  let propertyAnalyticsHtml = `
  
@@ -1279,9 +1310,9 @@ function renderPropertyAnalytics()
         <br>
 
         <div class="propertyMenuOptionsButtons">
-            <button class="menuButton" onclick="renderViewProperty()">Overview</button>
-            <button class="menuButton" onclick="renderPropertyAnalytics()">Analytics</button>
-            <button class="menuButton" onclick="renderPropertyPayment()">Payment</button>
+            <button class="menuButton" onclick="renderViewProperty('${pid}')">Overview</button>
+            <button class="menuButton" onclick="renderPropertyAnalytics('${pid}')">Analytics</button>
+            <button class="menuButton" onclick="renderPropertyPayment('${pid}')">Payment</button>
         </div>
 
         <br>
@@ -1289,25 +1320,28 @@ function renderPropertyAnalytics()
 
 
         <div class="propertyAnalyticsContainerSection">
-            <div class="propertyAnalyticsCard">
-                <p class="propertyCardTitleText">Property Analytics</p>
-                <div class="boxedQuickAnalyticsContainer">
-                    <div class="analyticsBox">
-                        <p>Home Price</p>
-                        <p id="homePriceAnalyticsText">$175,000</p>
-                    </div>
 
-                    <div class="analyticsBox">
-                        <p>Rent Per Month</p>
-                        <p id="rentAnalyticsText">$1,600</p>
-                    </div>
+            <!--
+                <div class="propertyAnalyticsCard">
+                    <p class="propertyCardTitleText">Property Analytics</p>
+                    <div class="boxedQuickAnalyticsContainer">
+                        <div class="analyticsBox">
+                            <p>Home Price</p>
+                            <p id="homePriceAnalyticsText"></p>
+                        </div>
 
-                    <div class="analyticsBox">
-                        <p>Expenses</p>
-                        <p id="expensesAnalyticsText">$1,000</p>
+                        <div class="analyticsBox">
+                            <p>Rent Per Month</p>
+                            <p id="rentAnalyticsText"></p>
+                        </div>
+
+                        <div class="analyticsBox">
+                            <p>Expenses</p>
+                            <p id="expensesAnalyticsText"></p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            -->
 
             <br>
             <br>
@@ -1326,10 +1360,6 @@ function renderPropertyAnalytics()
                         <tr>
                             <th>Population</th>
                             <td id="propertyAreaPopulationText"></td>
-                        </tr>
-                        <tr>
-                            <th>Avg. Weather</th>
-                            <td id="propertyAreaWeatherText"></td>
                         </tr>
                         <tr>
                             <th>Median Rent</th>
@@ -1355,10 +1385,6 @@ function renderPropertyAnalytics()
                             <th>Most Common Age Range</th>
                             <td id="propertyAreaRangeText"></td>
                         </tr>
-                        <tr>
-                            <th>Number of Natural Disasters</th>
-                            <td id="propertyAreaNaturalDisastersNumberText"></td>
-                        </tr>
                     </table>
                 </div>
             </div>
@@ -1368,9 +1394,10 @@ function renderPropertyAnalytics()
         <br>
  `;
     document.getElementById("mainBody").innerHTML = propertyAnalyticsHtml;
+    populatePropertyAreaAnalytics();
 }
 
-function renderPropertyPayment()
+function renderPropertyPayment(pid = null)
 {
     let propertyPaymentHtml = `
     
@@ -1382,9 +1409,9 @@ function renderPropertyPayment()
         <br>
 
         <div class="propertyMenuOptionsButtons">
-            <button class="menuButton" onclick="renderViewProperty()">Overview</button>
-            <button class="menuButton" onclick="renderPropertyAnalytics()">Analytics</button>
-            <button class="menuButton" onclick="renderPropertyPayment()">Payment</button>
+            <button class="menuButton" onclick="renderViewProperty('${pid}')">Overview</button>
+            <button class="menuButton" onclick="renderPropertyAnalytics('${pid}')">Analytics</button>
+            <button class="menuButton" onclick="renderPropertyPayment('${pid}')">Payment</button>
         </div>
 
         <br>
@@ -1395,14 +1422,13 @@ function renderPropertyPayment()
                 <p class="propertyCardTitleText" >Contract</p>
                 <div class="paymentHalfContainer">
                     <div>
-                        <p class="contractIdCardText">Contract Id</p>
-                        <p class="contractPriceCardText">$1,345 / month</p>
-                        <p>07/03/2023 - 07/03/2024</p>
+                        <p id="propertyContractAmount" class="contractPriceCardText"></p>
+                        <p id="propertyContractDateRange"></p>
                     </div>
                     <div>
                         <p>Payment Link</p>
-                        <p>https://poh.com/pay/x52731js</p>
-                        <button class="copyLinkButton"><i class="fa fa-copy"></i> Copy Link</button>
+                        <p id="paymentPortalLink">https://poh.com/pay/x52731js</p>
+                        <button onclick="copyPaymentPortalLink()" class="copyLinkButton" id="copyLinkButton"><i class="fa fa-copy"></i> Copy Link</button>
                     </div>
                 </div>
             </div>
@@ -1410,14 +1436,16 @@ function renderPropertyPayment()
     `;
 
     document.getElementById("mainBody").innerHTML = propertyPaymentHtml;
-
+    populatePropertyPaymentsPage();
 }
 
 
-function renderRemoveModal()
+function renderRemoveModal(pid = null)
 {
     var modal = document.getElementById("removePropertyModal");
     modal.style.display = "block";
+
+    TO_DELETE_PID = pid;
 }
 
 function closeModal()

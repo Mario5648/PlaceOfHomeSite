@@ -26,5 +26,5 @@ var TEST_API_CALLS = false;
 
 var USER_EMAIL = '';
 
-
-
+var SELECTED_PROPERTY_DATA = null;
+var TO_DELETE_PID = null;

@@ -579,10 +579,20 @@ function getAllUserProperties()
             let propertiesGridHtml = ``;
             for(let index = 0; index < data['properties'].length; index +=1)
             {
+
+                let imgSrc = '';
+                if(data['properties'][index]['propertyImage'] != "None")
+                {
+                    imgSrc = data['properties'][index]['propertyImage'];
+                }else
+                {
+                    imgSrc = "./noImg.png";
+                }
+
                 propertiesGridHtml += `
                 
                 <div class="propertyViewCard">
-                    <img class="propertyCardImage" src='${data['properties'][index]['propertyImage']}'></img>
+                    <img class="propertyCardImage" src=${imgSrc}></img>
                     <div class="propertyCardInfo">
                         <p>${data['properties'][index]['propertyName']}</p>
                         <br>
@@ -601,6 +611,67 @@ function getAllUserProperties()
     })
 }
 
+function getFullSinglePropertyData(pid, areaAnalytics)
+{
+
+    if(Object.keys(SELECTED_PROPERTY_DATA).length === 0)
+    {
+        getPropertyData(function(data)
+        {
+    
+            if(data["status"] == "success")
+            {
+    
+                SELECTED_PROPERTY_DATA = data;
+    
+                let imgSrc = '';
+                if(data['properties'][0]['propertyImage'] != "None")
+                {
+                    imgSrc = data['properties'][0]['propertyImage'];
+                }else
+                {
+                    imgSrc = "./noImg.png";
+                }
+
+                document.getElementById("propertyName").innerHTML = data['properties'][0]['propertyName'];
+                document.getElementById("propertyAddress").innerHTML = data['properties'][0]['propertyAddress'].replace(/:/g, " ");
+                document.getElementById("propertyNumRooms").innerHTML = data['properties'][0]['propertyNumberRooms'];
+                document.getElementById("propertyNumBathrooms").innerHTML = data['properties'][0]['propertyNumberBathrooms'];
+                document.getElementById("propertySqFt").innerHTML = data['properties'][0]['propertySqFt'];
+                document.getElementById("propertyImage").src = imgSrc;
+                document.getElementById("propertyContractAmount").innerHTML = `$ ${data['properties'][0]['propertyContractPrice']} / month`;
+                document.getElementById("propertyContractDateRange").innerHTML = `Start Date: ${data['properties'][0]['propertyContractStartDate']} / End Date: ${data['properties'][0]['propertyContractEndDate']}`;
+                document.getElementById("propertyTenantName").innerHTML = data['properties'][0]['propertyTenantName'];
+                document.getElementById("propertyTenantEmail").innerHTML = data['properties'][0]['propertyTenantEmail'];
+                document.getElementById("propertyTenantPhone").innerHTML = data['properties'][0]['propertyTenantPhoneNumber'];
+            }
+        }, pid, areaAnalytics)
+    }else
+    {
+        let imgSrc = '';
+        if(SELECTED_PROPERTY_DATA['properties'][0]['propertyImage'] != "None")
+        {
+            imgSrc = SELECTED_PROPERTY_DATA['properties'][0]['propertyImage'];
+        }else
+        {
+            imgSrc = "./noImg.png";
+        }
+
+        document.getElementById("propertyName").innerHTML = SELECTED_PROPERTY_DATA['properties'][0]['propertyName'];
+        document.getElementById("propertyAddress").innerHTML = SELECTED_PROPERTY_DATA['properties'][0]['propertyAddress'].replace(/:/g, " ");
+        document.getElementById("propertyNumRooms").innerHTML = SELECTED_PROPERTY_DATA['properties'][0]['propertyNumberRooms'];
+        document.getElementById("propertyNumBathrooms").innerHTML = SELECTED_PROPERTY_DATA['properties'][0]['propertyNumberBathrooms'];
+        document.getElementById("propertySqFt").innerHTML = SELECTED_PROPERTY_DATA['properties'][0]['propertySqFt'];
+        document.getElementById("propertyImage").src = imgSrc;
+        document.getElementById("propertyContractAmount").innerHTML = `$ ${SELECTED_PROPERTY_DATA['properties'][0]['propertyContractPrice']} / month`;
+        document.getElementById("propertyContractDateRange").innerHTML = `Start Date: ${SELECTED_PROPERTY_DATA['properties'][0]['propertyContractStartDate']} / End Date: ${SELECTED_PROPERTY_DATA['properties'][0]['propertyContractEndDate']}`;
+        document.getElementById("propertyTenantName").innerHTML = SELECTED_PROPERTY_DATA['properties'][0]['propertyTenantName'];
+        document.getElementById("propertyTenantEmail").innerHTML = SELECTED_PROPERTY_DATA['properties'][0]['propertyTenantEmail'];
+        document.getElementById("propertyTenantPhone").innerHTML = SELECTED_PROPERTY_DATA['properties'][0]['propertyTenantPhoneNumber'];
+    }
+
+}
+
 function getSinglePropertyDataEdit(pid, areaAnalytics)
 {
     getPropertyData(function(data)
@@ -608,9 +679,15 @@ function getSinglePropertyDataEdit(pid, areaAnalytics)
 
         if(data["status"] == "success")
         {
-            console.log(data)
             document.getElementById("propertyName").value = data['properties'][0]['propertyName'];
-            document.getElementById("propertyAddress").value = data['properties'][0]['propertyAddress'];
+                    
+            let addressParts = data['properties'][0]['propertyAddress'].split(" ");
+            
+            document.getElementById("streetAddress").value = addressParts[0];
+            document.getElementById("cityAddress").value = addressParts[1];
+            document.getElementById("stateAddress").value = addressParts[2];
+            document.getElementById("zipCodeAddress").value = addressParts[3];
+
             document.getElementById("propertyNumRooms").value = data['properties'][0]['propertyNumberRooms'];
             document.getElementById("propertyNumBathrooms").value = data['properties'][0]['propertyNumberBathrooms'];
             document.getElementById("propertySqft").value = data['properties'][0]['propertySqFt'];
@@ -622,10 +699,7 @@ function getSinglePropertyDataEdit(pid, areaAnalytics)
             document.getElementById("mainTenantName").value = data['properties'][0]['propertyTenantName'];
             document.getElementById("mainTenantEmail").value = data['properties'][0]['propertyTenantEmail'];
             document.getElementById("mainTenantPhoneNumber").value = data['properties'][0]['propertyTenantPhoneNumber'];
-            console.log(data['properties'][0]['acceptOnlinePayments'])
             document.getElementById("acceptOnlinePayments").checked = data['properties'][0]['acceptOnlinePayments'] == "True" ? true : false;
-
-
         }
     }, pid, areaAnalytics)
 
@@ -653,4 +727,70 @@ function savePropertyChanges(pid)
             alert("Successfully edited property!");
         }
     }, pid)
+}
+
+
+function populatePropertyAreaAnalytics()
+{
+
+    
+    document.getElementById("propertyAreaText").innerHTML = SELECTED_PROPERTY_DATA['zipCodeData']['descriptions']['zipcodeOverall']
+
+
+    document.getElementById("propertyAreaPopulationText").innerHTML = SELECTED_PROPERTY_DATA['zipCodeData']['zipCode']['DEMOGRAPHIC']['Total population']
+    document.getElementById("propertyAreaRentText").innerHTML = SELECTED_PROPERTY_DATA['zipCodeData']['zipCode']['HOUSING']['Rent_Median (dollars)']
+    document.getElementById("propertyAreaHomePriceText").innerHTML = SELECTED_PROPERTY_DATA['zipCodeData']['zipCode']['HOUSING']['House_Median (dollars)']
+    document.getElementById("propertyAreaIncomeText").innerHTML = SELECTED_PROPERTY_DATA['zipCodeData']['zipCode']['ECONOMIC']['Mean household income (dollars)']
+    document.getElementById("propertyAreaCommuteText").innerHTML = SELECTED_PROPERTY_DATA['zipCodeData']['zipCode']['ECONOMIC']['Mean travel time to work (minutes)']
+    document.getElementById("propertyAreaSameHomeText").innerHTML = (parseFloat(parseInt(SELECTED_PROPERTY_DATA['zipCodeData']["zipCode"]["SOCIAL"]['Same house'].replace(',', '')) / parseInt(SELECTED_PROPERTY_DATA['zipCodeData']["zipCode"]["SOCIAL"]['Population 1 year and over'].replace(',', '')) ) * 100).toFixed(2)
+    document.getElementById("propertyAreaRangeText").innerHTML = _commonAgeRange(SELECTED_PROPERTY_DATA['zipCodeData'])
+
+    renderPropertyAreaRentComparisonChart(SELECTED_PROPERTY_DATA);
+
+}
+
+function populatePropertyPaymentsPage()
+{
+    
+    document.getElementById("propertyContractAmount").innerHTML = `$ ${SELECTED_PROPERTY_DATA['properties'][0]['propertyContractPrice']} / month`;
+    document.getElementById("propertyContractDateRange").innerHTML = `Start Date: ${SELECTED_PROPERTY_DATA['properties'][0]['propertyContractStartDate']} / End Date: ${SELECTED_PROPERTY_DATA['properties'][0]['propertyContractEndDate']}`;
+
+}
+
+function removeCachedPropertyData()
+{
+    SELECTED_PROPERTY_DATA = {};
+}
+
+function copyPaymentPortalLink() {
+    // Get the text field
+    var copyText = document.getElementById("paymentPortalLink");
+  
+     // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.innerHTML);
+    
+    document.getElementById("copyLinkButton").style.backgroundColor = '#f36c36';
+    document.getElementById("copyLinkButton").style.color = '#fff';
+    document.getElementById("copyLinkButton").innerHTML = 'Copied Text';
+
+    setTimeout(function(){
+        document.getElementById("copyLinkButton").style.backgroundColor = '#9cc5c7';
+        document.getElementById("copyLinkButton").style.color = '#fff';
+        document.getElementById("copyLinkButton").innerHTML = '<i class="fa fa-copy"></i> Copy Link';
+    }, 5000);
+
+  }
+
+function removeProperty()
+{
+
+    removePropertyPM(function(data)
+    {
+
+        if(data["status"] == "success")
+        {
+            alert("Successfully deleted property!");
+            renderPropertyManagementHome();
+        }
+    }, TO_DELETE_PID)
 }

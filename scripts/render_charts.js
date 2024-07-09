@@ -812,3 +812,63 @@ function renderHomePriceComparisonChart(data = null)
                                             
                                     });
 }
+
+function renderPropertyAreaRentComparisonChart(data = null)
+{
+
+    //zipCode Median, your rent
+    let rentComparisonData = [];
+
+    
+    rentComparisonData.push(parseInt(data['zipCodeData']['zipCode']['HOUSING']['Rent_Median (dollars)'].replace(',', '')).toString());
+    rentComparisonData.push(data['properties'][0]['propertyContractPrice'].toString());
+
+    var data = {
+        labels: ['Zip Code Median', 'Your Anticipated Rent'],
+        datasets: [{
+            axis: 'x',
+            label: 'Rent Comparison',
+            data: rentComparisonData,
+            fill: false,
+            backgroundColor: ['rgb(9, 34, 48, 0.6)', 'rgba(243,108,54,0.6)'],
+            borderWidth: 1,
+            datalabels: {
+                color: 'rgb(16,36,52)',
+                anchor: 'end',
+                align: 'top'
+            }
+        }]
+        };
+    const ctx = document.getElementById('rentPricesComparisonChart').getContext('2d');
+    const rentComparisonChart = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: data,
+                                    plugins :[ChartDataLabels],
+                                    options: {
+                                                responsive: true,
+                                                maintainAspectRatio: true,
+                                                indexAxis: 'x', // This will make the bar chart horizontal
+                                                scales: {
+                                                    y: {
+                                                        ticks: {
+                                                            beginAtZero: true,
+                                                        }
+                                                    }
+                                                    },
+                                                    plugins: {
+                                                        legend: {
+                                                            display: false
+                                                        },
+                                                        title: {
+                                                            display: true,
+                                                            text: 'Rent Comparison',
+                                                            font: {
+                                                                size: 16
+                                                            }
+                                                        },
+                                                        
+                                                    }
+                                                }
+                                            
+                                    });
+}

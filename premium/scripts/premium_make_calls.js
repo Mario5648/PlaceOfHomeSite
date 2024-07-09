@@ -371,7 +371,7 @@ function addNewProperty(callBack = null)
             "acceptOnlinePayments" : document.getElementById('acceptOnlinePayments').checked,
 
             "propertyName" : document.getElementById('propertyName').value,
-            "propertyAddress" : document.getElementById('propertyAddress').value,
+            "propertyAddress" : `${document.getElementById('streetAddress').value}:${document.getElementById('cityAddress').value}:${document.getElementById('stateAddress').value}:${document.getElementById('zipCodeAddress').value}`,
             "propertyNumberRooms" : document.getElementById('propertyNumRooms').value,
             "propertyNumberBathrooms" : document.getElementById('propertyNumBathrooms').value,
             "propertySqFt" : document.getElementById('propertySqft').value,
@@ -454,7 +454,7 @@ function savePropertyEditChanges(callBack = null, pid = null)
             "acceptOnlinePayments" : document.getElementById('acceptOnlinePayments').checked,
 
             "propertyName" : document.getElementById('propertyName').value,
-            "propertyAddress" : document.getElementById('propertyAddress').value,
+            "propertyAddress" : `${document.getElementById('streetAddress').value}:${document.getElementById('cityAddress').value}:${document.getElementById('stateAddress').value}:${document.getElementById('zipCodeAddress').value}`,
             "propertyNumberRooms" : document.getElementById('propertyNumRooms').value,
             "propertyNumberBathrooms" : document.getElementById('propertyNumBathrooms').value,
             "propertySqFt" : document.getElementById('propertySqft').value,
@@ -470,6 +470,28 @@ function savePropertyEditChanges(callBack = null, pid = null)
         };
 
     endpointCall("editPropertyPM", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data);
+        }
+        else if(data["status"] == "failed")
+        {
+            return callBack(data);
+        }
+    });
+}
+
+function removePropertyPM(callBack = null, pid = null)
+{
+
+    let params = {
+                "loginEmail":localStorage.getItem("POH_USER_EMAIL"),
+                "userToken":localStorage.getItem("POH_USER_TOKEN"),
+                "pid":pid,
+                };
+
+    endpointCall("removePropertyPM", params, function(data)
     {
         if(data["status"] == "success")
         {
