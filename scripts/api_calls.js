@@ -22,6 +22,7 @@ var getAllUserPropertiesPMEndPoint = "http://127.0.0.1:5000/getAllUserProperties
 var getSinglePropertyDataEndPoint = "http://127.0.0.1:5000/getSinglePropertyData";
 var editPropertyPMEndPoint = "http://127.0.0.1:5000/editPropertyPM";
 var removePropertyPMEndPoint = "http://127.0.0.1:5000/removePropertyPM";
+var assignStripeIdtoUserAccountEndPoint = "http://127.0.0.1:5000/assignStripeIdtoUserAccount"
 
 function endpointCall(endpoint=null, params={}, callBack=null)
 {
@@ -90,5 +91,7 @@ function identifyEndPoint(endpoint=null)
             return editPropertyPMEndPoint;
         case "removePropertyPM":
             return removePropertyPMEndPoint;
+        case "assignStripeIdtoUserAccount":
+            return assignStripeIdtoUserAccountEndPoint;
     }
 }
