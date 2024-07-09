@@ -679,9 +679,18 @@ function getSinglePropertyDataEdit(pid, areaAnalytics)
 
         if(data["status"] == "success")
         {
+
+            let imgSrc = "./noImg.png";
+
+            if(data['properties'][0]['propertyImage'] != "None")
+            {
+                imgSrc = data['properties'][0]['propertyImage'];
+            }
+            
+
             document.getElementById("propertyName").value = data['properties'][0]['propertyName'];
                     
-            let addressParts = data['properties'][0]['propertyAddress'].split(" ");
+            let addressParts = data['properties'][0]['propertyAddress'].split(":");
             
             document.getElementById("streetAddress").value = addressParts[0];
             document.getElementById("cityAddress").value = addressParts[1];
@@ -691,8 +700,8 @@ function getSinglePropertyDataEdit(pid, areaAnalytics)
             document.getElementById("propertyNumRooms").value = data['properties'][0]['propertyNumberRooms'];
             document.getElementById("propertyNumBathrooms").value = data['properties'][0]['propertyNumberBathrooms'];
             document.getElementById("propertySqft").value = data['properties'][0]['propertySqFt'];
-            document.getElementById("output").src = data['properties'][0]['propertyImage'];
-            document.getElementById("output").value = data['properties'][0]['propertyImage'];
+            document.getElementById("output").src = imgSrc;
+            document.getElementById("output").value = imgSrc;
             document.getElementById("pricePerMonth").value = data['properties'][0]['propertyContractPrice'];
             document.getElementById("contractStartDate").value = data['properties'][0]['propertyContractStartDate'];
             document.getElementById("contractEndDate").value = data['properties'][0]['propertyContractEndDate'];

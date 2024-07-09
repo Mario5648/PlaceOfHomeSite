@@ -1005,35 +1005,35 @@ function renderAddProperty()
             <p class="addPropertySectionHeaderText">Property Information</p>
             <br>
             <label for="propertyName">Property Name</label><br><br>
-            <input type="text" id="propertyName" name="propertyName" class="propertyInfoFieldInput"></input>
+            <input type="text" id="propertyName" name="propertyName" class="propertyInfoFieldInput" placeholder="Property 1"></input>
             <br>
             <br>
             <label for="streetAddress">Street Address</label><br><br>
-            <input type="text" id="streetAddress" name="streetAddress" class="propertyInfoFieldInput"></input>
+            <input type="text" id="streetAddress" name="streetAddress" class="propertyInfoFieldInput" placeholder="909 Texas Ave"></input>
             <br>
             <br>
             <label for="cityAddress">City</label><br><br>
-            <input type="text" id="cityAddress" name="cityAddress" class="propertyInfoFieldInput"></input>
+            <input type="text" id="cityAddress" name="cityAddress" class="propertyInfoFieldInput" placeholder="Houston"></input>
             <br>
             <br>
             <label for="stateAddress">State</label><br><br>
-            <input type="text" id="stateAddress" name="stateAddress" class="propertyInfoFieldInput"></input>
+            <input type="text" id="stateAddress" name="stateAddress" class="propertyInfoFieldInput" placeholder="Texas"></input>
             <br>
             <br>
             <label for="zipCodeAddress">Zip Code</label><br><br>
-            <input type="text" id="zipCodeAddress" name="zipCodeAddress" class="propertyInfoFieldInput"></input>
+            <input type="number" id="zipCodeAddress" name="zipCodeAddress" class="propertyInfoFieldInput" placeholder="77002"></input>
             <br>
             <br>
             <label for="propertyNumRooms">Property Number of Rooms</label><br><br>
-            <input type="text" id="propertyNumRooms" name="propertyNumRooms" class="propertyInfoFieldInput"></input>
+            <input type="number" id="propertyNumRooms" name="propertyNumRooms" class="propertyInfoFieldInput" placeholder="1"></input>
             <br>
             <br>
             <label for="propertyNumBathrooms">Property Number of Bathrooms</label><br><br>
-            <input type="text" id="propertyNumBathrooms" name="propertyNumBathrooms" class="propertyInfoFieldInput"></input>
+            <input type="number" id="propertyNumBathrooms" name="propertyNumBathrooms" class="propertyInfoFieldInput" placeholder="1"></input>
             <br>
             <br>
             <label for="propertySqFt">Property SqFt</label><br><br>
-            <input type="text" id="propertySqft" name="propertySqft" class="propertyInfoFieldInput"></input>
+            <input type="number" id="propertySqft" name="propertySqft" class="propertyInfoFieldInput" placeholder="450"></input>
             <br>
             <br>
             <label>Upload Property Image</label><br><br><br>
@@ -1045,8 +1045,8 @@ function renderAddProperty()
             <hr>
             <p class="addPropertySectionHeaderText">Contract Information</p>
             <br>
-            <label for="pricePerMonth">Price Per Month </label><br><br>
-            <input type="text" id="pricePerMonth" name="pricePerMonth" class="propertyInfoFieldInput"></input>
+            <label for="pricePerMonth">Price Per Month (USD $)</label><br><br>
+            <input type="number" id="pricePerMonth" name="pricePerMonth" class="propertyInfoFieldInput" placeholder="1600.00"></input>
             <br>
             <br>
             <label for="contractStartDate">Start Date </label><br><br>
@@ -1061,15 +1061,15 @@ function renderAddProperty()
             <p class="addPropertySectionHeaderText">Tenant Information</p>
             <br>
             <label for="mainTenantName">Main Tenant Name</label><br><br>
-            <input type="text" id="mainTenantName" name="mainTenantName" class="propertyInfoFieldInput"></input>
+            <input type="text" id="mainTenantName" name="mainTenantName" class="propertyInfoFieldInput" placeholder="John Doe"></input>
             <br>
             <br>
             <label for="mainTenantEmail">Main Tenant Email</label><br><br>
-            <input type="email" id="mainTenantEmail" name="mainTenantEmail" class="propertyInfoFieldInput"></input>
+            <input type="email" id="mainTenantEmail" name="mainTenantEmail" class="propertyInfoFieldInput" placeholder="john@gmail.com"></input>
             <br>
             <br>
             <label for="mainTenantPhoneNumber">Main Tenant Phone Number</label><br><br>
-            <input type="text" id="mainTenantPhoneNumber" name="mainTenantPhoneNumber" class="propertyInfoFieldInput"></input>
+            <input type="text" id="mainTenantPhoneNumber" name="mainTenantPhoneNumber" class="propertyInfoFieldInput" placeholder="(123) 456-7891"></input>
             <br>
             <br>
             <br>
@@ -1111,39 +1111,35 @@ function renderEditProperty(pid = null)
             <p class="addPropertySectionHeaderText">Property Information</p>
             <br>
             <label for="propertyName">Property Name</label><br><br>
-            <input type="text" id="propertyName" name="propertyName" class="propertyInfoFieldInput"></input>
+            <input type="text" id="propertyName" name="propertyName" class="propertyInfoFieldInput" placeholder="Property 1"></input>
             <br>
             <br>
             <label for="streetAddress">Street Address</label><br><br>
-            <input type="text" id="streetAddress" name="streetAddress" class="propertyInfoFieldInput"></input>
+            <input type="text" id="streetAddress" name="streetAddress" class="propertyInfoFieldInput" placeholder="909 Texas Ave"></input>
             <br>
             <br>
             <label for="cityAddress">City</label><br><br>
-            <input type="text" id="cityAddress" name="cityAddress" class="propertyInfoFieldInput"></input>
+            <input type="text" id="cityAddress" name="cityAddress" class="propertyInfoFieldInput" placeholder="Houston"></input>
             <br>
             <br>
             <label for="stateAddress">State</label><br><br>
-            <input type="text" id="stateAddress" name="stateAddress" class="propertyInfoFieldInput"></input>
+            <input type="text" id="stateAddress" name="stateAddress" class="propertyInfoFieldInput" placeholder="Texas"></input>
             <br>
             <br>
             <label for="zipCodeAddress">Zip Code</label><br><br>
-            <input type="text" id="zipCodeAddress" name="zipCodeAddress" class="propertyInfoFieldInput"></input>
-            <br>
-            <br>
-            <label for="propertyAddress">Property Address</label><br><br>
-            <input type="text" id="propertyAddress" name="propertyAddress" class="propertyInfoFieldInput"></input>
+            <input type="number" id="zipCodeAddress" name="zipCodeAddress" class="propertyInfoFieldInput" placeholder="77002"></input>
             <br>
             <br>
             <label for="propertyNumRooms">Property Number of Rooms</label><br><br>
-            <input type="text" id="propertyNumRooms" name="propertyNumRooms" class="propertyInfoFieldInput"></input>
+            <input type="number" id="propertyNumRooms" name="propertyNumRooms" class="propertyInfoFieldInput" placeholder="1"></input>
             <br>
             <br>
             <label for="propertyNumBathrooms">Property Number of Bathrooms</label><br><br>
-            <input type="text" id="propertyNumBathrooms" name="propertyNumBathrooms" class="propertyInfoFieldInput"></input>
+            <input type="number" id="propertyNumBathrooms" name="propertyNumBathrooms" class="propertyInfoFieldInput" placeholder="1"></input>
             <br>
             <br>
             <label for="propertySqFt">Property SqFt</label><br><br>
-            <input type="text" id="propertySqft" name="propertySqft" class="propertyInfoFieldInput"></input>
+            <input type="number" id="propertySqft" name="propertySqft" class="propertyInfoFieldInput" placeholder="450"></input>
             <br>
             <br>
             <label>Upload New Property Image</label><br><br><br>
@@ -1155,8 +1151,8 @@ function renderEditProperty(pid = null)
             <hr>
             <p class="addPropertySectionHeaderText">Contract Information</p>
             <br>
-            <label for="pricePerMonth">Price Per Month </label><br><br>
-            <input type="text" id="pricePerMonth" name="pricePerMonth" class="propertyInfoFieldInput"></input>
+            <label for="pricePerMonth">Price Per Month (USD $)</label><br><br>
+            <input type="number" id="pricePerMonth" name="pricePerMonth" class="propertyInfoFieldInput" placeholder="1600.00"></input>
             <br>
             <br>
             <label for="contractStartDate">Start Date </label><br><br>
@@ -1171,15 +1167,15 @@ function renderEditProperty(pid = null)
             <p class="addPropertySectionHeaderText">Tenant Information</p>
             <br>
             <label for="mainTenantName">Main Tenant Name</label><br><br>
-            <input type="text" id="mainTenantName" name="mainTenantName" class="propertyInfoFieldInput"></input>
+            <input type="text" id="mainTenantName" name="mainTenantName" class="propertyInfoFieldInput" placeholder="John Doe"></input>
             <br>
             <br>
             <label for="mainTenantEmail">Main Tenant Email</label><br><br>
-            <input type="email" id="mainTenantEmail" name="mainTenantEmail" class="propertyInfoFieldInput"></input>
+            <input type="email" id="mainTenantEmail" name="mainTenantEmail" class="propertyInfoFieldInput" placeholder="john@gmail.com"></input>
             <br>
             <br>
             <label for="mainTenantPhoneNumber">Main Tenant Phone Number</label><br><br>
-            <input type="text" id="mainTenantPhoneNumber" name="mainTenantPhoneNumber" class="propertyInfoFieldInput"></input>
+            <input type="text" id="mainTenantPhoneNumber" name="mainTenantPhoneNumber" class="propertyInfoFieldInput" placeholder="(123) 456-7891"></input>
             <br>
             <br>
             <br>
