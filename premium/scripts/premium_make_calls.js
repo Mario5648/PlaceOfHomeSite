@@ -504,12 +504,12 @@ function removePropertyPM(callBack = null, pid = null)
     });
 }
 
-function assignStripeIdtoUserAccount(callBack = null, stripeAccountId = null)
+function assignStripeIdtoUserAccount(callBack = null, email = null, token = null, stripeAccountId = null)
 {
 
     let params = {
-                "loginEmail":localStorage.getItem("POH_USER_EMAIL"),
-                "userToken":localStorage.getItem("POH_USER_TOKEN"),
+                "loginEmail": email,
+                "userToken": token,
                 "stripeAccountId": stripeAccountId,
                 };
 

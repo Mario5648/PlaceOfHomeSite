@@ -808,6 +808,8 @@ function addStripeIdToUser()
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const stripeAccountId = urlParams.get('stripeAccountId');
+    const email = urlParams.get('email');
+    const token = urlParams.get('userToken');
 
     assignStripeIdtoUserAccount(function(data)
     {
@@ -815,10 +817,9 @@ function addStripeIdToUser()
         if(data["status"] == "success")
         {
             var timer = setTimeout(function() {
-                localStorage.setItem("POH_USER_STRIPE_ACCOUNT_ID", data['accountId']);
                 window.location='https://placeofhome.org/premium/premium.html'
             }, 5000);
         }
-    }, stripeAccountId)
+    }, email, token, stripeAccountId)
 }
 
