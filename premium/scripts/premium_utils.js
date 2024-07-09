@@ -530,13 +530,16 @@ function removeWebsite()
 
 function createStripeAccount()
 {
-
+    document.getElementById("connectStripeAccountButton").disabled = true;
     createAndLinkStripeAccount(function(data)
     {
 
         if(data["status"] == "success")
         {
             window.open(data['accountOnboardingUrl']);
+        }else
+        {
+            document.getElementById("connectStripeAccountButton").disabled = false;
         }
     })
 }

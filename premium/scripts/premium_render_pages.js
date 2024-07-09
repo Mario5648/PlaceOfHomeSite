@@ -1481,7 +1481,7 @@ function renderPropertyProfileSettings()
                 <p>Connect to stripe inorder to create payment portals for your tenants to receive payments online.</p>
                 <p class="propertySettingsSectionNoteText">NOTE: A website will also be needed when onboarding your account.</p>
                 <div id="accountNotConnectedInfoDiv" class="accountNotConnectedInfoDiv">
-                    <button class="profileSettingsNormalButton" onclick="createStripeAccount()">Connect to Stripe</button>
+                    <button id="connectStripeAccountButton" class="profileSettingsNormalButton" onclick="createStripeAccount()">Connect to Stripe</button>
                 </div>
 
                 <div id="accountConnectedInfoDiv" class="accountConnectedInfoDiv">
