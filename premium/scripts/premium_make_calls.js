@@ -503,3 +503,25 @@ function removePropertyPM(callBack = null, pid = null)
         }
     });
 }
+
+function assignStripeIdtoUserAccount(callBack = null, stripeAccountId = null)
+{
+
+    let params = {
+                "loginEmail":localStorage.getItem("POH_USER_EMAIL"),
+                "userToken":localStorage.getItem("POH_USER_TOKEN"),
+                "stripeAccountId": stripeAccountId,
+                };
+
+    endpointCall("assignStripeIdtoUserAccount", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data);
+        }
+        else if(data["status"] == "failed")
+        {
+            return callBack(data);
+        }
+    });
+}

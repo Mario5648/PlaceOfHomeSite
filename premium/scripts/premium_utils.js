@@ -537,7 +537,6 @@ function createStripeAccount()
         if(data["status"] == "success")
         {
             window.open(data['accountOnboardingUrl']);
-            localStorage.setItem("POH_USER_STRIPE_ACCOUNT_ID", data['accountId']);            
         }
     })
 }
@@ -803,3 +802,23 @@ function removeProperty()
         }
     }, TO_DELETE_PID)
 }
+
+function addStripeIdToUser()
+{
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const stripeAccountId = urlParams.get('stripeAccountId');
+
+    assignStripeIdtoUserAccount(function(data)
+    {
+
+        if(data["status"] == "success")
+        {
+            var timer = setTimeout(function() {
+                localStorage.setItem("POH_USER_STRIPE_ACCOUNT_ID", data['accountId']);
+                window.location='https://placeofhome.org/premium/premium.html'
+            }, 5000);
+        }
+    }, stripeAccountId)
+}
+
