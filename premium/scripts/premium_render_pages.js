@@ -1004,31 +1004,31 @@ function renderAddProperty()
         <div class="addPropertyForm">
             <p class="addPropertySectionHeaderText">Property Information</p>
             <br>
-            <label for="propertyName">Property Name</label><br><br>
+            <label for="propertyName">Property Name <span class="requiredAsterisk">*</span></label><br><br>
             <input type="text" id="propertyName" name="propertyName" class="propertyInfoFieldInput" placeholder="Property 1"></input>
             <br>
             <br>
-            <label for="streetAddress">Street Address</label><br><br>
+            <label for="streetAddress">Street Address <span class="requiredAsterisk">*</span></label><br><br>
             <input type="text" id="streetAddress" name="streetAddress" class="propertyInfoFieldInput" placeholder="909 Texas Ave"></input>
             <br>
             <br>
-            <label for="cityAddress">City</label><br><br>
+            <label for="cityAddress">City <span class="requiredAsterisk">*</span></label><br><br>
             <input type="text" id="cityAddress" name="cityAddress" class="propertyInfoFieldInput" placeholder="Houston"></input>
             <br>
             <br>
-            <label for="stateAddress">State</label><br><br>
+            <label for="stateAddress">State <span class="requiredAsterisk">*</span></label><br><br>
             <input type="text" id="stateAddress" name="stateAddress" class="propertyInfoFieldInput" placeholder="Texas"></input>
             <br>
             <br>
-            <label for="zipCodeAddress">Zip Code</label><br><br>
+            <label for="zipCodeAddress">Zip Code <span class="requiredAsterisk">*</span></label><br><br>
             <input type="number" id="zipCodeAddress" name="zipCodeAddress" class="propertyInfoFieldInput" placeholder="77002"></input>
             <br>
             <br>
-            <label for="propertyNumRooms">Property Number of Rooms</label><br><br>
+            <label for="propertyNumRooms">Property Number of Rooms <span class="requiredAsterisk">*</span></label><br><br>
             <input type="number" id="propertyNumRooms" name="propertyNumRooms" class="propertyInfoFieldInput" placeholder="1"></input>
             <br>
             <br>
-            <label for="propertyNumBathrooms">Property Number of Bathrooms</label><br><br>
+            <label for="propertyNumBathrooms">Property Number of Bathrooms <span class="requiredAsterisk">*</span></label><br><br>
             <input type="number" id="propertyNumBathrooms" name="propertyNumBathrooms" class="propertyInfoFieldInput" placeholder="1"></input>
             <br>
             <br>
@@ -1110,31 +1110,31 @@ function renderEditProperty(pid = null)
         <div class="addPropertyForm">
             <p class="addPropertySectionHeaderText">Property Information</p>
             <br>
-            <label for="propertyName">Property Name</label><br><br>
+            <label for="propertyName">Property Name <span class="requiredAsterisk">*</span></label><br><br>
             <input type="text" id="propertyName" name="propertyName" class="propertyInfoFieldInput" placeholder="Property 1"></input>
             <br>
             <br>
-            <label for="streetAddress">Street Address</label><br><br>
+            <label for="streetAddress">Street Address <span class="requiredAsterisk">*</span></label><br><br>
             <input type="text" id="streetAddress" name="streetAddress" class="propertyInfoFieldInput" placeholder="909 Texas Ave"></input>
             <br>
             <br>
-            <label for="cityAddress">City</label><br><br>
+            <label for="cityAddress">City <span class="requiredAsterisk">*</span></label><br><br>
             <input type="text" id="cityAddress" name="cityAddress" class="propertyInfoFieldInput" placeholder="Houston"></input>
             <br>
             <br>
-            <label for="stateAddress">State</label><br><br>
+            <label for="stateAddress">State <span class="requiredAsterisk">*</span></label><br><br>
             <input type="text" id="stateAddress" name="stateAddress" class="propertyInfoFieldInput" placeholder="Texas"></input>
             <br>
             <br>
-            <label for="zipCodeAddress">Zip Code</label><br><br>
+            <label for="zipCodeAddress">Zip Code <span class="requiredAsterisk">*</span></label><br><br>
             <input type="number" id="zipCodeAddress" name="zipCodeAddress" class="propertyInfoFieldInput" placeholder="77002"></input>
             <br>
             <br>
-            <label for="propertyNumRooms">Property Number of Rooms</label><br><br>
+            <label for="propertyNumRooms">Property Number of Rooms <span class="requiredAsterisk">*</span></label><br><br>
             <input type="number" id="propertyNumRooms" name="propertyNumRooms" class="propertyInfoFieldInput" placeholder="1"></input>
             <br>
             <br>
-            <label for="propertyNumBathrooms">Property Number of Bathrooms</label><br><br>
+            <label for="propertyNumBathrooms">Property Number of Bathrooms <span class="requiredAsterisk">*</span></label><br><br>
             <input type="number" id="propertyNumBathrooms" name="propertyNumBathrooms" class="propertyInfoFieldInput" placeholder="1"></input>
             <br>
             <br>
@@ -1296,7 +1296,7 @@ function renderViewProperty(pid = null)
 
 function renderPropertyAnalytics(pid = null)
 {
- let propertyAnalyticsHtml = `
+    let propertyAnalyticsHtml = `
  
         <div class="main-header-container">
             <a onclick="renderPropertyManagementHome()"><p class="main-header-back-text"><i class="fa fa-arrow-left"></i> Back to Properties</></a>

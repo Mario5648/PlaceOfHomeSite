@@ -1133,3 +1133,8 @@ body
 {
     font-size: 20px;
 }
+
+.requiredAsterisk
+{
+    color: red;
+}

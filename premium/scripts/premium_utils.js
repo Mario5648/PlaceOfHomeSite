@@ -558,8 +558,34 @@ function checkStripeAccountConnection()
     }
 }
 
+function checkRequiredFields()
+{
+    let propertyName = document.getElementById('propertyName').value;
+    let streetAddress = document.getElementById('streetAddress').value;
+    let city = document.getElementById('cityAddress').value;
+    let state = document.getElementById('stateAddress').value;
+    let zipcode = document.getElementById('zipCodeAddress').value;
+    let propertyNumRooms = document.getElementById('propertyNumRooms').value;
+    let propertyNumBathrooms = document.getElementById('propertyNumBathrooms').value;
+
+    if(propertyName && streetAddress && city && state && zipcode && propertyNumRooms && propertyNumBathrooms)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+
 function addProperty()
 {
+
+    let allRequiredFieldsFilled = checkRequiredFields();
+    if(! allRequiredFieldsFilled)
+    {
+        alert("Please fill in all required fields. (*)");
+        return
+    }
     addNewProperty(function(data)
     {
 
@@ -567,6 +593,9 @@ function addProperty()
         {
             alert("Successfully added property!");
             renderPropertyManagementHome();
+        }else
+        {
+            alert(data["message"]);
         }
     })
 }
@@ -730,12 +759,21 @@ function checkForStripeOnlinePayments()
 
 function savePropertyChanges(pid)
 {
+    let allRequiredFieldsFilled = checkRequiredFields();
+    if(! allRequiredFieldsFilled)
+    {
+        alert("Please fill in all required fields. (*)");
+        return
+    }
     savePropertyEditChanges(function(data)
     {
 
         if(data["status"] == "success")
         {
             alert("Successfully edited property!");
+        }else
+        {
+            alert(data["message"]);
         }
     }, pid)
 }
