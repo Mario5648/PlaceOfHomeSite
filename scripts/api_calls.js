@@ -2,27 +2,27 @@
 var ERROR_FLAG = "ERROR";
 
 //https://placeofhome-api.org/
-var generateReportEndPoint = "http://127.0.0.1:5000/getZipCodeData";
-var getCitiesForStateEndPoint = "http://127.0.0.1:5000/getCitiesForState"
-var generatePremiumReportEndPoint = "http://127.0.0.1:5000/getZipCodeDataPremium";
-var generateZipCodeComparePremiumReportEndPoint = "http://127.0.0.1:5000/getZipCodeCompareDataPremium";
-var generatePropertyAnalysisPremiumReportEndPoint = "http://127.0.0.1:5000/generatePropertyAnalysisPremiumReport";
-var userSignupEndPoint = "http://127.0.0.1:5000/signup";
-var userLoginEndPoint = "http://127.0.0.1:5000/login";
-var userAnalyticsEndPoint = "http://127.0.0.1:5000/getUserAnalytics";
+var generateReportEndPoint = "https://placeofhome-api.org/getZipCodeData";
+var getCitiesForStateEndPoint = "https://placeofhome-api.org/getCitiesForState"
+var generatePremiumReportEndPoint = "https://placeofhome-api.org/getZipCodeDataPremium";
+var generateZipCodeComparePremiumReportEndPoint = "https://placeofhome-api.org/getZipCodeCompareDataPremium";
+var generatePropertyAnalysisPremiumReportEndPoint = "https://placeofhome-api.org/generatePropertyAnalysisPremiumReport";
+var userSignupEndPoint = "https://placeofhome-api.org/signup";
+var userLoginEndPoint = "https://placeofhome-api.org/login";
+var userAnalyticsEndPoint = "https://placeofhome-api.org/getUserAnalytics";
 var sendMessageEndPoint = "https://www.api-contact-lite.com/sendMessage";
-var updateUserSubscriptionEndPoint = "http://127.0.0.1:5000/updateUserSubscription";
-var getUserWebsiteDataEndPoint = "http://127.0.0.1:5000/getUserWebsiteData";
-var createWebsiteEndPoint = "http://127.0.0.1:5000/createWebsite";
-var updateWebsiteEndPoint = "http://127.0.0.1:5000/updateWebsite";
-var removeWebsiteEndPoint = "http://127.0.0.1:5000/removeWebsite";
-var createAndLinkStripeAccountEndPoint = "http://127.0.0.1:5000/createStripeAccount";
-var addPropertyPMEndPoint = "http://127.0.0.1:5000/addPropertyPM";
-var getAllUserPropertiesPMEndPoint = "http://127.0.0.1:5000/getAllUserPropertiesPM";
-var getSinglePropertyDataEndPoint = "http://127.0.0.1:5000/getSinglePropertyData";
-var editPropertyPMEndPoint = "http://127.0.0.1:5000/editPropertyPM";
-var removePropertyPMEndPoint = "http://127.0.0.1:5000/removePropertyPM";
-var assignStripeIdtoUserAccountEndPoint = "http://127.0.0.1:5000/assignStripeIdtoUserAccount"
+var updateUserSubscriptionEndPoint = "https://placeofhome-api.org/updateUserSubscription";
+var getUserWebsiteDataEndPoint = "https://placeofhome-api.org/getUserWebsiteData";
+var createWebsiteEndPoint = "https://placeofhome-api.org/createWebsite";
+var updateWebsiteEndPoint = "https://placeofhome-api.org/updateWebsite";
+var removeWebsiteEndPoint = "https://placeofhome-api.org/removeWebsite";
+var createAndLinkStripeAccountEndPoint = "https://placeofhome-api.org/createStripeAccount";
+var addPropertyPMEndPoint = "https://placeofhome-api.org/addPropertyPM";
+var getAllUserPropertiesPMEndPoint = "https://placeofhome-api.org/getAllUserPropertiesPM";
+var getSinglePropertyDataEndPoint = "https://placeofhome-api.org/getSinglePropertyData";
+var editPropertyPMEndPoint = "https://placeofhome-api.org/editPropertyPM";
+var removePropertyPMEndPoint = "https://placeofhome-api.org/removePropertyPM";
+var assignStripeIdtoUserAccountEndPoint = "https://placeofhome-api.org/assignStripeIdtoUserAccount"
 
 function endpointCall(endpoint=null, params={}, callBack=null)
 {
