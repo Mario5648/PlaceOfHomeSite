@@ -410,12 +410,7 @@ function generateToolOptionsMenu()
     let toolOptionsHtml = ``;
     
 
-    let userTools = localStorage.getItem("POH_USER_TOOLS");
-
-    if(userTools != 'null')
-    {
-        userTools = userTools.split(",")
-    }
+    let userTools = JSON.parse(localStorage.getItem("POH_USER_TOOLS"));
 
     let toolsDictOptions = {
 
