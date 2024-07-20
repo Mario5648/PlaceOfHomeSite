@@ -28,3 +28,5 @@ var USER_EMAIL = '';
 
 var SELECTED_PROPERTY_DATA = null;
 var TO_DELETE_PID = null;
+
+var COL_DATA_BY_PEOPLE = {};

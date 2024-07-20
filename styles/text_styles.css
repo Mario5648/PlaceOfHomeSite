@@ -92,6 +92,13 @@ a
 
         padding-left: 50px;
     }
+
+    .section-subtitle-text
+    {
+        font-size: 16px;
+
+        padding-left: 50px;
+    }
     .reciept-title
     {
         font-size: 35px;
@@ -181,6 +188,11 @@ a
     {
         font-size: 16px;
         font-weight: bold;
+    }
+
+    .section-subtitle-text
+    {
+        font-size: 16px;
     }
 
     .reciept-title

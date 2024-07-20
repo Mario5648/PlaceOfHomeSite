@@ -304,24 +304,28 @@ function renderPremiumReportPage()
                                 <p id="livingInZipCodeText" class="section-header-text">Living in 77002</p>
 
                                 <p class="section-title-text">Rent & Home Prices</p>
+                                <p id="livePricesAsOf" class="section-subtitle-text"></p>
                                 <div id="housingContainer">
                                     <div class="half-horizontal-container-box">
                                         <div class="left-horizontal-container-box">
-                                            <p class="box-title">Zip Code Median Rent</p>
+                                            <p class="box-title">Zip Code Average Rent</p>
                                             <p id="zipCodeRent" class="box-value-text">- Not Found -</p>
 
                                             <p id="cityRent" class="box-value-subtext">- Not Found -</p>
-                                            <p id="stateRent" class="box-value-subtext">- Not Found -</p>
-                                            <p id="nationalRent" class="box-value-subtext">- Not Found -</p>
+                                            <p id="medianRent" class="box-value-subtext">- Not Found -</p>
+                                            <p id="maxRent" class="box-value-subtext">- Not Found -</p>
+                                            <p id="minRent" class="box-value-subtext">- Not Found -</p>
+
                                         </div>
                                         <div class="vl"></div>
                                         <div class="right-horizontal-container-box">
-                                            <p class="box-title">Zip Code Median Home Price</p>
+                                            <p class="box-title">Zip Code Average Home Price</p>
                                             <p id="zipCodeHomePrice" class="box-value-text">- Not Found -</p>
 
                                             <p id="cityHomePrice" class="box-value-subtext">- Not Found -</p>
-                                            <p id="stateHomePrice" class="box-value-subtext">- Not Found -</p>
-                                            <p id="nationalHomePrice" class="box-value-subtext">- Not Found -</p>
+                                            <p id="medianHomePrice" class="box-value-subtext">- Not Found -</p>
+                                            <p id="maxHomePrice" class="box-value-subtext">- Not Found -</p>
+                                            <p id="minHomePrice" class="box-value-subtext">- Not Found -</p>
                                         </div>
                                     </div>
                                 </div>
@@ -411,8 +415,8 @@ function renderPremiumReportPage()
 
                                 <div id="socialContainer">
                                     <div class="full-horizontal-container-box">
-                                        <p class="box-title">Race - Demographic</p>
-                                        <canvas id="raceDemographicBreakdown" width="400" height="200"></canvas>
+                                        <p class="box-title">Industry - Demographic</p>
+                                        <canvas id="industryDemographicBreakdown" width="400" height="200"></canvas>
                                     </div>
                                 </div>
                                 <div id="socialContainer">
@@ -454,7 +458,8 @@ function renderPremiumReportPage()
                         <div id="COLSection">
                             <div id="COLSectionContainer">
                                 <p id="costOfLivingInZipCodeText" class="section-header-text">Cost of Living in</p>
-                                <p id="costBreakDownInZipCodeText" class="section-title-text">Cost breakdown for one person in</p>
+                                <p id="costBreakDownInZipCodeText" class="section-title-text">Cost breakdown</p>
+                                <select name="numOfPeopleSelection" id="numOfPeopleSelection" onchange="updateCostOfLiving()" class="numOfPeopleSelectorStyles"></select>
                                 <div id="COLContainer">
 
                                     <div class="StyledReceipt">

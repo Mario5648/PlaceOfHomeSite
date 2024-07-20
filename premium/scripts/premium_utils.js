@@ -36,7 +36,7 @@ function generateZipCodePremiumReport()
             document.getElementById("workingInZipCodeText").innerHTML = "Working in "+ZIPCODE;
             document.getElementById("peopleInZipCodeText").innerHTML = "People in "+ZIPCODE;
             document.getElementById("costOfLivingInZipCodeText").innerHTML = "Cost of Living in "+ZIPCODE;
-            document.getElementById("costBreakDownInZipCodeText").innerHTML = "Cost breakdown for one person in "+ZIPCODE;
+            document.getElementById("costBreakDownInZipCodeText").innerHTML = "Cost breakdown in "+CITY;
             document.getElementById("COLSubText").innerHTML = "How much will you pay on average living in "+CITY;
             
             document.getElementById("avgWeather").innerHTML = "Avg. "+data["weatherData"]["averageWeather"]+"°F" 
@@ -52,16 +52,19 @@ function generateZipCodePremiumReport()
 
             document.getElementById("populationDescription").innerHTML = "*"+data["descriptions"]["population"];
 
-            document.getElementById("zipCodeRent").innerHTML = "$"+data["zipCode"]["HOUSING"]["Rent_Median (dollars)"];
-            document.getElementById("cityRent").innerHTML = "Median. City : $"+data["city"]["HOUSING"]["Rent_Median (dollars)"];
-            document.getElementById("stateRent").innerHTML = "Median. State : $"+data["state"]["HOUSING"]["Rent_Median (dollars)"];
-            document.getElementById("nationalRent").innerHTML = "Median. National : $"+data["nation"]["HOUSING"]["Rent_Median (dollars)"];
+            document.getElementById("livePricesAsOf").innerHTML = `Prices as of : ${DATE_TODAY}`;
 
-            document.getElementById("zipCodeHomePrice").innerHTML = "$"+data["zipCode"]["HOUSING"]["House_Median (dollars)"];
-            document.getElementById("cityHomePrice").innerHTML = "Median. City : $"+data["city"]["HOUSING"]["House_Median (dollars)"];
-            document.getElementById("stateHomePrice").innerHTML = "Median. Sate : $"+data["state"]["HOUSING"]["House_Median (dollars)"];
-            document.getElementById("nationalHomePrice").innerHTML = "Median. National : $"+data["nation"]["HOUSING"]["House_Median (dollars)"];
+            document.getElementById("zipCodeRent").innerHTML = "$"+data["liveData"]["liveZipCodePrices"]["rentPrices"]["avgPrice"];
+            document.getElementById("cityRent").innerHTML = "Avg. City : $"+data["liveData"]["liveCityPrices"]["rentPrices"]["avgPrice"];
+            document.getElementById("medianRent").innerHTML = "Median. Zip Code Rent : $"+data["liveData"]["liveZipCodePrices"]["rentPrices"]["medianPrice"];
+            document.getElementById("maxRent").innerHTML = "Max. Zip Code Rent : $"+data["liveData"]["liveZipCodePrices"]["rentPrices"]["maxPrice"];
+            document.getElementById("minRent").innerHTML = "Min. Zip Code Rent : $"+data["liveData"]["liveZipCodePrices"]["rentPrices"]["minPrice"];
 
+            document.getElementById("zipCodeHomePrice").innerHTML = "$"+data["liveData"]["liveZipCodePrices"]["homePrices"]["avgPrice"];
+            document.getElementById("cityHomePrice").innerHTML = "Avg. City : $"+data["liveData"]["liveCityPrices"]["homePrices"]["avgPrice"];
+            document.getElementById("medianHomePrice").innerHTML = "Median. Zip Code Home Price : $"+data["liveData"]["liveCityPrices"]["homePrices"]["medianPrice"];
+            document.getElementById("maxHomePrice").innerHTML = "Max. Zip Code Home Price : $"+data["liveData"]["liveCityPrices"]["homePrices"]["maxPrice"];
+            document.getElementById("minHomePrice").innerHTML = "Min. Zip Code Home Price : $"+data["liveData"]["liveCityPrices"]["homePrices"]["minPrice"];
 
             document.getElementById("rentDescription").innerHTML = "*"+data["descriptions"]["medianRent"];
             document.getElementById("homePriceDescription").innerHTML = "*"+data["descriptions"]["medianHomePrice"];
@@ -87,15 +90,14 @@ function generateZipCodePremiumReport()
          
             document.getElementById("peopleStayedDescription").innerHTML = "*"+data["descriptions"]["residentsStayed"];
 
-            document.getElementById("foodCOL").innerHTML = "$"+data["costOfLiving"]["Month_Food"];
-            document.getElementById("healthcareCOL").innerHTML = "$"+data["costOfLiving"]["Month_Healthcare"];
-            document.getElementById("housingCOL").innerHTML = "$"+data["costOfLiving"]["Month_Housing"];
-            document.getElementById("transportationCOL").innerHTML = "$"+data["costOfLiving"]["Month_Transportation"];
-            document.getElementById("otherCOL").innerHTML = "$"+data["costOfLiving"]["Month_Other"];
-            document.getElementById("taxesCOL").innerHTML = "$"+data["costOfLiving"]["Month_Taxes"];
-            document.getElementById("monthlyTotalCOL").innerHTML = "$"+data["costOfLiving"]["Month_Total"];
-            document.getElementById("annualTotalCOL").innerHTML = "$"+data["costOfLiving"]["Annual_Total"];
-
+            document.getElementById("foodCOL").innerHTML = "$"+data["costOfLiving"]["1 Person 0 Children"]["Month_Food"];
+            document.getElementById("healthcareCOL").innerHTML = "$"+data["costOfLiving"]["1 Person 0 Children"]["Month_Healthcare"];
+            document.getElementById("housingCOL").innerHTML = "$"+data["costOfLiving"]["1 Person 0 Children"]["Month_Housing"];
+            document.getElementById("transportationCOL").innerHTML = "$"+data["costOfLiving"]["1 Person 0 Children"]["Month_Transportation"];
+            document.getElementById("otherCOL").innerHTML = "$"+data["costOfLiving"]["1 Person 0 Children"]["Month_Other"];
+            document.getElementById("taxesCOL").innerHTML = "$"+data["costOfLiving"]["1 Person 0 Children"]["Month_Taxes"];
+            document.getElementById("monthlyTotalCOL").innerHTML = "$"+data["costOfLiving"]["1 Person 0 Children"]["Month_Total"];
+            document.getElementById("annualTotalCOL").innerHTML = "$"+data["costOfLiving"]["1 Person 0 Children"]["Annual_Total"];
 
             document.getElementById("overallRatingIcon").src = `../grade_icons/grade_${data["ratings"]["overallRating"]}.png`;
             document.getElementById("rentRatingIcon").src = `../grade_icons/grade_${data["ratings"]["rentRating"]}.png`;
@@ -110,17 +112,44 @@ function generateZipCodePremiumReport()
             renderIncomeHistory(data);
             renderCommuteChart(data);
             renderResidentsStayedChart(data);
-            renderRaceDemographicChart(data);
+            renderIndustryDemographicChart(data);
             renderAgeDemographicChart(data);
             renderEducationAttainmentChart(data);
 
             renderNaturalDisasters(data);
 
+            populateCOLSelectionOptions(data["costOfLiving"]);
+
             renderRestaurants(data["destinations"]["restaurants"]["places"]);
             renderParks(data["destinations"]["parks"]["places"]);
             renderGroceryStores(data["destinations"]["groceryStores"]["places"]);
+
         }
     })
+}
+
+function populateCOLSelectionOptions(costOfLivingData)
+{
+    for(const numOfPeopleCOL in costOfLivingData) 
+    {
+        document.getElementById("numOfPeopleSelection").innerHTML += `<option value="${numOfPeopleCOL}">${numOfPeopleCOL}</option>`;
+    }
+
+    COL_DATA_BY_PEOPLE = costOfLivingData;
+}
+
+function updateCostOfLiving()
+{
+    let numOfPeopleCOL = document.getElementById("numOfPeopleSelection").value;
+
+    document.getElementById("foodCOL").innerHTML = "$"+COL_DATA_BY_PEOPLE[numOfPeopleCOL]["Month_Food"];
+    document.getElementById("healthcareCOL").innerHTML = "$"+COL_DATA_BY_PEOPLE[numOfPeopleCOL]["Month_Healthcare"];
+    document.getElementById("housingCOL").innerHTML = "$"+COL_DATA_BY_PEOPLE[numOfPeopleCOL]["Month_Housing"];
+    document.getElementById("transportationCOL").innerHTML = "$"+COL_DATA_BY_PEOPLE[numOfPeopleCOL]["Month_Transportation"];
+    document.getElementById("otherCOL").innerHTML = "$"+COL_DATA_BY_PEOPLE[numOfPeopleCOL]["Month_Other"];
+    document.getElementById("taxesCOL").innerHTML = "$"+COL_DATA_BY_PEOPLE[numOfPeopleCOL]["Month_Taxes"];
+    document.getElementById("monthlyTotalCOL").innerHTML = "$"+COL_DATA_BY_PEOPLE[numOfPeopleCOL]["Month_Total"];
+    document.getElementById("annualTotalCOL").innerHTML = "$"+COL_DATA_BY_PEOPLE[numOfPeopleCOL]["Annual_Total"];
 }
 
 function generateZipCodeComparePremiumReport()
