@@ -500,23 +500,30 @@ function renderResidentsStayedChart(data = null)
                                     });
 }
 
-function renderRaceDemographicChart(data = null)
+function renderIndustryDemographicChart(data = null)
 {
-    let raceData = [];
+    let industryData = [];
 
-    raceData.push(parseInt(data["zipCode"]["DEMOGRAPHIC"]["American Indian and Alaska Native"].replace(",","")))
-    raceData.push(parseInt(data["zipCode"]["DEMOGRAPHIC"]["Asian"].replace(",","")))
-    raceData.push(parseInt(data["zipCode"]["DEMOGRAPHIC"]["Black or African American"].replace(",","")))
-    raceData.push(parseInt(data["zipCode"]["DEMOGRAPHIC"]["Native Hawaiian and Other Pacific Islander"].replace(",","")))
-    raceData.push(parseInt(data["zipCode"]["DEMOGRAPHIC"]["Some Other Race"].replace(",","")))
-    raceData.push(parseInt(data["zipCode"]["DEMOGRAPHIC"]["White"].replace(",","")))
+    industryData.push(parseInt(data["zipCode"]["ECONOMIC"]["Agriculture, forestry, fishing and hunting, and mining"].replace(",","")));
+    industryData.push(parseInt(data["zipCode"]["ECONOMIC"]["Construction"].replace(",","")));
+    industryData.push(parseInt(data["zipCode"]["ECONOMIC"]["Manufacturing"].replace(",","")));
+    industryData.push(parseInt(data["zipCode"]["ECONOMIC"]["Wholesale trade"].replace(",","")));
+    industryData.push(parseInt(data["zipCode"]["ECONOMIC"]["Retail trade"].replace(",","")));
+    industryData.push(parseInt(data["zipCode"]["ECONOMIC"]["Transportation and warehousing, and utilities"].replace(",","")));
+    industryData.push(parseInt(data["zipCode"]["ECONOMIC"]["Information"].replace(",","")));
+    industryData.push(parseInt(data["zipCode"]["ECONOMIC"]["Finance and insurance, and real estate and rental and leasing"].replace(",","")));
+    industryData.push(parseInt(data["zipCode"]["ECONOMIC"]["Professional, scientific, and management, and administrative and waste management services"].replace(",","")));
+    industryData.push(parseInt(data["zipCode"]["ECONOMIC"]["Educational services, and health care and social assistance"].replace(",","")));
+    industryData.push(parseInt(data["zipCode"]["ECONOMIC"]["Arts, entertainment, and recreation, and accommodation and food services"].replace(",","")));
+    industryData.push(parseInt(data["zipCode"]["ECONOMIC"]["Other services, except public administration"].replace(",","")));
+    industryData.push(parseInt(data["zipCode"]["ECONOMIC"]["Public administration"].replace(",","")));
 
     var data = {
-        labels: ["American Indian and Alaska Native", "Asian", "Black or African American", "Native Hawaiian and Other Pacific Islander", "Some Other Race", "White"],
+        labels: ["Agriculture, forestry, fishing and hunting, and mining", "Construction", "Manufacturing", "Wholesale trade", "Retail trade", "Transportation and warehousing, and utilities", "Information", "Finance and insurance, and real estate and rental and leasing", "Professional, scientific, and waste management services", "Educational services, and health care and social assistance", "Arts, entertainment, and food services", "Other services, except public administration", "Public administration"],
         datasets: [{
             axis: 'y',
-            label: 'Race Demographic',
-            data: raceData,
+            label: 'Industry Demographic',
+            data: industryData,
             fill: false,
             backgroundColor: ['rgba(243,108,54,0.6)'],
             borderWidth: 1,
@@ -527,8 +534,8 @@ function renderRaceDemographicChart(data = null)
             }
         }]
         };
-    const ctx = document.getElementById('raceDemographicBreakdown').getContext('2d');
-    const raceDemographicChart = new Chart(ctx, {
+    const ctx = document.getElementById('industryDemographicBreakdown').getContext('2d');
+    const industryDemographicChart = new Chart(ctx, {
                                     type: 'bar',
                                     data: data,
                                     plugins :[ChartDataLabels],
@@ -549,7 +556,7 @@ function renderRaceDemographicChart(data = null)
                                                         },
                                                         title: {
                                                             display: true,
-                                                            text: 'Race Demographic',
+                                                            text: 'Industry Demographic',
                                                             font: {
                                                                 size: 16
                                                             }
