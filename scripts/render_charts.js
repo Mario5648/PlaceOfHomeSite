@@ -879,3 +879,70 @@ function renderPropertyAreaRentComparisonChart(data = null)
                                             
                                     });
 }
+
+function renderPriceRangesChart(data = null)
+{
+    let priceRangesCount = [];
+
+
+    const priceRanges = Object.keys(data["currentMarketAnalytics"]["liveMarketData"]["soldPricesList"]).sort((a, b) => {
+        const minValueA = parseInt(a.substring(1).split('-')[0].replace(/,/g, ''));
+        const minValueB = parseInt(b.substring(1).split('-')[0].replace(/,/g, ''));
+        return minValueA - minValueB;
+    });
+    
+
+    for(let priceRangeIndex = 0; priceRangeIndex < priceRanges.length; priceRangeIndex+=1)
+    {
+        priceRangesCount.push(data["currentMarketAnalytics"]["liveMarketData"]["soldPricesList"][priceRanges[priceRangeIndex]].length)
+    }
+
+    var data = {
+        labels: priceRanges,
+        datasets: [{
+            axis: 'x',
+            label: 'Recently Sold Price Ranges',
+            data: priceRangesCount,
+            fill: false,
+            backgroundColor: ['rgba(243,108,54,0.6)'],
+            borderWidth: 1,
+            datalabels: {
+                color: 'rgb(16,36,52)',
+                anchor: 'center',
+                align: 'center'
+            }
+        }]
+        };
+    const ctx = document.getElementById('soldPriceRangesChart').getContext('2d');
+    const priceRangesChart = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: data,
+                                    plugins :[ChartDataLabels],
+                                    options: {
+                                                responsive: true,
+                                                maintainAspectRatio: true,
+                                                indexAxis: 'y', // This will make the bar chart horizontal
+                                                scales: {
+                                                    y: {
+                                                        ticks: {
+                                                            beginAtZero: true,
+                                                        }
+                                                    }
+                                                    },
+                                                    plugins: {
+                                                        legend: {
+                                                            display: false
+                                                        },
+                                                        title: {
+                                                            display: true,
+                                                            text: 'Recently Sold Price Ranges',
+                                                            font: {
+                                                                size: 16
+                                                            }
+                                                        },
+                                                        
+                                                    }
+                                                }
+                                            
+                                    });
+}
