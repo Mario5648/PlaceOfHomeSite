@@ -23,6 +23,7 @@ var getSinglePropertyDataEndPoint = "https://placeofhome-api.org/getSingleProper
 var editPropertyPMEndPoint = "https://placeofhome-api.org/editPropertyPM";
 var removePropertyPMEndPoint = "https://placeofhome-api.org/removePropertyPM";
 var assignStripeIdtoUserAccountEndPoint = "https://placeofhome-api.org/assignStripeIdtoUserAccount"
+var getZipCodeLiveMarketDataEndPoint = "https://placeofhome-api.org/getZipCodeLiveMarketData"
 
 function endpointCall(endpoint=null, params={}, callBack=null)
 {
@@ -93,5 +94,7 @@ function identifyEndPoint(endpoint=null)
             return removePropertyPMEndPoint;
         case "assignStripeIdtoUserAccount":
             return assignStripeIdtoUserAccountEndPoint;
+        case "getZipCodeLiveMarketData":
+            return getZipCodeLiveMarketDataEndPoint;
     }
 }
