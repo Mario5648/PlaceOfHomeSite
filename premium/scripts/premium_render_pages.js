@@ -68,6 +68,29 @@ function renderZipCodeAnalysisInputPage()
     generateStateSelectionFieldOptions();
 }
 
+function renderLiveMarketDataInputPage()
+{
+    let zipCodeInputHtml = `
+                                
+                                <div class="main-header-container">
+                                    <p class="main-header-text">Zip Code Live Market Data</p>
+                                    <p class="main-header-subtext">Enter a zip code and instantly access key real estate metrics like listing prices, market days, price trends, and rent. Ideal for quickly gauging any local market's dynamics.</p>
+                                </div>
+
+                                <div class="input-box-container">
+                                    <div class="input-box">
+                                        <br>
+                                        <label for="zipCodeInput">Zip Code :</label>
+                                        <input class="input-field" id="zipCodeInput" name="zipCodeInput" type="number"></input>
+                                        <br>
+                                        <button class="input-submit-button" onclick="generateLiveMarketReport()">Submit</button>
+                                    </div>
+                                </div>
+    `;
+
+    document.getElementById("mainBody").innerHTML = zipCodeInputHtml;
+}
+
 function renderZipCodeCompareInputPage()
 {
     let zipCodeInputHtml = `
@@ -1564,4 +1587,69 @@ function renderPropertyProfileSettings()
     document.getElementById("mainBody").innerHTML = propertyProfileSettings;
     checkWebsiteLive();
     checkStripeAccountConnection();
+}
+
+function renderLiveMarketPremiumReportPage()
+{
+    let liveMarketPageHtml = `  
+                                <div class="main-header-container">
+                                    <p class="main-header-text">Zip Code Market Analysis</p>
+                                    <p id="currentDateOfReport" class="main-header-subtext">Date:</p>
+                                </div>
+
+                                <div class="liveMarketTableContainer">
+                                    <p class="realTimeMarketTitleText">Real Time Market Analysis</p>
+                                    <table id="propertyInformationTable">
+                                        <tr class="setTableWhiteBackground">
+                                            <th>Average List Price</th>
+                                            <td id="avgListPriceText"></td>
+                                        </tr>
+                                        <tr class="setTableGrayBackground">
+                                            <th>Median List Price</th>
+                                            <td id="medianListPriceText"></td>
+                                        </tr>
+                                        <tr class="setTableWhiteBackground">
+                                            <th>Average Price Per Square Foot</th>
+                                            <td id="avgPricePerSquareFootText"></td>
+                                        </tr>
+                                        <tr class="setTableGrayBackground">
+                                            <th>Median Price Per Square Foot</th>
+                                            <td id="medianPricePerSquareFootText"></td>
+                                        </tr>
+                                        <tr class="setTableWhiteBackground">
+                                            <th>Average Days Listed</th>
+                                            <td id="avgDaysOnMarketText"></td>
+                                        </tr>
+                                        <tr class="setTableGrayBackground">
+                                            <th>Median Days Listed</th>
+                                            <td id="medianDaysOnMarketText"></td>
+                                        </tr>
+                                        <tr class="setTableWhiteBackground">
+                                            <th>Average Rent</th>
+                                            <td id="avgRentText"></td>
+                                        </tr>
+                                        <tr class="setTableGrayBackground">
+                                            <th>Median Rent</th>
+                                            <td id="medianRentText"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <br>
+                                <br>
+                                <br>
+
+                                <div class="recentlySoldPropertyPricesContainer">
+                                    <p class="realTimeMarketTitleText">Recently Sold Property Prices</p>
+                                    <div class="full-horizontal-container-box">
+                                        <canvas id="soldPriceRangesChart" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <br>
+                                <br>
+                            `;
+
+    document.getElementById("mainBody").innerHTML = liveMarketPageHtml;
 }

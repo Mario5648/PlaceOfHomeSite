@@ -1152,3 +1152,35 @@ body
 
     padding: 10px;
 }
+
+.liveMarketTableContainer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.realTimeMarketTitleText
+{
+    font-size: 20px;
+    color: #f36c36;
+}
+
+.recentlySoldPropertyPricesContainer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.setTableWhiteBackground
+{
+    background-color: #fff;
+}
+
+.setTableGrayBackground
+{
+    background-color: #888;
+}

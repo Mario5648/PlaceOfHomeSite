@@ -525,3 +525,25 @@ function assignStripeIdtoUserAccount(callBack = null, email = null, token = null
         }
     });
 }
+
+function generateLiveMarketPremiumReport(callBack = null)
+{
+
+    let params = {
+                "zipCode": ZIPCODE,
+                "userEmail":localStorage.getItem("POH_USER_EMAIL"),
+                "userToken":localStorage.getItem("POH_USER_TOKEN"),
+                };
+
+    endpointCall("getZipCodeLiveMarketData", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data);
+        }
+        else if(data["status"] == "failed")
+        {
+            return callBack(data);
+        }
+    });
+}

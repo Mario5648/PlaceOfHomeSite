@@ -460,6 +460,10 @@ function generateToolOptionsMenu()
                                 <i class="fa fa-home menu-icon-style"></i>
                                 <p class="menu-text" onclick="renderPropertyManagementHome()">Property Manager</p>
                             </div>`,
+        "liveMarketAnalyzer":`<div class="menu-row-selection-container">
+                                <i class="fa fa-home menu-icon-style"></i>
+                                <p class="menu-text" onclick="renderLiveMarketDataInputPage()">Live Market Analyzer</p>
+                              </div>`,
     }
 
 
@@ -888,3 +892,41 @@ function addStripeIdToUser()
     }, email, token, stripeAccountId)
 }
 
+
+function generateLiveMarketReport()
+{
+
+    ZIPCODE = checkValidZipCode();
+    if(!ZIPCODE)
+    {
+        return;
+    }
+
+    
+    renderLoadingScreen();
+    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0');
+
+    generateLiveMarketPremiumReport(function(data)
+    {
+
+        if(data["status"] == "success")
+        { 
+            renderLiveMarketPremiumReportPage();
+
+            console.log(data);
+
+            document.getElementById("currentDateOfReport").innerHTML = "Date : "+DATE_TODAY;
+
+            document.getElementById("avgListPriceText").innerHTML = "$"+data['currentListingPrices']['homePrices']['avgPrice'];
+            document.getElementById("medianListPriceText").innerHTML = "$"+data['currentListingPrices']['homePrices']['medianPrice'];
+            document.getElementById("avgPricePerSquareFootText").innerHTML = "$"+data['currentMarketAnalytics']['liveMarketData']['avgPricePerSqFt'];
+            document.getElementById("medianPricePerSquareFootText").innerHTML = "$"+data['currentMarketAnalytics']['liveMarketData']['medianPricePerSqFt'];
+            document.getElementById("avgDaysOnMarketText").innerHTML = data['currentMarketAnalytics']['liveMarketData']['avgDaysOnMarket'];
+            document.getElementById("medianDaysOnMarketText").innerHTML = data['currentMarketAnalytics']['liveMarketData']['medianDaysOnMarket'];
+            document.getElementById("avgRentText").innerHTML = "$"+data['currentListingPrices']['rentPrices']['avgPrice'];
+            document.getElementById("medianRentText").innerHTML = "$"+data['currentListingPrices']['rentPrices']['medianPrice'];
+            
+            renderPriceRangesChart(data);
+        }
+    })
+}
