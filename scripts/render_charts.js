@@ -882,8 +882,16 @@ function renderPropertyAreaRentComparisonChart(data = null)
 
 function renderPriceRangesChart(data = null)
 {
+    
+
     let priceRangesCount = [];
 
+    // Check if the chart instance exists
+    if (PRICE_RANGES_CHART) {
+        // Destroy the existing chart
+        PRICE_RANGES_CHART.destroy();
+    }
+    
 
     const priceRanges = Object.keys(data["currentMarketAnalytics"]["liveMarketData"]["soldPricesList"]).sort((a, b) => {
         const minValueA = parseInt(a.substring(1).split('-')[0].replace(/,/g, ''));
@@ -914,7 +922,7 @@ function renderPriceRangesChart(data = null)
         }]
         };
     const ctx = document.getElementById('soldPriceRangesChart').getContext('2d');
-    const priceRangesChart = new Chart(ctx, {
+    PRICE_RANGES_CHART = new Chart(ctx, {
                                     type: 'bar',
                                     data: data,
                                     plugins :[ChartDataLabels],
