@@ -941,12 +941,17 @@ function decideTextToPopulate(value, beginningString, elementId)
 }
 
 function getLiveMarketDataWithSelection()
-{   
+{
+    document.getElementById('chartSoldPropertyPrices').innerHTML = returnLoadingAnimationHtml();
+    document.getElementById('propertyInformationTable').innerHTML = returnLoadingAnimationHtml();
+
     updateLiveMarketPremiumReport(function(data)
     {
 
         if(data["status"] == "success")
         { 
+            document.getElementById('chartSoldPropertyPrices').innerHTML = returnSoldPropertyPricesChartHtml();
+            document.getElementById('propertyInformationTable').innerHTML = returnRealTimeAnalyticsTableHtml();
 
             document.getElementById("currentDateOfReport").innerHTML = "Date : "+DATE_TODAY;
             

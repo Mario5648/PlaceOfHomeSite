@@ -4,7 +4,7 @@ function renderLoadingScreen()
                 <div class="loadingBody">
                     <div class="loadingBodySection">
                         <img src="../placeOfHomeLoading.gif" width="200px"></img>
-                        <p class="loadingText">Gathering data for the area to potentially call home!</p>
+                        <p class="loadingText">Gathering Analytics!</p>
                     </div>
                 </div>
     `;
@@ -1678,7 +1678,7 @@ function renderLiveMarketPremiumReportPage()
                                 <br>
                                 <br>
 
-                                <div class="recentlySoldPropertyPricesContainer">
+                                <div  id="chartSoldPropertyPrices" class="recentlySoldPropertyPricesContainer">
                                     <p class="realTimeMarketTitleText">Recently Sold Property Prices</p>
                                     <div class="full-horizontal-container-box">
                                         <canvas id="soldPriceRangesChart" width="400" height="200"></canvas>
@@ -1691,4 +1691,59 @@ function renderLiveMarketPremiumReportPage()
                             `;
 
     document.getElementById("mainBody").innerHTML = liveMarketPageHtml;
+}
+
+
+function returnSoldPropertyPricesChartHtml()
+{
+    return `<p class="realTimeMarketTitleText">Recently Sold Property Prices</p>
+        <div class="full-horizontal-container-box">
+            <canvas id="soldPriceRangesChart" width="400" height="200"></canvas>
+        </div>`;
+}
+
+function returnRealTimeAnalyticsTableHtml()
+{
+    return `<tr class="setTableWhiteBackground">
+                <th>Average List Price</th>
+                <td id="avgListPriceText"></td>
+            </tr>
+            <tr class="setTableGrayBackground">
+                <th>Median List Price</th>
+                <td id="medianListPriceText"></td>
+            </tr>
+            <tr class="setTableWhiteBackground">
+                <th>Average Price Per Square Foot</th>
+                <td id="avgPricePerSquareFootText"></td>
+            </tr>
+            <tr class="setTableGrayBackground">
+                <th>Median Price Per Square Foot</th>
+                <td id="medianPricePerSquareFootText"></td>
+            </tr>
+            <tr class="setTableWhiteBackground">
+                <th>Average Days Listed</th>
+                <td id="avgDaysOnMarketText"></td>
+            </tr>
+            <tr class="setTableGrayBackground">
+                <th>Median Days Listed</th>
+                <td id="medianDaysOnMarketText"></td>
+            </tr>
+            <tr class="setTableWhiteBackground">
+                <th>Average Rent</th>
+                <td id="avgRentText"></td>
+            </tr>
+            <tr class="setTableGrayBackground">
+                <th>Median Rent</th>
+                <td id="medianRentText"></td>
+            </tr>`;
+}
+
+function returnLoadingAnimationHtml()
+{
+    return `<div class="loadingBody">
+                <div class="loadingBodySection">
+                    <img src="../placeOfHomeLoading.gif" width="200px"></img>
+                    <p class="loadingText">Gathering Analytics!</p>
+                </div>
+            </div>`;
 }
