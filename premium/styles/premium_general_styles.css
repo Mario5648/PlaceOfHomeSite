@@ -1184,3 +1184,30 @@ body
 {
     background-color: #888;
 }
+
+.homeTypeMenuContainer
+{
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px;
+
+    background-color: #092230;
+    color: #fff;
+
+    margin: 30px;
+}
+
+.analyzeSelectionButton
+{
+    width: 200px;
+    height: 30px;
+
+    font-size: 16px;
+
+    background-color: #26646c;
+    color: #fff;
+
+    border-radius: 30px;
+    border-style: none;
+}

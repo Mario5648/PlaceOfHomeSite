@@ -547,3 +547,30 @@ function generateLiveMarketPremiumReport(callBack = null)
         }
     });
 }
+
+
+
+function updateLiveMarketPremiumReport(callBack = null)
+{
+
+    let params = {
+                "zipCode": ZIPCODE,
+                "numberOfRooms": document.getElementById("numberOfRooms").value,
+                "numberOfBathrooms": document.getElementById("numberOfBathrooms").value,
+                "homeTypeSelection": getSelectedHomeTypes(),
+                "userEmail":localStorage.getItem("POH_USER_EMAIL"),
+                "userToken":localStorage.getItem("POH_USER_TOKEN"),
+                };
+
+    endpointCall("getZipCodeLiveMarketDataWithSelection", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data);
+        }
+        else if(data["status"] == "failed")
+        {
+            return callBack(data);
+        }
+    });
+}

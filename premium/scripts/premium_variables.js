@@ -30,3 +30,6 @@ var SELECTED_PROPERTY_DATA = null;
 var TO_DELETE_PID = null;
 
 var COL_DATA_BY_PEOPLE = {};
+
+
+var PRICE_RANGES_CHART = null;

@@ -913,8 +913,6 @@ function generateLiveMarketReport()
         { 
             renderLiveMarketPremiumReportPage();
 
-            console.log(data);
-
             document.getElementById("currentDateOfReport").innerHTML = "Date : "+DATE_TODAY;
 
             document.getElementById("avgListPriceText").innerHTML = "$"+data['currentListingPrices']['homePrices']['avgPrice'];
@@ -929,4 +927,56 @@ function generateLiveMarketReport()
             renderPriceRangesChart(data);
         }
     })
+}
+
+function decideTextToPopulate(value, beginningString, elementId)
+{
+    if(value)
+    {
+        document.getElementById(elementId).innerHTML = beginningString+value;
+    }else
+    {
+        document.getElementById(elementId).innerHTML = "N/A"
+    }
+}
+
+function getLiveMarketDataWithSelection()
+{   
+    updateLiveMarketPremiumReport(function(data)
+    {
+
+        if(data["status"] == "success")
+        { 
+
+            document.getElementById("currentDateOfReport").innerHTML = "Date : "+DATE_TODAY;
+            
+            let avgListPrice = data['currentListingPrices']['homePrices']['avgPrice'];
+            let medianListPrice = data['currentListingPrices']['homePrices']['medianPrice'];
+            let avgPricePerSquareFoot = data['currentMarketAnalytics']['liveMarketData']['avgPricePerSqFt'];
+            let medianPricePerSquareFoot = data['currentMarketAnalytics']['liveMarketData']['medianPricePerSqFt'];
+            let avgDaysOnMarket = data['currentMarketAnalytics']['liveMarketData']['avgDaysOnMarket'];
+            let medianDaysOnMarket = data['currentMarketAnalytics']['liveMarketData']['medianDaysOnMarket'];
+            let avgRent  = data['currentListingPrices']['rentPrices']['avgPrice'];
+            let medianRent = data['currentListingPrices']['rentPrices']['medianPrice'];
+
+
+            decideTextToPopulate(avgListPrice, "$", "avgListPriceText")
+            decideTextToPopulate(medianListPrice, "$", "medianListPriceText")
+            decideTextToPopulate(avgPricePerSquareFoot, "$", "avgPricePerSquareFootText")
+            decideTextToPopulate(medianPricePerSquareFoot, "$", "medianPricePerSquareFootText")
+            decideTextToPopulate(avgDaysOnMarket, "", "avgDaysOnMarketText")
+            decideTextToPopulate(medianDaysOnMarket, "", "medianDaysOnMarketText")
+            decideTextToPopulate(avgRent, "$", "avgRentText")
+            decideTextToPopulate(medianRent, "$", "medianRentText")
+            
+            renderPriceRangesChart(data);
+        }
+    })
+}
+
+
+function getSelectedHomeTypes() {
+    const checkboxes = document.querySelectorAll('.homeTypeOptionSectionContainer input[name="homeTypeSelection"]:checked');
+    const selectedValues = Array.from(checkboxes).map(checkbox => checkbox.value);
+    return selectedValues
 }

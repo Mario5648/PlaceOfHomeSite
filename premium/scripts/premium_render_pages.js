@@ -1597,6 +1597,45 @@ function renderLiveMarketPremiumReportPage()
                                     <p id="currentDateOfReport" class="main-header-subtext">Date:</p>
                                 </div>
 
+                                <div class="homeTypeMenuContainer">
+                                    <div>
+                                        <label for="numberOfRooms"># of Rooms :</label>
+                                        <input type="number" name="numberOfRooms" id="numberOfRooms"></input>
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <label for="numberOfBathrooms"># of Bathrooms :</label>
+                                        <input type="number" name="numberOfBathrooms" id="numberOfBathrooms"></input>
+                                    </div>
+                                    <br>
+                                    <div class="homeTypeOptionSectionContainer">
+                                        <input type="checkbox" id="multi_family" name="homeTypeSelection" value="multi_family">
+                                        <label for="multi_family">Multi Family</label>  
+                                        
+                                        <input type="checkbox" id="single_family" name="homeTypeSelection" value="single_family">
+                                        <label for="single_family">Single Family</label> 
+
+                                        <input type="checkbox" id="mobile" name="homeTypeSelection" value="mobile">
+                                        <label for="mobile">Mobile</label>
+
+                                        <input type="checkbox" id="land" name="homeTypeSelection" value="land">
+                                        <label for="land">Land</label> 
+                                        
+                                        <input type="checkbox" id="farm" name="homeTypeSelection" value="farm">
+                                        <label for="farm">Farm</label>  
+
+                                        <input type="checkbox" id="condos" name="homeTypeSelection" value="condos">
+                                        <label for="condos">Condos</label>  
+
+                                        <input type="checkbox" id="townhome" name="homeTypeSelection" value="townhome">
+                                        <label for="townhome">Townhome</label>  
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <button class="analyzeSelectionButton" onclick="getLiveMarketDataWithSelection()">Analyze Selection</button>
+                                    </div>
+                                </div>
+
                                 <div class="liveMarketTableContainer">
                                     <p class="realTimeMarketTitleText">Real Time Market Analysis</p>
                                     <table id="propertyInformationTable">
