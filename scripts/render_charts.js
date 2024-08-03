@@ -962,3 +962,125 @@ function renderPriceRangesChart(data = null)
                                             
                                     });
 }
+
+
+function renderMortgageOvetimeChart(data = null)
+{
+
+    // Check if the chart instance exists
+    if (MORTGAGE_OVERTIME_CHART) {
+        // Destroy the existing chart
+        MORTGAGE_OVERTIME_CHART.destroy();
+    }
+    
+    let principle = parseFloat(ANTICIPATED_PRINCIPLE);
+    let interestRate = parseFloat(ANTICIPATED_INTEREST);
+    let loanPeriodYears = parseFloat(ANTICIPATED_MORTGAGE_DURATION);
+    let extraMonthlyPayment = parseFloat(ANTICIPATED_EXTRA_MONTHLY_PAYMENT);
+
+    let loanPeriodMonths = loanPeriodYears * 12;
+
+    let totalLoanAmount = principle + (principle * (interestRate / 100));
+    let monthlyPayment = totalLoanAmount / loanPeriodMonths;
+
+    let loanAmountLeftYear = []
+    let yearLabels = []
+    let loanAmountLeft = totalLoanAmount;
+
+    for(let year = 0; year < loanPeriodYears; year +=1)
+    {
+        loanAmountLeft -= ((monthlyPayment * 12) + (extraMonthlyPayment * 12))
+        if(loanAmountLeft > 0)
+        {
+            loanAmountLeftYear.push(loanAmountLeft)
+        }else
+        {
+            loanAmountLeftYear.push(0)
+        }
+        yearLabels.push("Year "+(year+1))
+    }
+
+    var data = {
+        labels: yearLabels,
+        datasets: [{
+            axis: 'x',
+            label: 'Mortgage Overtime',
+            data: loanAmountLeftYear,
+            fill: false,
+            backgroundColor: ['rgba(243,108,54,0.6)'],
+            borderWidth: 1,
+        }]
+        };
+    const ctx = document.getElementById('mortgageOvertimeChart').getContext('2d');
+    MORTGAGE_OVERTIME_CHART = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: data,
+                                    options: {
+                                                responsive: true,
+                                                maintainAspectRatio: true,
+                                                indexAxis: 'x', // This will make the bar chart horizontal
+                                                scales: {
+                                                    y: {
+                                                        ticks: {
+                                                            beginAtZero: true,
+                                                        }
+                                                    },
+                                                    x: {
+                                                        ticks: {
+                                                            beginAtZero: true,
+                                                        }
+                                                    }
+                                                    },
+                                                    plugins: {
+                                                        legend: {
+                                                            display: false
+                                                        },
+
+                                                        
+                                                    }
+                                                }
+                                            
+                                    });
+}
+
+function renderIncomeBreakdownChart(data = null)
+{
+    
+    let principle = parseFloat(ANTICIPATED_PRINCIPLE);
+    let interestRate = parseFloat(ANTICIPATED_INTEREST);
+    let loanPeriodYears = parseFloat(ANTICIPATED_MORTGAGE_DURATION);
+    let loanPeriodMonths = loanPeriodYears * 12;
+
+    let totalLoanAmount = principle + (principle * (interestRate / 100));
+    let monthlyPayment = totalLoanAmount / loanPeriodMonths;
+
+    let totalYearlyExpenses = (ANTICIPATED_EXPENSES * 12) + ANTICIPATED_YEARLY_TAX + (monthlyPayment * 12);
+    let totalYearlyEarnings = (ANTICIPATED_RENT * 12) + (ANTICIPATED_EXTRA_MONTHLY_PAYMENT * 12);
+
+
+    var data = {
+        labels: ["Monthly Expenses", "Monthly Property Tax", "Monthly Mortgage Payment", "Monthly Rent"],
+        datasets: [{
+            label: 'Income Breakdown',
+            data: [ANTICIPATED_EXPENSES, ANTICIPATED_YEARLY_TAX / 12 , monthlyPayment, ANTICIPATED_RENT],
+            backgroundColor: ['rgb(61,150,186)','rgb(0,175,130)', 'rgb(243,188,0)', 'rgb(243,108,54)'],
+        }]
+        };
+    const ctx = document.getElementById('incomeBreakdownChart').getContext('2d');
+    let incomeBreakdownChart = new Chart(ctx, {
+                                    type: 'doughnut',
+                                    data: data,
+                                    options: {
+                                                responsive: false,
+                                                maintainAspectRatio: true,
+                                                indexAxis: 'x', // This will make the bar chart horizontal
+                                                scales: {},
+                                                plugins: {
+                                                    legend: {
+                                                        position: 'top',
+                                                    },
+                                                }
+                                                }
+                                            
+                                    });
+}

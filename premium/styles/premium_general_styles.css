@@ -1277,3 +1277,31 @@ body
     padding-left:30px;
     font-size: 30px;   
 }
+
+.editCalculationInputContainer
+{
+    display: none;
+}
+
+.defaultOrangeButton
+{
+    background-color: #f36c36;
+    color: #fff;
+    border-style: none;
+
+    width: 200px;
+    height: 40px;
+
+    padding: 10px;
+}
+.updateMortgageChartButton
+{
+    background-color: #f36c36;
+    color: #fff;
+    border-style: none;
+
+    width: 100px;
+    height: 30px;
+
+    padding: 5px;
+}

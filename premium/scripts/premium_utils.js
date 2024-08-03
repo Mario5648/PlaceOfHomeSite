@@ -340,6 +340,8 @@ function getAllPropertyInputData()
     ANTICIPATED_DOWNPAYMENT = document.getElementById("anticipatedDownpaymentInput").value;
     ANTICIPATED_CLOSING_COST = document.getElementById("anticipatedClosingCostInput").value;
     ANTICIPATED_RENOVATION_COST = document.getElementById("anticipatedRenovationCostInput").value;
+    ANTICIPATED_MORTGAGE_DURATION = document.getElementById("anticipatedMortgageDurationInput").value;
+    ANTICIPATED_YEARLY_TAX = document.getElementById("anticipatedYearlyTaxInput").value;
 }
 
 function generatePropertyAnalysisPremiumReport()
@@ -407,6 +409,9 @@ function generatePropertyAnalysisPremiumReport()
 
             renderRentComparisonChart(data);
             renderHomePriceComparisonChart(data);
+            renderMortgageOvetimeChart(data);
+            renderIncomeBreakdownChart(data);
+
 
         }
     })
@@ -1027,4 +1032,117 @@ function generateSoldHomeGrid(priceRange)
 
     document.getElementById("soldHomesGrid").innerHTML = homeGridHtml;
     document.getElementById("soldHomesGridTitle").innerHTML = `Sold Properties Price Range : ${priceRange}`;
+}
+
+function displayCalculationInputs()
+{
+    if(document.getElementById("calculationInputs").style.display == "block")
+    {
+        document.getElementById("calculationInputs").style.display = "none";
+        document.getElementById("editCalculationsButton").innerHTML = "Edit Calculation Inputs";
+
+    }else{
+        document.getElementById("calculationInputs").style.display = "block";
+        document.getElementById("editCalculationsButton").innerHTML = "Hide Inputs";
+
+        document.getElementById("monthlyRentInput").value = ANTICIPATED_RENT;
+        document.getElementById("occupiedMonthsInput").value = ANTICIPATED_OCCUPIED_MONTHS;
+        document.getElementById("anticipatedMonthlyExpensesInput").value = ANTICIPATED_EXPENSES;
+        document.getElementById("anticipatedPrincipleInput").value = ANTICIPATED_PRINCIPLE;
+        document.getElementById("anticipatedInterestRateInput").value = ANTICIPATED_INTEREST;
+        document.getElementById("anticipatedDownpaymentInput").value = ANTICIPATED_DOWNPAYMENT;
+        document.getElementById("anticipatedClosingCostsInput").value = ANTICIPATED_CLOSING_COST;
+        document.getElementById("anticipatedRenovationCostInput").value = ANTICIPATED_RENOVATION_COST;
+        document.getElementById("anticipatedMortgageDurationInput").value = ANTICIPATED_MORTGAGE_DURATION;
+        document.getElementById("anticipatedYearlyTaxInput").value = ANTICIPATED_YEARLY_TAX;
+    }
+}
+
+
+function updatePropertyAnalyzerCalculations()
+{
+
+    ANTICIPATED_RENT = document.getElementById("monthlyRentInput").value;
+    ANTICIPATED_OCCUPIED_MONTHS = document.getElementById("occupiedMonthsInput").value;
+    ANTICIPATED_EXPENSES = document.getElementById("anticipatedMonthlyExpensesInput").value;
+    ANTICIPATED_PRINCIPLE = document.getElementById("anticipatedPrincipleInput").value;
+    ANTICIPATED_INTEREST = document.getElementById("anticipatedInterestRateInput").value;
+    ANTICIPATED_DOWNPAYMENT = document.getElementById("anticipatedDownpaymentInput").value;
+    ANTICIPATED_CLOSING_COST = document.getElementById("anticipatedClosingCostsInput").value;
+    ANTICIPATED_RENOVATION_COST = document.getElementById("anticipatedRenovationCostInput").value;
+    ANTICIPATED_MORTGAGE_DURATION = document.getElementById("anticipatedMortgageDurationInput").value;
+    ANTICIPATED_YEARLY_TAX = document.getElementById("anticipatedYearlyTaxInput").value;
+
+    renderLoadingScreen();
+    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0');
+
+    generatePremiumPropertyAnalysisReport(function(data)
+    {
+
+        if(data["status"] == "success")
+        {
+            renderPropertyAnalysisPremiumReport();
+            document.getElementById("generatedDateText").innerHTML = "Report Generated On: "+DATE_TODAY;
+
+            document.getElementById("propertyAddress").innerHTML = data["zillowData"]["address"]["streetAddress"];
+            document.getElementById("propertyCityStateZipCode").innerHTML = data["zillowData"]["address"]["city"] + ", " + data["zillowData"]["address"]["state"]+ " "+data["zillowData"]["address"]["zipcode"];
+
+            document.getElementById("propertyImage").src = data['zillowData']['imgSrc']
+            document.getElementById("propertyDatePostedText").innerHTML = "Date Posted: "+data['zillowData']['datePosted']
+
+            document.getElementById("propertyPriceText").innerHTML = data['zillowData']['price']
+            document.getElementById("propertyBedroomsText").innerHTML = data['zillowData']['bedrooms']
+            document.getElementById("propertyBathroomsText").innerHTML = data['zillowData']['bathrooms']
+            document.getElementById("propertyStoryText").innerHTML = data['zillowData']['resoFacts']['stories']
+            document.getElementById("propertyLivingAreaText").innerHTML = data['zillowData']['livingArea']
+            document.getElementById("propertyYearBuiltText").innerHTML = data['zillowData']['yearBuilt']
+            document.getElementById("propertyTypeText").innerHTML = data['zillowData']['resoFacts']['propertySubType']
+            document.getElementById("propertyPricePerSqFtText").innerHTML = data['zillowData']['resoFacts']['pricePerSquareFoot']
+            document.getElementById("propertyHOAText").innerHTML = data['zillowData']['monthlyHoaFee']
+
+            document.getElementById("zillowDescriptionsText").innerHTML = data['zillowData']['description']
+
+            document.getElementById("propertyAreaText").innerHTML = data['zipCodeData']['descriptions']['zipcodeOverall']
+
+            document.getElementById("propertyAreaPopulationText").innerHTML = data['zipCodeData']['zipCode']['DEMOGRAPHIC']['Total population']
+            document.getElementById("propertyAreaWeatherText").innerHTML = data['zipCodeData']['weatherData']['averageWeather']+"°F"
+            document.getElementById("propertyAreaRentText").innerHTML = data['zipCodeData']['zipCode']['HOUSING']['Rent_Median (dollars)']
+            document.getElementById("propertyAreaHomePriceText").innerHTML = data['zipCodeData']['zipCode']['HOUSING']['House_Median (dollars)']
+            document.getElementById("propertyAreaIncomeText").innerHTML = data['zipCodeData']['zipCode']['ECONOMIC']['Mean household income (dollars)']
+            document.getElementById("propertyAreaCommuteText").innerHTML = data['zipCodeData']['zipCode']['ECONOMIC']['Mean travel time to work (minutes)']
+            document.getElementById("propertyAreaSameHomeText").innerHTML = (parseFloat(parseInt(data['zipCodeData']["zipCode"]["SOCIAL"]['Same house'].replace(',', '')) / parseInt(data['zipCodeData']["zipCode"]["SOCIAL"]['Population 1 year and over'].replace(',', '')) ) * 100).toFixed(2)
+            document.getElementById("propertyAreaRangeText").innerHTML = _commonAgeRange(data['zipCodeData'])
+            document.getElementById("propertyAreaNaturalDisastersNumberText").innerHTML = Object.keys(data['zipCodeData']['naturalDisasters']['BEGIN_LOCATION']).length
+            
+
+            document.getElementById("grossOperatingIncomeText").innerHTML = "$ " +data['propertyAnalyticsCalculations']['grossOperatingIncome']
+            document.getElementById("netOperatingIncomeText").innerHTML = "$ " +data['propertyAnalyticsCalculations']['netOperatingIncome']
+            document.getElementById("capRateText").innerHTML = data['propertyAnalyticsCalculations']['capRate']+ " %"
+            document.getElementById("cashFlowText").innerHTML = "$ " +data['propertyAnalyticsCalculations']['cashFlow_BeforeTax']
+            document.getElementById("cashOnCashText").innerHTML = data['propertyAnalyticsCalculations']['cashOnCashReturns']+ " %"
+            document.getElementById("grossRentMultiplierText").innerHTML = data['propertyAnalyticsCalculations']['grossRentMultiplier']
+            document.getElementById("debtServiceCoverageRatio").innerHTML = data['propertyAnalyticsCalculations']['debtServiceCoverageRatio']
+
+            document.getElementById("homePriceAnalyticsText").innerHTML = "$ " +data['zillowData']['price']
+            document.getElementById("rentAnalyticsText").innerHTML = "$ " +data['propertyAnalyticsCalculations']['anticipatedRent']
+            document.getElementById("expensesAnalyticsText").innerHTML = "$ " +data['propertyAnalyticsCalculations']['anticipatedExpenses']
+            document.getElementById("annualDebtServiceText").innerHTML = "$ " +data['propertyAnalyticsCalculations']['annualDebtService']
+
+            generateNearbyHomes(data['zillowData']['nearbyHomes']);
+            renderPopulationHistoryChart(data['zipCodeData']);
+            renderHomePriceHistoryChart(data['zipCodeData']);
+
+            renderRentComparisonChart(data);
+            renderHomePriceComparisonChart(data);
+            renderMortgageOvetimeChart(data);
+            renderIncomeBreakdownChart(data);
+        }
+    })
+    
+}
+
+function regenerateMortgageOvertimeChart()
+{
+    ANTICIPATED_EXTRA_MONTHLY_PAYMENT = document.getElementById("extraMonthlyPayment").value.toString();
+    renderMortgageOvetimeChart();
 }

@@ -104,6 +104,8 @@ function makeCallGeneratePremiumPropertyAnalysisReport( callBack = null )
                   "anticipatedDownpaymentInput":ANTICIPATED_DOWNPAYMENT,
                   "anticipatedClosingCostInput":ANTICIPATED_CLOSING_COST,
                   "anticipatedRenovationCostInput":ANTICIPATED_RENOVATION_COST,
+                  "anticipatedMortgageDurationYears":ANTICIPATED_MORTGAGE_DURATION,
+                  "anticipatedYearlyTax":ANTICIPATED_YEARLY_TAX,
                   "test_flag":TEST_API_CALLS,
                   "reportType":"premium",
                  };

@@ -148,6 +148,7 @@ function renderPropertyAnalysisInputPage()
                                 <label for="zillowLinkInput">Zillow Property Link:</label>
                                 <input style="width:360px;"class="input-field" id="zillowLinkInput" name="zillowLinkInput" type="text"></input>
                                 <br>
+                                <br>
                                 <p class="input-header-text">Property Info</p>
                                 <label for="anticipatedRentInput">Anticipated Monthly Rent:</label>
                                 <input style="width:360px;"class="input-field" id="anticipatedRentInput" name="anticipatedRentInput" type="number"></input>
@@ -155,22 +156,33 @@ function renderPropertyAnalysisInputPage()
                                 <label for="anticipatedOccupiedMonthsInput">Anticipated Occupied Months:</label>
                                 <input style="width:360px;"class="input-field" id="anticipatedOccupiedMonthsInput" name="anticipatedOccupiedMonthsInput" type="number"></input>
                                 <br>
-                                <label for="anticipatedExpensesInput">Anticipated Expenses:</label>
+                                <label for="anticipatedExpensesInput">Anticipated Monthly Expenses:</label>
                                 <input style="width:360px;"class="input-field" id="anticipatedExpensesInput" name="anticipatedExpensesInput" type="number"></input>
+                                <br>
+                                <label for="anticipatedYearlyTaxInput">Anticipated Yearly Property Tax:</button>
+                                <input style="width:360px;"class="input-field" id="anticipatedYearlyTaxInput" name="anticipatedYearlyTaxInput"></input>
                                 <br>
                                 <p class="input-header-text">Annual Debt Info</p>
                                 <label for="anticipatedPrincipleInput">Anticipated Principle:</label>
                                 <input style="width:360px;"class="input-field" id="anticipatedPrincipleInput" name="anticipatedPrincipleInput" type="number"></input>
                                 <br>
-                                <label for="anticipatedInterestInput">Anticipated Interest:</label>
+                                <br>
+                                <label for="anticipatedInterestInput">Anticipated Interest Rate (Whole number format):</label>
                                 <input style="width:360px;"class="input-field" id="anticipatedInterestInput" name="anticipatedInterestInput" type="number"></input>
+                                <br>
+                                <br>
+                                <label for="anticipatedMortgageDurationInput">Anticipated Mortgage Duration (in Years):</button>
+                                <input style="width:360px;"class="input-field" id="anticipatedMortgageDurationInput" name="anticipatedMortgageDurationInput"></input>
+                                <br>
                                 <br>
                                 <p class="input-header-text">Purchase Info</p>
                                 <label for="anticipatedDownpaymentInput">Anticipated Downpayment:</label>
                                 <input style="width:360px;"class="input-field" id="anticipatedDownpaymentInput" name="anticipatedDownpaymentInput" type="number"></input>
                                 <br>
+                                <br>
                                 <label for="anticipatedClosingCostInput">Anticipated Closing Cost:</label>
                                 <input style="width:360px;"class="input-field" id="anticipatedClosingCostInput" name="anticipatedClosingCostInput" type="number"></input>
+                                <br>
                                 <br>
                                 <label for="anticipatedRenovationCostInput">Anticipated Renovation Cost:</label>
                                 <input style="width:360px;"class="input-field" id="anticipatedRenovationCostInput" name="anticipatedRenovationCostInput" type="number"></input>
@@ -880,7 +892,7 @@ function renderPropertyAnalysisPremiumReport()
                                         </div>
 
                                         <div class="analyticsBox">
-                                            <p>Expenses</p>
+                                            <p>Monthly Expenses</p>
                                             <p id="expensesAnalyticsText"></p>
                                         </div>
 
@@ -893,11 +905,11 @@ function renderPropertyAnalysisPremiumReport()
                                     <br>
                                     <table id="propertyAnalyticsCalculationTable">
                                         <tr>
-                                            <th>Gross Operating Income</th>
+                                            <th>Gross Operating Yearly Income</th>
                                             <td id="grossOperatingIncomeText"></td>
                                         </tr>
                                         <tr>
-                                            <th>Net Operating Income</th>
+                                            <th>Net Operating Yearly Income</th>
                                             <td id="netOperatingIncomeText"></td>
                                         </tr>
                                         <tr>
@@ -922,7 +934,82 @@ function renderPropertyAnalysisPremiumReport()
                                         </tr>
                                     </table>
                                 </div>
-
+                                <br>
+                                <br>
+                                <div>
+                                    <p class="propertyInformationText">Mortgage Overtime</p>
+                                    <div>
+                                        <label for="extraMonthlyPayment">Extra Monthly Payment $</label>
+                                        <input type="number" id="extraMonthlyPayment" name="extraMonthlyPayment"></input>
+                                        <button class="updateMortgageChartButton" onclick="regenerateMortgageOvertimeChart()">Update</button>
+                                    </div>
+                                    <div>
+                                        <canvas id="mortgageOvertimeChart" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <div>
+                                    <p class="propertyInformationText">Income Breakdown</p>
+                                    <div>
+                                        <canvas id="incomeBreakdownChart" width="800" height="500"></canvas>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <button class="defaultOrangeButton" id="editCalculationsButton" onclick="displayCalculationInputs()">Edit Calculation Input</button>
+                                <div id="calculationInputs" class="editCalculationInputContainer">
+                                    <p class="propertyInformationText">Property Info</p>
+                                    <label for="monthlyRentInput">Anticipated Monthly Rent</button>
+                                    <input id="monthlyRentInput" name="monthlyRentInput"></input>
+                                    <br>
+                                    <br>
+                                    <label for="occupiedMonthsInput">Anticipated Occupied Months</button>
+                                    <input id="occupiedMonthsInput" name="occupiedMonthsInput"></input>
+                                    <br>
+                                    <br>
+                                    <label for="anticipatedMonthlyExpensesInput">Anticipated Monthly Expenses</button>
+                                    <input id="anticipatedMonthlyExpensesInput" name="anticipatedMonthlyExpensesInput"></input>
+                                    <br>
+                                    <br>
+                                    <label for="anticipatedYearlyTaxInput">Anticipated Yearly Property Tax</button>
+                                    <input id="anticipatedYearlyTaxInput" name="anticipatedYearlyTaxInput"></input>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <p class="propertyInformationText">Annual Debt Info</p>
+                                    <label for="anticipatedPrincipleInput">Anticipated Principle</button>
+                                    <input id="anticipatedPrincipleInput" name="anticipatedPrincipleInput"></input>
+                                    <br>
+                                    <br>
+                                    <label for="anticipatedInterestRateInput">Anticipated Interest Rate (Whole number format)</button>
+                                    <input id="anticipatedInterestRateInput" name="anticipatedInterestRateInput"></input>
+                                    <br>
+                                    <br>
+                                    <label for="anticipatedMortgageDurationInput">Anticipated Mortgage Duration (in Years)</button>
+                                    <input id="anticipatedMortgageDurationInput" name="anticipatedMortgageDurationInput"></input>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <p class="propertyInformationText">Purchase Costs</p>
+                                    <label for="anticipatedDownpaymentInput">Anticipated Downpayment</button>
+                                    <input id="anticipatedDownpaymentInput" name="anticipatedDownpaymentInput"></input>
+                                    <br>
+                                    <br>
+                                    <label for="anticipatedClosingCostsInput">Anticipated Closing Cost</button>
+                                    <input id="anticipatedClosingCostsInput" name="anticipatedClosingCostsInput"></input>
+                                    <br>
+                                    <br>
+                                    <label for="anticipatedRenovationCostInput">Anticipated Renovation Cost</button>
+                                    <input id="anticipatedRenovationCostInput" name="anticipatedRenovationCostInput"></input>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <button class="defaultOrangeButton" onclick="updatePropertyAnalyzerCalculations()">Save Changes</button>
+                                    <br>
+                                    <br>
+                                    <br>
+                                </div>
                             </div>
                         </div>
     
