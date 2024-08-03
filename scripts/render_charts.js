@@ -898,7 +898,6 @@ function renderPriceRangesChart(data = null)
         const minValueB = parseInt(b.substring(1).split('-')[0].replace(/,/g, ''));
         return minValueA - minValueB;
     });
-    
 
     for(let priceRangeIndex = 0; priceRangeIndex < priceRanges.length; priceRangeIndex+=1)
     {
@@ -927,6 +926,15 @@ function renderPriceRangesChart(data = null)
                                     data: data,
                                     plugins :[ChartDataLabels],
                                     options: {
+                                                onClick: (e, activeEls) => {
+                                                    let datasetIndex = activeEls[0].datasetIndex;
+                                                    let dataIndex = activeEls[0].index;
+                                                    let datasetLabel = e.chart.data.datasets[datasetIndex].label;
+                                                    let value = e.chart.data.datasets[datasetIndex].data[dataIndex];
+                                                    let label = e.chart.data.labels[dataIndex];
+
+                                                    generateSoldHomeGrid(label);
+                                                },
                                                 responsive: true,
                                                 maintainAspectRatio: true,
                                                 indexAxis: 'y', // This will make the bar chart horizontal

@@ -539,6 +539,7 @@ function generateLiveMarketPremiumReport(callBack = null)
     {
         if(data["status"] == "success")
         {
+            SOLD_PROPERTIES_DATA_LIST = data["currentMarketAnalytics"]["liveMarketData"]["soldPropertiesDataList"];
             return callBack(data);
         }
         else if(data["status"] == "failed")
@@ -566,6 +567,7 @@ function updateLiveMarketPremiumReport(callBack = null)
     {
         if(data["status"] == "success")
         {
+            SOLD_PROPERTIES_DATA_LIST = data["currentMarketAnalytics"]["liveMarketData"]["soldPropertiesDataList"];
             return callBack(data);
         }
         else if(data["status"] == "failed")

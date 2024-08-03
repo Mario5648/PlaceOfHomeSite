@@ -33,3 +33,5 @@ var COL_DATA_BY_PEOPLE = {};
 
 
 var PRICE_RANGES_CHART = null;
+
+var SOLD_PROPERTIES_DATA_LIST = [];

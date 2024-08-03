@@ -419,6 +419,9 @@ body
 .propertyInfomationContainer
 {
     padding-left: 100px;
+    width: 800px;
+
+    text-align: right;
 }
 
 .propertyInformationText
@@ -434,11 +437,18 @@ body
     border-collapse: collapse;
 }
 
-#propertyInformationTable th, #propertyInformationTable td 
+#propertyInformationTable th
 {
     border-bottom: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+}
+
+#propertyInformationTable td 
+{
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: right;
 }
 
 #propertyInformationTable tr:nth-child(even){background-color: #f2f2f2;}
@@ -457,6 +467,7 @@ body
 {
     padding-right: 40px;
     font-size: 15px;
+    width:400px;
 }
 
 .areaDescriptionHeaderText
@@ -1165,6 +1176,8 @@ body
 {
     font-size: 20px;
     color: #f36c36;
+
+    padding-left: 30px;
 }
 
 .recentlySoldPropertyPricesContainer
@@ -1210,4 +1223,57 @@ body
 
     border-radius: 30px;
     border-style: none;
+}
+
+
+.soldHomeGridContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+.soldHomeGridCard
+{
+    padding:30px;
+    width: 200px;
+
+    background-color: #fff;
+    color: #092230;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+
+}
+
+.soldPropertyImageGridCard
+{
+    width: 100%;
+}
+
+.viewSoldPropertyGridCardButton
+{
+    background-color: #f36c36;
+    color: #fff;
+
+    border-radius: 30px;
+    border-style: none;
+    
+    padding:5px;
+
+    width: 150px;
+    height: 40px;
+
+}
+
+.backButton
+{
+    padding-left:30px;
+    font-size: 30px;   
 }

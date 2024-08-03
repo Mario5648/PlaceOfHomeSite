@@ -729,7 +729,7 @@ function renderPropertyAnalysisPremiumReport()
                                                 <td id="propertyStoryText"></td>
                                             </tr>
                                             <tr>
-                                                <th>Living Area</th>
+                                                <th>Home SqFt</th>
                                                 <td id="propertyLivingAreaText"></td>
                                             </tr>
                                             <tr>
@@ -1593,7 +1593,10 @@ function renderLiveMarketPremiumReportPage()
 {
     let liveMarketPageHtml = `  
                                 <div class="main-header-container">
-                                    <p class="main-header-text">Zip Code Market Analysis</p>
+                                    <br>
+                                    <br>
+                                    <a class="backButton" onclick="renderLiveMarketDataInputPage()"><i class="fa fa-arrow-circle-o-left"></i></a>
+                                    <p id="liveMarketReportHeader" class="main-header-text">Zip Code Market Analysis</p>
                                     <p id="currentDateOfReport" class="main-header-subtext">Date:</p>
                                 </div>
 
@@ -1636,8 +1639,8 @@ function renderLiveMarketPremiumReportPage()
                                     </div>
                                 </div>
 
+                                <p class="realTimeMarketTitleText">Real Time Market Analysis</p>
                                 <div class="liveMarketTableContainer">
-                                    <p class="realTimeMarketTitleText">Real Time Market Analysis</p>
                                     <table id="propertyInformationTable">
                                         <tr class="setTableWhiteBackground">
                                             <th>Average List Price</th>
@@ -1678,13 +1681,18 @@ function renderLiveMarketPremiumReportPage()
                                 <br>
                                 <br>
 
+                                <p class="realTimeMarketTitleText">Recently Sold Property Prices</p>
                                 <div  id="chartSoldPropertyPrices" class="recentlySoldPropertyPricesContainer">
-                                    <p class="realTimeMarketTitleText">Recently Sold Property Prices</p>
                                     <div class="full-horizontal-container-box">
                                         <canvas id="soldPriceRangesChart" width="400" height="200"></canvas>
                                     </div>
                                 </div>
 
+                                <br>
+                                <br>
+                                <p class="realTimeMarketTitleText" id="soldHomesGridTitle">Sold Properties</p>
+                                <div id="soldHomesGrid" class="soldHomeGridContainer">
+                                <div>
                                 <br>
                                 <br>
                                 <br>

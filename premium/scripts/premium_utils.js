@@ -299,7 +299,7 @@ function generateNearbyHomes(nearByHomesData)
     let nearbyHomesTableHtml = `
                                 <tr>
                                     <th>Address</th>
-                                    <th>living Area</th>
+                                    <th>Home SqFt</th>
                                     <th>SqFt</th>
                                     <th>Sale Price</th>
                                 </tr>
@@ -902,7 +902,6 @@ function generateLiveMarketReport()
         return;
     }
 
-    
     renderLoadingScreen();
     document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0');
 
@@ -913,6 +912,7 @@ function generateLiveMarketReport()
         { 
             renderLiveMarketPremiumReportPage();
 
+            document.getElementById('liveMarketReportHeader').innerHTML = `Zip Code Market Analysis - ${ZIPCODE}`;
             document.getElementById("currentDateOfReport").innerHTML = "Date : "+DATE_TODAY;
 
             document.getElementById("avgListPriceText").innerHTML = "$"+data['currentListingPrices']['homePrices']['avgPrice'];
@@ -944,12 +944,15 @@ function getLiveMarketDataWithSelection()
 {
     document.getElementById('chartSoldPropertyPrices').innerHTML = returnLoadingAnimationHtml();
     document.getElementById('propertyInformationTable').innerHTML = returnLoadingAnimationHtml();
+    document.getElementById('soldHomesGridTitle').innerHTML = "Sold Properties";
+    document.getElementById('soldHomesGrid').innerHTML = "";
 
     updateLiveMarketPremiumReport(function(data)
     {
 
         if(data["status"] == "success")
         { 
+
             document.getElementById('chartSoldPropertyPrices').innerHTML = returnSoldPropertyPricesChartHtml();
             document.getElementById('propertyInformationTable').innerHTML = returnRealTimeAnalyticsTableHtml();
 
@@ -984,4 +987,44 @@ function getSelectedHomeTypes() {
     const checkboxes = document.querySelectorAll('.homeTypeOptionSectionContainer input[name="homeTypeSelection"]:checked');
     const selectedValues = Array.from(checkboxes).map(checkbox => checkbox.value);
     return selectedValues
+}
+
+function _handleValueFormat(value, valueType = "string")
+{
+    if (value && valueType == "number")
+    {
+        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }else if(value)
+    {
+        return value;
+    }else
+    {
+        return "N/A";
+    }   
+}
+
+function generateSoldHomeGrid(priceRange)
+{
+    let homeGridHtml = ``;
+
+    let soldPropertiesList = SOLD_PROPERTIES_DATA_LIST[priceRange]
+
+    for(let index = 0; index < soldPropertiesList.length; index += 1)
+    {
+
+        homeGridHtml += `
+                        <div class="soldHomeGridCard">
+                            <img class="soldPropertyImageGridCard" src="${soldPropertiesList[index]["image"]}" />
+                            <p>Lot SqFt: ${_handleValueFormat(soldPropertiesList[index]["lotSqFt"], "number")}</p>
+                            <p># of Bathrooms : ${_handleValueFormat(soldPropertiesList[index]["numOfBathrooms"])}</p>
+                            <p># of Bedrooms : ${_handleValueFormat(soldPropertiesList[index]["numOfRooms"])}</p>
+                            <p>Sold Price : $${_handleValueFormat(soldPropertiesList[index]["soldPrice"], "number")}</p>
+                            <br>
+                            <a href="${soldPropertiesList[index]["link"]}" target="_blank"><button class="viewSoldPropertyGridCardButton">View Property</button></a>
+                        </div>
+        `;
+    }
+
+    document.getElementById("soldHomesGrid").innerHTML = homeGridHtml;
+    document.getElementById("soldHomesGridTitle").innerHTML = `Sold Properties Price Range : ${priceRange}`;
 }
