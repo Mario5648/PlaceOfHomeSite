@@ -97,42 +97,49 @@
         <br>
         <div class="fullContainerContentSection">
             <div class="pricingBox">
-                <p class="priceText">$50 / month</p>
+                <p class="priceText">$50</p>
                 <br>
                 <p class="boldText">Basic Plan</p>
+                <p>Billed Monthly</p>
+                <br>
+                <p><i class="fa fa-check orangeText"></i> Access to Basic Design</p>
+                <p><i class="fa fa-check orangeText"></i> Access to our Restaurant Network (Limited)</p>
+                <p><i class="fa fa-check orangeText"></i> 20 Prints per Month</p>
+                <p><i class="fa fa-check orangeText"></i> Unique Photographs</p>
+                <p><i class="fa fa-check orangeText"></i> Detailed descriptions</p>
+                <br>
+                <br>
+                <br>
+                <a href="#contactUs"><button class="pricingContactUsButton">Contact Us</button></a>
+            </div>
+            <div class="pricingBox" style="background-color: #0a2230; color:white;">
+                <p class="boldText">*Favorite!*</p>
+                <p class="priceText">$150</p>
+                <br>
+                <p class="boldText">Core Plan</p>
                 <p>Billed every 3 months</p>
                 <br>
-                <p>Access to all basic features</p>
-                <p>Access to all basic features</p>
-                <p>Access to all basic features</p>
+                <p><i class="fa fa-check orangeText"></i> Access to Pre-Made Designs</p>
+                <p><i class="fa fa-check orangeText"></i> Access to our Full Restaurant Network</p>
+                <p><i class="fa fa-check orangeText"></i> 20 Prints per Month</p>
+                <p><i class="fa fa-check orangeText"></i> Unique Photographs</p>
+                <p><i class="fa fa-check orangeText"></i> Detailed descriptions</p>
                 <br>
                 <br>
                 <br>
                 <a href="#contactUs"><button class="pricingContactUsButton">Contact Us</button></a>
             </div>
             <div class="pricingBox">
-                <p class="priceText">$50 / month</p>
+                <p class="priceText">$250</p>
                 <br>
-                <p class="boldText">Basic Plan</p>
+                <p class="boldText">Premium Plan</p>
                 <p>Billed every 3 months</p>
                 <br>
-                <p>Access to all basic features</p>
-                <p>Access to all basic features</p>
-                <p>Access to all basic features</p>
-                <br>
-                <br>
-                <br>
-                <a href="#contactUs"><button class="pricingContactUsButton">Contact Us</button></a>
-            </div>
-            <div class="pricingBox">
-                <p class="priceText">$50 / month</p>
-                <br>
-                <p class="boldText">Basic Plan</p>
-                <p>Billed every 3 months</p>
-                <br>
-                <p>Access to all basic features</p>
-                <p>Access to all basic features</p>
-                <p>Access to all basic features</p>
+                <p><i class="fa fa-check orangeText"></i> Access to Custom Designs</p>
+                <p><i class="fa fa-check orangeText"></i> Access to our Full Vendor (Restaurants, Stores, Experiences) Network</p>
+                <p><i class="fa fa-check orangeText"></i> Up to 50 Prints per Month</p>
+                <p><i class="fa fa-check orangeText"></i> Unique Photographs</p>
+                <p><i class="fa fa-check orangeText"></i> Detailed descriptions</p>
                 <br>
                 <br>
                 <br>
@@ -153,28 +160,28 @@
                 <p>+</p>
             </div>
             <div class="faqBoxAnswer" id="faqBoxAnswer1"></div>
-            <div class="faqBox">
+            <div class="faqBox" onclick="generateFaqAnswer(2)" id="faqBox2">
                 <p>What payment methods do you accept?</p>
                 <p>+</p>
             </div>
             <div class="faqBoxAnswer" id="faqBoxAnswer2"></div>
-            <div class="faqBox">
+            <div class="faqBox" onclick="generateFaqAnswer(3)" id="faqBox3">
                 <p>What is your canellation policy?</p>
                 <p>+</p>
             </div>
             <div class="faqBoxAnswer" id="faqBoxAnswer3"></div>
-            <div class="faqBox">
+            <div class="faqBox" onclick="generateFaqAnswer(4)" id="faqBox4">
                 <p>How do I contact customer support?</p>
                 <p>+</p>
             </div>
             <div class="faqBoxAnswer" id="faqBoxAnswer4"></div>
-            <div class="faqBox">
-                <p>Can I request specific locations?</p>
+            <div class="faqBox" onclick="generateFaqAnswer(5)" id="faqBox5">
+                <p>Can I request specific locations to feature?</p>
                 <p>+</p>
             </div>
             <div class="faqBoxAnswer" id="faqBoxAnswer5"></div>
-            <div class="faqBox">
-                <p>Can I get different different designs or media?</p>
+            <div class="faqBox" onclick="generateFaqAnswer(6)" id="faqBox6">
+                <p>Can I get different designs for my prints?</p>
                 <p>+</p>
             </div>
             <div class="faqBoxAnswer" id="faqBoxAnswer6"></div>
@@ -214,7 +221,7 @@
                     <option value="scheduleMeeting">Schedule Meeting</option>
                     <option value="reportIssue">Report Issue</option>
                     <option value="customRequests">Custom Requests</option>
-                    <option value="other">other</option>
+                    <option value="other">Other</option>
                 </select>
                 <br>
                 <br>
@@ -294,8 +301,8 @@
             <div class="footerRight">
                 <p class="boldText">Quick Links</p>
                 <a href="https://placeofhome.org"><p>Zip Code Analyzer</p></a>
-                <p>Pricing</p>
-                <p>Contact Us</p>
+                <a href="#pricing"><p>Pricing</p></a>
+                <a href="#contactUs"><p>Contact Us</p></a>
             </div>
 
             <div class="footerLeft">

@@ -1,14 +1,34 @@
 const faqQuestionAnswerMap = 
 {
-    1:"This is an answer"
+    1:"To place an order, please contact us by using our contact form on this page, so we can send you the payment link and we can start discussing what your prints should feature!",
+    2:"We accept Apple Pay, Visa, Mastercard, and American Express",
+    3:"You can cancel at any time. Once you cancel, your subscription will finish the remaining period and you will no longer be charged.",
+    4:"You can contact us on our contact form on this page or you can reach us directly at info@placeofhome.org or (832) 570-8833.",
+    5:"You can request any store, experience, and restaurant to feature if you are under the core or premium plan.",
+    6:"You can get customed designs approved by you if you are under the premium plan. If you are under our core plan you will have options of pre-made designs that you can choose from before hand.",
+
+}
+
+function minimizeAllFaqAnswers()
+{
+    let answerBoxId = '';
+    for(let questionNumber = 1; questionNumber < 7; questionNumber += 1)
+    {
+        answerBoxId = "faqBoxAnswer" + questionNumber.toString()
+        if (document.getElementById(answerBoxId).innerHTML != ``)
+        {
+            minimizeFaqAnswer(questionNumber);
+        }
+    }
 }
 
 function generateFaqAnswer(questionNumber)
 {
+    minimizeAllFaqAnswers();
+
     let boxId = "faqBox" + questionNumber.toString()
     let answerBoxId = "faqBoxAnswer" + questionNumber.toString()
     document.getElementById(answerBoxId).innerHTML = `<p>${faqQuestionAnswerMap[questionNumber]} <br><br><button class="normalButton" onclick="minimizeFaqAnswer(${questionNumber})">Hide Answer</button></p>`;
-
 }
 
 function minimizeFaqAnswer(questionNumber)
@@ -17,7 +37,6 @@ function minimizeFaqAnswer(questionNumber)
     let answerBoxId = "faqBoxAnswer" + questionNumber.toString()
     document.getElementById(answerBoxId).innerHTML = ``;
 }
-
 
 // References to DOM Elements
 var prevBtn = document.getElementById("prev-btn");

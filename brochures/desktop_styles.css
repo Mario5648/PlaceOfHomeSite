@@ -191,6 +191,8 @@
         width: 250px;
         border-radius: 16px;
         padding: 30px;
+
+        height: 600px;
     }
 
     .priceText
