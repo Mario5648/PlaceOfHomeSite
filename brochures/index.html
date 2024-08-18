@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place of Home - Brochures</title>
+    <link rel="stylesheet" href="desktop_styles.css">
+    <link rel="stylesheet" href="mobile_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="scripts.js"></script>
+    <script src="api_calls.js"></script>
+    <link rel="icon" type="image/x-icon" href="../placeOfHomeLogo.ico">
+
+</head>
+<body>
+
+    <!-- Hero -->
+    <div class="heroContainer">
+        <img class="backgroundImage" src="background.jpg" />
+        <div class="navBarContainter">
+            <img class="logoImageHero" src="placeOfHomeLogo.png" />
+            <div class="desktopMenu">
+                <a href="#pricing">Pricing</a>
+                <a href="#example">Example</a>
+                <a href="#contactUs">Contact Us</a>
+            </div>
+
+            <div class="mobileMenu">
+                <div class="topnav">
+                    <a href="javascript:void(0);" onclick="renderMobileMenu()"><i class="fa fa-bars active" style="color:white;font-size: 50px;"></i></a>
+                </div>
+            </div>
+        </div>
+        <div id="myLinks" class="mobileMenuOptionsContainer hideDesktop">
+            <div class="mobileMenuOptions">
+                <a href="#pricing">Pricing</a>
+                <a href="#example">Example</a>
+                <a href="#contactUs">Contact Us</a>
+            </div>
+        </div>
+        <span class="hideMobile">
+            <div class="centeredHeroTitleText">Residents Uncover Local Gems</div>
+            <div class="centeredHeroText">Residents are often touring many apartments all at once. Allow them to fall in love with the area your aparment's location to give them the push to choose you.</div>
+        </span>
+        <div class="heroContentSection hideDesktop">
+            <div class="centeredHeroTitleText">Residents Uncover Local Gems</div>
+            <div class="centeredHeroText">Residents are often touring many apartments all at once. Allow them to fall in love with the area your aparment's location to give them the push to choose you.</div>
+            <a href="#contactUs"><button class="pricingContactUsButton" style="margin-left:30px;">Contact Us</button></a>
+        </div>
+    </div>
+
+    <div class="mobile_padding"></div>
+
+    <!--About-->
+    <div class="halfContainer">
+        <div class="leftSection">
+            <p class="sectionSubtext">We are the Best</p>
+            <p class="sectionTitleText">About Us</p>
+            <p>Welcome to Place of Home! We craft engaging physical media that highlights the best of your neighborhood, connecting you with local commerce through vivid descriptions, accurate data, and stunning photography. Our exclusive network of restaurant partners offers special deals, enriching your experience with both savings and discoveries. At Place of Home, we celebrate local charm and community, enhancing your living experience by keeping you connected to the treasures around you. Join us and explore local lifestyle right from your home!</p>
+        </div>
+
+        <div clas="rightSection">
+            <img class="normalSectionImage" src="./background.jpg">
+        </div>
+    </div>
+
+    <div class="mobile_padding"></div>
+
+    <!--Why us-->
+    <div class="halfContainer">
+        <div clas="leftSection">
+            <img class="normalSectionImage" src="./background.jpg">
+        </div>
+        <div class="rightSection">
+            <p class="sectionSubtext">Best Choice</p>
+            <p class="sectionTitleText">Why Choose Us</p>
+            <p class="boldText"><i class="fa fa-check orangeText"></i> In-Depth Local Insights</p>
+            <p>Place of Home provides a detailed exploration of your neighborhood through comprehensive research and vivid photography. Our publications give you a rich understanding of the area, helping you feel more connected and informed, whether you're considering moving or already live there.</p>
+            <p class="boldText"><i class="fa fa-check orangeText"></i> Exclusive Local Deals</p>
+            <p>Through our partnerships with a wide network of local restaurants and businesses, we offer exclusive deals and promotions. These special offers are designed to enhance your lifestyle and provide significant savings, making everyday life and local dining more enjoyable and affordable.</p>
+            <p class="boldText"><i class="fa fa-check orangeText"></i> Personalized Media for Each Apartment</p>
+            <p>We tailor our content to align with the specific characteristics and demographics of each apartment community. This personalized approach ensures that every resident receives the most relevant and useful information, making our publications a perfect fit for your unique living situation.</p>    
+        </div>
+    </div>
+
+    <div class="mobile_padding"></div>
+
+    <!--pricing-->
+    <div class="fullContainer" id="pricing">
+        <div class="fullContainerTitleSection">
+            <center><p class="sectionSubtext">The Right Price</p></center>
+            <center><p class="sectionTitleText">Service Pricing</p></center>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="fullContainerContentSection">
+            <div class="pricingBox">
+                <p class="priceText">$50 / month</p>
+                <br>
+                <p class="boldText">Basic Plan</p>
+                <p>Billed every 3 months</p>
+                <br>
+                <p>Access to all basic features</p>
+                <p>Access to all basic features</p>
+                <p>Access to all basic features</p>
+                <br>
+                <br>
+                <br>
+                <a href="#contactUs"><button class="pricingContactUsButton">Contact Us</button></a>
+            </div>
+            <div class="pricingBox">
+                <p class="priceText">$50 / month</p>
+                <br>
+                <p class="boldText">Basic Plan</p>
+                <p>Billed every 3 months</p>
+                <br>
+                <p>Access to all basic features</p>
+                <p>Access to all basic features</p>
+                <p>Access to all basic features</p>
+                <br>
+                <br>
+                <br>
+                <a href="#contactUs"><button class="pricingContactUsButton">Contact Us</button></a>
+            </div>
+            <div class="pricingBox">
+                <p class="priceText">$50 / month</p>
+                <br>
+                <p class="boldText">Basic Plan</p>
+                <p>Billed every 3 months</p>
+                <br>
+                <p>Access to all basic features</p>
+                <p>Access to all basic features</p>
+                <p>Access to all basic features</p>
+                <br>
+                <br>
+                <br>
+                <a href="#contactUs"><button class="pricingContactUsButton">Contact Us</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile_padding"></div>
+
+    <!--FAQ-->
+    <div class="halfContainer">
+        <div class="leftSection">
+            <p class="sectionSubtext">Actuals</p>
+            <p class="sectionTitleText">FAQs</p>
+            <div class="faqBox" onclick="generateFaqAnswer(1)" id="faqBox1">
+                <p>How do I place an order?</p>
+                <p>+</p>
+            </div>
+            <div class="faqBoxAnswer" id="faqBoxAnswer1"></div>
+            <div class="faqBox">
+                <p>What payment methods do you accept?</p>
+                <p>+</p>
+            </div>
+            <div class="faqBoxAnswer" id="faqBoxAnswer2"></div>
+            <div class="faqBox">
+                <p>What is your canellation policy?</p>
+                <p>+</p>
+            </div>
+            <div class="faqBoxAnswer" id="faqBoxAnswer3"></div>
+            <div class="faqBox">
+                <p>How do I contact customer support?</p>
+                <p>+</p>
+            </div>
+            <div class="faqBoxAnswer" id="faqBoxAnswer4"></div>
+            <div class="faqBox">
+                <p>Can I request specific locations?</p>
+                <p>+</p>
+            </div>
+            <div class="faqBoxAnswer" id="faqBoxAnswer5"></div>
+            <div class="faqBox">
+                <p>Can I get different different designs or media?</p>
+                <p>+</p>
+            </div>
+            <div class="faqBoxAnswer" id="faqBoxAnswer6"></div>
+        </div>
+
+        <div clas="rightSection">
+            <img class="normalSectionImage" src="./background.jpg">
+        </div>
+    </div>
+
+    <div class="mobile_padding"></div>
+
+    <!--Contact Us-->
+    <div class="halfContainer" id="contactUs">
+        <div class="leftSection">
+            <p class="sectionSubtext">We Are Here</p>
+            <p class="sectionTitleText">Contact Us</p>
+            <p>Email : info@placeofhome.org</p>
+            <p>Phone Number : (832) 570-8833</p>
+        </div>
+
+        <div clas="rightSection">
+            <div class="contactForm">
+                <label for="clientName">Name:</label><br><br>
+                <input class="formField" type="text" id="clientName" name="clientName" placeholder="John Doe"></input>
+                <br>
+                <br>
+                <br>
+                <label for="clientEmail">Email:</label><br><br>
+                <input class="formField" type="text" id="clientEmail" name="clientEmail" placeholder="john@apartments.com"></input>
+                <br>
+                <br>
+                <br>
+                <label for="clientReason">Reason:</label><br><br>
+                <select class="selectorField" id="clientReason" name="clientReason">
+                    <option value="requestInfo">Request More Information</option>
+                    <option value="scheduleMeeting">Schedule Meeting</option>
+                    <option value="reportIssue">Report Issue</option>
+                    <option value="customRequests">Custom Requests</option>
+                    <option value="other">other</option>
+                </select>
+                <br>
+                <br>
+                <br>
+                <label for="clientMessage">Message:</label><br><br>
+                <textarea class="formField" id="clientMessage" name="clientMessage" rows="8" cols="35" class="contactInputMessage"></textarea>
+                <br>
+                <br>
+                <br>
+                <button id="sendMessageButton" class="normalButton" onclick="sendMessageOnClick()">Send Message</button>                
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile_padding"></div>
+
+    
+    <!-- Example bifold-->
+    <div class="fullContainer" id="example">
+        <div class="fullContainerTitleSection">
+            <center><p class="sectionSubtext">Sneak Peak</p></center>
+            <center><p class="sectionTitleText">Example Apartment Bifold</p></center>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="fullContainerContentSection">
+            <!-- Previous Button -->
+            <button class="greyButtons" id="prev-btn" onclick="goPrevPage()">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+
+
+            <!-- Book -->
+            <div id="book" class="book">
+                <!-- Paper 1 -->
+                <div id="p1" class="paper">
+                    <div class="front">
+                        <div id="f1" class="front-content">
+                            <img class="pageImage" src="./apartmentBrochure/1.png" />
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div id="b1" class="back-content">
+                            <img class="pageImage" src="./apartmentBrochure/2.png" />
+                        </div>
+                    </div>
+                </div>
+                <!-- Paper 2 -->
+                <div id="p2" class="paper">
+                    <div class="front">
+                        <div id="f2" class="front-content">
+                            <img class="pageImage" src="./apartmentBrochure/3.png" />
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div id="b2" class="back-content">
+                            <img class="pageImage" src="./apartmentBrochure/4.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Button -->
+            <button class="greyButtons" id="next-btn" onclick="goNextPage()">
+                <i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile_padding_footer"></div>
+
+    <!-- footer -->
+    <div class="footerContainer">
+        <div class="footerContents">
+            <div class="footerRight">
+                <p class="boldText">Quick Links</p>
+                <a href="https://placeofhome.org"><p>Zip Code Analyzer</p></a>
+                <p>Pricing</p>
+                <p>Contact Us</p>
+            </div>
+
+            <div class="footerLeft">
+                <p class="boldText">Social Media</p>
+                <a href="https://www.instagram.com/place_of_home?igsh=aTkzdmlxY2psZXk2&amp;utm_source=qr"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD00lEQVR4nO1ZS08UQRCeAyqGh+ARrioYD+LrphJvEhPRX2CMyB9QQc88rgTDUYJ/wEfiSUBFb+hdQC+661VRcGCqJvKZ7q5ZB93Z7Zmd2V2TrWSTzUx31VfT9W7HaVCDak/wvB4wj4JoEcwrIPoJZqTyM7xWQLQA5hF43pH0FWA+DaIXqYG2V24RzKcqVwDYA6IZEO0I469gfgDPu6xPB2hJ5UsZWS2ap+cNgnlWZCmZOyC6D6ApKeNOEL0UZi6IxgC0pwXcQn47iMZBtFU4HaAjyUkEpvRFmVZmiMthIToO5k+izGsAe+NsnhElcnDdrkyR2uBx3S4w50WZ6TiOvSPmdMKpEwLRSW1mRL/Uf5sNxqSIxpw6IxBNCLYFmzxholMVHbsg3/cviU/m4fsD/7wHDoDom8boeYejGalkZ3xjNmvQEfLzoTySi1gzJ+/vRDMyWVVpO5gl4IoU8byrYjXzpRitiSKJywPJP9fB/BTMq7r0MOXHKpif6HdAZ9G9vj8gyuTg+xdLmj/zajQIog29CGhLoMB+MN8D0XeL0mMdzHcBNCeQ0yY8NqIXiaBEcZ7oXQjocxANBWWMlB+9+hnRfGjd2yR5CuVwJlFEklUuOG4wn7UAcq5gxgmSLtJWRJtTcBJEr+LUQuJLS7J3OY6ZIXVFlE+YPSuxC7pAmT8nM1oTReSLBo5d1pxKyOwvBAAUj2bZKmJCrHbsGLhL5y+ia9VXROUEI/xGDMzFeRHdFNmPaqFIkDx7YmAuzkuF5nJJLkPT2pTk2WqzviQvoFVOd/N/V6RdFPlhtb5hWqWdfcipkMA8XDtnp0L4jS6nLUnmVzUKvyYhrsue8zFw7+bj+xdCCbGj1iXKmm1WLlKifCjb8VWhaGzWpbj5oktxlAFwEERv6qJoLFLGq6/b79iZ08e6KeP/aqyWQw2Tqp2G4XlHdbJTP/VfPQscOziJTBorqqjVbZYrh3XLVncEwL6sWt21FIYPHSqMgvmx3HdsShWwop+pdwl6l7jDh5qOg2woNA6Kbh/0cddwQGdDYH4oGG/V7ci0HFmPTP8qF8adOiMQTVp3perOTq4VtqzG91UimOuObblW6LPbpO7sjB3m4brdmaMsh8d1u0MXPVP2G4GmUOJSY/4zmSIthYWoD8yfC4k27qWo5IPAX5SZTShnywxxccee1OYk7ULi/CMnM63t0jBTEWMOnndFDwxSaHNDslQZ0yt5Yq4QnYxPTCW+nt4lhOgYiJ6VLT3S/hEtZBJwVOxWfYNM1E35kR5oxeu9nuQz38b29qHUFWhQg5zY9BvL6osF8D3vmwAAAABJRU5ErkJggg=="></a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <p>Developed by Mantis Software LLC</p>
+    </div>
+</body>
+</html>
