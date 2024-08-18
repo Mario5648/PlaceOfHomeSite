@@ -86,9 +86,8 @@
         background-image: url('mobile_header_img.jpg');
 
         background-repeat: no-repeat;
-        background-attachment:fixed;
         background-size:cover;
-        background-position: center right;
+        background-position: center;
 
         height: 700px;
     }
