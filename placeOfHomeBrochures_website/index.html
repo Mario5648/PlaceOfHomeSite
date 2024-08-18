@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Place of Home - Brochures</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="desktop_styles.css">
+    <link rel="stylesheet" href="mobile_styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts.js"></script>
+
 </head>
 <body>
 
@@ -15,14 +17,37 @@
         <img class="backgroundImage" src="background.jpg" />
         <div class="navBarContainter">
             <img class="logoImageHero" src="placeOfHomeLogo.png" />
-            <p>Home</p>
-            <p>Pricing</p>
-            <p>Example</p>
-            <p>Contact Us</p>
+            <div class="desktopMenu">
+                <a href="#pricing">Pricing</a>
+                <a href="#example">Example</a>
+                <a href="#contactUs">Contact Us</a>
+            </div>
+
+            <div class="mobileMenu">
+                <div class="topnav">
+                    <a href="javascript:void(0);" onclick="renderMobileMenu()"><i class="fa fa-bars active" style="color:white;font-size: 50px;"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="centeredHeroTitleText">Residents Uncover Local Gems</div>
-        <div class="centeredHeroText">Residents are often touring many apartments all at once. Allow them to fall in love with the area your aparment's location to give them the push to choose you.</div>
+        <div id="myLinks" class="mobileMenuOptionsContainer hideDesktop">
+            <div class="mobileMenuOptions">
+                <a href="#pricing">Pricing</a>
+                <a href="#example">Example</a>
+                <a href="#contactUs">Contact Us</a>
+            </div>
+        </div>
+        <span class="hideMobile">
+            <div class="centeredHeroTitleText">Residents Uncover Local Gems</div>
+            <div class="centeredHeroText">Residents are often touring many apartments all at once. Allow them to fall in love with the area your aparment's location to give them the push to choose you.</div>
+        </span>
+        <div class="heroContentSection hideDesktop">
+            <div class="centeredHeroTitleText">Residents Uncover Local Gems</div>
+            <div class="centeredHeroText">Residents are often touring many apartments all at once. Allow them to fall in love with the area your aparment's location to give them the push to choose you.</div>
+            <a href="#contactUs"><button class="pricingContactUsButton" style="margin-left:30px;">Contact Us</button></a>
+        </div>
     </div>
+
+    <div class="mobile_padding"></div>
 
     <!--About-->
     <div class="halfContainer">
@@ -36,6 +61,8 @@
             <img class="normalSectionImage" src="./background.jpg">
         </div>
     </div>
+
+    <div class="mobile_padding"></div>
 
     <!--Why us-->
     <div class="halfContainer">
@@ -54,8 +81,10 @@
         </div>
     </div>
 
+    <div class="mobile_padding"></div>
+
     <!--pricing-->
-    <div class="fullContainer">
+    <div class="fullContainer" id="pricing">
         <div class="fullContainerTitleSection">
             <center><p class="sectionSubtext">The Right Price</p></center>
             <center><p class="sectionTitleText">Service Pricing</p></center>
@@ -77,7 +106,7 @@
                 <br>
                 <br>
                 <br>
-                <button class="pricingContactUsButton">Contact Us</button>
+                <a href="#contactUs"><button class="pricingContactUsButton">Contact Us</button></a>
             </div>
             <div class="pricingBox">
                 <p class="priceText">$50 / month</p>
@@ -91,7 +120,7 @@
                 <br>
                 <br>
                 <br>
-                <button class="pricingContactUsButton">Contact Us</button>
+                <a href="#contactUs"><button class="pricingContactUsButton">Contact Us</button></a>
             </div>
             <div class="pricingBox">
                 <p class="priceText">$50 / month</p>
@@ -105,10 +134,12 @@
                 <br>
                 <br>
                 <br>
-                <button class="pricingContactUsButton">Contact Us</button>
+                <a href="#contactUs"><button class="pricingContactUsButton">Contact Us</button></a>
             </div>
         </div>
     </div>
+
+    <div class="mobile_padding"></div>
 
     <!--FAQ-->
     <div class="halfContainer">
@@ -152,8 +183,10 @@
         </div>
     </div>
 
+    <div class="mobile_padding"></div>
+
     <!--Contact Us-->
-    <div class="halfContainer">
+    <div class="halfContainer" id="contactUs">
         <div class="leftSection">
             <p class="sectionSubtext">We Are Here</p>
             <p class="sectionTitleText">Contact Us</p>
@@ -193,9 +226,12 @@
             </div>
         </div>
     </div>
+
+    <div class="mobile_padding"></div>
+
     
     <!-- Example bifold-->
-    <div class="fullContainer">
+    <div class="fullContainer" id="example">
         <div class="fullContainerTitleSection">
             <center><p class="sectionSubtext">Sneak Peak</p></center>
             <center><p class="sectionTitleText">Example Apartment Bifold</p></center>
@@ -248,6 +284,8 @@
         </div>
     </div>
 
+    <div class="mobile_padding_footer"></div>
+
     <!-- footer -->
     <div class="footerContainer">
         <div class="footerContents">
@@ -259,7 +297,7 @@
             </div>
 
             <div class="footerLeft">
-                <p>Social Media</p>
+                <p class="boldText">Social Media</p>
                 <a href="https://www.instagram.com/place_of_home?igsh=aTkzdmlxY2psZXk2&amp;utm_source=qr"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD00lEQVR4nO1ZS08UQRCeAyqGh+ARrioYD+LrphJvEhPRX2CMyB9QQc88rgTDUYJ/wEfiSUBFb+hdQC+661VRcGCqJvKZ7q5ZB93Z7Zmd2V2TrWSTzUx31VfT9W7HaVCDak/wvB4wj4JoEcwrIPoJZqTyM7xWQLQA5hF43pH0FWA+DaIXqYG2V24RzKcqVwDYA6IZEO0I469gfgDPu6xPB2hJ5UsZWS2ap+cNgnlWZCmZOyC6D6ApKeNOEL0UZi6IxgC0pwXcQn47iMZBtFU4HaAjyUkEpvRFmVZmiMthIToO5k+izGsAe+NsnhElcnDdrkyR2uBx3S4w50WZ6TiOvSPmdMKpEwLRSW1mRL/Uf5sNxqSIxpw6IxBNCLYFmzxholMVHbsg3/cviU/m4fsD/7wHDoDom8boeYejGalkZ3xjNmvQEfLzoTySi1gzJ+/vRDMyWVVpO5gl4IoU8byrYjXzpRitiSKJywPJP9fB/BTMq7r0MOXHKpif6HdAZ9G9vj8gyuTg+xdLmj/zajQIog29CGhLoMB+MN8D0XeL0mMdzHcBNCeQ0yY8NqIXiaBEcZ7oXQjocxANBWWMlB+9+hnRfGjd2yR5CuVwJlFEklUuOG4wn7UAcq5gxgmSLtJWRJtTcBJEr+LUQuJLS7J3OY6ZIXVFlE+YPSuxC7pAmT8nM1oTReSLBo5d1pxKyOwvBAAUj2bZKmJCrHbsGLhL5y+ia9VXROUEI/xGDMzFeRHdFNmPaqFIkDx7YmAuzkuF5nJJLkPT2pTk2WqzviQvoFVOd/N/V6RdFPlhtb5hWqWdfcipkMA8XDtnp0L4jS6nLUnmVzUKvyYhrsue8zFw7+bj+xdCCbGj1iXKmm1WLlKifCjb8VWhaGzWpbj5oktxlAFwEERv6qJoLFLGq6/b79iZ08e6KeP/aqyWQw2Tqp2G4XlHdbJTP/VfPQscOziJTBorqqjVbZYrh3XLVncEwL6sWt21FIYPHSqMgvmx3HdsShWwop+pdwl6l7jDh5qOg2woNA6Kbh/0cddwQGdDYH4oGG/V7ci0HFmPTP8qF8adOiMQTVp3perOTq4VtqzG91UimOuObblW6LPbpO7sjB3m4brdmaMsh8d1u0MXPVP2G4GmUOJSY/4zmSIthYWoD8yfC4k27qWo5IPAX5SZTShnywxxccee1OYk7ULi/CMnM63t0jBTEWMOnndFDwxSaHNDslQZ0yt5Yq4QnYxPTCW+nt4lhOgYiJ6VLT3S/hEtZBJwVOxWfYNM1E35kR5oxeu9nuQz38b29qHUFWhQg5zY9BvL6osF8D3vmwAAAABJRU5ErkJggg=="></a>
             </div>
         </div>
